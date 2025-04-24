@@ -6,7 +6,7 @@ This module evaluates whether knowledge graphs extracted by LLM4CTI can help lar
 ## 🔄 Workflow
 
 ### 1. Input Preparation
-- Load `rq1.xlsx`, which includes:
+- Load `RQ1 Evaluation.xlsx`, which includes:
   - CTI article text
   - Extracted knowledge graphs from different methods (LLM4CTI, CTIKG, GPT-4o)
   - Topic entity for each article
