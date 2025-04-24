@@ -68,3 +68,29 @@ visualize_community_graph_no_overlap(
 )
 ```
 
+
+### RQ4: Community Detection
+
+We examine whether LLM4CTI can uncover cross-document semantic clusters through community detection. Communities are evaluated for their edge coverage, article support, and relevance.
+
+| Central Node        | Threat Type   | Edges From Core | Edges From Related | Related Article Count | Unrelated Edges |
+|---------------------|---------------|------------------|---------------------|------------------------|------------------|
+| DDoS                | attack-pattern| 10               | 21                  | 10                     | 3                |
+| Ransomware Attack   | attack-pattern| 8                | 15                  | 3                      | 0                |
+| Malspam             | attack-pattern| 9                | 11                  | 4                      | 0                |
+| Ursnif              | malware       | 24               | 8                   | 3                      | 2                |
+| Scarab              | malware       | 26               | 2                   | 2                      | 0                |
+| ZeuS Trojan         | malware       | 6                | 20                  | 12                     | 1                |
+| Locky ransomware    | malware       | 10               | 12                  | 3                      | 1                |
+| CryptoWall 4.0      | malware       | 15               | 2                   | 1                      | 1                |
+| WannaMine           | malware       | 13               | 3                   | 1                      | 1                |
+| Kelihos.B           | malware       | 19               | 3                   | 2                      | 0                |
+| Neutrino            | malware       | 5                | 16                  | 12                     | 1                |
+| Koobface gang       | threat-actor  | 21               | 9                   | 5                      | 0                |
+| Lazarus             | threat-actor  | 6                | 4                   | 2                      | 0                |
+| ProjectM            | threat-actor  | 13               | 2                   | 2                      | 0                |
+| Paunch              | threat-actor  | 19               | 24                  | 13                     | 0                |
+| Java vulnerability  | vulnerability | 10               | 13                  | 6                      | 0                |
+| SMB vulnerability   | vulnerability | 8                | 38                  | 14                     | 0                |
+| **Total**           | –             | 222              | 203                 | 95                     | 10               |
+
