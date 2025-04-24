@@ -58,8 +58,6 @@ communities, runtime, seeds = run_osse_with_typed_seeds(G_aggregated, type_count
 ### 3. Analyze & Visualize
 
 ```python
-from your_module import analyze_community_edge_sources, visualize_community_graph_no_overlap
-
 multi_source_communities, stats = analyze_community_edge_sources(communities, G_aggregated)
 
 # Visualize a specific community
