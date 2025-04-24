@@ -38,8 +38,7 @@ The notebook `/Seed-Driven Community Detection.ipynb` implements the following s
 
 ```python
 import pandas as pd
-
-df = pd.read_excel("RQ4.xlsx")
+df = pd.read_excel("RQ3.xlsx")
 G_aggregated = aggregate_knowledge_graph(df, "knowledge graph", "keyindex")
 ```
 
