@@ -10,16 +10,17 @@ To address these limitations, LLM4CTI employs LLMs to process correlated sentenc
 
 LLM4CTI's architecture comprises three main phases:
 
-### 1. Chunk-Level Knowledge Extraction
+### 1. [Chunk-Level Knowledge Extraction](https://github.com/hiddenauthor/LLM4CTI/tree/main/Knowledge%20Graph%20Construction)
 - **Step-wise Distributed Guidance:** Segments CTI articles into semantically coherent text chunks, guiding LLMs through structured entity extraction and relationship inference.
 - **Dual-Context Multi-Chunk Extraction:** Combines local chunk context and global article content to extract both explicitly and implicitly stated relationships spanning distant chunks.
 
-### 2. Article-Level Knowledge Graph Construction
+### 2. [Article-Level Knowledge Graph Construction](https://github.com/hiddenauthor/LLM4CTI/tree/main/Knowledge%20Graph%20Construction)
 - Extracted entities and triples from all chunks are aggregated into an entity triple pool, followed by deduplication and entity resolution by a dedicated LLM agent, forming a unified article-level knowledge graph.
 
 ### 3. Knowledge Graph-Based Applications
-- **GNN-Based Relationship Prediction:** Trains a Graph Neural Network (GNN) on the constructed knowledge graph to predict relationships among security entities, supporting proactive defense strategies against emerging threats.
-- **Seed-Driven Community Detection:** Applies community detection algorithms using seed nodes categorized by threat types (e.g., malware, threat actors, vulnerabilities) to uncover densely connected subgraphs that represent different perspectives of the same threat across multiple CTI articles.
+- [**GNN-Based Relationship Prediction**](https://github.com/hiddenauthor/LLM4CTI/tree/main/GNN-Based%20Relationship%20Prediction): Trains a Graph Neural Network (GNN) on the constructed knowledge graph to predict relationships among security entities, supporting proactive defense strategies against emerging threats.
+- [**Seed-Driven Community Detection**](https://github.com/hiddenauthor/LLM4CTI/tree/main/Seed-Driven%20Community%20Detection): Applies community detection algorithms using seed nodes categorized by threat types (e.g., malware, threat actors, vulnerabilities) to uncover densely connected subgraphs that represent different perspectives of the same threat across multiple CTI articles.
+- [**Question Answering Based on Knowledge Graph**](https://github.com/hiddenauthor/LLM4CTI/tree/main/question%20answering%20based%20on%20knowledge%20graph): Leverages the structured knowledge graph to support LLMs in answering CTI-related multiple-choice questions, improving comprehension and decision-making on cyber threats.
 
 ![LLM4CTI Overview](https://i.imgur.com/Vmbwc7R.png)  
 Figure: The overall architecture of LLM4CTI, including chunk-level knowledge extraction, article-level graph construction, and graph-based security applications.
