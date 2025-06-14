@@ -31,11 +31,12 @@ This module evaluates whether knowledge graphs extracted by LLM4CTI can help lar
 
 We assess how well LLM4CTI’s knowledge graphs support downstream question answering by LLMs. The evaluation is based on multiple-choice questions generated from CTI articles.
 
-| Approach               | APT     | Adware  | Botnets | Spam & Phishing | Supply Chain Attacks | Trojan  | Virus   | Vulns & Exploits | **Average** |
-|------------------------|---------|---------|---------|------------------|------------------------|---------|---------|-------------------|-------------|
-| **LLM4CTI (Ours)**     | 98.33%  | 94.00%  | 86.00%  | 88.75%           | 92.00%                 | 86.00%  | 95.00%  | 86.00%            | **90.40%**  |
-| CTIKG                  | 88.33%  | 92.00%  | 88.00%  | 86.25%           | 86.00%                 | 79.00%  | 91.67%  | 88.00%            | 86.60%      |
-| GPT-4o                 | 96.67%  | 90.00%  | 78.00%  | 85.00%           | 94.00%                 | 85.00%  | 88.33%  | 88.00%            | 87.80%      |
-| GPT-4o (No Graph)      | 66.67%  | 86.00%  | 80.00%  | 80.00%           | 76.00%                 | 75.00%  | 81.67%  | 78.00%            | 77.60%      |
+We assess how well LLM4CTI’s knowledge graphs support downstream question answering by LLMs. The evaluation is based on multiple-choice questions generated from CTI articles.
+| Approach                  | APT     | Adware  | Botnet  | Denial-of-Service attack | Ransomware | Spam/Phishing | Supply Chain Attack | Trojan horse | Virus/Worm | Vulnerability/exploit | Average   |
+|---------------------------|---------|---------|---------|-------------------------|------------|---------------|---------------------|--------------|------------|----------------------|-----------|
+| **LLM4CTI (Ours)**        | 98.33%  | 94.00%  | 87.50%  | 100.00%                 | 85.71%     | 90.00%        | 92.00%              | 90.00%       | 90.00%     | 86.00%               | 90.68%    |
+| CTIKG                     | 88.33%  | 92.00%  | 90.00%  | 86.67%                  | 85.71%     | 86.67%        | 86.00%              | 66.67%       | 88.33%     | 88.00%               | 86.60%    |
+| GPT-4o                    | 96.67%  | 90.00%  | 77.50%  | 93.33%                  | 82.86%     | 86.67%        | 94.00%              | 90.00%       | 85.00%     | 88.00%               | 87.96%    |
+| GPT-4o (No Graph)         | 66.67%  | 86.00%  | 80.00%  | 66.67%                  | 81.43%     | 80.00%        | 76.00%              | 66.67%       | 78.33%     | 78.00%               | 77.28%    |
 
 ---
