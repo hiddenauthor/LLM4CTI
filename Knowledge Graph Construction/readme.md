@@ -44,7 +44,7 @@ kg_text=process_texts_to_kg_strings_in_batch(Articlecontent, temp=0.1, token=4*1
 # Merger all article graphs into one knowledge graph
 df['KnowledgeGraph']=kg_text
 G_aggregated = aggregate_knowledge_graph(df, 'KnowledgeGraph', 'ArticleIndex')
-
+```
 
 ## Evaluation
 
