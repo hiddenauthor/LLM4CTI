@@ -1,0 +1,247 @@
+{
+  "idorurl": "60k_0028121",
+  "content": "\n\nby\nSophosLabs\n\nWhile drinking my coffee this morning I was reading another blog. The story about hackers poisoning Search Engine results for queries regarding the exPrime Minister of Pakistan Ms Benazir Bhutto was interesting.\nFrom my investigations it doesnt look like the hackers were targeting Ms Bhutto but rather websites in Pakistan and India.\n\nThe script that people would download is now detected as Mal/JessyA. Mal/JessyA would attempt to download Troj/IframeM from the same site then Mal/WSshlA and ultimately Mal/BasineC.\nAt this time many expatriate Pakistanis or those of Pakistani origin with relatives in Pakistan will be hungry for news from the region. This malware seeding will add to their miseries. Luckily people browsing behind a WS1000 are safe.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "hackers",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Search Engine",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Ms Benazir Bhutto",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Pakistan",
+      "type": "location",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "India",
+      "type": "location",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/JessyA",
+      "type": "malware",
+      "alias": [
+        "script"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Troj/IframeM",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/WSshlA",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/BasineC",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "hackers",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Search Engine",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Ms Benazir Bhutto",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Pakistan",
+      "type": "location",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "India",
+      "type": "location",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/JessyA",
+      "type": "malware",
+      "alias": [
+        "script",
+        "malware"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Troj/IframeM",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/WSshlA",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/BasineC",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "hackers",
+      "rel": "poisoning Search Engine results",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Search Engine"
+    },
+    {
+      "sub": "hackers",
+      "rel": "targeting websites in",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "Pakistan"
+    },
+    {
+      "sub": "hackers",
+      "rel": "targeting websites in",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "India"
+    },
+    {
+      "sub": "Search Engine",
+      "rel": "queries regarding",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "Ms Benazir Bhutto"
+    },
+    {
+      "sub": "Mal/JessyA",
+      "rel": "would attempt to download",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "Troj/IframeM"
+    },
+    {
+      "sub": "Mal/JessyA",
+      "rel": "would attempt to download",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "Mal/WSshlA"
+    },
+    {
+      "sub": "Mal/JessyA",
+      "rel": "would attempt to download",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "Mal/BasineC"
+    }
+  ]
+}

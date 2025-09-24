@@ -1,0 +1,560 @@
+{
+  "idorurl": "60k_0040926",
+  "content": "\nThe TDSS loader, a malicious program that we wrote a lot about (e.g. here and here) now has legs, i.e. a tool for selfpropagation. TDSS is a very complicated piece of malware and the cybercriminals have created an ingenious propagation tool for its loader.\n\nThe TDSS loader was named NetWorm.Win32.Rorpian and has two methods of propagation:\n\nVia removable media\nVia a LAN\n\nWhen propagating via removable media, the worm creates the files setup.lnk, myporno.avi.lnk, pornmovs.lnk and autorun.inf. These files contain a link to the file rundll32.exe whose parameters reference the worms DLL. This is a standard technique used in many malicious programs.\nThe worm uses the following methodology when working with a LAN. To infect a computer, the worm checks if a DHSP server is used in the network. If the victim computer is located on a network using the DHCP protocol, the worm starts scanning the network to see if there are any available IP addresses. After that, the worm launches its own DHCP server and starts listening to the network. When a DHCP request from a computer in the local network arrives, the worm attempts to respond to it before the official DHCP server does, and species the following:\n\nAn IP address from the pool of available IP addresses\nThe main gateway specified on the infected computer\nThe address of the malicious DNS server belonging to the cybercriminals\nAfter these manipulations, whenever the user tries to visit any web page, they will be redirected to the malicious server and prompted to update their web browser.\n\nFragment of NetWorm.Win32.Rorpian code that works with the DHCP protocol\nThe user will only be able to visit sites after agreeing to install an update. If the user agrees, they unwittingly download a variant of NetWorm.Win32.Rorpian. After infecting the users computer, it changes the DNS settings into a Google server address and lets the user browse.\n\nScreenshot of the malicious site from which the worm propagates\nThus the NetWorm.Win32.Rorpian worm acts as a loader for TDSS, one of the most advanced and sophisticated malicious programs around. The worm leverages the users indiscretion  the most dangerous vulnerability of them all.\nPS Acknowledgements go to  Evgeny Aseev for his help in preparing this article.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "TDSS loader",
+      "type": "malware",
+      "alias": [
+        "NetWorm.Win32.Rorpian",
+        "TDSS",
+        "tool for selfpropagation",
+        "self-propagation tool",
+        "worm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "NetWorm.Win32.Rorpian",
+      "type": "malware",
+      "alias": [
+        "TDSS",
+        "TDSS loader",
+        "tool for selfpropagation",
+        "self-propagation tool",
+        "worm"
+      ],
+      "mother entity": [
+        "TDSS loader"
+      ]
+    },
+    {
+      "name": "tool for selfpropagation",
+      "type": "hacker-tool",
+      "alias": [
+        "NetWorm.Win32.Rorpian",
+        "TDSS",
+        "TDSS loader",
+        "self-propagation tool",
+        "worm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "cybercriminals",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "removable media",
+      "type": "infrastructure",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "LAN",
+      "type": "infrastructure",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "setup.lnk",
+      "type": "file",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "myporno.avi.lnk",
+      "type": "file",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "pornmous.lnk",
+      "type": "file",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "autorun.inf",
+      "type": "file",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "rundll32.exe",
+      "type": "general-software",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "worm's DLL",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [],
+      "mother entity": [
+        "NetWorm.Win32.Rorpian"
+      ]
+    },
+    {
+      "name": "official DHCP server",
+      "type": "general-software",
+      "alias": [
+        "DHSP server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "worm's DHCP server",
+      "type": "hacker-tool",
+      "alias": [],
+      "mother entity": [
+        "NetWorm.Win32.Rorpian"
+      ]
+    },
+    {
+      "name": "DHCP request",
+      "type": "network-traffic",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "malicious server",
+      "type": "infrastructure",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "user",
+      "type": "user-account",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Google server address",
+      "type": "domain-name",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "network",
+      "type": "infrastructure",
+      "alias": [],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "TDSS loader",
+      "type": "malware",
+      "alias": [
+        "NetWorm.Win32.Rorpian",
+        "TDSS",
+        "tool for selfpropagation",
+        "self-propagation tool",
+        "worm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "NetWorm.Win32.Rorpian",
+      "type": "malware",
+      "alias": [
+        "TDSS",
+        "TDSS loader",
+        "tool for selfpropagation",
+        "self-propagation tool",
+        "worm"
+      ],
+      "mother entity": [
+        "TDSS loader"
+      ]
+    },
+    {
+      "name": "tool for selfpropagation",
+      "type": "hacker-tool",
+      "alias": [
+        "NetWorm.Win32.Rorpian",
+        "TDSS",
+        "TDSS loader",
+        "self-propagation tool",
+        "worm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "cybercriminals",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "removable media",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "LAN",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "setup.lnk",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "myporno.avi.lnk",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "pornmous.lnk",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "autorun.inf",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "rundll32.exe",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "worm's DLL",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "NetWorm.Win32.Rorpian"
+      ]
+    },
+    {
+      "name": "official DHCP server",
+      "type": "general-software",
+      "alias": [
+        "DHSP server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "worm's DHCP server",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "NetWorm.Win32.Rorpian"
+      ]
+    },
+    {
+      "name": "DHCP request",
+      "type": "network-traffic",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "malicious server",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "user",
+      "type": "user-account",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Google server address",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "network",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "tool for selfpropagation",
+      "rel": "alias-of",
+      "rel_type": [
+        "alias-of"
+      ],
+      "obj": "NetWorm.Win32.Rorpian"
+    },
+    {
+      "sub": "cybercriminals",
+      "rel": "created",
+      "rel_type": [
+        "authored-by"
+      ],
+      "obj": "tool for selfpropagation"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "propagating via",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "removable media"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "propagating via",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "LAN"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "creates the files",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "setup.lnk"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "creates the files",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "myporno.avi.lnk"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "creates the files",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "pornmous.lnk"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "creates the files",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "autorun.inf"
+    },
+    {
+      "sub": "setup.lnk",
+      "rel": "contain a link to",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "rundll32.exe"
+    },
+    {
+      "sub": "myporno.avi.lnk",
+      "rel": "contain a link to",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "rundll32.exe"
+    },
+    {
+      "sub": "pornmous.lnk",
+      "rel": "contain a link to",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "rundll32.exe"
+    },
+    {
+      "sub": "autorun.inf",
+      "rel": "contain a link to",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "rundll32.exe"
+    },
+    {
+      "sub": "rundll32.exe",
+      "rel": "reference the",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "worm's DLL"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "checks if used in the network",
+      "rel_type": [
+        "malicious-investigates-track-detects"
+      ],
+      "obj": "official DHCP server"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "scan",
+      "rel_type": [
+        "malicious-investigates-track-detects"
+      ],
+      "obj": "network"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "launches its own",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "worm's DHCP server"
+    },
+    {
+      "sub": "worm's DHCP server",
+      "rel": "starts listening to the network",
+      "rel_type": [
+        "malicious-investigates-track-detects"
+      ],
+      "obj": "DHCP request"
+    },
+    {
+      "sub": "user",
+      "rel": "will be redirected to",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "malicious server"
+    },
+    {
+      "sub": "user",
+      "rel": "download a variant of",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "NetWorm.Win32.Rorpian"
+    },
+    {
+      "sub": "malicious server",
+      "rel": "prompts to install",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "NetWorm.Win32.Rorpian"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "changes the DNS settings into",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "Google server address"
+    },
+    {
+      "sub": "NetWorm.Win32.Rorpian",
+      "rel": "acts as a loader for",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "TDSS loader"
+    }
+  ]
+}

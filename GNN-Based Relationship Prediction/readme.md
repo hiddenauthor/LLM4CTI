@@ -46,34 +46,29 @@ The `GNN-Based Relationship Prediction.ipynb` includes the following pipeline:
 ## 🚀 How to Use
 
 ### 1. Prepare Input Data
-The input is a `.xlsx` file containing the output from `Knowledge Graph Construction`.
+The input is a `.pkl` file containing the output from `Knowledge Graph Construction`.
 
 ### 2. Train and Evaluate
 Run through the notebook. It will:
 - Build and train the model
-- Output top-k correctly predicted links
-- Save a ROC curve at `roc_curve.png`
+- Output the evaluation metrics 
 
 
 ### RQ3: Relationship Prediction
 
 We evaluate how LLM4CTI’s knowledge graphs can support link prediction using GNN models. This task measures the ability to uncover latent relationships among security entities.
 
-| Link Type                         | Count | Precision | Recall  | F1 Score |
-|----------------------------------|-------|-----------|---------|----------|
-| malware–malware                 | 225   | 100.00%   | 87.80%  | 93.51%   |
-| attack pattern–general entity   | 225   | 100.00%   | 88.97%  | 94.16%   |
-| campaign–domain name            | 215   | 100.00%   | 81.11%  | 89.57%   |
-| domain name–malware             | 195   | 100.00%   | 85.19%  | 92.00%   |
-| domain name–threat actor        | 190   | 100.00%   | 90.00%  | 94.74%   |
-| malware–threat actor            | 185   | 100.00%   | 86.88%  | 92.98%   |
-| general entity–malware          | 185   | 100.00%   | 80.00%  | 88.89%   |
-| identity–malware                | 175   | 100.00%   | 88.00%  | 93.62%   |
-| campaign–threat actor           | 170   | 100.00%   | 82.76%  | 90.57%   |
-| infrastructure–malware          | 170   | 100.00%   | 88.28%  | 93.77%   |
-| hacker tool–malware             | 165   | 100.00%   | 85.33%  | 92.09%   |
-| file–malware                    | 160   | 100.00%   | 74.12%  | 85.14%   |
-| campaign–identity               | 160   | 100.00%   | 87.69%  | 93.44%   |
-| identity–threat actor           | 155   | 97.96%    | 83.48%  | 90.14%   |
-| infrastructure–threat actor     | 140   | 100.00%   | 84.21%  | 91.43%   |
-| **Average**                     | –     | **99.86%**| 84.92%  | **91.74%**|
+#### Results of Link Prediction
+
+| Entity Pair Type                     | Hit@1  | Hit@5  | Hit@10 |
+|--------------------------------------|--------|--------|--------|
+| malware → malware                    | 9.14%  | 64.00% | 80.57% |
+| malware → threat actor/intrusion     | 3.36%  | 57.98% | 78.15% |
+| infrastructure → malware             | 6.90%  | 49.43% | 63.22% |
+| general software → malware           | 5.33%  | 34.67% | 45.33% |
+| attack pattern → malware             | 2.78%  | 54.17% | 62.50% |
+| infrastructure → threat actor        | 11.11% | 50.79% | 71.43% |
+| attack pattern → threat actor        | 3.57%  | 42.86% | 71.43% |
+| threat actor → threat actor          | 2.33%  | 60.47% | 74.42% |
+| attack pattern → infrastructure      | 3.33%  | 53.33% | 60.00% |
+| attack pattern → attack pattern      | 7.41%  | 74.07% | 81.48% |

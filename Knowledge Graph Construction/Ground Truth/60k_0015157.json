@@ -1,0 +1,150 @@
+{
+  "idorurl": "60k_0015157",
+  "content": " Back in early 2013, a new mobile antivirus (AV) company called Armor for Android emerged into the mobile security software industry that had everyone perplexed. It seemed eerily like malware known as a Fake AV, and some even gave it that label. As a younger mobile researcher, I was one of those who gave it such a label, adding it to a list of malware detections. Shortly after, Armor for Android contacted the security company I worked for at the time and demanded their detection be removed.\nAs a rebuttal, I wrote a blog to fire back with evidence that there was no way this AV company could be legitimatedespite it being on Google Play. I never published that blog because I was thrown off by something that had me questioning everything: the AV company was tested by a reputable antivirus testing company. Even more offputting, it landed a high score to receive an official certification! How could a Fake AV be certified by a respectable AV test company?\nI left the blog alone and let the subject die. But recently, Armor for Android appears to have made a comeback. Lets take a look at how they were gaming the system five years ago, and what new tricks theyre up to now.\nCheating the system\nSuddenly, Armor for Android was competing with everyone else in the industry after only a couple months. But how? Simple. They were cheating. I remember vividly that the naming conventions they used to detect malware were the same as other wellreceived antimalware mobile scanners. To be fair, many in the industry use similar naming conventions. However, the ones used by Android for Armor were EXACTLY the same as other companies. It was obvious they were stealing other companys detections. But how?\nShare, but dont steal\nVirusTotal is a company that everyone in the software security industry uses to share detections with the world. You can simply upload a file, even an Android APK, to virustotal.com and several antivirus/antimalware scanners will return results. This can aid the typical user in finding out if a file is malicious. In addition, it helps point security researchers in the right direction in determining for themselves if something is malicious. What isnt allowed is stealing directly from VirusTotal to produce your results. Not only is this against the terms of service, it is a deadly sin among everyone in the security industry.\nBut that is exactly what Android for Armor does. By using a network analyzer tool and running Android for Armor, you can see traffic to and from VirusTotal. The detailed data reveals that they indeed steal the detections of others. Pretty easy to do well on a test when youre peeking over the shoulder of the smartest kids in class!\nShowing their real intentions\nAndroid for Armor could have stopped there. They had already duped Google Play. In addition, they clearly had the money to pay for an expensive test to receive certification. Instead, they decided to proceed with tactics used by other Fake AV malware. The following evidence is what I found years ago, but regrettably never published.\nBack in 2013, I was playing a free game downloaded from Google Play. In exchange for the app being free, I agreed to receive nonaggressive ads, as many of us do. What I saw was a series of different links using scare tactics:\nThis slideshow requires JavaScript.\nAs a young mobile researcher, I did what all of us would have done and clicked on these links to see down which rabbit holes it would me. The first hop was this one:\n\nOnward down the rabbit hole, I clicked Download  Scan FREE Now, and it started to download a file named ScanForVirusesNow.apk (more on this app in a bit).\n\nAfter the download, I landed on a known Armor for Android web page that instructs you to allow unknown sources and again to download and install an app.\n\nVery odd for a legitimate AV company to instruct mobile users to download directly from their website rather than pointing them to Google Play.\nDouble chance of infection\nFurther analyzing the downloaded app,ScanForVirusesNow.apk, its a version of Armor for Android that insists on a payment of 1.99 to scan the device. Check the fine print, because that ends up being 1.99 per week, or 103.48 a year. But hey, they have a certification by an AV testing form, right?\nThis slideshow requires JavaScript.\nIt appearsScanForVirusesNow.apkdownloads just in case you werent falling for the last web page asking to allow unknown sources and stating IMPORTANT! You must now INSTALL, OPEN and ACTIVATE. Also, ifallowing unknown sources was disabled on your device, it would have been a last chance effort, sinceScanForVirusesNow.apk wouldnt have been able to download and install. In my opinion, none of this looks like the practices of a legitimate AV company.\nReemergence of a classic\nJust a couple of days ago, an APK came into our mobile intelligence system with a different name, but very familiar set of behaviors. It was clearly a repackaged variant of Armor for Android, but this time called Androids Antivirus.\nThis slideshow requires JavaScript.\nSwiftly, we added a detection called PUP.Riskware.Armor.\nWarning about Fake AVs\nFake AVs like the one described above have been around for a long time and come in many different forms. Some can be extremely dangerous. For legitimate antivirus/antimalware programs to do their jobs, special permissions must be given. For instance, Malwarebytes for Android uses device administration as required to remediate nasty ransomware. As a respectable antimalware company, you have our word that we will never use device administration rights for erasing mobile devices or other nefarious actions. However, give those same rights to a malicious Fake AV app, and you could be in trouble.\nFake AV or legitimate\nBecause of the elevated permissions needed, consumers need to take extra caution when choosing a mobile antivirus/antimalware scanner. Unfortunately, its often hard to tell what is a Fake AV versus a legitimate antivirus/antimalware mobile appespecially when Fake AVs creep into Google Play and take time to create a convincing website. As a consumer, do your research to pick respectable software companies. Does the company have a deep, respectable blog (like this one)? How long have they been around? When in doubt, you can always rely on Malwarebytes products to keep you safe from the latest threats!\nDenial of entry\nAlthough I never published that blog way back when, I did stand my ground to classify Armor for Android as a fake AV. Now, as a researcher at Malwarebytes, I continue to fight against shady fake AV companies in the mobile space. I helped detect Armor for Android as a fake Android AV years ago. Ill do the same for any other company looking to take advantage of mobile customers. Stay safe out there!\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Armor for Android",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "VirusTotal",
+      "type": "security-product",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ScanForVirusesNow.apk",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "Armor for Android"
+      ]
+    },
+    {
+      "name": "Androids Antivirus",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "Armor for Android"
+      ]
+    },
+    {
+      "name": "PUP.Riskware.Armor",
+      "type": "indicator",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Armor for Android",
+      "type": "malware",
+      "alias": [
+        "Androids Antivirus",
+        "PUP.Riskware.Armor",
+        "ScanForVirusesNow.apk"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "VirusTotal",
+      "type": "security-product",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ScanForVirusesNow.apk",
+      "type": "malware",
+      "alias": [
+        "Androids Antivirus",
+        "Armor for Android",
+        "PUP.Riskware.Armor"
+      ],
+      "mother entity": [
+        "Armor for Android"
+      ]
+    },
+    {
+      "name": "Androids Antivirus",
+      "type": "malware",
+      "alias": [
+        "Armor for Android",
+        "PUP.Riskware.Armor",
+        "ScanForVirusesNow.apk"
+      ],
+      "mother entity": [
+        "Armor for Android"
+      ]
+    },
+    {
+      "name": "PUP.Riskware.Armor",
+      "type": "indicator",
+      "alias": [
+        "Androids Antivirus",
+        "Armor for Android",
+        "ScanForVirusesNow.apk"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Armor for Android",
+      "rel": "communicates with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "VirusTotal"
+    },
+    {
+      "sub": "ScanForVirusesNow.apk",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
+      ],
+      "obj": "Armor for Android"
+    },
+    {
+      "sub": "Androids Antivirus",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
+      ],
+      "obj": "Armor for Android"
+    },
+    {
+      "sub": "PUP.Riskware.Armor",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "Androids Antivirus"
+    }
+  ]
+}

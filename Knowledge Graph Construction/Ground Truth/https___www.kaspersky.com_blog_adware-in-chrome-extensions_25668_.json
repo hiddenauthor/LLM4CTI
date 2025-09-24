@@ -1,0 +1,58 @@
+{
+  "idorurl": "https://www.kaspersky.com/blog/adware-in-chrome-extensions/25668/",
+  "content": "Chrome extensions abuse millions with adware | Kaspersky official blog\nextensions\nChrome extensions abuse millions with adware\nToo many ads on your computer lately? Malicious Chrome extensions might be to blame.\nMarina Mash\nFebruary 18, 2019\nIt’s bad enough being assaulted by ads on TV.\nWhen I switch to my computer (for any reason) and still keep seeing tons of ads, I get really annoyed.\nI’ll bet you get annoyed too.\nBut why does it happen?\nWell, one thing that’ll get you ads is installing browser extensions that are actually adware — from the time you install them or somewhere down the line.\nOne recent example is an extremely popular Google Chrome extension called Automatic 4K/HD for YouTube.\nFor users who really want to get their fill, YouTube doesn’t seem to be the easiest platform to deal with.\nNot surprisingly, demand is high for applications and browser extensions that facilitate managing its contents.\nAutomatic 4K/HD for YouTube, for example, got its five-star ratings and 4.2 million downloads by enabling users to select a permanent video playback quality level and preventing the YouTube platform from selecting a lower quality setting on the user’s behalf, among other features.\nUnfortunately, at some point the popular extension apparently opted to ditch its hard-won fame in favor of abusing its fan base, pestering users with unwanted popups.\nIronically, it started showing ads (and automatically opening up the page) for a Chrome extension to block ads.\nThe advertised extension is named Adblocker for Chrome – NoAds, and it has more than 6.5 million downloads as of this writing.\nThe popup ad appeared shortly after newcomers installed Automatic 4K/HD for YouTube, as you can see in the GIF above.\nMeanwhile, those for whom the extension was usable but then turned into adware say the ads appear at regular intervals, sometimes as often as once an hour.\nAt the moment, the extension has been removed from the Chrome Web Store, so there won’t be any new victims — at least, not for a while.\nIt’s likely the ban isn’t permanent, though, because the current behavior is annoying but not outright malicious — fortunately, adware doesn’t corrupt your files or steal your data.\nMalicious or not, there is nothing good about having unwanted software on your computer. Here’s what to do about it:\nIf you are among the 4.2 million who have this extension installed, the only solution is to remove it.\nFor instructions, click here.\nIn general, keep browser extensions at bay — don’t install too many of them.\nThey affect computer performance, but more important, they are also a potential attack vector, so minimize their number and keep just a few of the most useful.\nPay attention to the permissions that extensions require.\nIf an extension already installed on your computer requests a new permission, something is probably going on, so do a bit of research to ensure the extension hasn’t been hijacked or sold.\nUse a reliable security solution, such as Kaspersky Internet Security, that can neutralize malicious browser extensions, including adware.\nAdware\nChrome\nextensions\nGoogle\nplugins\nprivacy\nBrowser extensions: more dangerous than you think\nDangerous Chrome extensions\nCloud migration: Not so fast!\nThe process is undoubtedly underway, but it is going much slower than enthusiasts like to think.\nMatvey Voytov\nFebruary 15, 2019\nChrome extensions abuse millions with adware | Kaspersky official blog\nextensions\nChrome extensions abuse millions with adware\nToo many ads on your computer lately? Malicious Chrome extensions might be to blame.\nMarina Mash\nFebruary 18, 2019\nIt’s bad enough being assaulted by ads on TV.\nWhen I switch to my computer (for any reason) and still keep seeing tons of ads, I get really annoyed.\nI’ll bet you get annoyed too.\nBut why does it happen?\nWell, one thing that’ll get you ads is installing browser extensions that are actually adware — from the time you install them or somewhere down the line.\nOne recent example is an extremely popular Google Chrome extension called Automatic 4K/HD for YouTube.\nFor users who really want to get their fill, YouTube doesn’t seem to be the easiest platform to deal with.\nNot surprisingly, demand is high for applications and browser extensions that facilitate managing its contents.\nAutomatic 4K/HD for YouTube, for example, got its five-star ratings and 4.2 million downloads by enabling users to select a permanent video playback quality level and preventing the YouTube platform from selecting a lower quality setting on the user’s behalf, among other features.\nUnfortunately, at some point the popular extension apparently opted to ditch its hard-won fame in favor of abusing its fan base, pestering users with unwanted popups.\nIronically, it started showing ads (and automatically opening up the page) for a Chrome extension to block ads.\nThe advertised extension is named Adblocker for Chrome – NoAds, and it has more than 6.5 million downloads as of this writing.\nThe popup ad appeared shortly after newcomers installed Automatic 4K/HD for YouTube, as you can see in the GIF above.\nMeanwhile, those for whom the extension was usable but then turned into adware say the ads appear at regular intervals, sometimes as often as once an hour.\nAt the moment, the extension has been removed from the Chrome Web Store, so there won’t be any new victims — at least, not for a while.\nIt’s likely the ban isn’t permanent, though, because the current behavior is annoying but not outright malicious — fortunately, adware doesn’t corrupt your files or steal your data.\nMalicious or not, there is nothing good about having unwanted software on your computer. Here’s what to do about it:\nIf you are among the 4.2 million who have this extension installed, the only solution is to remove it.\nFor instructions, click here.\nIn general, keep browser extensions at bay — don’t install too many of them.\nThey affect computer performance, but more important, they are also a potential attack vector, so minimize their number and keep just a few of the most useful.\nPay attention to the permissions that extensions require.\nIf an extension already installed on your computer requests a new permission, something is probably going on, so do a bit of research to ensure the extension hasn’t been hijacked or sold.\nUse a reliable security solution, such as Kaspersky Internet Security, that can neutralize malicious browser extensions, including adware.\nAdware\nChrome\nextensions\nGoogle\nplugins\nprivacy\nBrowser extensions: more dangerous than you think\nDangerous Chrome extensions\nCloud migration: Not so fast!\nThe process is undoubtedly underway, but it is going much slower than enthusiasts like to think.\nMatvey Voytov\nFebruary 15, 2019",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Automatic 4K/HD for YouTube",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Adblocker for Chrome – NoAds",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Automatic 4K/HD for YouTube",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Adblocker for Chrome – NoAds",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Automatic 4K/HD for YouTube",
+      "rel": "shows ads for",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "Adblocker for Chrome – NoAds"
+    }
+  ]
+}

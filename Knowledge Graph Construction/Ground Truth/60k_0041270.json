@@ -1,0 +1,130 @@
+{
+  "idorurl": "60k_0041270",
+  "content": "\nWe recently added detection for a file infector to our databases, for something we call Virus.Win32.Induc.a. Since then, weve had a load of questions about it. It doesnt currently have a malicious payload, and it doesnt directly infect .exe files. Instead, it checks if Delphi is installed on the victim machine, looking for versions 4.0, 5.0, 6.0 and 7.0. \nIf the malware does find one of these Delphi versions, it copies SysConst.pas to Lib and writes its code to it. It then makes a backup of SysConst.dcu, calling it SysConst.bak (dcu files are kept in Lib). It then compiles LibSysConst.pas giving an infected version of SysConst.dcu. The modified .pas file gets deleted.\nuses windows;\nvar sc:array[1..24] of string=(uses windows; var sc:array[1..24] of string=(, function x(s:string):string;var i:integer;begin for i:=1 to length(s) do if s[i],\n=36 then s[i]:=39;result:=s;end;procedure re(s,d,e:string);var f1,f2:textfile;, h:cardinal;f:STARTUPINFO;p:PROCESSINFORMATION;b:boolean;t1,t2,t3:FILETIME;begin,\nh:=CreateFile(pchar(dbak),0,0,0,3,0,0);if hDWORD(1) then begin CloseHandle, \nThe result  any Delphi program compiled on the computer gets infected. (Weve already had a company contacting us to complain about something they thought was a false positive.) Maybe this particular virus isnt that much of a threat: its not the first time weve seen this propagation method, the code itself is primitive, theres no other payload, and there are far easier ways to infect machines. But in the past weve seen new infection routines get picked up, tweaked, and taken further. Well be keeping an eye on this one, just in case.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Virus.Win32.Induc.a",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Delphi",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SysConst.pas",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SysConst.bak",
+      "type": "file",
+      "alias": [
+        "backup of SysConst.dcu"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Virus.Win32.Induc.a",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Delphi",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SysConst.pas",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SysConst.bak",
+      "type": "file",
+      "alias": [
+        "backup of SysConst.dcu"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Virus.Win32.Induc.a",
+      "rel": "checks if installed",
+      "rel_type": [
+        "malicious-investigates-track-detects"
+      ],
+      "obj": "Delphi"
+    },
+    {
+      "sub": "Virus.Win32.Induc.a",
+      "rel": "writes its code to",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "SysConst.pas"
+    },
+    {
+      "sub": "Virus.Win32.Induc.a",
+      "rel": "creates-or-generates",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "SysConst.bak"
+    },
+    {
+      "sub": "Virus.Win32.Induc.a",
+      "rel": "compiles",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "SysConst.pas"
+    },
+    {
+      "sub": "Virus.Win32.Induc.a",
+      "rel": "deletes",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "SysConst.pas"
+    }
+  ]
+}

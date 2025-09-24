@@ -1,0 +1,142 @@
+{
+  "idorurl": "60k_0028166",
+  "content": "\n\nby\nVanja Svajcer\n\nAlthough script malware, especially in the context of HTML has made a comeback to our detection lists, many days have passed since the last time I analysed a selfpropagating batch file.\nThe submission of Bat/LoseSlpA came as a minisurprise to my eyes so much more used to x86 assembly and JavaScript code.  These days .BAT files are often used by banking Trojans for removing the traces of the infection once the payload was successfully delivered, but they are usually very far from the complexity of Bat/LoseSlpA (although Bat/LoseSlpA is not a very complex piece of code).\nThere are however few interesting things about Bat/LoseSlpA: it seems like it is a part of a larger malicious package, but it functions itself well without the additional components. It behaves like a typical Win32 PE worm  it copies itself to the Windows folder and sets the registry run entry to ensure it is started when the user logs into Windows.\nFurthermore, it also acts as a fullyfunctional diskhopping worm  it copies itself to the root folder of drives C: to Z: and sets up an autorun.inf file so that the worm is run when an infected drive is mounted (of course, this technique works only on Windows). We have already blogged few times about increasing number of malware samples affecting USB based drives and Bat/LoseSlpA only confirms the trend. USB drives are a modern equivalent of floppy disks. I fear that the awareness of dangers of sharing USB drives is rather low and that the danger of infection through this significant infection vector is largely underestimated.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Bat/LoseSlpA",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows folder",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "registry run entry",
+      "type": "windows-registry-key",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "root folder of drives C: to Z:",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "autorun.inf",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Bat/LoseSlpA",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows folder",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "registry run entry",
+      "type": "windows-registry-key",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "root folder of drives C: to Z:",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "autorun.inf",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Bat/LoseSlpA",
+      "rel": "copies itself to",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "Windows folder"
+    },
+    {
+      "sub": "Bat/LoseSlpA",
+      "rel": "sets",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "registry run entry"
+    },
+    {
+      "sub": "Bat/LoseSlpA",
+      "rel": "copies itself to",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "root folder of drives C: to Z:"
+    },
+    {
+      "sub": "Bat/LoseSlpA",
+      "rel": "sets up",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "autorun.inf"
+    }
+  ]
+}

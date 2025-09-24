@@ -1,0 +1,311 @@
+{
+  "idorurl": "60k_0000098",
+  "content": "A new malware called Stuxnet is currently targeting Scada systems. This could be one of the thousands of pieces of malware used by criminals but I want to emphasize some of the characteristics that make this attempt important enough to think over.The malware is designed specifically to attack Siemens WinCC systems. This software controls and monitors industrial processes such as water treatment, gas pipelines, electrical distribution systems and so son. The malware takes advantage of default system credentials and seems to steal schematics information. (http://www.securityfocus.com/bid/41753)Stuxnet uses a previously unknown vulnerability that affects the current versions of Windows. The vulnerability affects the Windows Shell that incorrectly parses shortcuts letting malicious code being executed when the icon is displayed. This can be exploited through USB drives or network shares. (POC: http://www.exploitdb.com/exploits/14403/)The drivers dropped by the malware are signed with a digital certificate belonging to Realtek so we can assume that the malware authors gained access to Realteks private key.A high number of infections have been reported in Iran, Indonesia, India, Azerbaijan and the United States. Coincidence?Who is behind Stuxnet? Anyway, this is a successful attempt to attack highvalue assets around the world and whoever did this is highly skilled, well funded and possibly motivated by political, economical or military reasons.",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Stuxnet",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SCADA systems",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Siemens WinCC",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "default system credentials",
+      "type": "credential-value",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "schematics information",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "unknown Windows Shell vulnerability",
+      "type": "vulnerability",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows Shell",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "USB drives",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "network shares",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "drivers",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Realtek digital certificate",
+      "type": "x509-certificate",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Stuxnet",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SCADA systems",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Siemens WinCC",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "default system credentials",
+      "type": "credential-value",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "schematics information",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "unknown Windows Shell vulnerability",
+      "type": "vulnerability",
+      "alias": [
+        "41753",
+        "14403"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows Shell",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "USB drives",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "network shares",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "drivers",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Realtek digital certificate",
+      "type": "x509-certificate",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Stuxnet",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "SCADA systems"
+    },
+    {
+      "sub": "Stuxnet",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "Siemens WinCC"
+    },
+    {
+      "sub": "Stuxnet",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "default system credentials"
+    },
+    {
+      "sub": "Stuxnet",
+      "rel": "malicious-investigates-track-detects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
+      ],
+      "obj": "schematics information"
+    },
+    {
+      "sub": "Stuxnet",
+      "rel": "exploits",
+      "rel_type": [
+        "exploits"
+      ],
+      "obj": "unknown Windows Shell vulnerability"
+    },
+    {
+      "sub": "unknown Windows Shell vulnerability",
+      "rel": "affects",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "Windows Shell"
+    },
+    {
+      "sub": "unknown Windows Shell vulnerability",
+      "rel": "can be exploited through",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "USB drives"
+    },
+    {
+      "sub": "unknown Windows Shell vulnerability",
+      "rel": "can be exploited through",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "network shares"
+    },
+    {
+      "sub": "Stuxnet",
+      "rel": "drops",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "drivers"
+    },
+    {
+      "sub": "drivers",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Realtek digital certificate"
+    }
+  ]
+}

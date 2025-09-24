@@ -1,0 +1,144 @@
+{
+  "idorurl": "60k_0021428",
+  "content": "\n\nby\nPaul Ducklin\n\nThanks to Benjamin Humphrey of SophosLabs for thebehindthescenes effort he put into this article.\nRecently, we came across an intriguing phishing campaign that combines two feared products of the information age.\nGatsos (speed cameras) and ransomware, rolled into one attack!\nIt all started with a phishing email claiming to be from the Office of State Revenue in New South Wales, Australia.\nThe subject matter is a speeding fine you are alleged to have clocked up:\n\nDetails are scant, notably that the location is identified only by a code number and your registration number (a.k.a. licence plate or tag) is not given.\nBut the time of the alleged offence is stated as 11.21pm, presumably a time at which most people wouldnt be driving, giving a glimmer of hope that some sort of mistake was made. \n(Or someone else was driving your car. Wouldnt you love to see if the speed camera could tell you who it was?)\nYou ought to smell a rat, of course, not least because the word offence is spelled in two different ways in the email, and the penalty notice number is inconsistent:\n\nBut, as we said, Gatsos get many peoples knees aknocking, so you might be inclined to click on ACT NOW anyway.\n  Did you know that the name Gatso comes from a Dutch rally driver called Maurice Gatsonides, who ironically came up with the idea of a speed camera so he could learn to drive faster?\nThe next step in the phish takes you to a what looks like a download portal page belonging to the State Debt Recovery Office (SDRO).\nTo add a touch of realism, the crooks have made it harder, not easier, to access your penalty notice by making you solve a CAPTCHA first:\n\nThe real SRDO portal looks vaguely similar, but has one important difference:\n\nTheres a warning entitled SCAM ALERT posted across the top of the real page, advising you about just this sort of scam.\nInterestingly, we regularly see scams that try to add a veneer of legitimacy by incorporating real warnings and antiphishing advice from the very sites they are impersonating advice you would be welladvised to take!\nThe ransomware download\nOnce you solve the CAPTCHA shown above, you are redirected to a download site that serves up a file called offenceid37984264.zip.\nAgain, you ought to smell a rat, especially if you unzip the file and notice it contains an undisguised program called offenceid37984264.exe.\nSophos AntiVirus will block this file with the name Troj/RansomANH, and with good reason: its ransomware, that dastardly brand of malware that scrambles your data and offers to sell it back to you.\nThis one calls itself CryptoLocker, borrowing the brand name of one of the best known ransomware variants ever distributed:\n\nThe original CryptoLocker reached its peak of notoriety towards the end of 2013, giving you three days to come up with 300 if you wanted to see your data again.\nBy March 2014 it was estimated that in the UK alone, about 1 in 30 users had their system hit by CryptoLocker, and 40 of those paid up.\nThe original CryptoLocker was neutralised after a USled takedown operation managed to confiscate the servers it used to generate and store the decryption keys.\n CryptoLocker took care never to have a copy of the decryption key on your computer (not even in memory), where you might be able to intercept it without paying the ransom. That meant generating a publicprivate key pair on its own servers, and then releasing only the public key, used for encryption. In other words, if the malware couldnt call home, it couldnt get an encryption key, so it didnt scramble your data. Taking the servers offline therefore had the handy sideeffect of preventing further ransoms from being demanded.\nThe Troj/RansomANH ransomware even has a handy Frequently Asked Questions page:\n\nThis explains that the only way to get your data back is to pay up, and refers you to a website accessible via the anonymising service Tor:\n\nThe fee is the BitCoin equivalent of US500 if you pay up within five days (120 hours), or US1000 if you wait.\nA common feature of recent ransomware, shown above, is the option to decrypt a single file for free a crooked version of try before you buy aimed at convincing you that the crooks really do have your decryption key, but without giving you so much as a hint what that key might be.\nThe bottom line\nFortunately, in this case:\n\n The phishing email contains some rather obvious errors. (Although the absence of mistakes doesnt prove that an email is legitimate, egregious errors should persuade you that it is fake.)\n The links via which the ACT NOW button takes you to the fake SDRO page would be blocked by Sophoss web filtering products.\n The downloaded ransomware would blocked by Sophos AntiVirus as Troj/RansomANH.\n The ransomwares call home would be detected by the Sophos UTM as a malware commandandcontrol operation.\n The fake CAPTCHA site and the malware download site have been taken down anyway, making detection a moot point now.\n\nThis reminds us of two things: that defence in depth really works, and that a little caution goes a long way.\n\nImage of speed camera available under CC BYSA 2.0 licence.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Office of State Revenue",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "offenceid37984264.zip",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "offenceid37984264.exe",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Troj/RansomANH",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Speeding fine phishing email",
+      "type": "other",
+      "alias": [
+        "Speeding Fine Phishing Campaign"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Office of State Revenue",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "offenceid37984264.zip",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "offenceid37984264.exe",
+      "type": "file",
+      "alias": [
+        "Troj/RansomANH",
+        "CryptoLocker"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Troj/RansomANH",
+      "type": "malware",
+      "alias": [
+        "offenceid37984264.exe",
+        "CryptoLocker"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Speeding fine phishing email",
+      "type": "other",
+      "alias": [
+        "Speeding Fine Phishing Campaign"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Speeding fine phishing email",
+      "rel": "claiming to be from",
+      "rel_type": [
+        "impersonates"
+      ],
+      "obj": "Office of State Revenue"
+    },
+    {
+      "sub": "Speeding fine phishing email",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "offenceid37984264.zip"
+    },
+    {
+      "sub": "offenceid37984264.zip",
+      "rel": "consists-of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "offenceid37984264.exe"
+    },
+    {
+      "sub": "offenceid37984264.exe",
+      "rel": "categorized-as",
+      "rel_type": [
+        "categorized-as"
+      ],
+      "obj": "Troj/RansomANH"
+    }
+  ]
+}

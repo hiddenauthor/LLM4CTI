@@ -1,0 +1,202 @@
+{
+  "idorurl": "https://www.trendmicro.com/en_us/research/24/g/ai-deepfake-cybercrime.html",
+  "content": "Imagine receiving a video call from your boss, only to realize later that it was a convincing deepfake orchestrated by cyber criminals. This scenario is no longer science fiction but a real threat in today's rapidly evolving digital landscape.\n\nCybersecurity is one of the most pressing challenges for businesses in the digital age.\n\nTrend Micro's latest research reveals a significant increase in the availability of deep fake technology and the sophistication of AI tools in the cybercrime underground. This evolution creates more opportunities for mass exploitation, even by non-technically minded cyber criminals.\n\nSeveral new deepfake tools on the cybercrime underground promise to create highly convincing but fake videos and images seamlessly. They include:\n\nDeepNude Pro: A criminal service that claims to be able to take the image of any individual and rework it to display without clothes. This could be used for sextortion campaigns.\n\nDeepfake 3D Pro: Generates entirely synthetic 3D avatars featuring a face taken from the picture of a victim. The avatar can be programmed to follow recorded or generated speech. This could be used to fool banks' KYC checks or used to impersonate celebrities in scams and vishing campaigns.\n\nDeepfake AI: Enables criminals to stitch a victim's face to a compromising video to ruin the victim's reputation and/or use it as extortion. Or it could be used to spread fake news. Only supports pre-recorded videos.\n\nSwapFace: Enables criminals to fake real-time video streams for BEC attacks and other corporate scams.\n\nVideoCallSpoofer: Similar to SwapFace, can generate a realistic 3D avatar from one picture, and have it followed live the movement of an actor's face. This enables deepfakes to be streamed on video conferencing calls and similar scams, fake news, and other trickery.\n\nAside from deepfakes, the report revealed the re-emergence of defunct criminal LLM services like WormGPT and DarkBERT, which are now armed with new functionality. They're being advertised alongside new offerings, such as DarkGemini and TorGPT, that offer multimodal capabilities, including image-generation services.\n\nHowever, the report noted that many of the ChatGPT-lookalike services offered on the cybercrime underground are little more than \"jailbreak-as-a-service\" frontends designed to trick commercial LLMs into providing unfiltered responses to malicious queries.\n\nIt's also true that cybercriminals have generally adopted malicious generative AI tools relatively slowly. That's most likely because current tactics, techniques, and procedures (TTPs) work effectively enough without introducing new technology.\n\nWith the increasing sophistication and frequency of cyberattacks, traditional security measures are not enough. Businesses need to proactively test their systems and networks for potential weaknesses and fix them before threat actors exploit them. Individuals should be cautious of unsolicited communications and verify the authenticity of online interactions.",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Deepfake 3D Pro",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "synthetic 3D avatars",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SwapFace",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "real-time video streams",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Deepfake AI",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "victim's face",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "VideoCallSpoofer",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "realistic 3D avatar",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Deepfake 3D Pro",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "synthetic 3D avatars",
+      "type": "other",
+      "alias": [
+        "realistic 3D avatar"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SwapFace",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "real-time video streams",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Deepfake AI",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "victim's face",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "VideoCallSpoofer",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "realistic 3D avatar",
+      "type": "other",
+      "alias": [
+        "synthetic 3D avatars"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Deepfake 3D Pro",
+      "rel": "Generates",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "synthetic 3D avatars"
+    },
+    {
+      "sub": "SwapFace",
+      "rel": "Enables criminals to fake",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "real-time video streams"
+    },
+    {
+      "sub": "Deepfake AI",
+      "rel": "Enables criminals to stitch",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "victim's face"
+    },
+    {
+      "sub": "VideoCallSpoofer",
+      "rel": "can generate",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "realistic 3D avatar"
+    }
+  ]
+}

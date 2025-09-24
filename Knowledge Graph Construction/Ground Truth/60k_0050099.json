@@ -1,0 +1,378 @@
+{
+  "idorurl": "60k_0050099",
+  "content": "\n\nThe Andromeda botnet  first spotted in late 2011  has recently resurfaced. This threat arrives via a familiar means: spammed messages with malicious attachments or links to compromised websites hosting Blackhole Exploit Kit (BHEK) code. Here is one spam message we saw recently:\n\nFigure 1. Sample spammed message\nAndromeda itself is highly modular, and can incorporate various modules, such as:\n\nKeyloggers\nForm grabbers\nSOCKS4 proxy module\nRootkits\n\nAs is typical of backdoors, it can download and execute other files like ZeuS, as well as update and remove itself if needed. Typically, variants of the Andromeda malware can be bought online for 300500 US dollars. However, each of the plugins mentioned above costs an extra sum of money. The most recent version number we have identified is version 2.60. The top affected countries of this threat are Australia, Turkey, and Germany based on our Smart Protection Network feedback below:\n\nFigure 2. Andromeda infection count from January February 25 2013\n\nOne unusual aspect worth mentioning here is how ANDROMEDA spreads via removable drives. Instead of simply dropping copies of itself, it drops component files instead, making detection and analysis more difficult. The latest variant we spotted, which Trend Micro detects as BKDRANDROM.DA has the capability to open and listen to TCP Port 8000 and launch Command Shell (cmd.exe). Once a remote system is connected, it can already use all the command capability of the Command Shell rendering the system vulnerable to other malware. It also uses the following native APIs to inject to the normal processes, a technique also seen in DUQU and KULUOZ:\n\nZwCreateSection\nZwMapViewOfSection\nZwResumeThread\nZwUnmapViewOfSection\n\nThis can make analysis difficult and consequently, malware removal from the infected system.The ultimate payload of Andromeda depends entirely on the commands given from the commandandcontrol (CC) server it connects to. This means that a wide variety of threats can be seen on affected systems. In addition, the malware itself is being continuously updated.\nIn our 2013 security predictions, we mentioned that were going to see more refinements in the tools or malware that attackers use. The perpetrators behind Andromeda have improved the malwares propagation routines to proliferate itself by dropping several component files, one of which creates the registry key containing an encrypted .DLL file for its propagation.\nTo some degree, these threats can be evaded by not opening links or attachments in suspicious emails, although with wellcrafted emails this can be difficult. Trend Micro products already detect and remove this particular threat from user systems.\n\nRelated posts:\nA Closer Look at Unpopular Software Downloads and the Risks They Pose to Organizations \nUncovering Unknown Threats With HumanReadable Machine Learning \nMoneroMining RETADUP Worm Goes Polymorphic, Gets an AutoHotKey Variant \n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: AndromedabotnetMalware\n\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Andromeda",
+      "type": "malware",
+      "alias": [
+        "Andromeda botnet"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Spammed messages",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Blackhole Exploit Kit",
+      "type": "hacker-tool",
+      "alias": [
+        "BHEK"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Keylogger module",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Form grabber module",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SOCKS4 proxy module",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Rootkit",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ZeuS",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Removable drive propagation",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BKDR_ANDROM.DA",
+      "type": "malware",
+      "alias": [
+        "BKDRANDROM.DA"
+      ],
+      "mother entity": [
+        "Andromeda"
+      ]
+    },
+    {
+      "name": "cmd.exe",
+      "type": "general-software",
+      "alias": [
+        "Command Shell"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "DUQU",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "KULUOZ",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Andromeda",
+      "type": "malware",
+      "alias": [
+        "Andromeda botnet",
+        "BKDR_ANDROM.DA",
+        "BKDRANDROM.DA"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Spammed messages",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Blackhole Exploit Kit",
+      "type": "hacker-tool",
+      "alias": [
+        "BHEK"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Keylogger module",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Form grabber module",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SOCKS4 proxy module",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Rootkit",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ZeuS",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Removable drive propagation",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BKDR_ANDROM.DA",
+      "type": "malware",
+      "alias": [
+        "BKDRANDROM.DA",
+        "Andromeda",
+        "Andromeda botnet"
+      ],
+      "mother entity": [
+        "Andromeda"
+      ]
+    },
+    {
+      "name": "cmd.exe",
+      "type": "general-software",
+      "alias": [
+        "Command Shell"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "DUQU",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "KULUOZ",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Spammed messages",
+      "rel": "deliver",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "Andromeda"
+    },
+    {
+      "sub": "Blackhole Exploit Kit",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "Andromeda"
+    },
+    {
+      "sub": "Andromeda",
+      "rel": "consists-of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "Keylogger module"
+    },
+    {
+      "sub": "Andromeda",
+      "rel": "consists-of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "Form grabber module"
+    },
+    {
+      "sub": "Andromeda",
+      "rel": "consists-of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "SOCKS4 proxy module"
+    },
+    {
+      "sub": "Andromeda",
+      "rel": "consists-of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "Rootkit"
+    },
+    {
+      "sub": "Andromeda",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "ZeuS"
+    },
+    {
+      "sub": "Andromeda",
+      "rel": "executes",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "ZeuS"
+    },
+    {
+      "sub": "Andromeda",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Removable drive propagation"
+    },
+    {
+      "sub": "BKDR_ANDROM.DA",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
+      ],
+      "obj": "Andromeda"
+    },
+    {
+      "sub": "BKDR_ANDROM.DA",
+      "rel": "executes",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "cmd.exe"
+    },
+    {
+      "sub": "DUQU",
+      "rel": "compares-to",
+      "rel_type": [
+        "compares-to"
+      ],
+      "obj": "BKDR_ANDROM.DA"
+    },
+    {
+      "sub": "KULUOZ",
+      "rel": "compares-to",
+      "rel_type": [
+        "compares-to"
+      ],
+      "obj": "BKDR_ANDROM.DA"
+    }
+  ]
+}

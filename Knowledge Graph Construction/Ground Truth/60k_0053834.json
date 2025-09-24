@@ -1,0 +1,1301 @@
+{
+  "idorurl": "60k_0053834",
+  "content": "\n\nfacebook\n\nlinkedin\n\ntwitter\n\ngoogleplus\n\nReading Time: ~3 min.LinkedIn users, watch what you click on!\nOver the past 24 hours, cybercriminals have launched yet another massive spam campaign, impersonating LinkedIn, in an attempt to trick its users into clicking on the malicious links found in the bogus Invitation Notification themed emails. Once they click on the links, users are automatically exposed to the clientside exploits served by the Black Hole Exploit Kit.\nMore details:\n\nSample screenshot of the spamvertised email:\n\nSample spamvertised URLs used in the campaign:\nhxxp://vikasprint.ru/linkedrequest.html\nhxxp://img.anibook.ru/linkedrequest.html\nhxxp://spitnsawdust.co.uk/linkedrequest.html\nhxxp://einfoware.com/linkedrequest.html\nhxxp://mouldingname.info/linkedrequest.html\nhxxp://old.mlsit.ru/linkedrequest.html\nhxxp://hytfgasses.com/linkedrequest.html\nhxxp://dommotorov.ru/linkedrequest.html\nhxxp://mislite.ru/linkedrequest.html\nhxxp://img.anibook.ru/linkedrequest.html\nhxxp://arabellatravel.ru/linkedrequest.html\nhxxp://oldfinco.autolb.ru/linkedrequest.html\nSample clientside exploits serving URLs, all of them responding to 222.238.109.66:\nhxxp://euronotedetector.net/detects/updatedledconcerns.php\nhxxp://kendallvile.com/detects/exceptionsauthoritydistancedisturbing.php  Email: fxfotohotmail.com\nhxxp://prepadav.com/detects/regionapplieddepending.php  Email: bannerpick45yahoo.com\nhxxp://shininghill.net/detects/solvedsurelyconsiderable.php  Email: fxfotohotmail.com\nhxxp://teamrobotmusic.net/detects/bitsrememberconfident.php\nResponding to the same IP are also the following malicious domains, part of the campaigns infrastructure:\nseoseoonwe.com\nalphabeticalwin.com\nehadnedrlop.com\nbestwesttest.com\nmasterseoprodnew.com\ncocolspottersqwery.com\nafricanbeat.net\nName servers used by these malicious domains:\nName server: ns1.httppage.net  31.170.106.17  Email: ezvalueyahoo.com\nName server: ns2.httppage.net  7.129.51.158  Email: ezvalueyahoo.com\nName Server: ns1.highgrades.com  208.117.43.145\nName Server: ns2.highgrades.com  92.121.9.25\nSample malicious payload dropping URL:\nhxxp://shininghill.net/detects/solvedsurelyconsiderable.php?vf=1o:31:1h:1l:2wfe=33:1o:1g:1l:1m:1k:2v:1l:1o:32n=1fdw=wqs=p\nUpon successful clientside exploitation, the campaign drops MD5: fdc05614f56aca9421271887c1937f51  detected by 30 out of 44 antivirus scanners as TrojanSpy.Win32.Zbot.ihgm.\nUpon execution, the same creates the following process on the affected hosts:\nAppDataBytaayjdoly.exe\nThe following registry keys:\nHKEYCURRENTUSERSoftwareMicrosoftRekime\nWith the following values:\n[HKEYCURRENTUSERIdentities] > Identity Login = 0x00098053\n[HKEYCURRENTUSERSoftwareMicrosoftWindowsCurrentVersionRun] > 3DFA1AE4115CAD7BA6BAA75086AF8442 = AppDataBytaayjdoly.exe\n[HKEYCURRENTUSERSoftwareMicrosoftRekime] > 24e75bab = la0ooHdmCjM=; 28588825 = 0xA079AD85; 350g709 = 51 C5 79 A0 F5 4B 32 33 BC 54 E3 B8\nAs well as the following Mutexes:\nGlobalCB561546E774D5EA8F9261FCBA8C42EE\nLocal744F300DC23F6AF38F9261FCBA8C42EE\nGlobal5E9F7FDE8DEC40230508B06D3016937F\nGlobal5E9F7FDE8DEC40237109B06D4417937F\nGlobal5E9F7FDE8DEC4023490AB06D7C14937F\nGlobal5E9F7FDE8DEC4023610AB06D5414937F\nGlobal5E9F7FDE8DEC40238D0AB06DB814937F\nGlobal5E9F7FDE8DEC4023990AB06DAC14937F\nGlobal5E9F7FDE8DEC4023410BB06D7415937F\nGlobal5E9F7FDE8DEC40236D0BB06D5815937F\nGlobal5E9F7FDE8DEC4023C50BB06DF015937F\nGlobal5E9F7FDE8DEC4023210CB06D1412937F\nGlobal5E9F7FDE8DEC4023610CB06D5412937F\nGlobal5E9F7FDE8DEC4023790CB06D4C12937F\nGlobal5E9F7FDE8DEC4023C90DB06DFC13937F\nGlobal5E9F7FDE8DEC40231D0EB06D2810937F\nGlobal5E9F7FDE8DEC4023710EB06D4410937F\nGlobal5E9F7FDE8DEC4023A108B06D9416937F\nGlobal5E9F7FDE8DEC40238D0BB06DB815937F\nGlobal5E9F7FDE8DEC4023190CB06D2C12937F\nGlobal5E9F7FDE8DEC4023090FB06D3C11937F\nGlobal5E9F7FDE8DEC4023ED0FB06DD811937F\nGlobal5E370004F236408B8F9261FCBA8C42EE\nGlobal5E9F7FDE8DEC40236D0CB06D5812937F\nGlobalEEE5022FF01DF0598F9261FCBA8C42EE\nGlobal38E3341CC62E265F8F9261FCBA8C42EE\nGlobal340FE32E111C2AB38F9261FCBA8C42EE\nGlobal340FE329111B2AB38F9261FCBA8C42EE\nLocal55E9553DA70F4B558F9261FCBA8C42EE\nLocal55E9553CA70E4B558F9261FCBA8C42EE\nOnce executed, the sample also attempts to establish multiple UDP connections with the following IPs:\n177.1.100.2:11709\n190.33.36.175:11404\n213.109.254.122:29436\n41.69.182.117:29817\n64.219.114.114:13503\n161.184.174.65:14545\n93.177.174.72:10119\n69.132.202.147:16149\nWebroot SecureAnywhereusers are proactively protected from these threats.\nYou can find more about Dancho Danchev at hisLinkedIn Profile. You can alsofollow him on Twitter.\n\nAbout the Author\nBlog Staff\n\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "cybercriminals",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "LinkedIn spam campaign"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "LinkedIn",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "LinkedIn spam campaign",
+      "type": "campaign",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Black Hole Exploit Kit",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://vikasprint.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://img.anibook.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://spitnsawdust.co.uk/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://einfoware.com/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://mouldingname.info/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://old.mlsit.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://hytfgasses.com/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://dommotorov.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://mislite.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://arabellatravel.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://oldfinco.autolb.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "euronotedetector.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "kendallvile.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "prepadav.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "shininghill.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "teamrobotmusic.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "seoseoonwe.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "alphabeticalwin.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ehadnedrlop.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "bestwesttest.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "masterseoprodnew.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "cocolspottersqwery.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "africanbeat.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns1.httppage.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns2.httppage.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns1.highgrades.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns2.highgrades.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "222.238.109.66",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "31.170.106.17",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "7.129.51.158",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "208.117.43.145",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "92.121.9.25",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "177.1.100.2",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "190.33.36.175",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "213.109.254.122",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "41.69.182.117",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "64.219.114.114",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "161.184.174.65",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "93.177.174.72",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "69.132.202.147",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "fdc05614f56aca9421271887c1937f51",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TrojanSpy.Win32.Zbot.ihgm",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "AppDataBytaayjdoly.exe",
+      "type": "process",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "HKEY_CURRENT_USER\\Software\\Microsoft\\Rekime",
+      "type": "windows-registry-key",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "cybercriminals",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "LinkedIn spam campaign"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "LinkedIn",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "LinkedIn spam campaign",
+      "type": "campaign",
+      "alias": [
+        "cybercriminals"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Black Hole Exploit Kit",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://vikasprint.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://img.anibook.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://spitnsawdust.co.uk/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://einfoware.com/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://mouldingname.info/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://old.mlsit.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://hytfgasses.com/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://dommotorov.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://mislite.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://arabellatravel.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://oldfinco.autolb.ru/linkedrequest.html",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "euronotedetector.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "kendallvile.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "prepadav.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "shininghill.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "teamrobotmusic.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "seoseoonwe.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "alphabeticalwin.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ehadnedrlop.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "bestwesttest.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "masterseoprodnew.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "cocolspottersqwery.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "africanbeat.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns1.httppage.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns2.httppage.net",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns1.highgrades.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ns2.highgrades.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "222.238.109.66",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "31.170.106.17",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "7.129.51.158",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "208.117.43.145",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "92.121.9.25",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "177.1.100.2",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "190.33.36.175",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "213.109.254.122",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "41.69.182.117",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "64.219.114.114",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "161.184.174.65",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "93.177.174.72",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "69.132.202.147",
+      "type": "ipv4-addr",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "fdc05614f56aca9421271887c1937f51",
+      "type": "file",
+      "alias": [
+        "TrojanSpy.Win32.Zbot.ihgm",
+        "AppDataBytaayjdoly.exe"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TrojanSpy.Win32.Zbot.ihgm",
+      "type": "malware",
+      "alias": [
+        "fdc05614f56aca9421271887c1937f51",
+        "AppDataBytaayjdoly.exe"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "AppDataBytaayjdoly.exe",
+      "type": "process",
+      "alias": [
+        "fdc05614f56aca9421271887c1937f51",
+        "TrojanSpy.Win32.Zbot.ihgm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "HKEY_CURRENT_USER\\Software\\Microsoft\\Rekime",
+      "type": "windows-registry-key",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "cybercriminals",
+      "rel": "impersonates",
+      "rel_type": [
+        "impersonates"
+      ],
+      "obj": "LinkedIn"
+    },
+    {
+      "sub": "cybercriminals",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Black Hole Exploit Kit"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://vikasprint.ru/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://img.anibook.ru/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://spitnsawdust.co.uk/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://einfoware.com/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://mouldingname.info/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://old.mlsit.ru/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://hytfgasses.com/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://dommotorov.ru/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://mislite.ru/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://arabellatravel.ru/linkedrequest.html"
+    },
+    {
+      "sub": "LinkedIn spam campaign",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "http://oldfinco.autolb.ru/linkedrequest.html"
+    },
+    {
+      "sub": "euronotedetector.net",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "kendallvile.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "prepadav.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "shininghill.net",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "teamrobotmusic.net",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "seoseoonwe.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "alphabeticalwin.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "ehadnedrlop.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "bestwesttest.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "masterseoprodnew.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "cocolspottersqwery.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "africanbeat.net",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "222.238.109.66"
+    },
+    {
+      "sub": "ns1.httppage.net",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "31.170.106.17"
+    },
+    {
+      "sub": "ns2.httppage.net",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "7.129.51.158"
+    },
+    {
+      "sub": "ns1.highgrades.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "208.117.43.145"
+    },
+    {
+      "sub": "ns2.highgrades.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "92.121.9.25"
+    },
+    {
+      "sub": "Black Hole Exploit Kit",
+      "rel": "drops",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "fdc05614f56aca9421271887c1937f51"
+    },
+    {
+      "sub": "fdc05614f56aca9421271887c1937f51",
+      "rel": "categorized-as",
+      "rel_type": [
+        "categorized-as"
+      ],
+      "obj": "TrojanSpy.Win32.Zbot.ihgm"
+    },
+    {
+      "sub": "fdc05614f56aca9421271887c1937f51",
+      "rel": "executes",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "AppDataBytaayjdoly.exe"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "creates-or-generates",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "HKEY_CURRENT_USER\\Software\\Microsoft\\Rekime"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "177.1.100.2"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "190.33.36.175"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "213.109.254.122"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "41.69.182.117"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "64.219.114.114"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "161.184.174.65"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "93.177.174.72"
+    },
+    {
+      "sub": "AppDataBytaayjdoly.exe",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "69.132.202.147"
+    }
+  ]
+}

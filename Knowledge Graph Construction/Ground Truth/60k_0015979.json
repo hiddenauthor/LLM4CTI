@@ -1,0 +1,86 @@
+{
+  "idorurl": "60k_0015979",
+  "content": " The xHamster malvertising campaign we wrote about last week was part of severalattacks against many top adult sites. It is unclear whether this was a planned effort from threat actors but the timing is certainly strange.\nOver the weekend we detected another incident affecting Pornhub and YouPorn, some of the biggest adult websites with a combined800million monthly visits (according to stats from SimilarWeb).\nOverview:\n\nPublishers: Pornhub.com/YouPorn.com\nAd network: syndication.exoclick.com/redacted\nMalicious code: trackitsup.com/cookiecheck.js?redacted\nRedirection to exploit kit: beatiful.sextubehard.pw/redacted\nAngler Exploit Kit:knutterigemukaantulolleen.colleenmhammond.org\n\nRogue advertisers abused the ExoClick ad network by inserting a seemingly legitimate piece of code as an ad banner. The first documented instance of the cookiecheck.js campaign appears to have taken place onSept. 19th according to this tweet from malware hunter Malekal.\n\nFortunately, the malvertising on Pornhub and YouPorn did not last as long, thanks to an immediate action from both the publisher and ad network.Mindgeek, owner of the aforementioned websitesreleased the following statement to us:\nWe were alerted to the presence of a malicious advertisement appearing on a select few of Pornhubs web properties. It wasquickly determined thatthemalwareoriginated from a third party advertising partner, and we responded immediately to disable all advertisements associated with this third party, and continue to actively investigate this incident.\n\nPornhub takes the safety and security of its users very seriously. Providing an optimal and secure customer experience is of topmost priority for Pornhub, and our organization has taken the necessary steps to protect our customers enjoyment without the threat of infection.\nOur organization has implemented rigorous web security programs and processes and has partnered with the worlds leading security vendors, including RiskIQ, in an ongoing effort to fight malvertizing. MindGeek proactively audits all third party advertisements displayed on our site on a continual basis.\nIt is important to note that our sites are not delivering malware and we will continue to actively monitor the situation to safeguard our users.\nDuring the past several months, high profile malvertising attacks against top adult sites have been sparse. This makes what we have seen during the past couple of weeks very unusual but also impactful given the sheer volume of traffic these sites receive.\nWhats more, the attack against top adult ad network TrafficHaus we documented last week may have been the result of a security breach, according to a comment left on security blogger Graham Cluleys site.\nUsers should make sure that their computers are fully patched and protected with several layers of security (the 3 As is a very effective line of defense: Antiexploit, Antivirus, Antimalware) in order to defeat malvertising and driveby download attacks.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "cookiecheck.js campaign",
+      "type": "campaign",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Rogue advertisers",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ExoClick",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "cookiecheck.js campaign",
+      "type": "campaign",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Rogue advertisers",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ExoClick",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Rogue advertisers",
+      "rel": "abused",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "ExoClick"
+    },
+    {
+      "sub": "Rogue advertisers",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "cookiecheck.js campaign"
+    }
+  ]
+}

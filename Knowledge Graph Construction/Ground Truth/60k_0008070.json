@@ -1,0 +1,311 @@
+{
+  "idorurl": "60k_0008070",
+  "content": "\n\nA new Internet Explorer zeroday vulnerability is currently being exploited in the wild. The vulnerability identified on Saturday affects all versions of Internet Explorer, including the archaic versions 6 through 8 which ship with the nowdead Windows XP.\nUpdate: the folks at Microsoft have issued a patch for the issue. Oddly enough, the patch has been made available for Windows XP users as well. UPDATE NOW!\nInternals of the exploit\nThis newly discovered flaw, also known as CVE20141776 leverages a Flash exploitation technique that loads a SWF file to corrupt process memory and direct the programs flow to a memory location where malicious code is laid out. This exploitation technique can bypass the two most important security mechanisms in Windows: DEP (Data Execution Prevention) and ASLR (Address Space Layout Randomization)\nImpact\nWhile a zeroday attack against an application as popular as Internet Explorer is serious business, things are even worse for a special category: the Windows XP users. Less than three weeks ago, Microsoft shipped the last security update for 20something percent of Windows users with the firm promise that it would be the last one ever.\n\nWindows OS breakdown by popularity  source: Bitdefender Labs data\nAnother significant issue is the fact that Windows is closely tied to Internet Explorer it is an important component of the operating system that is hardcoded in every edition of the OS, even after the installation of the EUfriendly Browser Choice update.\nLast, but not least, many still think that computer users running Windows XP are using ANYTHING but Internet Explorer on their setups. While this may be true for regular users, the situation in enterprise environments is exactly the opposite. Actually, this is one of the reasons companies have lagged behind for so long with the upgrade process: the incompatibility of their custom applications with Internet Explorer versions 7 and up. Which is why, 12 years later, Windows XP is still worlds second most popular operating system. And, if youre thinking about the cost of migration, now you should be thinking about the cost of not migrating.\nNow, strap yourself for the really bad news\nWhenever a zeroday exploit against the browser is discovered, it is just a matter of days until it becomes public knowledge (read: it is pushed in an exploit pack or in a penetration testing framework such as Metasploit), making payload generation a breeze even for the unexperienced. This means that in just a couple of days, were going to see all (or at least the most important) exploit packs updated to automatically throw freshly baked malicious code at completely unprotected users. And, while this will soon be over for users of supported versions of Windows, as Microsoft is readying a fix, XP users will remain vulnerable forever.\nWhat to do now?\nIf youre using a 64bit version of Windows, you can run Internet Explorer in Enhanced Protected Mode and enable 64bit process mode. If youre stuck with XP though, there is no way to do this simply because a) x64bit Windows XP is a rarity, as its always been and b) Enhanced Protected Mode is only available for IE10 and IE11. In this case, you can only pray that your antivirus detects the exploitation as it goes on and blocks the payload before execution.\n\nRegular users who rely on Windows for daytoday tasks should install an alternative browser until the issue gets an official patch from Microsoft. In the case of Windows XP users, they should adopt, if possible, a different, thirdparty browser permanently as they will not get the fix via Automatic Update. If youre a sysadmin maintaining a Windows XP computer network, then youre probably in for overtime: make sure that you run an antivirus solution with exploit detection features and that youre disallowing access to the Internet from machines running vulnerable versions of the browser.\nBitdefender offers Safepay, a hardened browser that is immune to exploitation and functions on all versions of Windows. You can download it for free immediately as a standalone product or you can use it right away if you have Bitdefender Internet Security or Total Security installed.\nA final word of advice: this is just the first of a presumably long series of security issues that Windows XP users will encounter in the near future. Windows XP had a good run in its 12 years on the market, but now its time to say goodbye and move on.\n\nTagsend of life exploit Internet Explorer slider support Windows XP zero day \n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Internet Explorer",
+      "type": "general-software",
+      "alias": [
+        "IE10",
+        "IE11",
+        "IE 6",
+        "IE 7",
+        "IE 8",
+        "IE version 6 through 8"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "zeroday vulnerability",
+      "type": "vulnerability",
+      "alias": [
+        "newly discovered flaw"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows XP",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "patch",
+      "type": "course-of-action",
+      "alias": [
+        "fix"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "CVE-2014-1776",
+      "type": "vulnerability",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "zeroday vulnerability"
+      ]
+    },
+    {
+      "name": "Flash exploitation technique",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SWF file",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "process memory",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "DEP (Data Execution Prevention)",
+      "type": "security-product",
+      "alias": [
+        "DEP",
+        "Data Execution Prevention"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ASLR (Address Space Layout Randomization)",
+      "type": "security-product",
+      "alias": [
+        "ASLR",
+        "Address Space Layout Randomization"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Internet Explorer",
+      "type": "general-software",
+      "alias": [
+        "IE10",
+        "IE11",
+        "IE 6",
+        "IE 7",
+        "IE 8",
+        "IE version 6 through 8"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "zeroday vulnerability",
+      "type": "vulnerability",
+      "alias": [
+        "CVE-2014-1776",
+        "newly discovered flaw"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows XP",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "patch",
+      "type": "course-of-action",
+      "alias": [
+        "fix",
+        "security update"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "CVE-2014-1776",
+      "type": "vulnerability",
+      "alias": [
+        "newly discovered flaw",
+        "zeroday vulnerability"
+      ],
+      "mother entity": [
+        "zeroday vulnerability"
+      ]
+    },
+    {
+      "name": "Flash exploitation technique",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SWF file",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "process memory",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "DEP (Data Execution Prevention)",
+      "type": "security-product",
+      "alias": [
+        "DEP",
+        "Data Execution Prevention"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ASLR (Address Space Layout Randomization)",
+      "type": "security-product",
+      "alias": [
+        "ASLR",
+        "Address Space Layout Randomization"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "zeroday vulnerability",
+      "rel": "affects",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "Internet Explorer"
+    },
+    {
+      "sub": "Microsoft",
+      "rel": "have issued a patch for",
+      "rel_type": [
+        "mitigates"
+      ],
+      "obj": "zeroday vulnerability"
+    },
+    {
+      "sub": "patch",
+      "rel": "has been made available for",
+      "rel_type": [
+        "mitigates"
+      ],
+      "obj": "Windows XP"
+    },
+    {
+      "sub": "CVE-2014-1776",
+      "rel": "leverages",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Flash exploitation technique"
+    },
+    {
+      "sub": "Flash exploitation technique",
+      "rel": "loads",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "SWF file"
+    },
+    {
+      "sub": "SWF file",
+      "rel": "to corrupt",
+      "rel_type": [
+        "compromises"
+      ],
+      "obj": "process memory"
+    },
+    {
+      "sub": "Flash exploitation technique",
+      "rel": "can bypass",
+      "rel_type": [
+        "bypasses"
+      ],
+      "obj": "DEP (Data Execution Prevention)"
+    },
+    {
+      "sub": "Flash exploitation technique",
+      "rel": "can bypass",
+      "rel_type": [
+        "bypasses"
+      ],
+      "obj": "ASLR (Address Space Layout Randomization)"
+    }
+  ]
+}

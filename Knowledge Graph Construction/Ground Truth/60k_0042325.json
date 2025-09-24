@@ -1,0 +1,304 @@
+{
+  "idorurl": "60k_0042325",
+  "content": "Sophos continues working toprotect customers from the WannaCry ransomware attack. That effort has been successful, but we continue to receive many questions about how this attack happened, what we must do to defend our organizations, and, of course, whats next?This article is designed to answer those questions.What happened?A fastspreading piece of ransomware called Wanna (also known as WannaCry, WCry, WanaCrypt, WanaCrypt0r and Wana DeCrypt0r) held computer systems hostage around the globe Friday. National Health Service hospitals (NHS) in the UK was hit hard, with its phone lines and IT systems beingheld hostage. From there, the attack spilled across the globe.It encrypted victims files and changed the extensions to: .wnry, .wcry, .wncry and .wncrypt.It then presented a window to the user with a ransom demand:Analysis seems to confirm that the attack was launched using suspected NSA code leaked by a group of hackers known as the Shadow Brokers. It uses a variant of the ShadowBrokers APT EternalBlue Exploit (CC1353). It also uses strong encryption on files such as documents, images, and videos.This was different from past ransomware attacks. Why?There were some unique aspects to the WannaCry attack.Typical ransomware infections happen after the victim clicks on a malicious email attachment or link. In this attack the malware was able to exploit a remote code execution (RCE) vulnerability that allowed it to infect unpatched machines without users having to do anything.Because of that, this was able to spread in the same rapid fashion as the worm outbreaks common a decade ago, such as Slammer and Conficker.Specifically, WannaCry exploited a Windows vulnerability Microsoft released a patch for in March. That flaw wasin the Windows Server Message Block (SMB) service, which Windows computers useto share files and printers across local networks. Microsoft addressed the issue in itsMS17010bulletin.Organizations running older, nolongersupporter versions of Windows were particularly hard hit. In fact, Microsoft tookthe highly unusual step of making asecurity update for platforms in custom support (such as Windows XP) available to everyone. The software giant said in a statement:We know some of our customers are running versions of Windows that no longer receive mainstream support. That means those customers will not have received the Security Update released in March. Given the potential impact to customers and their businesses, we made the decision to make the Security Update for platforms in custom support only, Windows XP, Windows 8, and Windows Server 2003, broadly available for downloadhere.       DEEP LEARNING FOR DEEPER CYBERSECURITY  Watch Video Is this over?Unlikely. With the code behind Fridays attack in the wild, we shouldexpect copycats to cook up their own campaignsin the coming daysto capitalize on the moneymaking opportunity in front of them. We also expect aftershocks Monday as employees at affected companys who werent there Friday return to work and fire up their computers.What is Sophos doing to protect customers?Sophos continues to update protections against the threat.Sophos Customers using Intercept X and Sophos EXP products will also see this ransomware blocked by CryptoGuard. Please note that while Intercept X and EXP will block the underlying behavior and restore deleted or encrypted files in all cases we have seen, the offending ransomware splash screen and note may still appear.Is there anything I need to do?Youll want to ensure all of your Windows environments have been updated as described inMicrosoft Security Bulletin MS17010  Critical. Microsoft is providingCustomer Guidance for WannaCrypt attacks. As noted above, Microsoft has made the decision to make the Security Update for platforms in custom support only  Windows XP, Windows 8, and Windows Server 2003  broadly available for download:Windows Server 2003 SP2 x64Windows Server 2003 SP2 x86Windows 8 x64Windows 8 x86Windows XP SP2 x64Windows XP SP3 x86Windows XP Embedded SP3 x86As we always say, patching is critical. For Sophos customers, keep checking the Wana Decrypt0r 2.0 Ransomware Knowledge Base where well be issuing updates.Related informationWanna Decrypter 2.0 ransomware attack: what you need to knowWannaCry benefits from unlearned lessons of Slammer, ConfickerMicrosoftCustomer Guidance for WannaCrypt attacksMS17010: Description of the security update for Windows SMB Server: March 14, 2017",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Conficker",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "EternalBlue Exploit (CC-1353)",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "NSA code",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Shadow Brokers",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Slammer",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "victims' files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "WannaCry",
+      "type": "malware",
+      "alias": [
+        "Wanna",
+        "WCry",
+        "WanaCrypt",
+        "WanaCrypt0r",
+        "Wana DeCrypt0r"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows Server Message Block (SMB) service",
+      "type": "detailed-part-of-general-software",
+      "alias": [
+        "SMB"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows vulnerability",
+      "type": "generic-noun",
+      "alias": [
+        "That flaw"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "file extension",
+      "type": "generic-noun",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "window",
+      "type": "generic-noun",
+      "alias": [],
+      "mother entity": []
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Conficker",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "EternalBlue Exploit (CC-1353)",
+      "type": "attack-pattern",
+      "alias": [
+        "CC1353"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "NSA code",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Shadow Brokers",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Slammer",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "victims' files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "WannaCry",
+      "type": "malware",
+      "alias": [
+        "Wanna",
+        "WCry",
+        "WanaCrypt",
+        "WanaCrypt0r",
+        "Wana DeCrypt0r",
+        "Wana Decrypter 2.0",
+        "Wana Decrypt0r 2.0"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows Server Message Block (SMB) service",
+      "type": "detailed-part-of-general-software",
+      "alias": [
+        "SMB"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows vulnerability",
+      "type": "generic-noun",
+      "alias": [
+        "That flaw",
+        "MS17010"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "file extension",
+      "type": "generic-noun",
+      "alias": [
+        ".wnry",
+        ".wcry",
+        ".wncry",
+        ".wncrypt"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "window",
+      "type": "generic-noun",
+      "alias": [
+        "ransomware splash screen"
+      ],
+      "mother entity": []
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "WannaCry",
+      "rel": "encrypted",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "victims' files"
+    },
+    {
+      "sub": "WannaCry",
+      "rel": "changed",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "file extension"
+    },
+    {
+      "sub": "WannaCry",
+      "rel": "presented",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "window"
+    },
+    {
+      "sub": "Shadow Brokers",
+      "rel": "leaked",
+      "rel_type": [
+        "leaks"
+      ],
+      "obj": "NSA code"
+    },
+    {
+      "sub": "WannaCry",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "EternalBlue Exploit (CC-1353)"
+    },
+    {
+      "sub": "WannaCry",
+      "rel": "exploited",
+      "rel_type": [
+        "exploits"
+      ],
+      "obj": "Windows vulnerability"
+    },
+    {
+      "sub": "Windows vulnerability",
+      "rel": "was in",
+      "rel_type": [
+        "is-part-of"
+      ],
+      "obj": "Windows Server Message Block (SMB) service"
+    },
+    {
+      "sub": "WannaCry",
+      "rel": "compares to",
+      "rel_type": [
+        "compares-to"
+      ],
+      "obj": "Slammer"
+    },
+    {
+      "sub": "WannaCry",
+      "rel": "compares to",
+      "rel_type": [
+        "compares-to"
+      ],
+      "obj": "Conficker"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "idorurl": "60k_0057293",
+  "content": "\n\nShare\n\nWin32/Swizzor is a very prevalentand oldmalware family having been around since at least 2002. Over the years, ESET has collected millions of samples related to this family and we still receive hundreds of new ones every day. Over the last two years, Win32/Swizzor has frequently shown up in our top ten lists of the most\n\nWin32/Swizzor is a very prevalentand oldmalware family having been around since at least 2002. Over the years, ESET has collected millions of samples related to this family and we still receive hundreds of new ones every day. Over the last two years, Win32/Swizzor has frequently shown up in our top ten lists of the most prevalent malware families.\nFor all its prevalence, though, technical details about the Win32/Swizzor family are very hard to come by on the Internet. One of the main reasons for this is because this threat protects its binary in such a complex fashion that it makes it hard to understand what exactly they do. On average, the binary obfuscation executes 50 millions instructions before passing control to the original code.\nIn collaboration with Joan Calvet from the Ecole Polytechnique of Montreal, we have analyzed Win32/Swizzor from many different angles. The results of our research were given in a presentation last weekend at the REcon 2010 conference. This post is a basic overview of our findings, focusing on what this threat does and how you can tell if your PC is infected.\nWin32/Swizzor is a complex piece of software that is made up of many different components. The programs main purpose is to deliver advertisements on infected PCs. Win32/Swizzors authors do not intall their adware on PCs themselves, instead they pay other groups to do this job for them through a payperinstall scheme.\nMuch of the time, it is difficult to determine if a computer has been infected by Win32/Swizzor. This is because this threat injects its code into Internet Explorer, so there are no running processes which are easily identifiable as belonging to Win32/Swizzor. Furthermore, Win32/Swizzor uses random names for its file names, registry entries and other objects, meaning there is typically no common set to look for, unlike some other malware families. In some cases, it is possible to find Swizzorrelated files in the Program Files folder of a system. The files often have strange icons such as the following:\n\nMost of the time, users spot the infection when a new Internet Explorer window opens by itself containing an advertisement. This threat delivers advertisement according to the location of the infected hosts, it is thus common to see specific advertisement per geographic region. We have seen Win32/Swizzor deliver advertisements for the following type of websites:\n\nGambling\nComputer hardware\nRogue antivirus\n\nTo protect yourself from this threat, we recommend using up to date antivirus and software. We also recommend carefully reading license agreements when installing new software, as Win32/Swizzor is often installed by other applications as a sponsor program.\n\nPierreMarc Bureau\nSenior Researcher\n\nPierreMarc Bureau 15 Jul 2010  04:41PM\n\nSimilar Articles\n\nGeneral \n\nSmoke damage and hard drives\n\nGeneral \n\nThe Occasional Orator Part 3\n\nGeneral \n\nThe Occasional Orator Part 2\n\nGeneral \n\nThe Occasional Orator Part 1\n\nDiscussion\n\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Win32/Swizzor",
+      "type": "malware",
+      "alias": [
+        "Swizzor"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "pay-per-install scheme",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Internet Explorer",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Win32/Swizzor",
+      "type": "malware",
+      "alias": [
+        "Swizzor"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "pay-per-install scheme",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Internet Explorer",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Win32/Swizzor",
+      "rel": "injects its code into",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "Internet Explorer"
+    },
+    {
+      "sub": "Win32/Swizzor",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "pay-per-install scheme"
+    }
+  ]
+}

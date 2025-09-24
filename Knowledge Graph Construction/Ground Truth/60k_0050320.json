@@ -1,0 +1,592 @@
+{
+  "idorurl": "60k_0050320",
+  "content": "\n\nWe recently discovered a Trojan that harvested documents on affected systems and uploaded them to the file hosting site, sendspace.com. This post will discuss more of our findings on the said attack.\nIn order to infect users, email disguised as a shipment notification from Fedex were massmailed to target victims.\n\nThis email contains a downloader Trojan which installs TSPYSPCESEND.A. This downloader also installs other malicious executables on affected systems including FAKEAV variants from the BestAV affiliate network and FakeHDD variants from the Yamba network. These were observed to be downloaded from compromised, legitimate websites.\nFurthermore, this downloader Trojan also shares the same CC with the TSPYSPCESEND.A. This strongly suggests that the documentstealing sendspace Trojan is pushed by cybercriminals who are also involved in the PayPerSell (PPS) underground business.\nCommand and Control Server\nAfter the malware uploads a .ZIP archive containing the victims documents to sendspace, it sends the sendspacedownload link along with a unique ID, the password for the .ZIP archive and the victims IP address to the command and control (CC)server.\n\nAs of this writing, we have seen at least three CC servers used by the malware: BLOCKED28889.ru, BLOCKED8483825.ru, and BLOCKED372721.ru . These three domains point to the IP addresses 31.184.237.143 and 31.184.237.142. These IPs, along with a number of IPs in the same range, have records of hosting malicious files since July 2011. These malicious files included variants of bots such as BFBot (Palevo), NgrBot, and IRCBot.\nDigging deeper into the directory structure of the CC server shows an open directory that contains a log file that records this information.\n\nThere are two logs files that contain the same data: log.txt and serialse.txt. The only difference is that serialse.txt is formatted for automated, programmatic parsing (it appears to be in JSON format). The contents of the log file contain the following information about the victims and the uploaded data:\n\nWe processed the log file and found that there have been 18,644 unique victims (based on a victim ID assigned by the malware) with 21,929 unique IP addresses (spanning over 150 countries) and 19,695 unique sendspace URLs generated.\n\nCountry\nVictims (based on IP address)\n\nUnited States\n13,939\n\nUnited Kingdom\n1,877\n\nIndia\n669\n\nCanada\n619\n\nAustralia\n568\n\nSpain\n391\n\nChina\n304\n\nMexico\n292\n\nTurkey\n206\n\nColombia\n189\n\nGermany\n178\n\nUnited Arab Emirates\n139\n\nSouth Africa\n134\n\nFrance\n121\n\nThe Netherlands\n120\n\nSome of the victims have been identified by looking up the IP addresses in the WhoIs databases of the Regional Internet Registries. While the majority consists of IP addresses in the ranges of ISPs (i.e. the subscribers of residential and commercial ISP services) we were able to identify several government, academic and corporate networks.\nTrend Micro and Sendspace Efforts\nWe contacted sendspaceupon discovering the attack. We assisted them by sharing our findings in order for them to deploy proper mitigation measures.\nAt the time the attack was reported, sendspacediscovered and removed more than 75,000 uploaded malicious archives from their server. Based on the upload logs, the first archive was uploaded on December 25, 2011, which may indicate the start of the malicious campaign.\nAs a result of our collaboration with sendspace, theyare currently monitoring their servers through an automated job that blocks archives uploaded by the sendspaceTrojan every few minutes. This effectively removes innocent users stolen documents from their server, therefore preventing the perpetrators behind this attack from retrieving stolen data.\nTrend Micro is pleased to assist sendspacein mitigating this abuse to their service. Nevertheless, this is probably not the last time similar attacks will take place.As always, Trend Micro is willing to assist in any effort that will make the Internet a safer place for everyone.\nHat tip to Senior Threat Researcher Nart Villeneuve for additional research.\nWe would like to thank Martin Amps for assisting with data collection from Sendspace.\n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "sendspace.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TSPYSPCESEND.A",
+      "type": "malware",
+      "alias": [
+        "sendspace Trojan",
+        "documentstealing sendspace Trojan"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Downloader Trojan",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "FAKEAV",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BestAV affiliate network",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "FakeHDD",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Yamba network",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BLOCKED28889.ru",
+      "type": "domain-name",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BLOCKED8483825.ru",
+      "type": "domain-name",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BLOCKED372721.ru",
+      "type": "domain-name",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "31.184.237.143",
+      "type": "ipv4-addr",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "31.184.237.142",
+      "type": "ipv4-addr",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BFBot",
+      "type": "malware",
+      "alias": [
+        "Palevo"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "NgrBot",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "IRCBot",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "log.txt",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "serialse.txt",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Fedex",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Fedex shipment notification phishing email",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "sendspace.com",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TSPYSPCESEND.A",
+      "type": "malware",
+      "alias": [
+        "sendspace Trojan",
+        "documentstealing sendspace Trojan"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Downloader Trojan",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "FAKEAV",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BestAV affiliate network",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "FakeHDD",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Yamba network",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BLOCKED28889.ru",
+      "type": "domain-name",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BLOCKED8483825.ru",
+      "type": "domain-name",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BLOCKED372721.ru",
+      "type": "domain-name",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "31.184.237.143",
+      "type": "ipv4-addr",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "31.184.237.142",
+      "type": "ipv4-addr",
+      "alias": [
+        "CC server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BFBot",
+      "type": "malware",
+      "alias": [
+        "Palevo"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "NgrBot",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "IRCBot",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "log.txt",
+      "type": "file",
+      "alias": [
+        "serialse.txt"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "serialse.txt",
+      "type": "file",
+      "alias": [
+        "log.txt"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Fedex",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Fedex shipment notification phishing email",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "TSPYSPCESEND.A",
+      "rel": "uploaded documents to",
+      "rel_type": [
+        "exfiltrate-to"
+      ],
+      "obj": "sendspace.com"
+    },
+    {
+      "sub": "Fedex shipment notification phishing email",
+      "rel": "disguised as",
+      "rel_type": [
+        "impersonates"
+      ],
+      "obj": "Fedex"
+    },
+    {
+      "sub": "Fedex shipment notification phishing email",
+      "rel": "contains",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "Downloader Trojan"
+    },
+    {
+      "sub": "Downloader Trojan",
+      "rel": "installs",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "TSPYSPCESEND.A"
+    },
+    {
+      "sub": "Downloader Trojan",
+      "rel": "installs",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "FAKEAV"
+    },
+    {
+      "sub": "Downloader Trojan",
+      "rel": "installs",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "FakeHDD"
+    },
+    {
+      "sub": "FAKEAV",
+      "rel": "from",
+      "rel_type": [
+        "authored-by"
+      ],
+      "obj": "BestAV affiliate network"
+    },
+    {
+      "sub": "FakeHDD",
+      "rel": "from",
+      "rel_type": [
+        "authored-by"
+      ],
+      "obj": "Yamba network"
+    },
+    {
+      "sub": "TSPYSPCESEND.A",
+      "rel": "sends information to",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "BLOCKED28889.ru"
+    },
+    {
+      "sub": "TSPYSPCESEND.A",
+      "rel": "sends information to",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "BLOCKED8483825.ru"
+    },
+    {
+      "sub": "TSPYSPCESEND.A",
+      "rel": "sends information to",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "BLOCKED372721.ru"
+    },
+    {
+      "sub": "BLOCKED28889.ru",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "31.184.237.143"
+    },
+    {
+      "sub": "BLOCKED28889.ru",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "31.184.237.142"
+    },
+    {
+      "sub": "BLOCKED8483825.ru",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "31.184.237.143"
+    },
+    {
+      "sub": "BLOCKED8483825.ru",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "31.184.237.142"
+    },
+    {
+      "sub": "BLOCKED372721.ru",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "31.184.237.143"
+    },
+    {
+      "sub": "BLOCKED372721.ru",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
+      ],
+      "obj": "31.184.237.142"
+    },
+    {
+      "sub": "31.184.237.143",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "BFBot"
+    },
+    {
+      "sub": "31.184.237.143",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "NgrBot"
+    },
+    {
+      "sub": "31.184.237.143",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "IRCBot"
+    },
+    {
+      "sub": "31.184.237.142",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "BFBot"
+    },
+    {
+      "sub": "31.184.237.142",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "NgrBot"
+    },
+    {
+      "sub": "31.184.237.142",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "IRCBot"
+    },
+    {
+      "sub": "BLOCKED28889.ru",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "log.txt"
+    },
+    {
+      "sub": "BLOCKED28889.ru",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "serialse.txt"
+    }
+  ]
+}

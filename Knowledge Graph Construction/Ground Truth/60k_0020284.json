@@ -1,0 +1,246 @@
+{
+  "idorurl": "60k_0020284",
+  "content": "\n\nby\nJohn Zorabedian\n\nA distributed denialofservice attack (DDoS) is a cheap but effective way to take out your targets website by flooding it with so much traffic that the web server becomes overwhelmed and the website crashes.\nThere are those who use DDoS attacks as a kind of online protest, such as hacktivist groups like Anonymous.\nThen there are those who do it to amuse themselves, like the Lizard Squad who took out Playstation and Xbox servers on Christmas Day last year.\nAnd thenthere are other DDoS attacks that come from cybercriminalswho dont care about politics or hijinks  they just want money.\nRecently a cybergang calling itself the Armada Collective has been attempting to extort money from victims by threatening DDoS attacks unless a ransom is paid in bitcoins.\nOne Swiss company, the encrypted webmail provider ProtonMail, recently paid 6000 in bitcoins after receiving a ransom from the Armada Collective, it said. The site was still DDoSed.\nAnd now, the latest site to fall victim to a DDoS attack is that of former Naked Security writer Graham Cluley.\nWe dont know why Graham was targeted, but on Twitterhe noted that he didnt receive a ransom demand, so it must have been personal.\nUnfortunately, it doesnt take much skill to launch this kind of attack.\nAnybody with a little bit of money and the will to wreak havoc can launch DDoS attackswith simple DDoSforhire web toolsthat harness armies of zombified computers to bombard your website with thousands or millions of illegitimate web requests.\nDDoS attacks aresimple but destructive  if your website goes down for any period of time, your customers cant get through and you end up losing new sales, losing customers, or missing out on ad revenue, depending on what your websites purpose is.\nIn Grahams article about how ProtonMail initially caved to the extortion demands, but then had a change of heart, Graham wrote something very sensible about how we should treat extortionists, blackmailers and ransomtakers:\nNoone should ever pay internet extortionists.\nFor those who receive a ransom demand, it might seem like a few thousand dollars is a fair price to pay when your customers are complaining they cant access your services, and your business is hurting.\nBut if we pay the extortionists demands, that will only give them more reason to do it again.\n\nImage of attacking cursor arrows courtesy of Shutterstock.com.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "DDoS attack",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Anonymous",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Lizard Squad",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "PlayStation servers",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Xbox servers",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Armada Collective",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ProtonMail",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ProtonMail website",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Graham Cluley website",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "DDoS attack",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Anonymous",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Lizard Squad",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "PlayStation servers",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Xbox servers",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Armada Collective",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ProtonMail",
+      "type": "identity",
+      "alias": [
+        "ProtonMail website"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ProtonMail website",
+      "type": "infrastructure",
+      "alias": [
+        "ProtonMail"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Graham Cluley website",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Anonymous",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "DDoS attack"
+    },
+    {
+      "sub": "Lizard Squad",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "DDoS attack"
+    },
+    {
+      "sub": "Lizard Squad",
+      "rel": "took out",
+      "rel_type": [
+        "compromises"
+      ],
+      "obj": "PlayStation servers"
+    },
+    {
+      "sub": "Lizard Squad",
+      "rel": "took out",
+      "rel_type": [
+        "compromises"
+      ],
+      "obj": "Xbox servers"
+    },
+    {
+      "sub": "ProtonMail",
+      "rel": "paid 6000 bitcoins to",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "Armada Collective"
+    },
+    {
+      "sub": "Armada Collective",
+      "rel": "DDoSed",
+      "rel_type": [
+        "compromises"
+      ],
+      "obj": "ProtonMail website"
+    },
+    {
+      "sub": "Armada Collective",
+      "rel": "DDoSed",
+      "rel_type": [
+        "compromises"
+      ],
+      "obj": "Graham Cluley website"
+    }
+  ]
+}

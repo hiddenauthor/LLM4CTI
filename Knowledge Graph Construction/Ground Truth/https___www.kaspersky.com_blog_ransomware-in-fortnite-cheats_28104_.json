@@ -1,0 +1,591 @@
+{
+  "idorurl": "https://www.kaspersky.com/blog/ransomware-in-fortnite-cheats/28104/",
+  "content": "Syrk ransomware pretending to be a Fortnite cheat pack | Kaspersky official blog\nFortnite\nSyrk ransomware lurking in Fortnite cheat pack\nSyrk ransomware is out, disguised as a Fortnite cheat pack.\nLearn what it is and how to recover your files.\nAugust 23, 2019\nCybercriminals try to capitalize on anything enjoying public favor, including popular games.\nMalware often pretends to be a pirated copy or mobile version of a game, especially if the latter has not been officially released.\nRecently, a ransomware encryptor called Syrk emerged.\nPassed off as a cheat pack for Fortnite — a game that has built a 250-million-strong user base in two years — Syrk promises players two cheats in one package: aimbot (an autoaiming tool) and WH (aka ESP, a cheat for discovering other players’ locations in the game).\nBut what this package really does is encrypt the victim’s files and demand ransom.\nHow Syrk ransomware works\nAccording to researchers from Cyren, Syrk is a basically intact copy of open-source ransomware. Once executed, the software connects to a command-and-control server and disables the following programs:\nWindows Defender,\nUAC (the system that requests user permission for administrator actions),\nProcess-monitoring apps that can be used to detect the infection, such as Task Manager, Process Monitor, and Process Hacker.\nThe cryptor also adds itself to the autoload list, so the user cannot get rid of it just by rebooting the machine.\nIf any USB drives are connected to the computer, Syrk attempts to infect them as well.\nThe malware then sets about locating and encrypting media files, text documents, spreadsheets and presentations, ZIP and RAR archives, and Photoshop and Microsoft Visual Studio files.\nIt gives the resulting abracadabra the .SYRK extension.\nThe monitor displays a nonclosable demand for ransom.\nSyrk Ransomware seems inspired by a Fortnite Hacktool, terminates task manager, process hacker, really good at being persistent and annoying.\nDoes encrypt but might still be in development.\n30/67 in VThttps://t.co/x7Y6Tz4NB1 pic.twitter.com/6e9wI8XTQR\n— Leo (@leotpsc) August 1, 2019\nThe text with the Guy Fawkes mask in the background says that the only way to recover the files is to contact the criminals by e-mail and pay them.\nThe victim is given limited time for that: Syrk will delete encrypted files every two hours, it says — first from the photos folder, then the desktop, and finally the user’s documents.\nRecover your files free\nThe good news is, you don’t have to pay the ransom, even if Syrk has penetrated your computer and encrypted your documents.\nIts current version actually stores the key needed to decrypt the files right on the infected machine.\nThe key is in the folder C:UsersDefaultAppDataLocalMicrosoft, in a file called -pw+.txt or +dp-.txt.\nTo recover your files:\nCopy the key.\nIn the ransom demand window, press Show My ID to open a page showing your ID and invitation to Enter the key to Decrypt your Files.\nPaste the key into the appropriate field and press Decrypt my Files.\nThe program will recover the encrypted photos and documents and then create and execute two .exe files, which will clean up what remains of the malware.\nThere is an alternative way to save your files, although a more difficult one.\nThe truth is, the malware features a decryption component that will recover the documents, should you succeed in extracting and executing it.\nThe infection will have to be deleted manually, though.\nProtecting yourself from ransomware\nAccording to the researchers, data deleted by Syrk is likely recoverable, although professional help might be required.\nRecovering the files using a locally stored key works for now, but the malware creators may later rework their tool to deny users the opportunity to decrypt their files without paying the ransom.\nAs always, the best tactic is to prevent ransomware from harming you.\nNever download programs from untrusted sources, even if they promise supercool gameplay advantages.\nEspecially if they promise supercool gameplay advantages.\nBack up your files and store them so they are inaccessible directly from your computer.\nIf you use external HDDs or flash drives, connect them only for as long as it takes to complete backup.\nInstall a reliable protection solution.\nKaspersky Internet Security detects Syrk as a malicious object, which means it will never be allowed to reach your files, even if you try downloading or executing it.\ncheats\ncryptors\nFortnite\ngames\nRansomware\nsecurity\nthreats\nSoccer Cyberthreats\nPrices down, miners up\nHow a simple office prank can lead to serious damage\nCollaboration tools can become a vector for malware propagation.\nNikolay Pankov\nAugust 22, 2019\nSyrk ransomware pretending to be a Fortnite cheat pack | Kaspersky official blog\nFortnite\nSyrk ransomware lurking in Fortnite cheat pack\nSyrk ransomware is out, disguised as a Fortnite cheat pack.\nLearn what it is and how to recover your files.\nAugust 23, 2019\nCybercriminals try to capitalize on anything enjoying public favor, including popular games.\nMalware often pretends to be a pirated copy or mobile version of a game, especially if the latter has not been officially released.\nRecently, a ransomware encryptor called Syrk emerged.\nPassed off as a cheat pack for Fortnite — a game that has built a 250-million-strong user base in two years — Syrk promises players two cheats in one package: aimbot (an autoaiming tool) and WH (aka ESP, a cheat for discovering other players’ locations in the game).\nBut what this package really does is encrypt the victim’s files and demand ransom.\nHow Syrk ransomware works\nAccording to researchers from Cyren, Syrk is a basically intact copy of open-source ransomware. Once executed, the software connects to a command-and-control server and disables the following programs:\nWindows Defender,\nUAC (the system that requests user permission for administrator actions),\nProcess-monitoring apps that can be used to detect the infection, such as Task Manager, Process Monitor, and Process Hacker.\nThe cryptor also adds itself to the autoload list, so the user cannot get rid of it just by rebooting the machine.\nIf any USB drives are connected to the computer, Syrk attempts to infect them as well.\nThe malware then sets about locating and encrypting media files, text documents, spreadsheets and presentations, ZIP and RAR archives, and Photoshop and Microsoft Visual Studio files.\nIt gives the resulting abracadabra the .SYRK extension.\nThe monitor displays a nonclosable demand for ransom.\nSyrk Ransomware seems inspired by a Fortnite Hacktool, terminates task manager, process hacker, really good at being persistent and annoying.\nDoes encrypt but might still be in development.\n30/67 in VThttps://t.co/x7Y6Tz4NB1 pic.twitter.com/6e9wI8XTQR\n— Leo (@leotpsc) August 1, 2019\nThe text with the Guy Fawkes mask in the background says that the only way to recover the files is to contact the criminals by e-mail and pay them.\nThe victim is given limited time for that: Syrk will delete encrypted files every two hours, it says — first from the photos folder, then the desktop, and finally the user’s documents.\nRecover your files free\nThe good news is, you don’t have to pay the ransom, even if Syrk has penetrated your computer and encrypted your documents.\nIts current version actually stores the key needed to decrypt the files right on the infected machine.\nThe key is in the folder C:UsersDefaultAppDataLocalMicrosoft, in a file called -pw+.txt or +dp-.txt.\nTo recover your files:\nCopy the key.\nIn the ransom demand window, press Show My ID to open a page showing your ID and invitation to Enter the key to Decrypt your Files.\nPaste the key into the appropriate field and press Decrypt my Files.\nThe program will recover the encrypted photos and documents and then create and execute two .exe files, which will clean up what remains of the malware.\nThere is an alternative way to save your files, although a more difficult one.\nThe truth is, the malware features a decryption component that will recover the documents, should you succeed in extracting and executing it.\nThe infection will have to be deleted manually, though.\nProtecting yourself from ransomware\nAccording to the researchers, data deleted by Syrk is likely recoverable, although professional help might be required.\nRecovering the files using a locally stored key works for now, but the malware creators may later rework their tool to deny users the opportunity to decrypt their files without paying the ransom.\nAs always, the best tactic is to prevent ransomware from harming you.\nNever download programs from untrusted sources, even if they promise supercool gameplay advantages.\nEspecially if they promise supercool gameplay advantages.\nBack up your files and store them so they are inaccessible directly from your computer.\nIf you use external HDDs or flash drives, connect them only for as long as it takes to complete backup.\nInstall a reliable protection solution.\nKaspersky Internet Security detects Syrk as a malicious object, which means it will never be allowed to reach your files, even if you try downloading or executing it.\ncheats\ncryptors\nFortnite\ngames\nRansomware\nsecurity\nthreats\nSoccer Cyberthreats\nPrices down, miners up\nHow a simple office prank can lead to serious damage\nCollaboration tools can become a vector for malware propagation.\nNikolay Pankov\nAugust 22, 2019",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Syrk ransomware",
+      "type": "malware",
+      "alias": [
+        "Syrk"
+      ],
+      "mother entity": [
+        "open-source ransomware"
+      ]
+    },
+    {
+      "name": "Fortnite cheat pack",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "victim's files",
+      "type": "file",
+      "alias": [
+        "media files",
+        "text documents",
+        "spreadsheets and presentations",
+        "ZIP and RAR archives",
+        "Photoshop and Microsoft Visual Studio files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "open-source ransomware",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "command-and-control server",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows Defender",
+      "type": "security-product",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "UAC",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Task Manager",
+      "type": "general-software",
+      "alias": [
+        "Process Monitor",
+        "Process Hacker"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Process Monitor",
+      "type": "general-software",
+      "alias": [
+        "Task Manager",
+        "Process Hacker"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Process Hacker",
+      "type": "general-software",
+      "alias": [
+        "Task Manager",
+        "Process Monitor"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "autoload list",
+      "type": "windows-registry-key",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "USB drives",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".SYRK extension",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "key",
+      "type": "credential-value",
+      "alias": [
+        "-pw+.txt",
+        "+dp-.txt",
+        "the folder C:\\Users\\Default\\AppData\\Local\\Microsoft"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "decryption component",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "Syrk ransomware"
+      ]
+    },
+    {
+      "name": "encrypted files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "media files",
+      "type": "file",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "text documents",
+      "type": "file",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "spreadsheets and presentations",
+      "type": "file",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "ZIP and RAR archives",
+      "type": "file",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "Photoshop and Microsoft Visual Studio files",
+      "type": "file",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "the folder C:UsersDefaultAppDataLocalMicrosoft",
+      "type": "file",
+      "alias": [],
+      "mother entity": []
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Syrk ransomware",
+      "type": "malware",
+      "alias": [
+        "Syrk"
+      ],
+      "mother entity": [
+        "open-source ransomware"
+      ]
+    },
+    {
+      "name": "Fortnite cheat pack",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "victim's files",
+      "type": "file",
+      "alias": [
+        "media files",
+        "text documents",
+        "spreadsheets and presentations",
+        "ZIP and RAR archives",
+        "Photoshop and Microsoft Visual Studio files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "open-source ransomware",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "command-and-control server",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows Defender",
+      "type": "security-product",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "UAC",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Task Manager",
+      "type": "general-software",
+      "alias": [
+        "Process Monitor",
+        "Process Hacker"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Process Monitor",
+      "type": "general-software",
+      "alias": [
+        "Task Manager",
+        "Process Hacker"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Process Hacker",
+      "type": "general-software",
+      "alias": [
+        "Task Manager",
+        "Process Monitor"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "autoload list",
+      "type": "windows-registry-key",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "USB drives",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".SYRK extension",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "key",
+      "type": "credential-value",
+      "alias": [
+        "-pw+.txt",
+        "+dp-.txt"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "decryption component",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "Syrk ransomware"
+      ]
+    },
+    {
+      "name": "encrypted files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "media files",
+      "type": "file",
+      "alias": [
+        "victim's files"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "text documents",
+      "type": "file",
+      "alias": [
+        "victim's files"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "spreadsheets and presentations",
+      "type": "file",
+      "alias": [
+        "victim's files"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "ZIP and RAR archives",
+      "type": "file",
+      "alias": [
+        "victim's files"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Photoshop and Microsoft Visual Studio files",
+      "type": "file",
+      "alias": [
+        "victim's files"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "the folder C:UsersDefaultAppDataLocalMicrosoft",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": []
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Syrk ransomware",
+      "rel": "disguised as",
+      "rel_type": [
+        "impersonates"
+      ],
+      "obj": "Fortnite cheat pack"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "encrypt the victim’s files",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "victim's files"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "is a basically intact copy of",
+      "rel_type": [
+        "variant-of"
+      ],
+      "obj": "open-source ransomware"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "connects to",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "command-and-control server"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "disables",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "Windows Defender"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "disables",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "UAC"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "disables",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "Task Manager"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "disables",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "Process Monitor"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "disables",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "Process Hacker"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "adds itself to",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "autoload list"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "attempts to infect",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "USB drives"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "locating and encrypting",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "media files"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "locating and encrypting",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "text documents"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "locating and encrypting",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "spreadsheets and presentations"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "locating and encrypting",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "ZIP and RAR archives"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "locating and encrypting",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "Photoshop and Microsoft Visual Studio files"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "gives the resulting abracadabra the",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": ".SYRK extension"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "delete",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "encrypted files"
+    },
+    {
+      "sub": "key",
+      "rel": "located-at",
+      "rel_type": [
+        "located-at"
+      ],
+      "obj": "the folder C:UsersDefaultAppDataLocalMicrosoft"
+    },
+    {
+      "sub": "Syrk ransomware",
+      "rel": "features a",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "decryption component"
+    }
+  ]
+}

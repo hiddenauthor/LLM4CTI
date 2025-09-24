@@ -1,0 +1,236 @@
+{
+  "idorurl": "60k_0008978",
+  "content": "\nBitDefender has just released a free removal tool to disinfect computers affected by Win32.Worm.Stuxnet. \n\nThis tool is capable of removing all known variants of Win32.Worm.Stuxnet, as well as the rootkit drivers that are used to conceal critical components of the worm.\n\nWin32.Worm.Stuxnet is a new breed of ethreats that emerged around midJuly. Although it infects all Windowsbased systems alike, it primarily targets supervisory control and data acquisition (SCADA) systems which run the Siemens WinCC software.\n\nThe worm spreads by taking advantage of a multitude of 0day exploits in the current versions of Windows. Moreover, it can execute itself from an infected removable medium as soon as the .lnk file on the drive has been read by the operating system.\n\nSuccessful exploitation of this vulnerability results in the injection of a backdoor, as well as the installation of two rootkits that will conceal both the .lnk files and the accompanying .tmp files.\n\nBitDefender has added generic detection covering all variants of Stuxnet as of July 19, thus protecting its customers since day zero. Computer users that are not running a BitDefender security solution can now eliminate Stuxnet from the infected systems by running the attached removal tool. The tool can be run on both 32 and 64bit installations and will eliminate both the rootkit drivers and the worm.\n\nInformation in this article is available courtesy of Rzvan Benchea, BitDefender Malware Analyst. The removal tool is available courtesy of Bogdan Timofte, BitDefender Online Threats Researcher.\n\nAll product and company names mentioned herein are for identification purposes only and are the property of, and may be trademarks of their respective owners.\n\nTagsbitdefender malware Removal tool rootkit Stuxnet worm \n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "BitDefender",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BitDefender removal tool",
+      "type": "security-product",
+      "alias": [
+        "free removal tool"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Win32.Worm.Stuxnet",
+      "type": "malware",
+      "alias": [
+        "Stuxnet"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "rootkit drivers",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "rootkits"
+      ],
+      "mother entity": [
+        "Win32.Worm.Stuxnet"
+      ]
+    },
+    {
+      "name": "SCADA systems",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows 0day vulnerabilities",
+      "type": "vulnerability",
+      "alias": [
+        "0day exploits"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".lnk files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".tmp files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "BitDefender",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BitDefender removal tool",
+      "type": "security-product",
+      "alias": [
+        "free removal tool",
+        "removal tool"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Win32.Worm.Stuxnet",
+      "type": "malware",
+      "alias": [
+        "Stuxnet",
+        "worm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "rootkit drivers",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "rootkits"
+      ],
+      "mother entity": [
+        "Win32.Worm.Stuxnet"
+      ]
+    },
+    {
+      "name": "SCADA systems",
+      "type": "generic-noun",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows 0day vulnerabilities",
+      "type": "vulnerability",
+      "alias": [
+        "0day exploits"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".lnk files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".tmp files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "BitDefender",
+      "rel": "has just released",
+      "rel_type": [
+        "authored-by"
+      ],
+      "obj": "BitDefender removal tool"
+    },
+    {
+      "sub": "BitDefender removal tool",
+      "rel": "removes",
+      "rel_type": [
+        "mitigates"
+      ],
+      "obj": "Win32.Worm.Stuxnet"
+    },
+    {
+      "sub": "BitDefender removal tool",
+      "rel": "eliminates",
+      "rel_type": [
+        "mitigates"
+      ],
+      "obj": "rootkit drivers"
+    },
+    {
+      "sub": "Win32.Worm.Stuxnet",
+      "rel": "primarily targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "SCADA systems"
+    },
+    {
+      "sub": "Win32.Worm.Stuxnet",
+      "rel": "takes advantage of",
+      "rel_type": [
+        "exploits"
+      ],
+      "obj": "Windows 0day vulnerabilities"
+    },
+    {
+      "sub": "Win32.Worm.Stuxnet",
+      "rel": "executes from",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": ".lnk files"
+    },
+    {
+      "sub": "rootkit drivers",
+      "rel": "conceal",
+      "rel_type": [
+        "other"
+      ],
+      "obj": ".lnk files"
+    },
+    {
+      "sub": "rootkit drivers",
+      "rel": "conceal",
+      "rel_type": [
+        "other"
+      ],
+      "obj": ".tmp files"
+    }
+  ]
+}

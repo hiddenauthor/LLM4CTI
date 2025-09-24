@@ -1,0 +1,392 @@
+{
+  "idorurl": "60k_0027515",
+  "content": "\n\nby\nSophosLabs\n\nWeve seen an increasing amount of Facebook worms over recent months, and the last few variants have started to reference other social networking sites, including MySpace. I saw the move to a broader spectrum of targets mirrored when I was investigating the following chain, and it led me to believe theres a link between these worms and the current plague of fake antivirus (aka fake AV) Trojans.\nThe chain starts off when you receive a message from someone you know in Facebook. The one I saw last week looked like this:\nyour friends name sent you a message.\nSubject: is it u there?\nWOW\nhttp://www.facebook.com/l.php?u=http://google.com2Fsearch3Fq3Dcache\n\nAs you can see, the Facebook link is trying to direct you to a page thats been cached in Google. In this instance Facebook actually knows that this isnt a site you shouldnt be visiting, and displays the following (click the image to expand it):\n\nStill, I wanted to know what was there, so I jumped directly to the cached page. On first glance it looked innocuous enough, but on closer inspection of the source code it was a site that had been the subject of SQL injection, and was detected by us as Mal/BadSrcC. The point of the injection was to redirect visitors silently to another site, and this is what I found there:\n\nThis script (detected by us as Mal/JSRedirA) uses document.referrer to see what site directed you there, and it then passes you on to a different page accordingly. Which means that someone sent here after they clicked a link in Facebook will end up being shown a different page to someone who clicked on the same link in MySpace.\nAt the moment the sites pointed to all then take you via a 302 redirect to the same payload, but Id expect to see people being filtered by the page to more targeted code soon. For now the page they point to is of the good oldfashioned heres a video, download a codec or software update so you can view it properly. In this instance its trying to get you to install flashupdate.exe, and the video its trying to show you is porn  Ill visit it from a browser without Flash installed to spare you the gory details:\n\nWe detect this page as Mal/VidHtmlA and flashupdate.exe as W32/KoobfaGen  running that executable gives you the following fake error message (because doing nothing at all would be suspicious):\n\nMeanwhile in the background the worm starts running  and so the cycle begins again.\nI promised to tie this together with the fake antivirus Trojans, and so here goes: if I visit the root domain of the Mal/JSRedirA page, I get a different variation of the view this video page, this one detected as Mal/VidHtmlB:\n\nThis page redirects me to another one, detected as Mal/VidHtmlC, which tries to download an executable called setup.exe from yet another remote location. This file is detected as Mal/EncPkGA, and instead of being a Facebook work, this is a fake antivirus Trojan  in fact its a component of the Zlob family, which is one of the oldest strains of this phenomenon.\nSeeing different types of malware hosted on the same sites isnt all that uncommon, and  weve seen instances of quite varied families being seen together. This particular chain incorporates many of the major threats weve been seeing recently, allowing us (to some extent) to plot out a better map of whos responsible for what  in this case, SQL injection, bogus video sites, fake antivirus software, and Facebook worms. The addition of targets including MySpace, Bebo, hi5, and GeoCities shows the direction these particular malware authors seem to be heading.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Facebook worms",
+      "type": "malware",
+      "alias": [
+        "Facebook link"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "MySpace",
+      "type": "general-software",
+      "alias": [
+        "social networking sites"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Google",
+      "type": "general-software",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/JSRedirA",
+      "type": "malware",
+      "alias": [
+        "This script"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "document.referrer",
+      "type": "detailed-part-of-general-software",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "flashupdate.exe",
+      "type": "file",
+      "alias": [
+        "W32/KoobfaGen",
+        "that executable",
+        "the worm"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/VidHtmlA",
+      "type": "malware",
+      "alias": [
+        "this page"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "W32/KoobfaGen",
+      "type": "malware",
+      "alias": [
+        "flashupdate.exe",
+        "that executable",
+        "the worm"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/VidHtmlB",
+      "type": "malware",
+      "alias": [
+        "view this video page"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/VidHtmlC",
+      "type": "malware",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "setup.exe",
+      "type": "file",
+      "alias": [
+        "Mal/EncPkGA",
+        "This file",
+        "fake AV",
+        "fake antivirus Trojan",
+        "this phenomenon"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/EncPkGA",
+      "type": "malware",
+      "alias": [
+        "This file",
+        "fake AV",
+        "fake antivirus Trojan",
+        "setup.exe",
+        "this phenomenon"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Zlob family",
+      "type": "malware",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "malware authors",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "Facebook link",
+      "type": "url",
+      "alias": [],
+      "mother entity": []
+    },
+    {
+      "name": "fake antivirus Trojan",
+      "type": "generic-noun",
+      "alias": [],
+      "mother entity": []
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Facebook worms",
+      "type": "malware",
+      "alias": [
+        "Facebook link"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "MySpace",
+      "type": "general-software",
+      "alias": [
+        "social networking sites"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Google",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/JSRedirA",
+      "type": "malware",
+      "alias": [
+        "This script"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "document.referrer",
+      "type": "detailed-part-of-general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "flashupdate.exe",
+      "type": "file",
+      "alias": [
+        "W32/KoobfaGen",
+        "that executable",
+        "the worm"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/VidHtmlA",
+      "type": "malware",
+      "alias": [
+        "this page"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "W32/KoobfaGen",
+      "type": "malware",
+      "alias": [
+        "flashupdate.exe",
+        "that executable",
+        "the worm"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/VidHtmlB",
+      "type": "malware",
+      "alias": [
+        "view this video page"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/VidHtmlC",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "setup.exe",
+      "type": "file",
+      "alias": [
+        "Mal/EncPkGA",
+        "This file",
+        "fake AV",
+        "fake antivirus Trojan",
+        "this phenomenon"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Mal/EncPkGA",
+      "type": "malware",
+      "alias": [
+        "This file",
+        "fake AV",
+        "fake antivirus Trojan",
+        "setup.exe",
+        "this phenomenon"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Zlob family",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "malware authors",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "Facebook link",
+      "type": "url",
+      "alias": [
+        "Facebook worms"
+      ],
+      "mother entity": []
+    },
+    {
+      "name": "fake antivirus Trojan",
+      "type": "generic-noun",
+      "alias": [
+        "setup.exe",
+        "Mal/EncPkGA",
+        "This file",
+        "fake AV",
+        "this phenomenon"
+      ],
+      "mother entity": []
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Facebook worms",
+      "rel": "reference",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "MySpace"
+    },
+    {
+      "sub": "Facebook link",
+      "rel": "directs to",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "Google"
+    },
+    {
+      "sub": "Mal/JSRedirA",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "document.referrer"
+    },
+    {
+      "sub": "Mal/JSRedirA",
+      "rel": "leads-to",
+      "rel_type": [
+        "leads-to"
+      ],
+      "obj": "Mal/VidHtmlA"
+    },
+    {
+      "sub": "Mal/VidHtmlA",
+      "rel": "trying to get you to install",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "flashupdate.exe"
+    },
+    {
+      "sub": "flashupdate.exe",
+      "rel": "is detected as",
+      "rel_type": [
+        "alias-of"
+      ],
+      "obj": "W32/KoobfaGen"
+    },
+    {
+      "sub": "Mal/JSRedirA",
+      "rel": "is hosted on the same site as",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "Mal/VidHtmlB"
+    },
+    {
+      "sub": "Mal/VidHtmlB",
+      "rel": "redirects me to",
+      "rel_type": [
+        "leads-to"
+      ],
+      "obj": "Mal/VidHtmlC"
+    },
+    {
+      "sub": "Mal/VidHtmlC",
+      "rel": "tries to download",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "setup.exe"
+    },
+    {
+      "sub": "setup.exe",
+      "rel": "is detected as",
+      "rel_type": [
+        "alias-of"
+      ],
+      "obj": "Mal/EncPkGA"
+    },
+    {
+      "sub": "setup.exe",
+      "rel": "is detected as",
+      "rel_type": [
+        "alias-of"
+      ],
+      "obj": "Mal/EncPkGA"
+    },
+    {
+      "sub": "Mal/EncPkGA",
+      "rel": "is a component of",
+      "rel_type": [
+        "is-part-of"
+      ],
+      "obj": "Zlob family"
+    },
+    {
+      "sub": "malware authors",
+      "rel": "target",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "MySpace"
+    },
+    {
+      "sub": "Mal/EncPkGA",
+      "rel": "is",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "fake antivirus Trojan"
+    }
+  ]
+}

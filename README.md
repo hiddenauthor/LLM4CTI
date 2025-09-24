@@ -19,98 +19,87 @@ LLM4CTI's architecture comprises three main phases:
 
 ### 3. Knowledge Graph-Based Applications
 - [**GNN-Based Relationship Prediction**](https://github.com/hiddenauthor/LLM4CTI/tree/main/GNN-Based%20Relationship%20Prediction): Trains a Graph Neural Network (GNN) on the constructed knowledge graph to predict relationships among security entities, supporting proactive defense strategies against emerging threats.
-- [**Seed-Driven Community Detection**](https://github.com/hiddenauthor/LLM4CTI/tree/main/Seed-Driven%20Community%20Detection): Applies community detection algorithms using seed nodes categorized by threat types (e.g., malware, threat actors, vulnerabilities) to uncover densely connected subgraphs that represent different perspectives of the same threat across multiple CTI articles.
-- [**Question Answering Based on Knowledge Graph**](https://github.com/hiddenauthor/LLM4CTI/tree/main/Question%20Answering%20based%20on%20Knowledge%20Graph): Leverages the structured knowledge graph to support LLMs in answering CTI-related multiple-choice questions, improving comprehension and decision-making on cyber threats.
 
-![LLM4CTI Overview](https://i.imgur.com/Vmbwc7R.png)  
+
+![LLM4CTI Overview](https://i.imgur.com/xtTcETK.png)  
 Figure: The overall architecture of LLM4CTI, including chunk-level knowledge extraction, article-level graph construction, and graph-based security applications.
 
 ## Evaluation
 
-We evaluate LLM4CTI on three curated datasets:
+We evaluate LLM4CTI on following curated datasets:
 - **Diverse CTI Dataset**: 51 articles covering 8 threat categories.
-- **CTI Question Dataset**: 510 questions to assess knowledge comprehension.
 - **Top Security Entity Dataset**: 302 articles focused on common threat entities.
 
+
+
 ### RQ1: Knowledge Graph Generation
+We applied LLM4CTI to construct knowledge graphs from articles of the Diverse CTI Dataset. We used Gemini 2.5 Pro as an automated judge, validated against two human experts on 600 triples (agreement: 85.5% precision, 87.3% recall).  
 
-We evaluate the effectiveness of LLM4CTI in transforming unstructured CTI articles into structured knowledge graphs. The evaluation is conducted using precision, recall, and F1-score against ground-truth graphs.
+**Results.** 
+| Threat Category        | LLM4CTI(QWQ 32B) P / R / F1 | LLM4CTI(o4-mini) P / R / F1 | CTINexus P / R / F1 | GraphRAG P / R / F1 | Extractor P / R / F1 | CTIKG P / R / F1 |
+|------------------------|---------------------------|---------------------------|---------------------|---------------------|----------------------|------------------|
+| APT                    | 90.75 / 80.77 / 85.47    | 92.39 / 95.71 / **94.02** | 92.56 / 75.68 / 83.27 | **94.65** / 76.90 / 84.86 | 24.76 / 64.88 / 35.84 | 83.55 / 90.85 / 87.04 |
+| Adware                 | 85.77 / **91.67** / 88.62 | 91.74 / 91.00 / **91.37** | 91.61 / 84.50 / 87.91 | **98.82** / 77.17 / 86.66 | 16.92 / 73.67 / 27.52 | 83.40 / 91.00 / 87.03 |
+| Botnets                | 77.52 / 77.57 / 77.54    | 91.63 / **84.90** / **88.14** | 84.84 / 74.32 / 79.23 | **95.80** / 63.96 / 76.70 | 19.13 / 37.63 / 25.36 | 87.02 / 81.18 / 84.00 |
+| Dos attack             | 83.76 / 78.57 / 81.08    | 87.41 / 52.38 / 65.51     | 88.80 / 52.38 / 65.89 | 82.96 / **95.24** / **88.68** | 6.94 / 19.05 / 10.18 | **95.00** / 33.33 / 49.35 |
+| Ransomware             | 90.63 / 73.57 / 81.21    | 76.75 / 75.20 / 75.97     | **95.66** / 67.93 / 79.45 | 91.33 / 50.53 / 65.06 | 35.15 / 54.11 / 42.61 | 82.61 / **86.02** / **84.28** |
+| Spam/Phishing          | 86.58 / 66.69 / 75.34    | 85.01 / 70.51 / **77.08** | 92.92 / 56.59 / 70.34 | **93.52** / 57.57 / 71.27 | 17.78 / 30.37 / 22.43 | 81.89 / **71.88** / 76.56 |
+| Supply Chain Attacks   | 79.91 / **95.38** / 86.96 | 90.15 / 85.13 / 87.57     | 86.39 / 68.21 / 76.23 | **91.06** / 85.90 / **88.40** | 14.00 / 36.67 / 20.27 | 81.15 / 68.72 / 74.42 |
+| Trojan                 | 85.05 / 63.18 / 72.50    | **98.46** / **85.89** / **91.75** | 73.32 / 45.84 / 56.41 | 97.92 / 58.58 / 73.31 | 14.13 / 37.87 / 20.58 | 79.17 / 64.53 / 71.10 |
+| Virus/Worm             | 91.69 / 79.36 / 85.08    | 92.06 / 89.91 / **90.97** | **94.31** / 69.66 / 80.14 | 94.18 / 75.15 / 83.59 | 25.05 / 52.54 / 33.92 | 82.60 / **92.67** / 87.34 |
+| Vuln. & exploits       | 84.17 / 79.84 / 81.95    | **93.07** / 85.19 / **88.96** | 86.10 / 64.58 / 73.80 | 89.87 / 61.49 / 73.02 | 23.19 / 52.73 / 32.21 | 90.33 / **87.14** / 88.71 |
+| **Average (macro)**    | 85.58 / 78.66 / 81.58    | 89.87 / **81.58** / **85.13** | 88.65 / 65.97 / 75.27 | **93.01** / 70.25 / 79.16 | 19.70 / 45.95 / 27.09 | 84.67 / 76.73 / 78.98 |
 
-| Threat Category              | \tool Precision | \tool Recall | \tool F1 | CTIKG Precision | CTIKG Recall | CTIKG F1 | GPT-4o Precision | GPT-4o Recall | GPT-4o F1 | Extractor Precision | Extractor Recall | Extractor F1 |
-|------------------------------|-----------------|--------------|----------|------------------|--------------|----------|-------------------|---------------|-----------|---------------------|------------------|--------------|
-| APT                          | 95.39%          | 86.18%       | 90.55%   | 99.58%           | 92.80%       | 96.07%   | 98.32%            | 89.15%        | 93.51%    | 62.21%              | 46.46%           | 53.19%       |
-| Adware                       | 94.74%          | 83.64%       | 88.84%   | 93.09%           | 62.96%       | 75.12%   | 95.16%            | 73.58%        | 82.99%    | 70.79%              | 48.15%           | 57.31%       |
-| Botnet                       | 94.49%          | 96.83%       | 95.64%   | 99.50%           | 94.83%       | 97.11%   | 97.83%            | 82.54%        | 89.54%    | 61.90%              | 54.39%           | 57.90%       |
-| Denial-of-Service Attack     | 95.24%          | 89.47%       | 92.27%   | 98.73%           | 73.68%       | 84.39%   | 96.77%            | 89.47%        | 92.98%    | 42.62%              | 61.54%           | 50.36%       |
-| Ransomware                   | 98.57%          | 96.27%       | 97.41%   | 98.37%           | 68.18%       | 80.54%   | 98.59%            | 80.00%        | 88.33%    | 54.23%              | 46.28%           | 49.94%       |
-| Spam/Phishing                | 92.17%          | 91.84%       | 92.00%   | 98.61%           | 66.03%       | 79.09%   | 99.18%            | 73.47%        | 84.41%    | 59.59%              | 49.02%           | 53.79%       |
-| Supply Chain Attack          | 91.89%          | 98.28%       | 94.98%   | 100.00%          | 96.30%       | 98.11%   | 96.43%            | 86.79%        | 91.36%    | 80.19%              | 34.04%           | 47.79%       |
-| Trojan horse                 | 94.12%          | 73.13%       | 82.31%   | 90.00%           | 50.00%       | 64.29%   | 76.19%            | 46.27%        | 57.57%    | 59.74%              | 35.82%           | 44.79%       |
-| Virus/Worm                   | 97.48%          | 90.43%       | 93.82%   | 98.50%           | 88.24%       | 93.09%   | 99.02%            | 71.43%        | 82.99%    | 59.66%              | 58.82%           | 59.24%       |
-| Vulnerability/exploit        | 99.28%          | 95.35%       | 97.27%   | 94.03%           | 88.64%       | 91.25%   | 100.00%           | 87.80%        | 93.51%    | 53.12%              | 71.74%           | 61.04%       |
-| **Average**                  | 95.34%          | 90.14%       | 92.51%   | 97.04%           | 78.17%       | 85.91%   | 95.75%            | 78.05%        | 85.72%    | 60.41%              | 50.63%           | 53.54%       |
 
-
----
-
-### RQ2: Question Answering
-
-We assess how well LLM4CTI’s knowledge graphs support downstream question answering by LLMs. The evaluation is based on multiple-choice questions generated from CTI articles.
-| Approach                  | APT     | Adware  | Botnet  | Denial-of-Service attack | Ransomware | Spam/Phishing | Supply Chain Attack | Trojan horse | Virus/Worm | Vulnerability/exploit | Average   |
-|---------------------------|---------|---------|---------|-------------------------|------------|---------------|---------------------|--------------|------------|----------------------|-----------|
-| **LLM4CTI (Ours)**        | 98.33%  | 94.00%  | 87.50%  | 100.00%                 | 85.71%     | 90.00%        | 92.00%              | 90.00%       | 90.00%     | 86.00%               | 90.68%    |
-| CTIKG                     | 88.33%  | 92.00%  | 90.00%  | 86.67%                  | 85.71%     | 86.67%        | 86.00%              | 66.67%       | 88.33%     | 88.00%               | 86.60%    |
-| GPT-4o                    | 96.67%  | 90.00%  | 77.50%  | 93.33%                  | 82.86%     | 86.67%        | 94.00%              | 90.00%       | 85.00%     | 88.00%               | 87.96%    |
-| GPT-4o (No Graph)         | 66.67%  | 86.00%  | 80.00%  | 66.67%                  | 81.43%     | 80.00%        | 76.00%              | 66.67%       | 78.33%     | 78.00%               | 77.28%    |
 
 ---
 
-### RQ3: Relationship Prediction
+### RQ2: Ablation Study
 
-We evaluate how LLM4CTI’s knowledge graphs can support link prediction using GNN models. This task measures the ability to uncover latent relationships among security entities.
+We study the effect of backend models, temperature, and chunk size on the performance of LLM4CTI.  
 
-| Link Type                         | Count | Precision | Recall  | F1 Score |
-|----------------------------------|-------|-----------|---------|----------|
-| malware–malware                 | 225   | 100.00%   | 87.80%  | 93.51%   |
-| attack pattern–general entity   | 225   | 100.00%   | 88.97%  | 94.16%   |
-| campaign–domain name            | 215   | 100.00%   | 81.11%  | 89.57%   |
-| domain name–malware             | 195   | 100.00%   | 85.19%  | 92.00%   |
-| domain name–threat actor        | 190   | 100.00%   | 90.00%  | 94.74%   |
-| malware–threat actor            | 185   | 100.00%   | 86.88%  | 92.98%   |
-| general entity–malware          | 185   | 100.00%   | 80.00%  | 88.89%   |
-| identity–malware                | 175   | 100.00%   | 88.00%  | 93.62%   |
-| campaign–threat actor           | 170   | 100.00%   | 82.76%  | 90.57%   |
-| infrastructure–malware          | 170   | 100.00%   | 88.28%  | 93.77%   |
-| hacker tool–malware             | 165   | 100.00%   | 85.33%  | 92.09%   |
-| file–malware                    | 160   | 100.00%   | 74.12%  | 85.14%   |
-| campaign–identity               | 160   | 100.00%   | 87.69%  | 93.44%   |
-| identity–threat actor           | 155   | 97.96%    | 83.48%  | 90.14%   |
-| infrastructure–threat actor     | 140   | 100.00%   | 84.21%  | 91.43%   |
-| **Average**                     | –     | **99.86%**| 84.92%  | **91.74%**|
+#### Impact of Different LLMs
 
----
+| Model            | Precision | Recall | F1-Score |
+|------------------|-----------|--------|----------|
+| QWQ 32B          | 86.21%    | 80.29% | 83.15%   |
+| OpenAI o4-mini   | 89.90%    | 80.98% | 85.21%   |
+| GPT-4o           | 57.20%    | 44.29% | 49.92%   |
+| LLaMa4 Maverick  | 67.30%    | 56.88% | 61.65%   |
+| Qwen3 32B        | 78.59%    | 78.47% | 78.53%   |
+| Qwen3 30B-A3B    | 79.94%    | 68.30% | 73.66%   |
 
-### RQ4: Community Detection
+#### Impact of Temperature (QWQ Model)
 
-We examine whether LLM4CTI can uncover cross-document semantic clusters through community detection. Communities are evaluated for their edge coverage, article support, and relevance.
+| Temperature | Precision | Recall | F1-Score |
+|-------------|-----------|--------|----------|
+| 0.2         | 86.21%    | 80.29% | 83.15%   |
+| 0.6         | 68.53%    | 50.40% | 58.08%   |
+| 1.0         | 62.81%    | 38.70% | 47.89%   |
 
-| Central Node        | Threat Type   | Edges From Core | Edges From Related | Related Article Count | Unrelated Edges |
-|---------------------|---------------|------------------|---------------------|------------------------|------------------|
-| DDoS                | attack-pattern| 10               | 21                  | 10                     | 3                |
-| Ransomware Attack   | attack-pattern| 8                | 15                  | 3                      | 0                |
-| Malspam             | attack-pattern| 9                | 11                  | 4                      | 0                |
-| Ursnif              | malware       | 24               | 8                   | 3                      | 2                |
-| Scarab              | malware       | 26               | 2                   | 2                      | 0                |
-| ZeuS Trojan         | malware       | 6                | 20                  | 12                     | 1                |
-| Locky ransomware    | malware       | 10               | 12                  | 3                      | 1                |
-| CryptoWall 4.0      | malware       | 15               | 2                   | 1                      | 1                |
-| WannaMine           | malware       | 13               | 3                   | 1                      | 1                |
-| Kelihos.B           | malware       | 19               | 3                   | 2                      | 0                |
-| Neutrino            | malware       | 5                | 16                  | 12                     | 1                |
-| Koobface gang       | threat-actor  | 21               | 9                   | 5                      | 0                |
-| Lazarus             | threat-actor  | 6                | 4                   | 2                      | 0                |
-| ProjectM            | threat-actor  | 13               | 2                   | 2                      | 0                |
-| Paunch              | threat-actor  | 19               | 24                  | 13                     | 0                |
-| Java vulnerability  | vulnerability | 10               | 13                  | 6                      | 0                |
-| SMB vulnerability   | vulnerability | 8                | 38                  | 14                     | 0                |
-| **Total**           | –             | 222              | 203                 | 95                     | 10               |
+
+#### Impact of Chunk Size (Qwen3 32B)
+
+| Chunk Size | Precision | Recall | F1-Score |
+|------------|-----------|--------|----------|
+| 400        | 78.59%    | 78.47% | 78.53%   |
+| 200        | 74.86%    | 83.68% | 79.02%   |
+| 100        | 78.59%    | 86.38% | 82.30%   |
+
+
+### RQ3: Semantic Relationship Prediction
+
+#### Results of Link Prediction
+
+| Entity Pair Type                     | Hit@1  | Hit@5  | Hit@10 |
+|--------------------------------------|--------|--------|--------|
+| malware → malware                    | 9.14%  | 64.00% | 80.57% |
+| malware → threat actor/intrusion     | 3.36%  | 57.98% | 78.15% |
+| infrastructure → malware             | 6.90%  | 49.43% | 63.22% |
+| general software → malware           | 5.33%  | 34.67% | 45.33% |
+| attack pattern → malware             | 2.78%  | 54.17% | 62.50% |
+| infrastructure → threat actor        | 11.11% | 50.79% | 71.43% |
+| attack pattern → threat actor        | 3.57%  | 42.86% | 71.43% |
+| threat actor → threat actor          | 2.33%  | 60.47% | 74.42% |
+| attack pattern → infrastructure      | 3.33%  | 53.33% | 60.00% |
+| attack pattern → attack pattern      | 7.41%  | 74.07% | 81.48% |

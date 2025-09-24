@@ -1,0 +1,218 @@
+{
+  "idorurl": "60k_0027883",
+  "content": "\n\nby\nMike Coulter\n\nIndependence day has always been a big event for our neighbors south of the border. For the Dorf (Storm) authors, this is no exception. After staying dormant for a day, the Dorf botnet launched the latest campaign at 13:00 PST. This time, they are using Independence day fireworks video as the lure.\nHeres a partial list of subject lines seen in the latest Dorf spam messages:\nAmazing Independence Day salute\nAmazing firework 2008\nAmerica for You and Me\nAmerica the Beautiful\nCelebrate Independence\nCelebrate with Pride\nCelebrating Fourth of July\nCelebrations have already begun\nFabulous Independence Day firework\nGod bless America\nHappy Fourth of July\nHappy Independence Day\nIndependence Day firework broke all records\nLight up the sky\nProud to be an American\nSparkling Celebration of Independence Day\nSpectacular fireworks show\nStars and Strips forever\nSuper 4th!\nThe best firework youve ever seen\nThe best of 4th of July Salute\nWell done 4th!\nThe body of the messages is similar to previous Dorf campaigns, with a one line phrase followed by an IP address, such as:\nAmazing Independence Day salute http://xxx.xxx.xxx.xxx/\nAmazing Independence Day show http://xxx.xxx.xxx.xxx/\nBright and joyful Fourth of July http://xxx.xxx.xxx.xxx/\nCelebrate the spirit of America http://xxx.xxx.xxx.xxx/\nCelebrating Fourth of July http://xxx.xxx.xxx.xxx/\nCelebrations have already begun http://xxx.xxx.xxx.xxx/\nLight up the sky http://xxx.xxx.xxx.xxx/\nProud to be an American http://xxx.xxx.xxx.xxx/\nStars and Strips forever http://xxx.xxx.xxx.xxx/\nThe best firework youve ever seen http://xxx.xxx.xxx.xxx/\nWell done 4th! http://xxx.xxx.xxx.xxx/\nVisiting the IP address would bring up a page with an online video player and a picture of fireworks inside the player. The following text is  included below the image:\nColorful Independence Day events have already started throughout the country. The largest firework happens on the last weekday before the Fourth of July. Unprecedented sum of money was spent on this fabulous show. If you want to see the best Independence Day firework just click on the video and run it.\n\nUsers attempting to watch the fireworks video will instead be infected by malicious code.\nThe video links to an executable called fireworks.exe. In addition, the Dorf site also launches the 11 iframe ind.php. For Sophos customers, this latest Dorf campaign is a nonevent. Our antispam solutions proactively detect these Dorf spam messages. With regards to the Dorf site, the executable is proactively detected as Troj/DorfBP. The obfuscated malicious javascript ind.php, is proactively detected as  Mal/ObfJSAY.\nVeteran observers of the malware scene may well remember that this is not the first time that hackers have used fireworks in their attempts to infect computer users.  At the tail end of 1998, the French virus writer Spanska used his Happy99 malware to display animated images of a fireworks display.\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Dorf botnet",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "Storm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Independence Day Dorf campaign",
+      "type": "campaign",
+      "alias": [
+        "latest Dorf campaign"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Dorf spam messages",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://xxx.xxx.xxx.xxx/",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "fireworks.exe",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ind.php",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Troj/DorfBP",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/ObfJSAY",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Dorf botnet",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "Storm"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Independence Day Dorf campaign",
+      "type": "campaign",
+      "alias": [
+        "latest Dorf campaign"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Dorf spam messages",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "http://xxx.xxx.xxx.xxx/",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "fireworks.exe",
+      "type": "file",
+      "alias": [
+        "Troj/DorfBP"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ind.php",
+      "type": "file",
+      "alias": [
+        "Mal/ObfJSAY"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Troj/DorfBP",
+      "type": "malware",
+      "alias": [
+        "fireworks.exe"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/ObfJSAY",
+      "type": "malware",
+      "alias": [
+        "ind.php"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Dorf botnet",
+      "rel": "launched",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "Independence Day Dorf campaign"
+    },
+    {
+      "sub": "Dorf spam messages",
+      "rel": "contain link to",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "http://xxx.xxx.xxx.xxx/"
+    },
+    {
+      "sub": "http://xxx.xxx.xxx.xxx/",
+      "rel": "links to",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "fireworks.exe"
+    },
+    {
+      "sub": "http://xxx.xxx.xxx.xxx/",
+      "rel": "launches",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "ind.php"
+    },
+    {
+      "sub": "fireworks.exe",
+      "rel": "detected as",
+      "rel_type": [
+        "categorized-as"
+      ],
+      "obj": "Troj/DorfBP"
+    },
+    {
+      "sub": "ind.php",
+      "rel": "detected as",
+      "rel_type": [
+        "categorized-as"
+      ],
+      "obj": "Mal/ObfJSAY"
+    }
+  ]
+}

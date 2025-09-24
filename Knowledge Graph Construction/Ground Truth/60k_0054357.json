@@ -1,0 +1,122 @@
+{
+  "idorurl": "60k_0054357",
+  "content": "\n\nShare\n\nIf undetected by a users security solution or content or adblocker, the script ran in the background unbeknown to the user until the webpage was closed. A number of the affected websites, including that of the ICO, were also offline for hours in the aftermath of the attack.\n\nOver 4,200 websites worldwide, including many in the public sector in the United States, the United Kingdom and Australia, inadvertently became part of a scheme on Sunday in which attackers generated profits by forcing visitors computers to surreptitiously mine a digital currency called Monero.\nThe latest major flareup in covert cryptocurrency mining, a practice also known as cryptojacking, generated headlines after security researcher Scott Helme sounded the alarm on the hack on Sunday. He was alerted to the issue by another security professional, Ian ThorntonTrump, who had received a warning from his security software when visiting the website of the Information Commissioners Office (ICO), the UKs data protection watchdog.\nScott Helme tweeting about the ICO website compromise. Image source: Twitter\nThe US courts portal (uscourts.gov), various websites belonging to the UKs National Health System (NHS) services and many others made it to the list of 4,275 targets, many of them highprofile. They all load a plugin that had been maliciously tainted to add a stealthy cryptocurrency mining script known as CoinHive.\nCoinHive inserted itself into the thousands of websites via Browsealoud, a thirdparty browser plugin that converts website text to speech for visually impaired visitors and for those with dyslexia or low literacy. If undetected by a users security solution or content or adblocker, the script ran in the background unbeknown to the user until the webpage was closed.\nIf you want to load a crypto miner on 1,000 websites you dont attack 1,000 websites, you attack the 1 website that they all load content from, Helme said on his website.\nThis type of attack isnt new  but this is the biggest Ive seen. A single company being hacked has meant thousands of sites impacted across the UK, Ireland and the United States, Helme was quoted as saying for Sky News.\nThe plugins maker, Texthelp, confirmed that their product had been compromised at 11.14 am GMT on Sunday and had remained active for four hours.\nTexthelp has in place continuous automated security tests for Browsealoud, and these detected the modified file and as a result the product was taken offline.This removed Browsealoud from all our customer sites immediately, addressing the security risk without our customers having to take any action, the companys, CTO and Data Security Officer, Martin McKay said. He gave assurances that no customer data had been accessed or lost, nor that any data redirection had taken place.\nA number of the affected websites, including that of the ICO, were also offline for hours in the aftermath of the attack.\nThe UKs National Cyber Security Centre (NCSC) said that its experts are examining data involving incidents of malware being used to illegally mine cryptocurrency.\nThe affected service has been taken offline, largely mitigating the issue. Government websites continue to operate securely. At this stage there is nothing to suggest that members of the public are at risk, reads the statement.\nCoinHive has been detected on thousands of websites as well as in browser extensions and plugins since it was rolled out last September. While it was touted as a legitimate way for website owners to generate revenue using a method other than adverts, CoinHive has been coopted by neerdowells looking to make a quick buck. The prevalence of the practice picked up extra steam as bitcoin and other virtual currencies soared in price.\nMalicious cryptocurrency miners are also known to target unpatched Windows webservers and mobile devices.\n\nTom Foltn 12 Feb 2018  03:49PM\n\nSimilar Articles\n\nCryptocurrency \n\nCoinhive cryptocurrency miner to call it a day next week\n\nCryptocurrency \n\nFirst clipper malware discovered on Google Play\n\nCryptocurrency \n\nOne in three UK orgs hit by cryptojacking in previous month, survey finds\n\nCryptocurrency \n\nUNICEF now using cryptocurrency mining for fundraising\n\nDiscussion\n\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Attacker(using: CoinHive)",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "uscourts.gov",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "National Health Service",
+      "type": "identity",
+      "alias": [
+        "NHS"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Browsealoud",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Attacker(using: CoinHive)",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "attackers"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "uscourts.gov",
+      "type": "domain-name",
+      "alias": [
+        "US courts portal"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "National Health Service",
+      "type": "identity",
+      "alias": [
+        "NHS"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Browsealoud",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "Attacker(using: CoinHive)",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "uscourts.gov"
+    },
+    {
+      "sub": "Attacker(using: CoinHive)",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "National Health Service"
+    },
+    {
+      "sub": "uscourts.gov",
+      "rel": "loads",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Browsealoud"
+    },
+    {
+      "sub": "National Health Service",
+      "rel": "loads",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Browsealoud"
+    }
+  ]
+}

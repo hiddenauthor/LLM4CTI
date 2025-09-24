@@ -1,0 +1,231 @@
+{
+  "idorurl": "60k_0049861",
+  "content": "\n\nMicrosoft has released a security bulletin announcing of a zeroday vulnerability affecting Microsoft Word. Furthermore, the company states that there are limited, targeted attacks directed at Microsoft Word 2010. If exploited, this vulnerability (CVE20141761) could allow a remote attacker to execute commands remotely via specially crafted files and email messages.\nMicrosoft has also released preliminary details of the vulnerability and the exploit code. The vulnerability is exploited if a user opens an RTF file in Microsoft Word or previews or opens an RTF email message in Microsoft Outlook using Microsoft Word as the email viewer. It should be noted that Microsoft Word is the default email reader for Microsoft Outlook 2007, Microsoft Outlook 2010, and Microsoft Outlook 2013.\nSeveral workarounds were included in Microsofts initial bulletin, including disabling opening of RTF files and enforcing Word to always open said type of file in Protected View. A fixtool has also been made available to help address the vulnerability while Microsoft works on a more permanent solution.\nWhats interesting is that Microsoft Word 2003 is listed as one of the affected software for this particular vulnerabilityjust a couple of weeks before support for Microsoft Office 2003 ends on April 8th. We advise users to upgrade to later versions of the software to continue receiving security updates.\nWe are currently looking into this vulnerability and will provide further information as appropriate. Trend Micro Deep Security has released a new deep packet inspection (DPI) rule to protect against exploits leveraging this vulnerability:\n\n1005990  Microsoft Word RTF Remote Code Execution Vulnerability (CVE20141761)\n\nUpdate as of April 4, 2014, 3:08 P.M. PDT\nExploits related to this vulnerability are detected by Trend Micro as the following:\n\nHEURRTFEXP.A\nTROJARTIEF.NSA\nTROJARTIEF.NSB\n\nRelated posts:\nDevice Vulnerabilities in the Connected Home:  Uncovering Remote Code Execution and More \nMicrosofts April Patch Tuesday Fixes Remote Code Execution Vulnerabilities in Fonts and Keyboard \n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: MicrosoftMicrosoft WordVulnerabilitieszeroday vulnerability\n\n",
+  "实体列表(没更新别名)": [
+    {
+      "name": "Microsoft Word",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "CVE20141761",
+      "type": "vulnerability",
+      "alias": [
+        "zeroday vulnerability",
+        "CVE20141761"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "remote attacker",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "specially crafted files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "email messages",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "HEURRTFEXP.A",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TROJARTIEF.NSA",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TROJARTIEF.NSB",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Microsoft Word",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "CVE20141761",
+      "type": "vulnerability",
+      "alias": [
+        "HEURRTFEXP.A",
+        "Microsoft Word RTF Remote Code Execution Vulnerability",
+        "TROJARTIEF.NSA",
+        "TROJARTIEF.NSB",
+        "zeroday vulnerability"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "remote attacker",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "specially crafted files",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "email messages",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "HEURRTFEXP.A",
+      "type": "malware",
+      "alias": [
+        "CVE20141761"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TROJARTIEF.NSA",
+      "type": "malware",
+      "alias": [
+        "CVE20141761"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TROJARTIEF.NSB",
+      "type": "malware",
+      "alias": [
+        "CVE20141761"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "relationshiplist": [
+    {
+      "sub": "CVE20141761",
+      "rel": "could allow a remote attacker to execute commands remotely",
+      "rel_type": [
+        "leads-to"
+      ],
+      "obj": "remote attacker"
+    },
+    {
+      "sub": "remote attacker",
+      "rel": "execute commands remotely via",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "specially crafted files"
+    },
+    {
+      "sub": "remote attacker",
+      "rel": "execute commands remotely via",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "email messages"
+    },
+    {
+      "sub": "CVE20141761",
+      "rel": "is exploited if a user opens an RTF file in",
+      "rel_type": [
+        "exploits"
+      ],
+      "obj": "Microsoft Word"
+    },
+    {
+      "sub": "HEURRTFEXP.A",
+      "rel": "related to",
+      "rel_type": [
+        "based-on"
+      ],
+      "obj": "CVE20141761"
+    },
+    {
+      "sub": "TROJARTIEF.NSA",
+      "rel": "related to",
+      "rel_type": [
+        "based-on"
+      ],
+      "obj": "CVE20141761"
+    },
+    {
+      "sub": "TROJARTIEF.NSB",
+      "rel": "related to",
+      "rel_type": [
+        "based-on"
+      ],
+      "obj": "CVE20141761"
+    }
+  ]
+}
