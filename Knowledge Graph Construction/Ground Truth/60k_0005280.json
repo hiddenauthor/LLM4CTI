@@ -1,198 +1,172 @@
 {
-  "idorurl": "60k_0005280",
-  "content": "\nThe Websense ThreatSeeker Network has detected that two Nepalese government websites, theNational Information Technology Center (NITC)and theOffice of the Prime Minister and Council Minister (nitc.gov.npandopmcm.gov.np respectively),have been compromised and injected with malicious code that tries to exploit the Java vulnerabilityCVE20120507. The aim of this injection is to install, through successfully exploiting that Java weakness, a backdoor that is also dubbed Zegost on the systems of visitors to these websites.\nThis vulnerability (CVE20120507) wasalso used in theAmnesty International UKwebsite compromise and in theINSS website compromise that we reported a few months back. Itsinterestingto note that all those compromises had injected code that was taken from theMetasploitframework, served in clear form, and not obfuscated. Although the use of code from the Metasploit framework doesntnecessarilyindicate a link between all thecompromises, we found further common characteristics between the compromises of the Amnesty UK website and theNepalese government website by analyzing the backdoor CC points when we noticed that they connected to the same domain in China.\nThe backdoor variant in this attack is known to have beenused in other targeted attacks that were aimed atUyghurs, Tibetans, and others in that area.\nWebsense customers are protected from these threats by ACE, ourAdvanced Classification Engine.\n\nTechnical Analysis\nAccording toCyberwarnews, in early 2012, the websites of Nepalese institutions, such as the police, sufferedtwo other types of attacks mainly in the form of defacements and data leakage. But its not just Nepal that has been affected.This region has recently seen a sequence of targeted attacks and APTs.\nBelow is the content of the Nepalese National Information Technology Center (NITC) Web page along with the injected code marked in red:\n\nThe main page was injected with a Java JAR file loader which once rendered by the Web browser is executed and attempts to exploit the CVE20120507 vulnerability. The name used for the Java class name (msf.x.Exploit.class) and the content of the file confirmed that the codewas taken from the Metasploit framework. If the exploit code in the JAR file has been successfully executed, the exploit shellcode downloads and runs the executable file named tools.exeon the impacted system (MD5:3c7b7124f84cc4d29aa067eca6110e2f).\nThe ThreatSeeker Network was able to connect that same executable file dropped fromnitc.gov.np(National Information Technology Center)to another Nepalese government website,opmcm.gov.np(Office of the Prime Minister and Council Minister website),as shown below:\n\nThe red, boxed URL is the website of the Office of the Prime Minister and Council Minister. We found out that this particular website was compromised this year, at least from May 915, to serve this same backdoor executable (MD5:3c7b7124f84cc4d29aa067eca6110e2f):\n\nThe content that was injectedbetween these dates at thewebsite of the Office of the Prime Minister and Council Minister wasidenticalto the code injectedat theNational Information Technology Center website,confirming that the same attack vector was used for both:\n\nWe detected that thedropped backdoor tools.exe (MD5:3c7b7124f84cc4d29aa067eca6110e2f) is a variant AD of the backdoorZegost. This backdoor toolkit or remote administration tool (RAT) has also been involved in other targeted attacks in Asia, according toan analysis by AlienVault in their researchblog.\nThanks to the Websense ThreatScope sandbox service, the CC address was detected atwho.xhhow4.com,as shown in the picture below (for the complete sandbox report, clickhere).\nThe domain hhow4.comwas also used as a CC point for the dropped backdoor served at thecompromised Amnesty UK website, where that variant specifically connected to the address at shell.xhhow4.com(for the complete sandbox report, clickhere).\n\nBoth CCs are hostedat IP address184.22.171.216:\n\nThe domainxhhow4.comis hosted in China by a Web hosting company known as Hichina Zhicheng Technology Co., Ltd. The next image shows a Robtex DNS names graph analysis for thatdomain:\n\nOnce the backdoor is installed on the impacted system, it initiates connections from localTCP port 1320.The destination address is to theCC at who.xhhow4.com and uses remoteTCP port 53 (usually the port reserved for the DNS Zone transfer). However, its important to note that the traffic wasnt DNS traffic but theproprietaryprotocol used by the backdoor for remote communications. Below is the first connection sequence between the backdoor and the CC:\n\nBy decoding the TCP stream, it is possible to recognize that custom encryption was used to exchange information with the CC. The network traffic starts also with a keyword,URATU, as shown below:\n\nOnce executed, the binary creates aMutex namedmicrosoft.comreported below:\n\nThe backdoor also uses common features like other common backdoors, such as keylogging, and supports the ability to accept and run commands remotely. As in other cases, we can see that this backdoor isnthighly complexat all, but its certainly no less effective than other complex malware once executed on the target systems. Another interesting aspect of this backdoor file is that its signed with what appears to be aninvalidfakecertificate issued to360.cn(a Chinese ISP) by VeriSign, as shown in the properties box:\n\nThe certificatecontains the following details:\n\nHaving malicious code signed with certificates is a trend that weve seen in other targeted attacks that can reduce the effectiveness of human and automatic countermeasures.\n\nIn this blog, we covered the compromise of Nepalese government websites in what appears to be a chain of targeted attacks. We managed to connect those attacks to a previously reported attack that took place in a different country: the compromise ofthe Amnesty International UK website. This shows that cyber warfare is trending and kicking and that theres certainly an effort by international players to staydominant and persistentin that realm.\n\nSecurity Researchers: Gianluca Giuliani, Elad Sharf. ",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "Nepalese government websites",
-      "type": "identity",
-      "alias": [
-        "National Information Technology Center",
-        "NITC",
-        "Office of the Prime Minister and Council Minister",
-        "OPMCM",
-        "nitc.gov.np",
-        "opmcm.gov.np"
+      "sub": "Attacker(using: CVE-2012-0507)",
+      "rel": "compromises",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Nepalese government websites"
     },
     {
-      "name": "CVE-2012-0507",
-      "type": "vulnerability",
-      "alias": [
-        "CVE20120507"
+      "sub": "Attacker(using: CVE-2012-0507)",
+      "rel": "compromises",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Amnesty International UK website"
     },
     {
-      "name": "Zegost",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Attacker(using: CVE-2012-0507)",
+      "rel": "compromises",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "INSS website"
     },
     {
-      "name": "tools.exe",
-      "type": "malware",
-      "alias": [
-        "3c7b7124f84cc4d29aa067eca6110e2f",
-        "Zegost variant AD"
+      "sub": "Attacker(using: CVE-2012-0507)",
+      "rel": "tries to exploit",
+      "rel_type": [
+        "exploits"
       ],
-      "mother entity": [
-        "Zegost"
-      ]
+      "obj": "CVE-2012-0507"
     },
     {
-      "name": "Metasploit framework",
-      "type": "hacker-tool",
-      "alias": [
-        "Metasploit"
+      "sub": "Attacker(using: CVE-2012-0507)",
+      "rel": "used code taken from",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Metasploit framework"
     },
     {
-      "name": "Java JAR file loader",
-      "type": "detailed-part-of-general-software",
-      "alias": [
-        "None"
+      "sub": "Metasploit framework",
+      "rel": "consists-of",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "msf.x.Exploit.class"
     },
     {
-      "name": "msf.x.Exploit.class",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
+      "sub": "Nepalese government websites",
+      "rel": "injected with",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "Metasploit framework"
-      ]
+      "obj": "Java JAR file loader"
     },
     {
-      "name": "Amnesty International UK website",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "Java JAR file loader",
+      "rel": "attempts to exploit",
+      "rel_type": [
+        "exploits"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "CVE-2012-0507"
     },
     {
-      "name": "INSS website",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "exploit shellcode",
+      "rel": "downloads and runs",
+      "rel_type": [
+        "downloads"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "tools.exe"
     },
     {
-      "name": "who.xhhow4.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "CVE-2012-0507",
+      "rel": "leads-to",
+      "rel_type": [
+        "leads-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "tools.exe"
     },
     {
-      "name": "shell.xhhow4.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "tools.exe",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Zegost"
     },
     {
-      "name": "hhow4.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "tools.exe",
+      "rel": "impersonates certificate of",
+      "rel_type": [
+        "impersonates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "360.cn"
     },
     {
-      "name": "184.22.171.216",
-      "type": "ipv4-addr",
-      "alias": [
-        "None"
+      "sub": "tools.exe",
+      "rel": "shows issuer as",
+      "rel_type": [
+        "other"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "VeriSign"
     },
     {
-      "name": "Hichina Zhicheng Technology Co., Ltd.",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "Zegost",
+      "rel": "connects to",
+      "rel_type": [
+        "beacons-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "who.xhhow4.com"
     },
     {
-      "name": "360.cn",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "Zegost",
+      "rel": "connects to",
+      "rel_type": [
+        "beacons-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "shell.xhhow4.com"
     },
     {
-      "name": "VeriSign",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "who.xhhow4.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "184.22.171.216"
     },
     {
-      "name": "China",
-      "type": "location",
-      "alias": [
-        "None"
+      "sub": "shell.xhhow4.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "184.22.171.216"
     },
     {
-      "name": "Attacker(using: CVE-2012-0507)",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "all those compromises"
+      "sub": "who.xhhow4.com",
+      "rel": "is-part-of",
+      "rel_type": [
+        "is-part-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "hhow4.com"
     },
     {
-      "name": "exploit shellcode",
-      "type": "malware",
-      "alias": [],
-      "mother entity": []
+      "sub": "shell.xhhow4.com",
+      "rel": "is-part-of",
+      "rel_type": [
+        "is-part-of"
+      ],
+      "obj": "hhow4.com"
+    },
+    {
+      "sub": "hhow4.com",
+      "rel": "located-at",
+      "rel_type": [
+        "located-at"
+      ],
+      "obj": "China"
+    },
+    {
+      "sub": "Hichina Zhicheng Technology Co., Ltd.",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "hhow4.com"
     }
   ],
   "entitylist": [
@@ -397,174 +371,6 @@
       "mother entity": []
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "Attacker(using: CVE-2012-0507)",
-      "rel": "compromises",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "Nepalese government websites"
-    },
-    {
-      "sub": "Attacker(using: CVE-2012-0507)",
-      "rel": "compromises",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "Amnesty International UK website"
-    },
-    {
-      "sub": "Attacker(using: CVE-2012-0507)",
-      "rel": "compromises",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "INSS website"
-    },
-    {
-      "sub": "Attacker(using: CVE-2012-0507)",
-      "rel": "tries to exploit",
-      "rel_type": [
-        "exploits"
-      ],
-      "obj": "CVE-2012-0507"
-    },
-    {
-      "sub": "Attacker(using: CVE-2012-0507)",
-      "rel": "used code taken from",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Metasploit framework"
-    },
-    {
-      "sub": "Metasploit framework",
-      "rel": "consists-of",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "msf.x.Exploit.class"
-    },
-    {
-      "sub": "Nepalese government websites",
-      "rel": "injected with",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "Java JAR file loader"
-    },
-    {
-      "sub": "Java JAR file loader",
-      "rel": "attempts to exploit",
-      "rel_type": [
-        "exploits"
-      ],
-      "obj": "CVE-2012-0507"
-    },
-    {
-      "sub": "exploit shellcode",
-      "rel": "downloads and runs",
-      "rel_type": [
-        "downloads"
-      ],
-      "obj": "tools.exe"
-    },
-    {
-      "sub": "CVE-2012-0507",
-      "rel": "leads-to",
-      "rel_type": [
-        "leads-to"
-      ],
-      "obj": "tools.exe"
-    },
-    {
-      "sub": "tools.exe",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "Zegost"
-    },
-    {
-      "sub": "tools.exe",
-      "rel": "impersonates certificate of",
-      "rel_type": [
-        "impersonates"
-      ],
-      "obj": "360.cn"
-    },
-    {
-      "sub": "tools.exe",
-      "rel": "shows issuer as",
-      "rel_type": [
-        "other"
-      ],
-      "obj": "VeriSign"
-    },
-    {
-      "sub": "Zegost",
-      "rel": "connects to",
-      "rel_type": [
-        "beacons-to"
-      ],
-      "obj": "who.xhhow4.com"
-    },
-    {
-      "sub": "Zegost",
-      "rel": "connects to",
-      "rel_type": [
-        "beacons-to"
-      ],
-      "obj": "shell.xhhow4.com"
-    },
-    {
-      "sub": "who.xhhow4.com",
-      "rel": "resolves-to",
-      "rel_type": [
-        "resolves-to"
-      ],
-      "obj": "184.22.171.216"
-    },
-    {
-      "sub": "shell.xhhow4.com",
-      "rel": "resolves-to",
-      "rel_type": [
-        "resolves-to"
-      ],
-      "obj": "184.22.171.216"
-    },
-    {
-      "sub": "who.xhhow4.com",
-      "rel": "is-part-of",
-      "rel_type": [
-        "is-part-of"
-      ],
-      "obj": "hhow4.com"
-    },
-    {
-      "sub": "shell.xhhow4.com",
-      "rel": "is-part-of",
-      "rel_type": [
-        "is-part-of"
-      ],
-      "obj": "hhow4.com"
-    },
-    {
-      "sub": "hhow4.com",
-      "rel": "located-at",
-      "rel_type": [
-        "located-at"
-      ],
-      "obj": "China"
-    },
-    {
-      "sub": "Hichina Zhicheng Technology Co., Ltd.",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "hhow4.com"
-    }
-  ]
+  "content": "\nThe Websense ThreatSeeker Network has detected that two Nepalese government websites, theNational Information Technology Center (NITC)and theOffice of the Prime Minister and Council Minister (nitc.gov.npandopmcm.gov.np respectively),have been compromised and injected with malicious code that tries to exploit the Java vulnerabilityCVE20120507. The aim of this injection is to install, through successfully exploiting that Java weakness, a backdoor that is also dubbed Zegost on the systems of visitors to these websites.\nThis vulnerability (CVE20120507) wasalso used in theAmnesty International UKwebsite compromise and in theINSS website compromise that we reported a few months back. Itsinterestingto note that all those compromises had injected code that was taken from theMetasploitframework, served in clear form, and not obfuscated. Although the use of code from the Metasploit framework doesntnecessarilyindicate a link between all thecompromises, we found further common characteristics between the compromises of the Amnesty UK website and theNepalese government website by analyzing the backdoor CC points when we noticed that they connected to the same domain in China.\nThe backdoor variant in this attack is known to have beenused in other targeted attacks that were aimed atUyghurs, Tibetans, and others in that area.\nWebsense customers are protected from these threats by ACE, ourAdvanced Classification Engine.\n\nTechnical Analysis\nAccording toCyberwarnews, in early 2012, the websites of Nepalese institutions, such as the police, sufferedtwo other types of attacks mainly in the form of defacements and data leakage. But its not just Nepal that has been affected.This region has recently seen a sequence of targeted attacks and APTs.\nBelow is the content of the Nepalese National Information Technology Center (NITC) Web page along with the injected code marked in red:\n\nThe main page was injected with a Java JAR file loader which once rendered by the Web browser is executed and attempts to exploit the CVE20120507 vulnerability. The name used for the Java class name (msf.x.Exploit.class) and the content of the file confirmed that the codewas taken from the Metasploit framework. If the exploit code in the JAR file has been successfully executed, the exploit shellcode downloads and runs the executable file named tools.exeon the impacted system (MD5:3c7b7124f84cc4d29aa067eca6110e2f).\nThe ThreatSeeker Network was able to connect that same executable file dropped fromnitc.gov.np(National Information Technology Center)to another Nepalese government website,opmcm.gov.np(Office of the Prime Minister and Council Minister website),as shown below:\n\nThe red, boxed URL is the website of the Office of the Prime Minister and Council Minister. We found out that this particular website was compromised this year, at least from May 915, to serve this same backdoor executable (MD5:3c7b7124f84cc4d29aa067eca6110e2f):\n\nThe content that was injectedbetween these dates at thewebsite of the Office of the Prime Minister and Council Minister wasidenticalto the code injectedat theNational Information Technology Center website,confirming that the same attack vector was used for both:\n\nWe detected that thedropped backdoor tools.exe (MD5:3c7b7124f84cc4d29aa067eca6110e2f) is a variant AD of the backdoorZegost. This backdoor toolkit or remote administration tool (RAT) has also been involved in other targeted attacks in Asia, according toan analysis by AlienVault in their researchblog.\nThanks to the Websense ThreatScope sandbox service, the CC address was detected atwho.xhhow4.com,as shown in the picture below (for the complete sandbox report, clickhere).\nThe domain hhow4.comwas also used as a CC point for the dropped backdoor served at thecompromised Amnesty UK website, where that variant specifically connected to the address at shell.xhhow4.com(for the complete sandbox report, clickhere).\n\nBoth CCs are hostedat IP address184.22.171.216:\n\nThe domainxhhow4.comis hosted in China by a Web hosting company known as Hichina Zhicheng Technology Co., Ltd. The next image shows a Robtex DNS names graph analysis for thatdomain:\n\nOnce the backdoor is installed on the impacted system, it initiates connections from localTCP port 1320.The destination address is to theCC at who.xhhow4.com and uses remoteTCP port 53 (usually the port reserved for the DNS Zone transfer). However, its important to note that the traffic wasnt DNS traffic but theproprietaryprotocol used by the backdoor for remote communications. Below is the first connection sequence between the backdoor and the CC:\n\nBy decoding the TCP stream, it is possible to recognize that custom encryption was used to exchange information with the CC. The network traffic starts also with a keyword,URATU, as shown below:\n\nOnce executed, the binary creates aMutex namedmicrosoft.comreported below:\n\nThe backdoor also uses common features like other common backdoors, such as keylogging, and supports the ability to accept and run commands remotely. As in other cases, we can see that this backdoor isnthighly complexat all, but its certainly no less effective than other complex malware once executed on the target systems. Another interesting aspect of this backdoor file is that its signed with what appears to be aninvalidfakecertificate issued to360.cn(a Chinese ISP) by VeriSign, as shown in the properties box:\n\nThe certificatecontains the following details:\n\nHaving malicious code signed with certificates is a trend that weve seen in other targeted attacks that can reduce the effectiveness of human and automatic countermeasures.\n\nIn this blog, we covered the compromise of Nepalese government websites in what appears to be a chain of targeted attacks. We managed to connect those attacks to a previously reported attack that took place in a different country: the compromise ofthe Amnesty International UK website. This shows that cyber warfare is trending and kicking and that theres certainly an effort by international players to staydominant and persistentin that realm.\n\nSecurity Researchers: Gianluca Giuliani, Elad Sharf. ",
+  "idorurl": "60k_0005280"
 }

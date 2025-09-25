@@ -1,82 +1,52 @@
 {
-  "idorurl": "60k_0001132",
-  "content": "\nOne of the important topics covered in the CrowdStrike 2018 Global Threat Report is the increase in supply chain attacks in 2017. This topic was also highlighted in a recent webcast featuring CrowdStrike VP of Intelligence Adam Meyers, who joined with CTO Dmitri Alperovitch to offer an indepth analysis of the findings in this years report.\nMeyers began his discussion of supply chain attacks by commenting, This is probably the thing that keeps me up at night when I look at what has changed in 2017. He goes on to explain that the industry has long talked about supply chain attacks as a potential vector. In a lot of peoples minds, they were thinking of hardware and chips  like microprocessors. But what we found in 2017 was that software as a supply chain attack became something that was realistic and viable, Meyers said.\nMeyers stated that the magnitude of such an attack vector is what makes it so terrifying. Virtually every organization in the world, whether in the public or private sector, depends on thirdparty software, which can include a widerange of applications. Imagine the multitude of different types of software used for accounting, HR and countless other specialized functions. He explained what makes things worse is that many of these programs were developed by small vendors that arent necessarily using the security development lifecycle (SDLC) process. SDLC is a stepbystep process designed to help developers build more secure software and ensure security compliance requirements are being met.\nSoftware supply chain attacks are also challenging because the vulnerabilities in many of these software programs are difficult to detect. The attackers are exploiting software and trust that existed well before the vulnerability is identified or the attack takes place. This makes it very difficult to nail down the problem or figure out how it occurred, Meyers said. He explained that most organizations use legitimate software that updates automatically and silently  making it difficult to verify and see what activity is occurring. He also warned that the effectiveness of software supply chain attacks in 2017 puts the supply chain at greater risk going forward as these tactics are leveraged by more actors, particularly those associated with nationstates.\nThe CrowdStrike Falcon Intelligence team analyzed a number of software supply chain attacks in 2017 that were tied to nationstate threat actors. The following is an overview of some major global incidents:\n\nNetSarang/CCleaner: Both of these backdoor attacks on legitimate applications point to Chinanexus threat actors, and used the technique of compiling malware directly into the compromised software. In CCleaner, the attacker modified a function so the execution flow was routed to a custom function meant to decode and load the malware. The intel team observed that NetSarang delivered PlugX linked to WICKED PANDA. Similarities between these attacks, such as commandandcontrol tactics and code overlaps, suggest they are connected to the same threat actor.\nM.E. Doc: This attack was aimed at a taxaccounting application, M.E. Doc, made by a Ukrainian company, and began when threat actors comprised the companys update server and sent NotPetya to unsuspecting victims. XDATA ransomware was also distributed via M.E. Doc in June 2017 and possibly as early as April, when access to the infected update services became available.\nPyPi: This attack compromised the popular Python programming language by replacing libraries on PyPi servers with packages altered to include a checkin beacon. Although the attribution for this attack remains unclear, Falcon Intelligence analysis suggests this was possibly a proofofconcept or grayhat incident. Regardless of its origins, it underscores the supply chain threat to usercurated systems.\n\nGet an indepth analysis of other information in the threat report including valuable insights that can inform your security strategy for 2018 and beyond:\n\nWatch the ondemand webcast: CrowdStrike 2018 Global Threat Report \nDownload the threat report\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "NetSarang",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "Chinanexus threat actors",
+      "rel": "compromises",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "NetSarang"
     },
     {
-      "name": "CCleaner",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "Chinanexus threat actors",
+      "rel": "compromises",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "CCleaner"
     },
     {
-      "name": "Chinanexus threat actors",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "None"
+      "sub": "NetSarang",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "PlugX"
     },
     {
-      "name": "PlugX",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "M.E. Doc",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "NotPetya"
     },
     {
-      "name": "M.E. Doc",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "M.E. Doc",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "XDATA ransomware"
     },
     {
-      "name": "NotPetya",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Chinanexus threat actors",
+      "rel": "modified",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "XDATA ransomware",
-      "type": "malware",
-      "alias": [
-        "XDATA"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "function",
-      "type": "detailed-part-of-general-software",
-      "alias": [],
-      "mother entity": []
+      "obj": "function"
     }
   ],
   "entitylist": [
@@ -159,54 +129,6 @@
       "mother entity": []
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "Chinanexus threat actors",
-      "rel": "compromises",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "NetSarang"
-    },
-    {
-      "sub": "Chinanexus threat actors",
-      "rel": "compromises",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "CCleaner"
-    },
-    {
-      "sub": "NetSarang",
-      "rel": "delivers",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "PlugX"
-    },
-    {
-      "sub": "M.E. Doc",
-      "rel": "delivers",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "NotPetya"
-    },
-    {
-      "sub": "M.E. Doc",
-      "rel": "delivers",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "XDATA ransomware"
-    },
-    {
-      "sub": "Chinanexus threat actors",
-      "rel": "modified",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": "function"
-    }
-  ]
+  "content": "\nOne of the important topics covered in the CrowdStrike 2018 Global Threat Report is the increase in supply chain attacks in 2017. This topic was also highlighted in a recent webcast featuring CrowdStrike VP of Intelligence Adam Meyers, who joined with CTO Dmitri Alperovitch to offer an indepth analysis of the findings in this years report.\nMeyers began his discussion of supply chain attacks by commenting, This is probably the thing that keeps me up at night when I look at what has changed in 2017. He goes on to explain that the industry has long talked about supply chain attacks as a potential vector. In a lot of peoples minds, they were thinking of hardware and chips  like microprocessors. But what we found in 2017 was that software as a supply chain attack became something that was realistic and viable, Meyers said.\nMeyers stated that the magnitude of such an attack vector is what makes it so terrifying. Virtually every organization in the world, whether in the public or private sector, depends on thirdparty software, which can include a widerange of applications. Imagine the multitude of different types of software used for accounting, HR and countless other specialized functions. He explained what makes things worse is that many of these programs were developed by small vendors that arent necessarily using the security development lifecycle (SDLC) process. SDLC is a stepbystep process designed to help developers build more secure software and ensure security compliance requirements are being met.\nSoftware supply chain attacks are also challenging because the vulnerabilities in many of these software programs are difficult to detect. The attackers are exploiting software and trust that existed well before the vulnerability is identified or the attack takes place. This makes it very difficult to nail down the problem or figure out how it occurred, Meyers said. He explained that most organizations use legitimate software that updates automatically and silently  making it difficult to verify and see what activity is occurring. He also warned that the effectiveness of software supply chain attacks in 2017 puts the supply chain at greater risk going forward as these tactics are leveraged by more actors, particularly those associated with nationstates.\nThe CrowdStrike Falcon Intelligence team analyzed a number of software supply chain attacks in 2017 that were tied to nationstate threat actors. The following is an overview of some major global incidents:\n\nNetSarang/CCleaner: Both of these backdoor attacks on legitimate applications point to Chinanexus threat actors, and used the technique of compiling malware directly into the compromised software. In CCleaner, the attacker modified a function so the execution flow was routed to a custom function meant to decode and load the malware. The intel team observed that NetSarang delivered PlugX linked to WICKED PANDA. Similarities between these attacks, such as commandandcontrol tactics and code overlaps, suggest they are connected to the same threat actor.\nM.E. Doc: This attack was aimed at a taxaccounting application, M.E. Doc, made by a Ukrainian company, and began when threat actors comprised the companys update server and sent NotPetya to unsuspecting victims. XDATA ransomware was also distributed via M.E. Doc in June 2017 and possibly as early as April, when access to the infected update services became available.\nPyPi: This attack compromised the popular Python programming language by replacing libraries on PyPi servers with packages altered to include a checkin beacon. Although the attribution for this attack remains unclear, Falcon Intelligence analysis suggests this was possibly a proofofconcept or grayhat incident. Regardless of its origins, it underscores the supply chain threat to usercurated systems.\n\nGet an indepth analysis of other information in the threat report including valuable insights that can inform your security strategy for 2018 and beyond:\n\nWatch the ondemand webcast: CrowdStrike 2018 Global Threat Report \nDownload the threat report\n\n",
+  "idorurl": "60k_0001132"
 }

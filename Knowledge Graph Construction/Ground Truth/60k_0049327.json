@@ -1,106 +1,100 @@
 {
-  "idorurl": "60k_0049327",
-  "content": "\n \nBy Echo Duan and Roland Sun \nWeve uncovered a pervasive autoclicking adware from as much as 340 apps from Google Play, one of which, named Aladdins Adventures World, was downloaded 5 million times. These adwareembedded applications include recreational games, device performance utilities like cleaners and boosters, and file managers, QR and barcode scanners, multimedia recorders and players, device charger, and GPS/navigationrelated apps.\nWhile the majority of the said apps have been taken down, 101 were still downloadable as of August 7, 2017. Our detections/sensors saw the prevalence of this adware in Southeast Asian countries as well as Brazil, Japan, Taiwan, Russia, Italy, and the U.S.\nTrend Micro detects these adware as GhostClicker (ANDROIDOSGHOSTCLICKER.AXM) given its autoclick routine and the way it hides itself in Google Mobile Services (GMS), the set of Googles most popular applications and application program interfaces (APIs). GhostClicker also hides in Facebook Ads software development kit (SDK). It embeds itself into these two services disguised as a package named logs, possibly to avoid rousing suspicion by pretending to be a legitimate app component.\n\nFigure 1. Snapshot of a GhostClickerembedded app downloaded by as much as 5 million times\n\nFigure 2. GhostClickers codes hides in GMS or Facebook Ads SDK\nGhostClicker is pervasive and persistentbut finicky\nThe adware comes with a few requirements. Once launched, the affected app will retrieve the devices system property (http.agent), which is used to configure the UserAgent string in Android devices. If the string contains nexus, GhostClickers routines will not be triggered. We construe this routine as a way to evade sandboxes like Androids builtin Android Application Sandbox, as Android emulators/sandboxing environments are usually named Nexus XXX.\n\nFigure 3: GhostClicker triggering its routines when the devices http.agent doesnt contain nexus\nSome of the GhostClickerembedded apps we analyzed also requested device administration permission when first run, but they do not declare the security policies used in metadata, such as wiping data and resetting password. This can be a way to deter users from removing the app, taking advantage of the lengthy and nebulous process of uninstalling apps. Its certainly not a userfriendly process: uninstalling an app with device administration requires that it be disabled first before an app can be removed.\n\nFigure 4. GhostClickeraffected app requesting device administration permission\n\nFigure 5. Snapshot of some users who cant uninstall the app\nGhostClicker earns its fraudulent keep through autoclicks\nUnlike other adware, GhostClicker doesnt use JavaScript code to locate/retrieve and click on advertisements. It instead inserts its code into Admobs (a Googleowned mobile advertising platform) to get the ads location. After getting the devices screen dimensions (width and height), it calculates the appropriate XY coordinates then uses the dispatchTouchEvent API to simulate clicking. Indeed, its true to its moniker: ghosting over the devices screen to click ads.\nTo earn more revenue, GhostClicker generates fake traffic. It will pop up in other apps download links in Google Store or open a YouTube video link in the devices browser via communication with its command and control (CC) server. Upon activation of device administration, GhostClicker will execute those autoclicks every minute.\n\nFigure 6. GhostClicker inserting code to get AdMobs Context View\n\nFigure 7. GhostClicker generating coordinates\n\nFigure 8. GhostClicker building a MotionEvent (simulating a touch) according to XY coordinates\n\nFigure 9. GhostClicker using the dispatchTouchEvent API to automatically click the ad\nGhostClicker is actually an earlier version of itself\nWe hunted GhostClickers trail and found that it was an earlier iteration of itself. A later version removed the autoclick feature and device administration permission request, likely to make the adware stealthier. After the user unlocks the screen, the adware will pop up interstitial advertisements at certain intervals if the device is connected to a network with data . We encountered this version of GhostClicker in Aladdins Adventures World.\nRetracing the adwares timeline, we also saw that apps embedded with GhostClicker were continuously released for nearly a year. GhostClicker manifested as early as August 2016 hiding in GMS SDK. By March 2017, GhostClicker eschewed autoclicks and leveraged Admob, Startapp, and Facebook Ads to pop up interstitial advertisements when receiving CC commands. By May, it reintegrated autoclicks and hid in Facebook Ads SDK. The notable updates and consistency in distribution points to a possible click fraud campaign, if not an actual cybercriminal operation.\nMitigation and Best Practices\nAdvertisements are an innocuous staple in the mobile ecosystem. GhostClicker, however, exemplifies how adware is intrusive, not to mention how it drains the devices resourcesCPU, battery, and internet data, to name a few. It puts the users privacy at risk by collecting personal information, often without knowledge or consent. Adware can also expose users to actual malware that go beyond showing bland advertisements.\nGhostClicker can be mitigated by restricting the use of the device administration feature, which is typically used to create securityaware applications like enterprise device or BYOD management and antivirus apps. Everyday users wont really miss out on much when doing this.\nKeeping the OS updated (or asking your OEM about update availability) and adopting best practices for securing personal mobile devices is recommended. Enterprises should also do the same to their company devices or BYOD environment, as theyre the ones that use device administration. Reading app reviews also helps identify if the app performs certain suspicious behaviors.\nTrend Micro Solutions\nEnd users and enterprises can also benefit from multilayered mobile security solutions such as Trend Micro Mobile Security for Android which is also available on Google Play. Trend Micro Mobile Security for Enterprise provides device, compliance and application management, data protection, and configuration provisioning, as well as protects devices from attacks that leverage vulnerabilities, preventing unauthorized access to apps, as well as detecting and blocking malware and fraudulent websites.\nWe have disclosed our findings to Google and worked with them to take down the adwareladen apps on Google Play. Updates have also been made to Google Play Protect to take appropriate action on those apps that have been verified as violating Play policy. Google Play Protect has implemented expanded protections to ensure robust and scalable protections across the ecosystem. A list of Indicators of Compromise (IoCs) comprising related hashes (SHA256), package names and app labels, can be found in this appendix.\n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: adwareandroidGhostClicker\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "GhostClicker",
-      "type": "malware",
-      "alias": [
-        "ANDROIDOSGHOSTCLICKER.AXM"
+      "sub": "GhostClicker",
+      "rel": "hides itself in",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Google Mobile Services"
     },
     {
-      "name": "Google Mobile Services",
-      "type": "general-software",
-      "alias": [
-        "GMS"
+      "sub": "GhostClicker",
+      "rel": "hides in",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Facebook Ads SDK"
     },
     {
-      "name": "Facebook Ads SDK",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "GhostClicker",
+      "rel": "requested",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "device administration feature"
     },
     {
-      "name": "device administration feature",
-      "type": "detailed-part-of-general-software",
-      "alias": [
-        "device administration permission"
+      "sub": "GhostClicker",
+      "rel": "inserts its code into",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Admob"
     },
     {
-      "name": "Admob",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "GhostClicker",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "dispatchTouchEvent API"
     },
     {
-      "name": "dispatchTouchEvent API",
-      "type": "detailed-part-of-general-software",
-      "alias": [
-        "None"
+      "sub": "GhostClicker",
+      "rel": "communication with",
+      "rel_type": [
+        "communicates-with"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "command and control server"
     },
     {
-      "name": "command and control server",
-      "type": "infrastructure",
-      "alias": [
-        "CC server"
+      "sub": "GhostClicker",
+      "rel": "requested",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "device administration feature"
     },
     {
-      "name": "Startapp",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "GhostClicker",
+      "rel": "generates",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "fake traffic"
     },
     {
-      "name": "fake traffic",
-      "type": "abstract-concept",
-      "alias": [
-        "None"
+      "sub": "GhostClicker",
+      "rel": "leveraged",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Admob"
     },
     {
-      "name": "YouTube",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "GhostClicker",
+      "rel": "leveraged",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Startapp"
+    },
+    {
+      "sub": "GhostClicker",
+      "rel": "leveraged",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Facebook Ads SDK"
+    },
+    {
+      "sub": "GhostClicker",
+      "rel": "opens video link for",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "YouTube"
     }
   ],
   "entitylist": [
@@ -206,102 +200,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "GhostClicker",
-      "rel": "hides itself in",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Google Mobile Services"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "hides in",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Facebook Ads SDK"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "requested",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "device administration feature"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "inserts its code into",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Admob"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "uses",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "dispatchTouchEvent API"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "communication with",
-      "rel_type": [
-        "communicates-with"
-      ],
-      "obj": "command and control server"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "requested",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "device administration feature"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "generates",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": "fake traffic"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "leveraged",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Admob"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "leveraged",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Startapp"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "leveraged",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Facebook Ads SDK"
-    },
-    {
-      "sub": "GhostClicker",
-      "rel": "opens video link for",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "YouTube"
-    }
-  ]
+  "content": "\n \nBy Echo Duan and Roland Sun \nWeve uncovered a pervasive autoclicking adware from as much as 340 apps from Google Play, one of which, named Aladdins Adventures World, was downloaded 5 million times. These adwareembedded applications include recreational games, device performance utilities like cleaners and boosters, and file managers, QR and barcode scanners, multimedia recorders and players, device charger, and GPS/navigationrelated apps.\nWhile the majority of the said apps have been taken down, 101 were still downloadable as of August 7, 2017. Our detections/sensors saw the prevalence of this adware in Southeast Asian countries as well as Brazil, Japan, Taiwan, Russia, Italy, and the U.S.\nTrend Micro detects these adware as GhostClicker (ANDROIDOSGHOSTCLICKER.AXM) given its autoclick routine and the way it hides itself in Google Mobile Services (GMS), the set of Googles most popular applications and application program interfaces (APIs). GhostClicker also hides in Facebook Ads software development kit (SDK). It embeds itself into these two services disguised as a package named logs, possibly to avoid rousing suspicion by pretending to be a legitimate app component.\n\nFigure 1. Snapshot of a GhostClickerembedded app downloaded by as much as 5 million times\n\nFigure 2. GhostClickers codes hides in GMS or Facebook Ads SDK\nGhostClicker is pervasive and persistentbut finicky\nThe adware comes with a few requirements. Once launched, the affected app will retrieve the devices system property (http.agent), which is used to configure the UserAgent string in Android devices. If the string contains nexus, GhostClickers routines will not be triggered. We construe this routine as a way to evade sandboxes like Androids builtin Android Application Sandbox, as Android emulators/sandboxing environments are usually named Nexus XXX.\n\nFigure 3: GhostClicker triggering its routines when the devices http.agent doesnt contain nexus\nSome of the GhostClickerembedded apps we analyzed also requested device administration permission when first run, but they do not declare the security policies used in metadata, such as wiping data and resetting password. This can be a way to deter users from removing the app, taking advantage of the lengthy and nebulous process of uninstalling apps. Its certainly not a userfriendly process: uninstalling an app with device administration requires that it be disabled first before an app can be removed.\n\nFigure 4. GhostClickeraffected app requesting device administration permission\n\nFigure 5. Snapshot of some users who cant uninstall the app\nGhostClicker earns its fraudulent keep through autoclicks\nUnlike other adware, GhostClicker doesnt use JavaScript code to locate/retrieve and click on advertisements. It instead inserts its code into Admobs (a Googleowned mobile advertising platform) to get the ads location. After getting the devices screen dimensions (width and height), it calculates the appropriate XY coordinates then uses the dispatchTouchEvent API to simulate clicking. Indeed, its true to its moniker: ghosting over the devices screen to click ads.\nTo earn more revenue, GhostClicker generates fake traffic. It will pop up in other apps download links in Google Store or open a YouTube video link in the devices browser via communication with its command and control (CC) server. Upon activation of device administration, GhostClicker will execute those autoclicks every minute.\n\nFigure 6. GhostClicker inserting code to get AdMobs Context View\n\nFigure 7. GhostClicker generating coordinates\n\nFigure 8. GhostClicker building a MotionEvent (simulating a touch) according to XY coordinates\n\nFigure 9. GhostClicker using the dispatchTouchEvent API to automatically click the ad\nGhostClicker is actually an earlier version of itself\nWe hunted GhostClickers trail and found that it was an earlier iteration of itself. A later version removed the autoclick feature and device administration permission request, likely to make the adware stealthier. After the user unlocks the screen, the adware will pop up interstitial advertisements at certain intervals if the device is connected to a network with data . We encountered this version of GhostClicker in Aladdins Adventures World.\nRetracing the adwares timeline, we also saw that apps embedded with GhostClicker were continuously released for nearly a year. GhostClicker manifested as early as August 2016 hiding in GMS SDK. By March 2017, GhostClicker eschewed autoclicks and leveraged Admob, Startapp, and Facebook Ads to pop up interstitial advertisements when receiving CC commands. By May, it reintegrated autoclicks and hid in Facebook Ads SDK. The notable updates and consistency in distribution points to a possible click fraud campaign, if not an actual cybercriminal operation.\nMitigation and Best Practices\nAdvertisements are an innocuous staple in the mobile ecosystem. GhostClicker, however, exemplifies how adware is intrusive, not to mention how it drains the devices resourcesCPU, battery, and internet data, to name a few. It puts the users privacy at risk by collecting personal information, often without knowledge or consent. Adware can also expose users to actual malware that go beyond showing bland advertisements.\nGhostClicker can be mitigated by restricting the use of the device administration feature, which is typically used to create securityaware applications like enterprise device or BYOD management and antivirus apps. Everyday users wont really miss out on much when doing this.\nKeeping the OS updated (or asking your OEM about update availability) and adopting best practices for securing personal mobile devices is recommended. Enterprises should also do the same to their company devices or BYOD environment, as theyre the ones that use device administration. Reading app reviews also helps identify if the app performs certain suspicious behaviors.\nTrend Micro Solutions\nEnd users and enterprises can also benefit from multilayered mobile security solutions such as Trend Micro Mobile Security for Android which is also available on Google Play. Trend Micro Mobile Security for Enterprise provides device, compliance and application management, data protection, and configuration provisioning, as well as protects devices from attacks that leverage vulnerabilities, preventing unauthorized access to apps, as well as detecting and blocking malware and fraudulent websites.\nWe have disclosed our findings to Google and worked with them to take down the adwareladen apps on Google Play. Updates have also been made to Google Play Protect to take appropriate action on those apps that have been verified as violating Play policy. Google Play Protect has implemented expanded protections to ensure robust and scalable protections across the ecosystem. A list of Indicators of Compromise (IoCs) comprising related hashes (SHA256), package names and app labels, can be found in this appendix.\n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: adwareandroidGhostClicker\n\n",
+  "idorurl": "60k_0049327"
 }

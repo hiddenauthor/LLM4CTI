@@ -1,0 +1,127 @@
+{
+  "relationshiplist": [
+    {
+      "sub": "Fake GitHub repositories",
+      "rel": "deploys",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "SmartLoader"
+    },
+    {
+      "sub": "SmartLoader",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
+      ],
+      "obj": "Lumma Stealer"
+    },
+    {
+      "sub": "Lumma Stealer",
+      "rel": "is distributed via",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "Malware-as-a-Service"
+    },
+    {
+      "sub": "Release.zip",
+      "rel": "contains",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "obfuscated Lua script"
+    },
+    {
+      "sub": "Fake GitHub repositories",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "Release.zip"
+    },
+    {
+      "sub": "Fake GitHub repositories",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
+      ],
+      "obj": "Software.zip"
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Fake GitHub repositories",
+      "type": "infrastructure",
+      "alias": [
+        "malicious repositories",
+        "fake repositories"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SmartLoader",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Lumma Stealer",
+      "type": "malware",
+      "alias": [
+        "information stealer"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Malware-as-a-Service",
+      "type": "abstract-concept",
+      "alias": [
+        "MaaS"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Release.zip",
+      "type": "file",
+      "alias": [
+        "ZIP files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Software.zip",
+      "type": "file",
+      "alias": [
+        "ZIP files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "obfuscated Lua script",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "content": "Cybercriminals are using fake GitHub repositories that make heavy use of AI for its lures to distribute malware, deceiving users with seemingly legitimate tools while evading detection. The Trend Micro Threat Hunting team identified an ongoing campaign that uses these repositories to deploy SmartLoader, which is then subsequently used to deliver other malware such as Lumma Stealer, an information stealer being distributed via the Malware-as-a-Service (MaaS) model by its creators (which we track as Water Kurita). These malicious repositories are disguised as non-malicious tools, including game cheats, cracked software, and cryptocurrency utilities. The campaign entices victims with promises of free or illicit unauthorized functionality, prompting them to download ZIP files (e.g., Release.zip, Software.zip). Upon execution, these files deploy SmartLoader, which ultimately facilitates the delivery of Lumma Stealer. \n\nThe campaign exploits GitHub’s trusted reputation to evade initial detection, using social engineering tactics to target users searching for gaming mods, software cracks, or other tools. This operation highlights how legitimate platforms can be abused for malware distribution, emphasizing the dangers of downloading unverified “gray-area” tools, even from seemingly legitimate sources.\n\nAbusing GitHub for malicious activities  \n\nThe use of GitHub for malware distribution is not a new tactic, but it remains a persistent threat due to limited detection capabilities. While earlier campaigns primarily leveraged GitHub for file hosting, threat actors have since evolved their approach. They are now exploiting GitHub’s trusted reputation more aggressively by using generative AI to create convincing fake repositories. As cybercriminals continue to innovate, this strategy is expected to expand, further reinforcing GitHub’s role as a key vector for malware delivery.\n\nOne example of malware propagation via fake GitHub repositories can be seen on X/Twitter. Security researchers frequently tweet about open-source tools that are hosted on GitHub, and threat actors may exploit this by pretending to be researchers themselves. This tactic is designed to lure unsuspecting users into downloading malicious and/or fake tools under the guise of legitimacy.\n\nAdditionally, SmartLoader is typically delivered via ZIP files containing obfuscated scripts. The only malicious component within the archive is an obfuscated Lua script, while the remaining files appear benign.\n\nTechnical analysis \n\nInitial lure\n\nThe malware campaign begins with a fake GitHub repository designed to appear legitimate, often mimicking popular tools or software. By exploiting GitHub’s trusted reputation, attackers deceive users into downloading malicious files. The malicious actors use AI to generate convincing README files and documentation, making these repositories appear professional and authentic — therefore increasing the likelihood that users will trust and install the malicious content.\n\nThe fake repositories stand out due to the formatting of its README content, which appears to be heavily assisted by AI, as exhibited by telltale signs such as excessive emoji usage, unnatural phrasing, a hyperlinked logo, and structured content. The repository contains only a README file, and all the hyperlinks redirect to the malicious files that are strategically concealed in the releases section, making them less conspicuous to unsuspecting users.",
+  "idorurl": "https://trendmicro.com/en_us/research/25/c/ai-assisted-fake-github-repositories.html"
+}

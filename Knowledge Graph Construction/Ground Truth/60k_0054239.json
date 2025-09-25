@@ -1,156 +1,108 @@
 {
-  "idorurl": "60k_0054239",
-  "content": "\n\nShare\n\nWebsite altered to serve a malwaretainted version of otherwise legitimate software with the global event in Russia acting as a smokescreen \n\nUsers who downloaded the free remote administration tool Ammyy Admin from its official website ammyy.com on June 13 or 14, beware!\nAccording to ESETs analysis, within that timeframe the website was compromised to serve a malwaretainted version of this otherwise legitimate software. To add an interesting twist to the incident, the attackers tried to hide their malicious activity behind the brand of the ongoing FIFA World Cup.\nIt feels almost like traveling back in time. In October 2015, the website offering a free version of Ammyy Admin software started serving malicious code connected to the cybercrime group Buhtrap. Now history repeats itself and the site seems to be compromised again. The issue was first spotted by ESET researchers shortly after midnight on June 13 and persisted until the morning of June 14.\nRemote admin with Kasidet bot on the side\nUsers who downloaded software from ammyy.com in the aforementioned timeframe received more than just the requested software  part of the bundle was also a multipurpose Trojan and banking malware detected by ESET as Win32/Kasidet. ESET advises all potential victims to take precautionary measures and use a reliable security product to scan and clean their devices.\nWin32/Kasidet is a bot that is sold in underground crime markets and is actively used by various cybercriminal groups. The build detected on the ammyy.com site on June 13 and 14, 2018 had two main goals:\n\nStealing files that could contain passwords or access data for cryptocurrency wallets and accounts of the victims. It achieves this by searching for filenames that match the following masks and by sending them to the CC server:\n\nbitcoin\npass.txt\npasswords.txt\nwallet.dat\n\n2. Reporting processes whose names include any of the following strings:\n\narmoryqt\nbitcoin\nexodus\nelectrum\njaxx\nkeepass\nkitty\nmstsc\nmultibit\nputty\nradmin\nvsphere\nwinscp\nxshell\n\nThe URL of the command and control server, hxxp://fifa2018start[.]info/panel/tasks.php, was also interesting  it seems as if it was designed by the attackers to use the ongoing FIFA World Cup as cover for their malicious network communication.\nESET researchers spotted multiple similarities to the 2015 attack. Back then, attackers were misusing ammyy.com to serve numerous malware families, changing them on an almost daily basis. In the 2018 case, ESET systems detected only Win32/Kasidet, however, the obfuscation of the payload changed on three occasions, probably to avoid detection by security products.\nAnother similarity between the incidents was the identical name of the file  AmmyyService.exe containing the payload. The downloaded installer AAv3.exe may look legitimate at first sight, however the attackers have used SmartInstaller and built a new binary, which drops the AmmyyService.exe before installing Ammyy Admin software.\nConclusion\nAs the site has been similarly compromised in the past, ESET recommends that users run a reliableuptodate  and updated multilayered antimalware solution whenever they try to download software from this website.\nWhile Ammyy Admin is a legitimate tool, it has a long history of being misused by fraudsters. As a result, several security products, including ESETs, detect it as a Potentially Unsafe Application. However, it is still widely used, mostly in Russia.\nWe notified Ammyy about the issue. As Ammyy Admin is widely used, we feel it is important to warn its users about its current security issues.\nSpecial thanks to Jakub Souek, who pointed us to the compromise and provided the analysis.\nIoCs\n\nESET detection names\n\nWin32/Kasidet\n\nSHA1 hashes\n\nInstaller\n\n6D11EA2D7DC9304E8E28E418B1DACFF7809BDC27\n\n6FB4212B81CD9917293523F9E0C716D2CA4693D4\n\n675ACA2C0A3E1EEB08D5919F2C866059798E6E93\n\nWin32/Kasidet\n\nEFE562F61BE0B5D497F3AA9CF27C03EA212A53C9\n\n9F9B8A102DD84ABF1349A82E4021884842DC22DD\n\n4B4498B5AFDAA4B9A2A2195B8B7E376BE10C903E\n\nCC Servers\n\nfifa2018start[.]info\n\nOndrej Kubovi 11 Jul 2018  02:57PM\n\nSimilar Articles\n\nMalware \n\nNavigating the murky waters of Android banking malware\n\nMalware \n\nDanaBot updated with new CC communication\n\nMalware \n\nRansomware vs. printing press? US newspapers face foreign cyberattack\n\nMalware \n\nDanaBot evolves beyond banking Trojan with new spamsending capability\n\nDiscussion\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "ammyy.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "ammyy.com",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Win32/Kasidet"
     },
     {
-      "name": "Win32/Kasidet",
-      "type": "malware",
-      "alias": [
-        "Kasidet"
+      "sub": "Win32/Kasidet",
+      "rel": "malicious-investigates-track-detects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "bitcoin"
     },
     {
-      "name": "bitcoin",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "Win32/Kasidet",
+      "rel": "malicious-investigates-track-detects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "pass.txt"
     },
     {
-      "name": "pass.txt",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "Win32/Kasidet",
+      "rel": "malicious-investigates-track-detects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "passwords.txt"
     },
     {
-      "name": "passwords.txt",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "Win32/Kasidet",
+      "rel": "malicious-investigates-track-detects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "wallet.dat"
     },
     {
-      "name": "wallet.dat",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "Win32/Kasidet",
+      "rel": "exfiltrate-to",
+      "rel_type": [
+        "exfiltrate-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "http://fifa2018start.info/panel/tasks.php"
     },
     {
-      "name": "http://fifa2018start.info/panel/tasks.php",
-      "type": "url",
-      "alias": [
-        "None"
+      "sub": "AAv3.exe",
+      "rel": "drops",
+      "rel_type": [
+        "drops"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "AmmyyService.exe"
     },
     {
-      "name": "AAv3.exe",
-      "type": "file",
-      "alias": [
-        "installer"
+      "sub": "6D11EA2D7DC9304E8E28E418B1DACFF7809BDC27",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "AAv3.exe"
     },
     {
-      "name": "AmmyyService.exe",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "6FB4212B81CD9917293523F9E0C716D2CA4693D4",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "AAv3.exe"
     },
     {
-      "name": "6D11EA2D7DC9304E8E28E418B1DACFF7809BDC27",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "675ACA2C0A3E1EEB08D5919F2C866059798E6E93",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "AAv3.exe"
     },
     {
-      "name": "6FB4212B81CD9917293523F9E0C716D2CA4693D4",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "EFE562F61BE0B5D497F3AA9CF27C03EA212A53C9",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Win32/Kasidet"
     },
     {
-      "name": "675ACA2C0A3E1EEB08D5919F2C866059798E6E93",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "9F9B8A102DD84ABF1349A82E4021884842DC22DD",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Win32/Kasidet"
     },
     {
-      "name": "EFE562F61BE0B5D497F3AA9CF27C03EA212A53C9",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "4B4498B5AFDAA4B9A2A2195B8B7E376BE10C903E",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "9F9B8A102DD84ABF1349A82E4021884842DC22DD",
-      "type": "indicator",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "4B4498B5AFDAA4B9A2A2195B8B7E376BE10C903E",
-      "type": "indicator",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Win32/Kasidet"
     }
   ],
   "entitylist": [
@@ -337,110 +289,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "ammyy.com",
-      "rel": "delivers",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "Win32/Kasidet"
-    },
-    {
-      "sub": "Win32/Kasidet",
-      "rel": "malicious-investigates-track-detects",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "bitcoin"
-    },
-    {
-      "sub": "Win32/Kasidet",
-      "rel": "malicious-investigates-track-detects",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "pass.txt"
-    },
-    {
-      "sub": "Win32/Kasidet",
-      "rel": "malicious-investigates-track-detects",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "passwords.txt"
-    },
-    {
-      "sub": "Win32/Kasidet",
-      "rel": "malicious-investigates-track-detects",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "wallet.dat"
-    },
-    {
-      "sub": "Win32/Kasidet",
-      "rel": "exfiltrate-to",
-      "rel_type": [
-        "exfiltrate-to"
-      ],
-      "obj": "http://fifa2018start.info/panel/tasks.php"
-    },
-    {
-      "sub": "AAv3.exe",
-      "rel": "drops",
-      "rel_type": [
-        "drops"
-      ],
-      "obj": "AmmyyService.exe"
-    },
-    {
-      "sub": "6D11EA2D7DC9304E8E28E418B1DACFF7809BDC27",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "AAv3.exe"
-    },
-    {
-      "sub": "6FB4212B81CD9917293523F9E0C716D2CA4693D4",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "AAv3.exe"
-    },
-    {
-      "sub": "675ACA2C0A3E1EEB08D5919F2C866059798E6E93",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "AAv3.exe"
-    },
-    {
-      "sub": "EFE562F61BE0B5D497F3AA9CF27C03EA212A53C9",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "Win32/Kasidet"
-    },
-    {
-      "sub": "9F9B8A102DD84ABF1349A82E4021884842DC22DD",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "Win32/Kasidet"
-    },
-    {
-      "sub": "4B4498B5AFDAA4B9A2A2195B8B7E376BE10C903E",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "Win32/Kasidet"
-    }
-  ]
+  "content": "\n\nShare\n\nWebsite altered to serve a malwaretainted version of otherwise legitimate software with the global event in Russia acting as a smokescreen \n\nUsers who downloaded the free remote administration tool Ammyy Admin from its official website ammyy.com on June 13 or 14, beware!\nAccording to ESETs analysis, within that timeframe the website was compromised to serve a malwaretainted version of this otherwise legitimate software. To add an interesting twist to the incident, the attackers tried to hide their malicious activity behind the brand of the ongoing FIFA World Cup.\nIt feels almost like traveling back in time. In October 2015, the website offering a free version of Ammyy Admin software started serving malicious code connected to the cybercrime group Buhtrap. Now history repeats itself and the site seems to be compromised again. The issue was first spotted by ESET researchers shortly after midnight on June 13 and persisted until the morning of June 14.\nRemote admin with Kasidet bot on the side\nUsers who downloaded software from ammyy.com in the aforementioned timeframe received more than just the requested software  part of the bundle was also a multipurpose Trojan and banking malware detected by ESET as Win32/Kasidet. ESET advises all potential victims to take precautionary measures and use a reliable security product to scan and clean their devices.\nWin32/Kasidet is a bot that is sold in underground crime markets and is actively used by various cybercriminal groups. The build detected on the ammyy.com site on June 13 and 14, 2018 had two main goals:\n\nStealing files that could contain passwords or access data for cryptocurrency wallets and accounts of the victims. It achieves this by searching for filenames that match the following masks and by sending them to the CC server:\n\nbitcoin\npass.txt\npasswords.txt\nwallet.dat\n\n2. Reporting processes whose names include any of the following strings:\n\narmoryqt\nbitcoin\nexodus\nelectrum\njaxx\nkeepass\nkitty\nmstsc\nmultibit\nputty\nradmin\nvsphere\nwinscp\nxshell\n\nThe URL of the command and control server, hxxp://fifa2018start[.]info/panel/tasks.php, was also interesting  it seems as if it was designed by the attackers to use the ongoing FIFA World Cup as cover for their malicious network communication.\nESET researchers spotted multiple similarities to the 2015 attack. Back then, attackers were misusing ammyy.com to serve numerous malware families, changing them on an almost daily basis. In the 2018 case, ESET systems detected only Win32/Kasidet, however, the obfuscation of the payload changed on three occasions, probably to avoid detection by security products.\nAnother similarity between the incidents was the identical name of the file  AmmyyService.exe containing the payload. The downloaded installer AAv3.exe may look legitimate at first sight, however the attackers have used SmartInstaller and built a new binary, which drops the AmmyyService.exe before installing Ammyy Admin software.\nConclusion\nAs the site has been similarly compromised in the past, ESET recommends that users run a reliableuptodate  and updated multilayered antimalware solution whenever they try to download software from this website.\nWhile Ammyy Admin is a legitimate tool, it has a long history of being misused by fraudsters. As a result, several security products, including ESETs, detect it as a Potentially Unsafe Application. However, it is still widely used, mostly in Russia.\nWe notified Ammyy about the issue. As Ammyy Admin is widely used, we feel it is important to warn its users about its current security issues.\nSpecial thanks to Jakub Souek, who pointed us to the compromise and provided the analysis.\nIoCs\n\nESET detection names\n\nWin32/Kasidet\n\nSHA1 hashes\n\nInstaller\n\n6D11EA2D7DC9304E8E28E418B1DACFF7809BDC27\n\n6FB4212B81CD9917293523F9E0C716D2CA4693D4\n\n675ACA2C0A3E1EEB08D5919F2C866059798E6E93\n\nWin32/Kasidet\n\nEFE562F61BE0B5D497F3AA9CF27C03EA212A53C9\n\n9F9B8A102DD84ABF1349A82E4021884842DC22DD\n\n4B4498B5AFDAA4B9A2A2195B8B7E376BE10C903E\n\nCC Servers\n\nfifa2018start[.]info\n\nOndrej Kubovi 11 Jul 2018  02:57PM\n\nSimilar Articles\n\nMalware \n\nNavigating the murky waters of Android banking malware\n\nMalware \n\nDanaBot updated with new CC communication\n\nMalware \n\nRansomware vs. printing press? US newspapers face foreign cyberattack\n\nMalware \n\nDanaBot evolves beyond banking Trojan with new spamsending capability\n\nDiscussion\n\n",
+  "idorurl": "60k_0054239"
 }

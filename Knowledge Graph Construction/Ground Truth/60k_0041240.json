@@ -1,78 +1,44 @@
 {
-  "idorurl": "60k_0041240",
-  "content": "\nWeve been looking at the infrastructure of the Gumblar malware and found some curious facts on how Gumblar operates which we would like to share to make hosting owners aware of the Gumblar threat.\nAnalysis of some infected websites showed that the only way to inject the infection of Gumblar was by using FTP access, because those websites have no serverside scripting. Later this was proved by an analysis of FTP log files.\nThe malicious code injection in HTML pages (which is a simple insertion of <script> tag in every file having HTML) was done by downloading all files from the server that could have HTML, changing them and uploading back. We call the websites modified in this way redirectors, because they simply redirect browsers to the website spreading malware.\nThe injected script refers to another website hosting exploits and registering all attacked clients. These websites have to support php, because the backend is implemented in php. We call these websites infectors, because they host the exploits and malicious executable file for Windows. The malicious Windows executable is pushed when the attack is successful. The executable waits for the user to enter FTP credentials.\nWeve been able to find where the server code for redirectors and infectors websites was coming from. And weve found an additional tier of infrastructure  a set of compromised websites which we call injectors. These websites host a generic php backdoor which lets the owner execute any php code on the webserver.All the websites from all tiers seem to be legitimate but compromised websites not connected to the Gumblar group. The whole set of compromised hosts was split into at least 3 nonintersecting groups which were used for different purposes.\nThe injectors are not acting on their own. This tier seems to be used to proxify the injection tasks. This means that there is another set of machines, which actually issue code and commands to infect the webpages on the compromised webservers. We call these machines dispatchers. There isnt a lot of information about them yet and its unclear if theyre compromised as well.\nSo the Gumblar tiers look like this: \n\nWhy is Gumblar so widespread? The answer is quite simple: its a fully automated system. Its a new generation of selfbuilding botnets. This system is actively attacking visitors of a website and once these visitors have been infected with the Windows executable, it grabs FTP credentials from the victim machines. The FTP accounts are then used to infect every webpage on new webservers. This way the system extends the number of infected pages, thus attacking more and more computers. The entire process is automated and the owner of the system just needs to adjust the system and update the Trojan executable which steals passwords and the exploits used to attack the browser.\nThe system works in a constant loop of attacking new computers, getting new FTP accounts and infecting new servers. The illustration below includes the roles of the compromised hosts: \n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "infectors",
-      "type": "infrastructure",
-      "alias": [
-        "websites",
-        "webservers"
+      "sub": "infectors",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "browser exploits"
     },
     {
-      "name": "malicious Windows executable",
-      "type": "malware",
-      "alias": [
-        "Trojan executable",
-        "Gumblar"
+      "sub": "infectors",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "malicious Windows executable"
     },
     {
-      "name": "FTP credentials",
-      "type": "credential-value",
-      "alias": [
-        "FTP accounts"
+      "sub": "injectors",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "generic php backdoor"
     },
     {
-      "name": "injectors",
-      "type": "infrastructure",
-      "alias": [
-        "None"
+      "sub": "dispatchers",
+      "rel": "sends commands to",
+      "rel_type": [
+        "other"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "injectors"
     },
     {
-      "name": "generic php backdoor",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "malicious Windows executable",
+      "rel": "grabs",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "dispatchers",
-      "type": "infrastructure",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "browser exploits",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "FTP credentials"
     }
   ],
   "entitylist": [
@@ -149,46 +115,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "infectors",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "browser exploits"
-    },
-    {
-      "sub": "infectors",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "malicious Windows executable"
-    },
-    {
-      "sub": "injectors",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "generic php backdoor"
-    },
-    {
-      "sub": "dispatchers",
-      "rel": "sends commands to",
-      "rel_type": [
-        "other"
-      ],
-      "obj": "injectors"
-    },
-    {
-      "sub": "malicious Windows executable",
-      "rel": "grabs",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "FTP credentials"
-    }
-  ]
+  "content": "\nWeve been looking at the infrastructure of the Gumblar malware and found some curious facts on how Gumblar operates which we would like to share to make hosting owners aware of the Gumblar threat.\nAnalysis of some infected websites showed that the only way to inject the infection of Gumblar was by using FTP access, because those websites have no serverside scripting. Later this was proved by an analysis of FTP log files.\nThe malicious code injection in HTML pages (which is a simple insertion of <script> tag in every file having HTML) was done by downloading all files from the server that could have HTML, changing them and uploading back. We call the websites modified in this way redirectors, because they simply redirect browsers to the website spreading malware.\nThe injected script refers to another website hosting exploits and registering all attacked clients. These websites have to support php, because the backend is implemented in php. We call these websites infectors, because they host the exploits and malicious executable file for Windows. The malicious Windows executable is pushed when the attack is successful. The executable waits for the user to enter FTP credentials.\nWeve been able to find where the server code for redirectors and infectors websites was coming from. And weve found an additional tier of infrastructure  a set of compromised websites which we call injectors. These websites host a generic php backdoor which lets the owner execute any php code on the webserver.All the websites from all tiers seem to be legitimate but compromised websites not connected to the Gumblar group. The whole set of compromised hosts was split into at least 3 nonintersecting groups which were used for different purposes.\nThe injectors are not acting on their own. This tier seems to be used to proxify the injection tasks. This means that there is another set of machines, which actually issue code and commands to infect the webpages on the compromised webservers. We call these machines dispatchers. There isnt a lot of information about them yet and its unclear if theyre compromised as well.\nSo the Gumblar tiers look like this: \n\nWhy is Gumblar so widespread? The answer is quite simple: its a fully automated system. Its a new generation of selfbuilding botnets. This system is actively attacking visitors of a website and once these visitors have been infected with the Windows executable, it grabs FTP credentials from the victim machines. The FTP accounts are then used to infect every webpage on new webservers. This way the system extends the number of infected pages, thus attacking more and more computers. The entire process is automated and the owner of the system just needs to adjust the system and update the Trojan executable which steals passwords and the exploits used to attack the browser.\nThe system works in a constant loop of attacking new computers, getting new FTP accounts and infecting new servers. The illustration below includes the roles of the compromised hosts: \n\n",
+  "idorurl": "60k_0041240"
 }

@@ -1,36 +1,20 @@
 {
-  "idorurl": "60k_0054655",
-  "content": "\n\nShare\n\nBoth the OurMine and PoodleCorp hacking gangs appear to be taking credit for Pokmon GO being offline over the weekend. But might there be a more downtoearth explanation?\n\nHackers have claimed responsibility for problems experienced by players of the hugelypopular smartphone game Pokmon GO this weekend.\nAvid gamers found to their frustration that their attempts to chase down cartoon critters were disrupted by the Pokmon servers being offline for a period of time over the weekend.\n\nPokmon GO\nOur servers are humbled by your incredible response.\nWe are working to resolve the issue. Please try again soon.\nSo, what caused the downtime?\nFirst up is the notorious OurMine hacking group  which has made something of a name for itself in recent months breaking into the social media accounts of the likes of Mark Zuckerberg, and Googles Sundar Pinchai amongst others.\nIn an interview with TechCrunch, OurMine appeared to take credit for a distributed denialofservice (DDoS) attack against the games servers.\nMeanwhile, a rival hacking group known as PoodleCorp has also claimed responsibility for Pokmon GOs downtime.\n\nIn a YouTube interview, a member of PoodleCorp claimed that they would be taking down all of Pokmon GOs servers for 24 hours on August 1st, as a proof that they were responsible for the attacks and disrupting gamers.\nSo, make a note in your diary folks \nAsked what the point of PoodleCorp was, the alleged member of PoodleCorp said simply Chaos.\nBy Sunday morning, the official Pokmon GO Twitter account was advising that the issue had been resolved, but made no mention of any DDoS attack or the claims made by the hacking gangs.\n\nThe issues causing the server problems have been identified. Trainers should once again be able to search for Pokmon in the real world.\n Pokmon GO (PokemonGoApp) July 17, 2016\n\nSo, was Pokmon GO knocked offline by a denialofservice attack or simply a victim of its extraordinary success? At the moment, the only people who know for certain are likely to be Nintendo and Niantic, the company which develops the game and runs its servers.\nAs Pokmon GO has been rolled out to more countries around the world, and more people install it to see what all the fuss is about, chances are that its servers will be tested once again. The games sheer popularity, until people grow bored of the fad and move on to something else, is likely to continue to make the game slightly glitchy and may  on occasions  mean that its servers cant take the strain.\nAnd frankly, that would be hard to distinguish from a denialofservice attack to much of the outside world.\nOf course, if Pokmon GO was hit by a DDoS attack it wont be the games first run in with cybercrime.\nThe muchhyped game has already had fake versions made of itself containing malware, and apps appear in the official Google Play store that lock Android screens. No doubt there will be more threats to come.\nPlease be sure to read and follow our tips on how to play Pokmon Go safely.\n\nGraham Cluley 18 Jul 2016  05:11PM\n\nSimilar Articles\n\nCybercrime \n\nCyberextortionists take aim at lucrative targets\n\nCybercrime \n\nSiegeware: When criminals take over your smart building\n\nCybercrime \n\nMaltas leading bank resumes operations after cyberheistinduced shutdown\n\nCybercrime \n\nCybercrime black markets: Dark web services and their prices\n\nDiscussion\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "OurMine",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "None"
+      "sub": "OurMine",
+      "rel": "breaking into social media accounts of",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Mark Zuckerberg"
     },
     {
-      "name": "Mark Zuckerberg",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "OurMine",
+      "rel": "breaking into social media accounts of",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Sundar Pinchai",
-      "type": "identity",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Sundar Pinchai"
     }
   ],
   "entitylist": [
@@ -66,22 +50,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "OurMine",
-      "rel": "breaking into social media accounts of",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "Mark Zuckerberg"
-    },
-    {
-      "sub": "OurMine",
-      "rel": "breaking into social media accounts of",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "Sundar Pinchai"
-    }
-  ]
+  "content": "\n\nShare\n\nBoth the OurMine and PoodleCorp hacking gangs appear to be taking credit for Pokmon GO being offline over the weekend. But might there be a more downtoearth explanation?\n\nHackers have claimed responsibility for problems experienced by players of the hugelypopular smartphone game Pokmon GO this weekend.\nAvid gamers found to their frustration that their attempts to chase down cartoon critters were disrupted by the Pokmon servers being offline for a period of time over the weekend.\n\nPokmon GO\nOur servers are humbled by your incredible response.\nWe are working to resolve the issue. Please try again soon.\nSo, what caused the downtime?\nFirst up is the notorious OurMine hacking group  which has made something of a name for itself in recent months breaking into the social media accounts of the likes of Mark Zuckerberg, and Googles Sundar Pinchai amongst others.\nIn an interview with TechCrunch, OurMine appeared to take credit for a distributed denialofservice (DDoS) attack against the games servers.\nMeanwhile, a rival hacking group known as PoodleCorp has also claimed responsibility for Pokmon GOs downtime.\n\nIn a YouTube interview, a member of PoodleCorp claimed that they would be taking down all of Pokmon GOs servers for 24 hours on August 1st, as a proof that they were responsible for the attacks and disrupting gamers.\nSo, make a note in your diary folks \nAsked what the point of PoodleCorp was, the alleged member of PoodleCorp said simply Chaos.\nBy Sunday morning, the official Pokmon GO Twitter account was advising that the issue had been resolved, but made no mention of any DDoS attack or the claims made by the hacking gangs.\n\nThe issues causing the server problems have been identified. Trainers should once again be able to search for Pokmon in the real world.\n Pokmon GO (PokemonGoApp) July 17, 2016\n\nSo, was Pokmon GO knocked offline by a denialofservice attack or simply a victim of its extraordinary success? At the moment, the only people who know for certain are likely to be Nintendo and Niantic, the company which develops the game and runs its servers.\nAs Pokmon GO has been rolled out to more countries around the world, and more people install it to see what all the fuss is about, chances are that its servers will be tested once again. The games sheer popularity, until people grow bored of the fad and move on to something else, is likely to continue to make the game slightly glitchy and may  on occasions  mean that its servers cant take the strain.\nAnd frankly, that would be hard to distinguish from a denialofservice attack to much of the outside world.\nOf course, if Pokmon GO was hit by a DDoS attack it wont be the games first run in with cybercrime.\nThe muchhyped game has already had fake versions made of itself containing malware, and apps appear in the official Google Play store that lock Android screens. No doubt there will be more threats to come.\nPlease be sure to read and follow our tips on how to play Pokmon Go safely.\n\nGraham Cluley 18 Jul 2016  05:11PM\n\nSimilar Articles\n\nCybercrime \n\nCyberextortionists take aim at lucrative targets\n\nCybercrime \n\nSiegeware: When criminals take over your smart building\n\nCybercrime \n\nMaltas leading bank resumes operations after cyberheistinduced shutdown\n\nCybercrime \n\nCybercrime black markets: Dark web services and their prices\n\nDiscussion\n\n",
+  "idorurl": "60k_0054655"
 }

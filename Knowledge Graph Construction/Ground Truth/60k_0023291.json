@@ -1,131 +1,116 @@
 {
-  "idorurl": "60k_0023291",
-  "content": "\n\nby\nGraham Cluley\n\nSophosLabs has intercepted many emails today, attempting to infect Windows computers via an email purporting to be an invoice from a car rental company.\nThe emails, which pretend to come from Europcar, have a ZIP file attached which contains a malicious payload.\n\nSubject: Europcar Invoice [random number]\nAttached file: EuropCar Invoice.zip\nMessage body:\nPlease find your Invoice attached.\nThis is an automated message, please do not reply to this email.\nShould you require further information, please contact Europcar UK Customer Services by emailing to CustomerServicesUKeuropcar.com \n<mailto:CustomerServicesUKeuropcar.com>.\nBest Regards,\nEuropcar UK Ltd\nCar hire with great rental deals, holiday offers, and discount UK car rentals.\nEuropcar UK make car hire quick and easy.\nFor latest offers and promotions please visit us at: http://www.europcar.co.uk\nSophos products are detecting the attached file, EuropCar Invoice.zip, as Troj/InvoZip.\nOf course, the emails dont really come from Europcar  the cybercriminals behind the attack have simply forged the senders email address.\nOf course, even if you havent hired a rental car you might still be concerend that your credit card might have been stung, and open the ZIP file without thinking of the possible consequences.\nOnce infected, remote hackers can take control of your computer  potentially using it to spam out other attacks or to steal information from you.\nMake sure that your antivirus defences are uptodate and always be suspicious of unsolicited emails that try to lure you into opening attachments. It could be a ploy by a hacker to hijack your computer.\n\nCar rental image from Shutterstock.\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "SophosLabs",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "SophosLabs",
+      "rel": "has intercepted",
+      "rel_type": [
+        "research-describes-analysis-of-characterizes-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Europcar invoice emails"
     },
     {
-      "name": "Europcar invoice emails",
-      "type": "attack-pattern",
-      "alias": [
-        "unsolicited emails"
+      "sub": "Attacker(behind:Europcar invoice campaign)",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Europcar invoice emails"
     },
     {
-      "name": "Windows computers",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "Europcar invoice emails",
+      "rel": "attempting to infect",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Windows computers"
     },
     {
-      "name": "Europcar",
-      "type": "identity",
-      "alias": [
-        "Europcar UK Ltd",
-        "car rental company"
+      "sub": "Europcar invoice emails",
+      "rel": "pretend to come from",
+      "rel_type": [
+        "impersonates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Europcar"
     },
     {
-      "name": "EuropCar Invoice.zip",
-      "type": "file",
-      "alias": [
-        "ZIP file",
-        "attached file",
-        "attachments"
+      "sub": "Europcar invoice emails",
+      "rel": "have attached",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "EuropCar Invoice.zip"
     },
     {
-      "name": "Troj/InvoZip",
-      "type": "malware",
-      "alias": [
-        "malicious payload"
+      "sub": "EuropCar Invoice.zip",
+      "rel": "contains",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Troj/InvoZip"
     },
     {
-      "name": "CustomerServicesUK@europcar.com",
-      "type": "email-address",
-      "alias": [
-        "None"
+      "sub": "Sophos products",
+      "rel": "are detecting",
+      "rel_type": [
+        "research-describes-analysis-of-characterizes-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "EuropCar Invoice.zip"
     },
     {
-      "name": "http://www.europcar.co.uk",
-      "type": "url",
-      "alias": [
-        "None"
+      "sub": "EuropCar Invoice.zip",
+      "rel": "is detected as",
+      "rel_type": [
+        "categorized-as"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Troj/InvoZip"
     },
     {
-      "name": "Sophos products",
-      "type": "security-product",
-      "alias": [
-        "antivirus defences"
+      "sub": "Troj/InvoZip",
+      "rel": "once infected, can lead to",
+      "rel_type": [
+        "leads-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "infected computer"
     },
     {
-      "name": "Attacker(behind:Europcar invoice campaign)",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "cybercriminals",
-        "remote hackers",
-        "hacker"
+      "sub": "Attacker(behind:Europcar invoice campaign)",
+      "rel": "can take control of",
+      "rel_type": [
+        "controls"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "infected computer"
     },
     {
-      "name": "infected computer",
-      "type": "general-software",
-      "alias": [
-        "computer"
+      "sub": "Attacker(behind:Europcar invoice campaign)",
+      "rel": "potentially using to spam out other attacks",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "infected computer"
     },
     {
-      "name": "information",
-      "type": "abstract-concept",
-      "alias": [
-        "None"
+      "sub": "Attacker(behind:Europcar invoice campaign)",
+      "rel": "steal",
+      "rel_type": [
+        "exfiltrate-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "information"
+    },
+    {
+      "sub": "Europcar",
+      "rel": "can be contacted by emailing",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "CustomerServicesUK@europcar.com"
+    },
+    {
+      "sub": "Europcar",
+      "rel": "has website",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "http://www.europcar.co.uk"
     }
   ],
   "entitylist": [
@@ -257,118 +242,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "SophosLabs",
-      "rel": "has intercepted",
-      "rel_type": [
-        "research-describes-analysis-of-characterizes-detects"
-      ],
-      "obj": "Europcar invoice emails"
-    },
-    {
-      "sub": "Attacker(behind:Europcar invoice campaign)",
-      "rel": "uses",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Europcar invoice emails"
-    },
-    {
-      "sub": "Europcar invoice emails",
-      "rel": "attempting to infect",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "Windows computers"
-    },
-    {
-      "sub": "Europcar invoice emails",
-      "rel": "pretend to come from",
-      "rel_type": [
-        "impersonates"
-      ],
-      "obj": "Europcar"
-    },
-    {
-      "sub": "Europcar invoice emails",
-      "rel": "have attached",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "EuropCar Invoice.zip"
-    },
-    {
-      "sub": "EuropCar Invoice.zip",
-      "rel": "contains",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "Troj/InvoZip"
-    },
-    {
-      "sub": "Sophos products",
-      "rel": "are detecting",
-      "rel_type": [
-        "research-describes-analysis-of-characterizes-detects"
-      ],
-      "obj": "EuropCar Invoice.zip"
-    },
-    {
-      "sub": "EuropCar Invoice.zip",
-      "rel": "is detected as",
-      "rel_type": [
-        "categorized-as"
-      ],
-      "obj": "Troj/InvoZip"
-    },
-    {
-      "sub": "Troj/InvoZip",
-      "rel": "once infected, can lead to",
-      "rel_type": [
-        "leads-to"
-      ],
-      "obj": "infected computer"
-    },
-    {
-      "sub": "Attacker(behind:Europcar invoice campaign)",
-      "rel": "can take control of",
-      "rel_type": [
-        "controls"
-      ],
-      "obj": "infected computer"
-    },
-    {
-      "sub": "Attacker(behind:Europcar invoice campaign)",
-      "rel": "potentially using to spam out other attacks",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "infected computer"
-    },
-    {
-      "sub": "Attacker(behind:Europcar invoice campaign)",
-      "rel": "steal",
-      "rel_type": [
-        "exfiltrate-to"
-      ],
-      "obj": "information"
-    },
-    {
-      "sub": "Europcar",
-      "rel": "can be contacted by emailing",
-      "rel_type": [
-        "other"
-      ],
-      "obj": "CustomerServicesUK@europcar.com"
-    },
-    {
-      "sub": "Europcar",
-      "rel": "has website",
-      "rel_type": [
-        "other"
-      ],
-      "obj": "http://www.europcar.co.uk"
-    }
-  ]
+  "content": "\n\nby\nGraham Cluley\n\nSophosLabs has intercepted many emails today, attempting to infect Windows computers via an email purporting to be an invoice from a car rental company.\nThe emails, which pretend to come from Europcar, have a ZIP file attached which contains a malicious payload.\n\nSubject: Europcar Invoice [random number]\nAttached file: EuropCar Invoice.zip\nMessage body:\nPlease find your Invoice attached.\nThis is an automated message, please do not reply to this email.\nShould you require further information, please contact Europcar UK Customer Services by emailing to CustomerServicesUKeuropcar.com \n<mailto:CustomerServicesUKeuropcar.com>.\nBest Regards,\nEuropcar UK Ltd\nCar hire with great rental deals, holiday offers, and discount UK car rentals.\nEuropcar UK make car hire quick and easy.\nFor latest offers and promotions please visit us at: http://www.europcar.co.uk\nSophos products are detecting the attached file, EuropCar Invoice.zip, as Troj/InvoZip.\nOf course, the emails dont really come from Europcar  the cybercriminals behind the attack have simply forged the senders email address.\nOf course, even if you havent hired a rental car you might still be concerend that your credit card might have been stung, and open the ZIP file without thinking of the possible consequences.\nOnce infected, remote hackers can take control of your computer  potentially using it to spam out other attacks or to steal information from you.\nMake sure that your antivirus defences are uptodate and always be suspicious of unsolicited emails that try to lure you into opening attachments. It could be a ploy by a hacker to hijack your computer.\n\nCar rental image from Shutterstock.\n",
+  "idorurl": "60k_0023291"
 }

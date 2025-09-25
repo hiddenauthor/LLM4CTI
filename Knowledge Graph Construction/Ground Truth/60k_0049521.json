@@ -1,207 +1,148 @@
 {
-  "idorurl": "60k_0049521",
-  "content": "\n\nEmail can be considered a big businessfor cybercrime.\nIn 2014, 196.3 billion emails were sent and received daily. Of that number, 108.7 billion were business emails.With the volume of business emails sent daily, it would be unimaginable for cybercriminals not to take advantage of email to target big businesses. And those attempts can result inmilliondollar losses and stolen information. For example, it was reported that the Home Depot breach cost the company US62M in losses while the Target breach cost US229M.\nHowever, it doesnt mean that businesses are the only ones vulnerable to email attacks. Based on our observations on the first half of the year, email threats do not discriminate when it comes to acquiring victims.\nThe first half of the year was defined by two trends in the spam landscape. The first was the continued rise of macrobased malware in spam. The second was the slew of ransomware attacks delivered via spam.\nSomething old made something new\nIn the first few months of the year, we noticed that there was a noticeable increase in macrobased threats in spammed messages. These spammed messages had attachments with Microsoft Office file extensions like .DOC, .DOCM, .XLS, and .XLSM. In Figure 1 below, we broke down the type of malwarerelated spam we saw throughout the months. While UPATRE (in red) is still the top type of malspam, we can see that macro spam (in green) has increased throughout the months.\n\nFigure 1. Macro spam has increased throughout the months\nSource: honeypot data\nWe also encountered emails that contained PDF attachments. These attachments actually contain embedded .DOC files. The .DOC files contain the macro that will download the malicious .EXE file once executed.\n\nFigure 2. Sample .PDF file\nBut not all spammed messages related to macro threats had attachments. Other emails contained links that lead to legitimate file hosting websites like Dropbox, where the malicious file is hosted.\n\nFigure 3. Sample spammed message with Dropbox link\nSpammers may have decided to use macros for their spam runs because of the newness of macros. After years of relative silence, its only recently that malicious macros have reentered the threat landscape. Spam recipients may not be aware of the dangers of macros, allowing spammers to cast a wider net of potential victims.\nRansom(ware) letters reimagined\nSpam remained a popular method of delivering ransomware to unsuspecting recipients. Two ransomware families particularly made a lot of noise during the first half of the year: Cryptowall 3.0 and TorrentLocker.\nDuring the first quarter of the year, we came across malicious spam runs that combined file encryption with information theft. Several spammed messages contained a supposed resume attachment in ZIP files. The archived file contains a .JS or .HTML file that downloads Cryptowall and FAREIT malware onto the computer. FAREIT is known to steal credentials stored in the systems FTP clients, web browsers, email clients and even Bitcoin wallets.\nMeanwhile, we saw TorrentLocker as part of regional attacks that targeted countries such as Australia, New Zealand, and certain parts of Europe. Some of the commonly used social engineering lures used in the attacks include invoice (such as those for Bolletta and Fatura) and postal tracking notifications.\n1H 2015 spam volume\nWe may have seen an increase in specific types of attacks but overall, there was a noticeable decline in the volume of spam as the year went on. Breaking down the total volume of spam for 1H 2015, we can see that March had the largest percentage of the six months.\n\nFigure 4. Total spam volume for 1H 2015\nSource: honeypot data\nThere are several factors that could explain the higher volume for the first three months of 2015. We saw recurring outbreaks involving dating, adult, and employment spam, which decreased coming into the second quarter. Its possible that spammers may have moved on to other types of spam attacks.\nTwo trends continued into the second quarter of the year. We saw outbreaks of malwarerelated spam; these spam contain zipped attachments of downloaded malware UPATRE and macrobased malware BARTALEX. We also encountered spam containing links to newly created domains, which are often created just days before the attacks. These spammed messages often useword saladand invisible ink to bypass filters.\nUpatre (still) reigns supreme\nUPATRE continued its streak as the top distributed malware via spam. Last year, we noted that there was a decrease in UPATRErelated spam campaigns due to the Gameover takedown. However, activity soon picked up due to the CUTWAIL botnet. A year later, UPATRE remains on top, distributed by the CUTWAIL botnet. CUTWAIL has been in the wild since as early as 2007 and was considered one of the biggest spam botnets in 2009.\nBut while UPATRE might be considered old at this point, it still has a few tricks up its sleeve. We spotted an upgraded version of UPATRE that can disable security featuresmaking it easier to avoid detection. We also encountered a new variant being dropped as a Microsoftcompiled HTM file (.CHM). The use of this file extension is a way to avoid suspicion: .CHM is the extension of Microsoft help files.\nPLUGX and EMDIVI, top spearphishing payloads\nEmail remains a popular arrival vector for targeted attacks, with 74 of targeted attack attempts using email as the gateway for infiltration.\nFor the first half of the year, spearphishing emails used a variety of social engineering lures like upcoming seminars, job vacancies, and personnel issues. However, what stood out was the fact that the two most common payloads were PLUGX and EMDIVI. PLUGX is a remote access tool (RAT) used in targeted attacks aimed toward governmentrelated institutions and key industries.EMDIVI, which first appeared in 2014, is notoriously used in targeted attacks against Japanese companies.\nWhats next for spam?\nWhile its hard to predict the exact steps spammers may take in the second half of the year, we can make some predictions based on past and current observations:\n\nMacrobased malware will continue to increase, possibly using new techniques such as the use of new file extensions and new payloads.\nCryptowall spam may also experience a slight change: we foresee attackers doing away with just using the resume template. Newer Cryptowall spam will include other templates.\nSpammers will use normal types of templates for their attacks to bypass antispam filters. These templates include social networking notifications, banking notifications, and tracking notifications like those for DHL and Fedex.\nSome things, however, will remain the same. Spammers will continue to use holidays and other newsworthy events just to victimize unsuspecting users.\nUPATRE will remain the top distributed malware because its small file size allows it to be easily attached to emails and/or downloaded from URLs. UPATRE can also be modified to bypass security filterssomething weve seen in the first half of 2015.\n\nRegardless of the next steps for spam,businesses should implement security solutions that can detect and block email threats. TheDeep DiscoveryEmail Inspectorisbuilt to detect and block targeted emails engineered to lead to a data breach. The Deep Discovery Email Inspector employs advanced malware detection engines, URL analysis, and file and web sandboxing to identify and immediately block or quarantine these emails.\nEnterprises can also opt for theTrend Micro Smart Protection Complete Suites, whichdelivers the best protection at multiple layers: endpoint, application, and network using the broadest range of antimalware techniques available.\nSmall businesses can protect their business from email threats with theTrend MicroWorryFree Business Security. Harnessing the power of the Smart Protection Network,WorryFree Business Security proactivelystops threats before they can reach the business, limiting the impact on your systems.\n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: 1H 2015 spam roundupemailemail roundupmacroSpamspam roundup\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": ".JS file",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "zipped attachments",
+      "rel": "contains",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": ".JS file"
     },
     {
-      "name": ".HTML file",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "zipped attachments",
+      "rel": "contains",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": ".HTML file"
     },
     {
-      "name": "Cryptowall",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": ".JS file",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Cryptowall"
     },
     {
-      "name": "FAREIT",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": ".HTML file",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Cryptowall"
     },
     {
-      "name": "credentials",
-      "type": "credential-value",
-      "alias": [
-        "None"
+      "sub": ".JS file",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "FAREIT"
     },
     {
-      "name": "UPATRE",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": ".HTML file",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "FAREIT"
     },
     {
-      "name": "BARTALEX",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "FAREIT",
+      "rel": "steal",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "credentials"
     },
     {
-      "name": "Spam email",
-      "type": "attack-pattern",
-      "alias": [
-        "spammed messages"
+      "sub": "social engineering lures",
+      "rel": "include",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "invoice"
     },
     {
-      "name": "zipped attachments",
-      "type": "file",
-      "alias": [
-        "archived file"
+      "sub": "social engineering lures",
+      "rel": "include",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "postal tracking notifications"
     },
     {
-      "name": "word salad",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
+      "sub": "zipped attachments",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "UPATRE"
     },
     {
-      "name": "invisible ink",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
+      "sub": "zipped attachments",
+      "rel": "delivers",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "BARTALEX"
     },
     {
-      "name": "filters",
-      "type": "security-product",
-      "alias": [
-        "None"
+      "sub": "Spam email",
+      "rel": "use",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "word salad"
     },
     {
-      "name": "CUTWAIL botnet",
-      "type": "infrastructure",
-      "alias": [
-        "None"
+      "sub": "Spam email",
+      "rel": "use",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "invisible ink"
     },
     {
-      "name": "upgraded version of UPATRE",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "word salad",
+      "rel": "bypass",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "UPATRE"
-      ]
+      "obj": "filters"
     },
     {
-      "name": "security features",
-      "type": "security-product",
-      "alias": [
-        "None"
+      "sub": "invisible ink",
+      "rel": "bypass",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "filters"
     },
     {
-      "name": "new variant of UPATRE",
-      "type": "malware",
-      "alias": [
-        "new variant"
+      "sub": "CUTWAIL botnet",
+      "rel": "distributed",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "UPATRE"
-      ]
+      "obj": "UPATRE"
     },
     {
-      "name": "Microsoft compiled HTM file",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "upgraded version of UPATRE",
+      "rel": "disable",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "security features"
     },
     {
-      "name": "social engineering lures",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
+      "sub": "new variant of UPATRE",
+      "rel": "dropped as",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "invoice",
-      "type": "attack-pattern",
-      "alias": [
-        "Bolletta",
-        "Fatura"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "postal tracking notifications",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Microsoft compiled HTM file"
     }
   ],
   "entitylist": [
@@ -409,150 +350,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "zipped attachments",
-      "rel": "contains",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": ".JS file"
-    },
-    {
-      "sub": "zipped attachments",
-      "rel": "contains",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": ".HTML file"
-    },
-    {
-      "sub": ".JS file",
-      "rel": "downloads",
-      "rel_type": [
-        "downloads"
-      ],
-      "obj": "Cryptowall"
-    },
-    {
-      "sub": ".HTML file",
-      "rel": "downloads",
-      "rel_type": [
-        "downloads"
-      ],
-      "obj": "Cryptowall"
-    },
-    {
-      "sub": ".JS file",
-      "rel": "downloads",
-      "rel_type": [
-        "downloads"
-      ],
-      "obj": "FAREIT"
-    },
-    {
-      "sub": ".HTML file",
-      "rel": "downloads",
-      "rel_type": [
-        "downloads"
-      ],
-      "obj": "FAREIT"
-    },
-    {
-      "sub": "FAREIT",
-      "rel": "steal",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "credentials"
-    },
-    {
-      "sub": "social engineering lures",
-      "rel": "include",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "invoice"
-    },
-    {
-      "sub": "social engineering lures",
-      "rel": "include",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "postal tracking notifications"
-    },
-    {
-      "sub": "zipped attachments",
-      "rel": "delivers",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "UPATRE"
-    },
-    {
-      "sub": "zipped attachments",
-      "rel": "delivers",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "BARTALEX"
-    },
-    {
-      "sub": "Spam email",
-      "rel": "use",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "word salad"
-    },
-    {
-      "sub": "Spam email",
-      "rel": "use",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "invisible ink"
-    },
-    {
-      "sub": "word salad",
-      "rel": "bypass",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "filters"
-    },
-    {
-      "sub": "invisible ink",
-      "rel": "bypass",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "filters"
-    },
-    {
-      "sub": "CUTWAIL botnet",
-      "rel": "distributed",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "UPATRE"
-    },
-    {
-      "sub": "upgraded version of UPATRE",
-      "rel": "disable",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "security features"
-    },
-    {
-      "sub": "new variant of UPATRE",
-      "rel": "dropped as",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Microsoft compiled HTM file"
-    }
-  ]
+  "content": "\n\nEmail can be considered a big businessfor cybercrime.\nIn 2014, 196.3 billion emails were sent and received daily. Of that number, 108.7 billion were business emails.With the volume of business emails sent daily, it would be unimaginable for cybercriminals not to take advantage of email to target big businesses. And those attempts can result inmilliondollar losses and stolen information. For example, it was reported that the Home Depot breach cost the company US62M in losses while the Target breach cost US229M.\nHowever, it doesnt mean that businesses are the only ones vulnerable to email attacks. Based on our observations on the first half of the year, email threats do not discriminate when it comes to acquiring victims.\nThe first half of the year was defined by two trends in the spam landscape. The first was the continued rise of macrobased malware in spam. The second was the slew of ransomware attacks delivered via spam.\nSomething old made something new\nIn the first few months of the year, we noticed that there was a noticeable increase in macrobased threats in spammed messages. These spammed messages had attachments with Microsoft Office file extensions like .DOC, .DOCM, .XLS, and .XLSM. In Figure 1 below, we broke down the type of malwarerelated spam we saw throughout the months. While UPATRE (in red) is still the top type of malspam, we can see that macro spam (in green) has increased throughout the months.\n\nFigure 1. Macro spam has increased throughout the months\nSource: honeypot data\nWe also encountered emails that contained PDF attachments. These attachments actually contain embedded .DOC files. The .DOC files contain the macro that will download the malicious .EXE file once executed.\n\nFigure 2. Sample .PDF file\nBut not all spammed messages related to macro threats had attachments. Other emails contained links that lead to legitimate file hosting websites like Dropbox, where the malicious file is hosted.\n\nFigure 3. Sample spammed message with Dropbox link\nSpammers may have decided to use macros for their spam runs because of the newness of macros. After years of relative silence, its only recently that malicious macros have reentered the threat landscape. Spam recipients may not be aware of the dangers of macros, allowing spammers to cast a wider net of potential victims.\nRansom(ware) letters reimagined\nSpam remained a popular method of delivering ransomware to unsuspecting recipients. Two ransomware families particularly made a lot of noise during the first half of the year: Cryptowall 3.0 and TorrentLocker.\nDuring the first quarter of the year, we came across malicious spam runs that combined file encryption with information theft. Several spammed messages contained a supposed resume attachment in ZIP files. The archived file contains a .JS or .HTML file that downloads Cryptowall and FAREIT malware onto the computer. FAREIT is known to steal credentials stored in the systems FTP clients, web browsers, email clients and even Bitcoin wallets.\nMeanwhile, we saw TorrentLocker as part of regional attacks that targeted countries such as Australia, New Zealand, and certain parts of Europe. Some of the commonly used social engineering lures used in the attacks include invoice (such as those for Bolletta and Fatura) and postal tracking notifications.\n1H 2015 spam volume\nWe may have seen an increase in specific types of attacks but overall, there was a noticeable decline in the volume of spam as the year went on. Breaking down the total volume of spam for 1H 2015, we can see that March had the largest percentage of the six months.\n\nFigure 4. Total spam volume for 1H 2015\nSource: honeypot data\nThere are several factors that could explain the higher volume for the first three months of 2015. We saw recurring outbreaks involving dating, adult, and employment spam, which decreased coming into the second quarter. Its possible that spammers may have moved on to other types of spam attacks.\nTwo trends continued into the second quarter of the year. We saw outbreaks of malwarerelated spam; these spam contain zipped attachments of downloaded malware UPATRE and macrobased malware BARTALEX. We also encountered spam containing links to newly created domains, which are often created just days before the attacks. These spammed messages often useword saladand invisible ink to bypass filters.\nUpatre (still) reigns supreme\nUPATRE continued its streak as the top distributed malware via spam. Last year, we noted that there was a decrease in UPATRErelated spam campaigns due to the Gameover takedown. However, activity soon picked up due to the CUTWAIL botnet. A year later, UPATRE remains on top, distributed by the CUTWAIL botnet. CUTWAIL has been in the wild since as early as 2007 and was considered one of the biggest spam botnets in 2009.\nBut while UPATRE might be considered old at this point, it still has a few tricks up its sleeve. We spotted an upgraded version of UPATRE that can disable security featuresmaking it easier to avoid detection. We also encountered a new variant being dropped as a Microsoftcompiled HTM file (.CHM). The use of this file extension is a way to avoid suspicion: .CHM is the extension of Microsoft help files.\nPLUGX and EMDIVI, top spearphishing payloads\nEmail remains a popular arrival vector for targeted attacks, with 74 of targeted attack attempts using email as the gateway for infiltration.\nFor the first half of the year, spearphishing emails used a variety of social engineering lures like upcoming seminars, job vacancies, and personnel issues. However, what stood out was the fact that the two most common payloads were PLUGX and EMDIVI. PLUGX is a remote access tool (RAT) used in targeted attacks aimed toward governmentrelated institutions and key industries.EMDIVI, which first appeared in 2014, is notoriously used in targeted attacks against Japanese companies.\nWhats next for spam?\nWhile its hard to predict the exact steps spammers may take in the second half of the year, we can make some predictions based on past and current observations:\n\nMacrobased malware will continue to increase, possibly using new techniques such as the use of new file extensions and new payloads.\nCryptowall spam may also experience a slight change: we foresee attackers doing away with just using the resume template. Newer Cryptowall spam will include other templates.\nSpammers will use normal types of templates for their attacks to bypass antispam filters. These templates include social networking notifications, banking notifications, and tracking notifications like those for DHL and Fedex.\nSome things, however, will remain the same. Spammers will continue to use holidays and other newsworthy events just to victimize unsuspecting users.\nUPATRE will remain the top distributed malware because its small file size allows it to be easily attached to emails and/or downloaded from URLs. UPATRE can also be modified to bypass security filterssomething weve seen in the first half of 2015.\n\nRegardless of the next steps for spam,businesses should implement security solutions that can detect and block email threats. TheDeep DiscoveryEmail Inspectorisbuilt to detect and block targeted emails engineered to lead to a data breach. The Deep Discovery Email Inspector employs advanced malware detection engines, URL analysis, and file and web sandboxing to identify and immediately block or quarantine these emails.\nEnterprises can also opt for theTrend Micro Smart Protection Complete Suites, whichdelivers the best protection at multiple layers: endpoint, application, and network using the broadest range of antimalware techniques available.\nSmall businesses can protect their business from email threats with theTrend MicroWorryFree Business Security. Harnessing the power of the Smart Protection Network,WorryFree Business Security proactivelystops threats before they can reach the business, limiting the impact on your systems.\n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: 1H 2015 spam roundupemailemail roundupmacroSpamspam roundup\n\n",
+  "idorurl": "60k_0049521"
 }

@@ -1,0 +1,397 @@
+{
+  "relationshiplist": [
+    {
+      "sub": "Cheerscrypt",
+      "rel": "derived from",
+      "rel_type": [
+        "derived-from"
+      ],
+      "obj": "Babuk source code"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "compares to",
+      "rel_type": [
+        "compares-to"
+      ],
+      "obj": "Babuk"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "VMware ESXi"
+    },
+    {
+      "sub": "LockBit",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "VMware ESXi"
+    },
+    {
+      "sub": "Hive",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "VMware ESXi"
+    },
+    {
+      "sub": "RansomEXX",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "VMware ESXi"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "terminates",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "virtual machines"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "employs",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "double extortion scheme"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "renames files with",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": ".Cheers"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "drops ransom note",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "How to Restore Your Files.txt"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": ".log"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": ".vmdk"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": ".vmem"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": ".vswp"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": ".vmsn"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "SOSEMANUK stream cipher"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "ECDH"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "/dev/urandom"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "generates",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "ECDH public-private key pair"
+    },
+    {
+      "sub": "Cheerscrypt",
+      "rel": "is composed of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "Cheerscrypt’s executable file"
+    },
+    {
+      "sub": "Cheerscrypt’s executable file",
+      "rel": "contains",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "public key"
+    }
+  ],
+  "entitylist": [
+    {
+      "name": ".Cheers",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".log",
+      "type": "file",
+      "alias": [
+        "VMware-related files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".vmdk",
+      "type": "file",
+      "alias": [
+        "VMware-related files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".vmem",
+      "type": "file",
+      "alias": [
+        "VMware-related files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".vmsn",
+      "type": "file",
+      "alias": [
+        "VMware-related files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": ".vswp",
+      "type": "file",
+      "alias": [
+        "VMware-related files"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "/dev/urandom",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Babuk",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Babuk source code",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Cheerscrypt",
+      "type": "malware",
+      "alias": [
+        "Cheerscrypt’s executable file"
+      ],
+      "mother entity": [
+        "Babuk"
+      ]
+    },
+    {
+      "name": "Cheerscrypt’s executable file",
+      "type": "file",
+      "alias": [
+        "Cheerscrypt"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "double extortion scheme",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ECDH",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ECDH public-private key pair",
+      "type": "credential-value",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Hive",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "How to Restore Your Files.txt",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "LockBit",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "public key",
+      "type": "credential-value",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "RansomEXX",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SOSEMANUK stream cipher",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "virtual machines",
+      "type": "generic-noun",
+      "alias": [
+        "VMs",
+        "VM processes"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "VMware ESXi",
+      "type": "general-software",
+      "alias": [
+        "ESXi"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "content": "New Linux-Based Ransomware Cheerscrypt Targets ESXi Devices\nNew Linux-Based Ransomware Cheerscrypt Targeting ESXi Devices Linked to Leaked Babuk Source Code\nNew Linux-Based Ransomware Cheerscrypt Targeting ESXi Devices Linked to Leaked Babuk Source Code\nNew findings showed that Cheerscrypt, a new Linux-based ransomware variant that compromises ESXi servers, was derived from the leaked Babuk source code.\nWe discuss our analysis in this report.\nBy: Arianne Dela Cruz, Byron Gelera, McJustine De Guzman, Warren Sto.Tomas\nMay 25, 2022\nWe recently discovered that Cheerscrypt, the new Linux-based ransomware that we detected in multiple attacks targeting ESXi servers, was based on the leaked Babuk source code.\nUpon scrutiny, we found similarities between Cheerscrypt and the Linux version of the Babuk ransomware, specifically its ESXi version.\nThe base code of Cheerscrypt appears to be derived from the Babuk source code, but modified and customized to suit the malicious actor’s ransomware goals.\nThis blog entry discusses our findings and provides an overview of Cheerscrypt’s infection routine based on the information we have gathered so far.\nBrief background\nOver the past few weeks, we observed several Linux-based ransomware detections that malicious actors launched to target VMware ESXi servers, a bare-metal hypervisor for creating and running several virtual machines (VMs) that share the same hard drive storage.\nWe encountered Cheerscrypt, a new ransomware family that has been targeting a customer’s EXSi server used to manage VMware files, during this period.\nIn the past, ESXi servers were also attacked by other known ransomware families such as LockBit, Hive, and RansomEXX as an efficient way to infect many  computers with ransomware.\nThis blog entry provides an overview of Cheerscrypt’s infection routine based on the information we have gathered so far.\nInfection routine\nThe ransomware requires an input parameter specifying the path to encrypt so that it can proceed to its Infection routine.\nFigure 1. Ransomware command line\nUpon execution, it implements the following command to terminate VM processes using ESXCLI:\n“esxcli vm process kill –type=force –world-id=$(esxcli vm process list|grep ‘World ID’|awk ‘{print $3}’)”\nThe termination of the VM processes ensures that the ransomware can successfully encrypt VMware-related files.\nSimilar to other infamous ransomware families, Cheerscrypt employs the double extortion scheme to coerce its victim to pay the ransom, as shown on their ransom note in Figure 2.\nFigure 2. Cheerscrypt’s ransom note\nSuccessfully encrypted files are renamed with the .Cheers extension.\nHowever, the ransomware first renames the files it will encrypt before encrypting the files.\nThus, if the access permission for the file was not granted, it cannot proceed with the actual encryption.\nFigure 3. Cheerscrypt renames the sample before encryption.\nFor each directory it encrypts, it will drop the ransom note named, “How to Restore Your Files.txt”.\nIt seeks out log files and VMware-related files with the following extensions:\n·       .log\n·       .vmdk\n·       .vmem\n·       .vswp\n·       .vmsn\nAfter successful encryption, it displays the following console that contains the data statistics of its routine:\nFigure 4. Console displayed after encryption\nEncryption algorithm\nCheerscrypt’s executable file contains the public key  of a matching key pair with the private key being held by the malicious actor.  The ransomware uses SOSEMANUK stream cipher to encrypt files and ECDH to generate the SOSEMANUK key.\nFor each file to encrypt, it generates an ECDH public-private key pair on the machine through Linux’s /dev/urandom.\nIt then uses its embedded public key and the generated private key to create a secret key that will be used as a SOSEMANUK key.\nAfter encrypting the file, it will append the generated public key to it.\nSince the generated private key is not saved, one cannot use the embedded public key with the generated private key to produce the secret key.\nTherefore, decryption is only possible if the malicious actor’s private key is known.\nThe infection chain is shown on Figure 5.\nFigure 5. Cheerscrypt’s encryption algorithm\nNew findings: Cheerscrypt linked to Babuk\nUnlike Cheerscrypt, Babuk’s malware version used to compromise ESXi servers ensured that the files were encrypted before it renamed the target files.\nThis goes to show that despite the Babuk ransomware operator’s announcement of their retirement — after claiming they already achieved their goals — their impact can still affect different organizations when other malicious actors build upon the source code they leaked.\nWe provide Babuk’s source code for the malware variant specific to ESXi servers in Figure 6.\nIn Figure 7, we can see that Cheerscrypt’s source code was based on Babuk’s source code that was leaked before.\nFigure 6. Babuk’s source code for the malware variant used to target ESXi servers\nFigure 7. Cheerscrypt’s source code with similarities to Babuk’s source code\nConclusion\nESXi is widely used in enterprise settings for server virtualization.\nIt is therefore a popular target for ransomware attacks.\nAs mentioned, compromising ESXi servers has been a scheme used by some notorious cybercriminal groups because it is a means to swiftly spread the ransomware to many devices.\nOrganizations should thus expect malicious actors to upgrade their malware arsenal and breach as many systems and platforms as they can for monetary gain.\nRecommendations\nA proactive stance that ensures solid cybersecurity defenses against modern ransomware threats is crucial for organizations to thrive in an ever-changing threat landscape.\nTo protect systems against similar attacks, organizations can establish security frameworks that systematically allocate resources based on an enterprise’s needs.\nOrganizations can benefit from following the security frameworks established by the Center of Internet Security and the National Institute of Standards and Technology when developing  their own cybersecurity strategies.\nThe frameworks they created help security teams to mitigate risks and minimize exposure to threats.\nAdopting the best practices discussed in their respective frameworks can save organizations the time and effort when they customize their own.\nTheir frameworks guide organizations through the entire process of planning while providing suggestions on measures that need to be established first.\nEndpoints\nArianne Dela Cruz\nByron Gelera\nMcJustine De Guzman\nWarren Sto.Tomas\nSr. Threat Research Engineer",
+  "idorurl": "https://www.trendmicro.com/en_us/research/22/e/new-linux-based-ransomware-cheerscrypt-targets-exsi-devices.html"
+}

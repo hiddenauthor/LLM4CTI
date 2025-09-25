@@ -1,36 +1,20 @@
 {
-  "idorurl": "60k_0056746",
-  "content": "\n\nShare\n\nRussia has been in the news for the last week, with thousands of protesters taking to the street to protest against alleged irregularities in the elections held on December 4th. There are also multiple reports of attempts to silence protesters on the Internet, such asDDoS attacks against websites used by the political opposition, the use\n\nRussia has been in the news for the last week, with thousands of protesters taking to the street to protest against alleged irregularities in the elections held on December 4th. There are also multiple reports of attempts to silence protesters on the Internet, such asDDoS attacks against websites used by the political opposition, the use of Twitter botsto flood messages with specific hashtags related to the protests or by requesting that social networks close groups associated with the protests, as is demonstrated by this lettermade public by the owner of the Vkontakte social network.\nThis week we noticed a botnet using a piece of malware detected as Win32/Flooder.Ramagedos by ESET targeting its distributed denial of service (DDoS) attack at the website http://superjedi.ru/, a forum with a section for discussions on politics in Russia. It contains multiple messages related to the recent events regarding the elections.\n\nThe forum currently has a notice stating that We are under DDOSattack by unknown persons. We do everything to keep the forum working. Thank you for being with us!.\n\nIt turns out that the botnet is currently targeting another website named attrition.org, participating in a DDoS attack that has being ongoing for 3 weeks now. The website contains an errata section (a mirror is available at securityerrata.org) with the aim to enlighten readers about errors, omissions, incidents, plagiarism, lies, and charlatans in the security industry. Chances are the website is targeted by an individual who is displeased to see his name appearing there.\nThose 2 cases are good illustrations of DDoS being used for censorship purposes. Based on the collected evidence, about 4500 computers are participating in the DDoS attacks. While this is a relatively small number for a botnet, it is sufficient to disrupt access to websites with limited bandwidth and no specific DDoS protection.\n\nSbastien Duquette 12 Dec 2011  04:48AM\n\nSimilar Articles\n\nGeneral \n\nSmoke damage and hard drives\n\nGeneral \n\nThe Occasional Orator Part 3\n\nGeneral \n\nThe Occasional Orator Part 2\n\nGeneral \n\nThe Occasional Orator Part 1\n\nDiscussion\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "Win32/Flooder.Ramagedos",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Win32/Flooder.Ramagedos",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "superjedi.ru"
     },
     {
-      "name": "superjedi.ru",
-      "type": "domain-name",
-      "alias": [
-        "http://superjedi.ru/"
+      "sub": "Win32/Flooder.Ramagedos",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "attrition.org",
-      "type": "domain-name",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "attrition.org"
     }
   ],
   "entitylist": [
@@ -65,22 +49,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "Win32/Flooder.Ramagedos",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "superjedi.ru"
-    },
-    {
-      "sub": "Win32/Flooder.Ramagedos",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "attrition.org"
-    }
-  ]
+  "content": "\n\nShare\n\nRussia has been in the news for the last week, with thousands of protesters taking to the street to protest against alleged irregularities in the elections held on December 4th. There are also multiple reports of attempts to silence protesters on the Internet, such asDDoS attacks against websites used by the political opposition, the use\n\nRussia has been in the news for the last week, with thousands of protesters taking to the street to protest against alleged irregularities in the elections held on December 4th. There are also multiple reports of attempts to silence protesters on the Internet, such asDDoS attacks against websites used by the political opposition, the use of Twitter botsto flood messages with specific hashtags related to the protests or by requesting that social networks close groups associated with the protests, as is demonstrated by this lettermade public by the owner of the Vkontakte social network.\nThis week we noticed a botnet using a piece of malware detected as Win32/Flooder.Ramagedos by ESET targeting its distributed denial of service (DDoS) attack at the website http://superjedi.ru/, a forum with a section for discussions on politics in Russia. It contains multiple messages related to the recent events regarding the elections.\n\nThe forum currently has a notice stating that We are under DDOSattack by unknown persons. We do everything to keep the forum working. Thank you for being with us!.\n\nIt turns out that the botnet is currently targeting another website named attrition.org, participating in a DDoS attack that has being ongoing for 3 weeks now. The website contains an errata section (a mirror is available at securityerrata.org) with the aim to enlighten readers about errors, omissions, incidents, plagiarism, lies, and charlatans in the security industry. Chances are the website is targeted by an individual who is displeased to see his name appearing there.\nThose 2 cases are good illustrations of DDoS being used for censorship purposes. Based on the collected evidence, about 4500 computers are participating in the DDoS attacks. While this is a relatively small number for a botnet, it is sufficient to disrupt access to websites with limited bandwidth and no specific DDoS protection.\n\nSbastien Duquette 12 Dec 2011  04:48AM\n\nSimilar Articles\n\nGeneral \n\nSmoke damage and hard drives\n\nGeneral \n\nThe Occasional Orator Part 3\n\nGeneral \n\nThe Occasional Orator Part 2\n\nGeneral \n\nThe Occasional Orator Part 1\n\nDiscussion\n\n",
+  "idorurl": "60k_0056746"
 }

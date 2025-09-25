@@ -1,157 +1,108 @@
 {
-  "idorurl": "60k_0013836",
-  "content": "\nTwo days ago, attackers allegedly associated with the fameseeking group Lizard Squad briefly hijackedGoogles Vietnam domain (google.com.vn). On Wednesday, Lenovo.com was similarly attacked. Sources now tell KrebsOnSecurity that both hijacks were possible because the attackers seized control over Webnic.cc, the Malaysianregistrar that serves both domains and 600,000 others.\nOn Feb. 23, google.com.vn briefly redirected visitors to a page that read, Hacked by Lizard Squad, greetz from antichrist, Brian Krebs, sp3c, Komodo, ryan, HTP  Rory Andrew Godfrey (holding it down in Texas). The message also included a link to the groups Twitter page and its Lizard Stresser online attacksforhire service.\nToday, the group took credit for hacking Lenovo.com, possibly because it was recently revealed that the computer maker was shipping the invasive Superfish adware with allsome new Lenovo notebook PCs (the company has since said Superfish is now disabled on all Lenovo products and that it will no longer preload the software).\nAccording to a report in TheVerge.com, the HTML source code for Lenovo.com was changed to read, the new and improved rebranded Lenovo website featuring Ryan King and Rory Andrew Godfrey.\nThe Verge story notes that both men have been identified as members of the Lizard Squad; to my knowledge this has never been true. In fact, both used to be part of ablack hatand nowdefunct hacker collective known asHack The Planet (HTP) along with one of the main current LizardSquad members  Julius Zeekill Kivimaki (for more on Julius, see these stories). However, both King (a.k.a Starfall) and Godfrey (KMS) have been quite publicly working to undermine and expose the group for months.\nReached via instant message, bothKing and Godfrey saidthe Lizard Squad used a command injection vulnerability in Webnic.cc to upload a rootkit  a set of hacking tools that hide the intruders presence on a compromised system and give the attacker persistent access to that system.\nWebnic.cc is currently inaccessible. A woman who answered the phone at the companys technical operations center in Kuala Lumpur acknowledged the outage but said Webnic doesnt have any additional information to share at this time. Were still in the investigation stage, said Eevon Soh, a Webnic customer support technician.\n\nIt appears the intruders were able to leverage their accessat Webnic.cc to alter the domain name system (DNS) records for the Google and Lenovo domains, effectively giving them the ability to redirect the legitimate traffic away from thedomains to other servers  including those under the attackers control.\nKing and Godfrey said theLizard Squadalso gained access to Webnics store of auth codes (also known as transfer secrets or EPP codes), unique and closelyguarded codes that can be used to transfer any domain to another registrar. As if to prove this level of access, the Lizard Squad tweeted what they claim is one of the codes.\nStarfall and KMS say the rootkit has been removed from Webnics servers, meaning the Lizard Squad should no longer be able to hijack Webnic domains with the same method they used to redirect Lenovo.com or Google Vietnam.\nThis is not the first time these actors have messed withWebnic.cc. Web Commerce Communications Ltd. (Webnic)is apopular registrar amonghacker forums and underground stores that traffic in stolen credit cards and identity information, and a great number of those sites are registered through Webnic.It was hardly a coincidence that many of these criminal storefronts which have been hacked over the past couple of years  including rescator[dot]so, and ssndob were registered at Webnic: All of the same playersinvolved this weeks drama were involved in those hacks as well.\n\n \nTags: eevon soh, hack the planet, htp, julius zeekill kivimaki, kms, lenovo, Lizard Squad, rory andrew godfrey, ryan king, starfall, superfish, Web Commerce Communications Ltd, webnic.cc\n\nThis entry was posted on Thursday, February 26th, 2015 at 1:41 amand is filed under Other.\nYou can follow any comments to this entry through the RSS 2.0 feed.\n\nBoth comments and pings are currently closed.\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "Lizard Squad",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "None"
+      "sub": "Lizard Squad",
+      "rel": "hijacked",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "google.com.vn"
     },
     {
-      "name": "google.com.vn",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "Lizard Squad",
+      "rel": "seized control over",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "webnic.cc"
     },
     {
-      "name": "lenovo.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "Lizard Squad",
+      "rel": "hacked",
+      "rel_type": [
+        "compromises"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "lenovo.com"
     },
     {
-      "name": "webnic.cc",
-      "type": "domain-name",
-      "alias": [
-        "Webnic"
+      "sub": "Lenovo",
+      "rel": "shipping",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Superfish adware"
     },
     {
-      "name": "Ryan King",
-      "type": "identity",
-      "alias": [
-        "Starfall"
+      "sub": "Ryan King",
+      "rel": "used to be part of",
+      "rel_type": [
+        "affiliated-with"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Hack The Planet"
     },
     {
-      "name": "Hack The Planet",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "HTP"
+      "sub": "Rory Andrew Godfrey",
+      "rel": "used to be part of",
+      "rel_type": [
+        "affiliated-with"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Hack The Planet"
     },
     {
-      "name": "Rory Andrew Godfrey",
-      "type": "identity",
-      "alias": [
-        "KMS"
+      "sub": "Julius Zeekill Kivimaki",
+      "rel": "was part of",
+      "rel_type": [
+        "affiliated-with"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Hack The Planet"
     },
     {
-      "name": "Julius Zeekill Kivimaki",
-      "type": "identity",
-      "alias": [
-        "Zeekill"
+      "sub": "Ryan King",
+      "rel": "alias-of",
+      "rel_type": [
+        "alias-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Starfall"
     },
     {
-      "name": "Starfall",
-      "type": "identity",
-      "alias": [
-        "Ryan King"
+      "sub": "Rory Andrew Godfrey",
+      "rel": "alias-of",
+      "rel_type": [
+        "alias-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "KMS"
     },
     {
-      "name": "KMS",
-      "type": "identity",
-      "alias": [
-        "Rory Andrew Godfrey"
+      "sub": "KMS",
+      "rel": "alias-of",
+      "rel_type": [
+        "alias-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Rory Andrew Godfrey"
     },
     {
-      "name": "Superfish adware",
-      "type": "malware",
-      "alias": [
-        "Superfish"
+      "sub": "Lizard Squad",
+      "rel": "exploits",
+      "rel_type": [
+        "exploits"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "command injection vulnerability in Webnic.cc"
     },
     {
-      "name": "Lenovo",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "Lizard Squad",
+      "rel": "uploaded",
+      "rel_type": [
+        "drops"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "rootkit"
     },
     {
-      "name": "command injection vulnerability in Webnic.cc",
-      "type": "vulnerability",
-      "alias": [
-        "None"
+      "sub": "Lizard Squad",
+      "rel": "tweeted",
+      "rel_type": [
+        "leaks"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "rootkit",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "domain auth codes (EPP codes)",
-      "type": "credential-value",
-      "alias": [
-        "auth codes",
-        "EPP codes"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "domain auth codes (EPP codes)"
     }
   ],
   "entitylist": [
@@ -308,110 +259,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "Lizard Squad",
-      "rel": "hijacked",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "google.com.vn"
-    },
-    {
-      "sub": "Lizard Squad",
-      "rel": "seized control over",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "webnic.cc"
-    },
-    {
-      "sub": "Lizard Squad",
-      "rel": "hacked",
-      "rel_type": [
-        "compromises"
-      ],
-      "obj": "lenovo.com"
-    },
-    {
-      "sub": "Lenovo",
-      "rel": "shipping",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "Superfish adware"
-    },
-    {
-      "sub": "Ryan King",
-      "rel": "used to be part of",
-      "rel_type": [
-        "affiliated-with"
-      ],
-      "obj": "Hack The Planet"
-    },
-    {
-      "sub": "Rory Andrew Godfrey",
-      "rel": "used to be part of",
-      "rel_type": [
-        "affiliated-with"
-      ],
-      "obj": "Hack The Planet"
-    },
-    {
-      "sub": "Julius Zeekill Kivimaki",
-      "rel": "was part of",
-      "rel_type": [
-        "affiliated-with"
-      ],
-      "obj": "Hack The Planet"
-    },
-    {
-      "sub": "Ryan King",
-      "rel": "alias-of",
-      "rel_type": [
-        "alias-of"
-      ],
-      "obj": "Starfall"
-    },
-    {
-      "sub": "Rory Andrew Godfrey",
-      "rel": "alias-of",
-      "rel_type": [
-        "alias-of"
-      ],
-      "obj": "KMS"
-    },
-    {
-      "sub": "KMS",
-      "rel": "alias-of",
-      "rel_type": [
-        "alias-of"
-      ],
-      "obj": "Rory Andrew Godfrey"
-    },
-    {
-      "sub": "Lizard Squad",
-      "rel": "exploits",
-      "rel_type": [
-        "exploits"
-      ],
-      "obj": "command injection vulnerability in Webnic.cc"
-    },
-    {
-      "sub": "Lizard Squad",
-      "rel": "uploaded",
-      "rel_type": [
-        "drops"
-      ],
-      "obj": "rootkit"
-    },
-    {
-      "sub": "Lizard Squad",
-      "rel": "tweeted",
-      "rel_type": [
-        "leaks"
-      ],
-      "obj": "domain auth codes (EPP codes)"
-    }
-  ]
+  "content": "\nTwo days ago, attackers allegedly associated with the fameseeking group Lizard Squad briefly hijackedGoogles Vietnam domain (google.com.vn). On Wednesday, Lenovo.com was similarly attacked. Sources now tell KrebsOnSecurity that both hijacks were possible because the attackers seized control over Webnic.cc, the Malaysianregistrar that serves both domains and 600,000 others.\nOn Feb. 23, google.com.vn briefly redirected visitors to a page that read, Hacked by Lizard Squad, greetz from antichrist, Brian Krebs, sp3c, Komodo, ryan, HTP  Rory Andrew Godfrey (holding it down in Texas). The message also included a link to the groups Twitter page and its Lizard Stresser online attacksforhire service.\nToday, the group took credit for hacking Lenovo.com, possibly because it was recently revealed that the computer maker was shipping the invasive Superfish adware with allsome new Lenovo notebook PCs (the company has since said Superfish is now disabled on all Lenovo products and that it will no longer preload the software).\nAccording to a report in TheVerge.com, the HTML source code for Lenovo.com was changed to read, the new and improved rebranded Lenovo website featuring Ryan King and Rory Andrew Godfrey.\nThe Verge story notes that both men have been identified as members of the Lizard Squad; to my knowledge this has never been true. In fact, both used to be part of ablack hatand nowdefunct hacker collective known asHack The Planet (HTP) along with one of the main current LizardSquad members  Julius Zeekill Kivimaki (for more on Julius, see these stories). However, both King (a.k.a Starfall) and Godfrey (KMS) have been quite publicly working to undermine and expose the group for months.\nReached via instant message, bothKing and Godfrey saidthe Lizard Squad used a command injection vulnerability in Webnic.cc to upload a rootkit  a set of hacking tools that hide the intruders presence on a compromised system and give the attacker persistent access to that system.\nWebnic.cc is currently inaccessible. A woman who answered the phone at the companys technical operations center in Kuala Lumpur acknowledged the outage but said Webnic doesnt have any additional information to share at this time. Were still in the investigation stage, said Eevon Soh, a Webnic customer support technician.\n\nIt appears the intruders were able to leverage their accessat Webnic.cc to alter the domain name system (DNS) records for the Google and Lenovo domains, effectively giving them the ability to redirect the legitimate traffic away from thedomains to other servers  including those under the attackers control.\nKing and Godfrey said theLizard Squadalso gained access to Webnics store of auth codes (also known as transfer secrets or EPP codes), unique and closelyguarded codes that can be used to transfer any domain to another registrar. As if to prove this level of access, the Lizard Squad tweeted what they claim is one of the codes.\nStarfall and KMS say the rootkit has been removed from Webnics servers, meaning the Lizard Squad should no longer be able to hijack Webnic domains with the same method they used to redirect Lenovo.com or Google Vietnam.\nThis is not the first time these actors have messed withWebnic.cc. Web Commerce Communications Ltd. (Webnic)is apopular registrar amonghacker forums and underground stores that traffic in stolen credit cards and identity information, and a great number of those sites are registered through Webnic.It was hardly a coincidence that many of these criminal storefronts which have been hacked over the past couple of years  including rescator[dot]so, and ssndob were registered at Webnic: All of the same playersinvolved this weeks drama were involved in those hacks as well.\n\n \nTags: eevon soh, hack the planet, htp, julius zeekill kivimaki, kms, lenovo, Lizard Squad, rory andrew godfrey, ryan king, starfall, superfish, Web Commerce Communications Ltd, webnic.cc\n\nThis entry was posted on Thursday, February 26th, 2015 at 1:41 amand is filed under Other.\nYou can follow any comments to this entry through the RSS 2.0 feed.\n\nBoth comments and pings are currently closed.\n\n",
+  "idorurl": "60k_0013836"
 }

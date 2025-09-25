@@ -1,0 +1,426 @@
+{
+  "relationshiplist": [
+    {
+      "sub": "Harvester",
+      "rel": "deployed",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Backdoor.Graphon"
+    },
+    {
+      "sub": "Harvester",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Custom Downloader"
+    },
+    {
+      "sub": "Harvester",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Custom Screenshotter"
+    },
+    {
+      "sub": "Harvester",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Cobalt Strike Beacon"
+    },
+    {
+      "sub": "Harvester",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Metasploit"
+    },
+    {
+      "sub": "Harvester",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "Afghanistan"
+    },
+    {
+      "sub": "Harvester",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
+      ],
+      "obj": "South Asia"
+    },
+    {
+      "sub": "Backdoor.Graphon",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "CloudFront infrastructure"
+    },
+    {
+      "sub": "Backdoor.Graphon",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Microsoft infrastructure"
+    },
+    {
+      "sub": "Backdoor.Graphon",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "https://microsoftmsdn.azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]"
+    },
+    {
+      "sub": "Backdoor.Graphon",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "https://microsoftsgraphapi.azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]"
+    },
+    {
+      "sub": "Backdoor.Graphon",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "https://msdnmicrosoft.azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]"
+    },
+    {
+      "sub": "Custom Downloader",
+      "rel": "checks",
+      "rel_type": [
+        "malicious-investigates-track-detects"
+      ],
+      "obj": "[ARTEFACTS_FOLDER]\\winser.dll"
+    },
+    {
+      "sub": "Custom Downloader",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "https://outportal.azurewebsites.net/api/Values_V2/Getting3210"
+    },
+    {
+      "sub": "Custom Downloader",
+      "rel": "drops",
+      "rel_type": [
+        "drops"
+      ],
+      "obj": "[ARTEFACTS_FOLDER]\\Microsoft Services.vbs"
+    },
+    {
+      "sub": "Custom Downloader",
+      "rel": "modifies-or-removes-or-replaces",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\MicrosoftSystemServices"
+    },
+    {
+      "sub": "Custom Downloader",
+      "rel": "communicates-with",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "https://usedust.com"
+    },
+    {
+      "sub": "Custom Downloader",
+      "rel": "leverages",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "Costura Assembly Loader"
+    },
+    {
+      "sub": "cmd.exe",
+      "rel": "pulled data from",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "output and error streams"
+    },
+    {
+      "sub": "data",
+      "rel": "is encrypted and sent back to",
+      "rel_type": [
+        "exfiltrate-to"
+      ],
+      "obj": "attackers’ servers"
+    },
+    {
+      "sub": "screenshot tool",
+      "rel": "saves photos to",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "password-protected ZIP archive"
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "Harvester",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Backdoor.Graphon",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Custom Downloader",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Custom Screenshotter",
+      "type": "malware",
+      "alias": [
+        "screenshot tool"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Cobalt Strike Beacon",
+      "type": "hacker-tool",
+      "alias": [
+        "Cobalt Strike"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Metasploit",
+      "type": "hacker-tool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Afghanistan",
+      "type": "location",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "South Asia",
+      "type": "location",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "CloudFront infrastructure",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Microsoft infrastructure",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "https://microsoftmsdn.azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "https://microsoftsgraphapi.azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "https://msdnmicrosoft.azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "[ARTEFACTS_FOLDER]\\winser.dll",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "https://outportal.azurewebsites.net/api/Values_V2/Getting3210",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "[ARTEFACTS_FOLDER]\\Microsoft Services.vbs",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\MicrosoftSystemServices",
+      "type": "windows-registry-key",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "https://usedust.com",
+      "type": "url",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Costura Assembly Loader",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "cmd.exe",
+      "type": "process",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "output and error streams",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "data",
+      "type": "abstract-concept",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "attackers’ servers",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "screenshot tool",
+      "type": "hacker-tool",
+      "alias": [
+        "Custom Screenshotter"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "password-protected ZIP archive",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "content": "Harvester: Nation-State-Backed Group Uses New Toolset to Target Victims in South Asia | Symantec Enterprise Blogs\nSymantec Enterprise BlogsThreat IntelligenceMenuMain menuBlogs HomeThreat Intelligence - All DivisionsFeature Stories - Symantec EnterpriseExpert Perspectives -\nSymantec EnterpriseProduct InsightsRansomwareSolarWindsRSA Conference日本語SearchBroadcom HomeThreat Hunter TeamSymantecPosted: 18 Oct, 20214 Min ReadThreat Intelligence\nSubscribeFollowtwitterlinkedinHarvester:\nNation-State-Backed Group Uses New Toolset to Target Victims in South AsiaPreviously unseen attack group targets victims in the IT, telecoms, and government sectors in espionage campaign.\nA previously unseen actor, likely nation-state-backed, is targeting organizations in South Asia, with a focus on Afghanistan, in what appears to be an information-stealing campaign using a new toolset.\nThe Harvester group uses both custom malware and publicly available tools in its attacks, which began in June 2021, with the most recent activity seen in October 2021.\nSectors targeted include telecommunications, government, and information technology (IT).\nThe capabilities of the tools, their custom development, and the victims targeted, all suggest that Harvester is a nation-state-backed actor.\nNew toolset deployed\nThe most notable thing about this campaign is the previously unseen toolset deployed by the attackers.\nThe attackers deployed a custom backdoor called Backdoor.Graphon on victim machines alongside other downloaders and screenshot tools that provided the attackers with remote access and allowed them to spy on user activities and exfiltrate information.\nWe do not know the initial infection vector that Harvester used to compromise victim networks, but the first evidence we found of Harvester activity on victim machines was a malicious URL.\nThe group then started to deploy various tools, including its custom Graphon backdoor, to gain remote access to the network.\nThe group also tried to blend its activity in with legitimate network traffic by leveraging legitimate CloudFront and Microsoft infrastructure for its command and control (C&C) activity.\nTools used:\nBackdoor.Graphon - custom backdoor that uses Microsoft infrastructure for its C&C activity\nCustom Downloader - uses Microsoft infrastructure for its C&C activity\nCustom Screenshotter - periodically logs screenshots to a file\nCobalt Strike Beacon - uses CloudFront infrastructure for its C&C activity (Cobalt Strike is an off-the-shelf tool that can be used to execute commands, inject other processes, elevate current processes, or impersonate other processes, and upload and download files)\nMetasploit - an off-the-shelf modular framework that can be used for a variety of malicious purposes on victim machines, including privilege escalation, screen capture, to set up a persistent backdoor, and more.\nThe custom downloader used by the attackers leverages the Costura Assembly Loader. Once on a victim machine, it checks if the following file exists:\n[ARTEFACTS_FOLDER]\\winser.dll\nIf the file does not exist it downloads a copy from the following URL:\nhxxps://outportal[.]azurewebsites.net/api/Values_V2/Getting3210\nNext, the sample creates the following file if it does not exist:\n\"[ARTEFACTS_FOLDER]\\Microsoft Services[.]vbs\"\nThen it sets the following registry value to create a loadpoint:\nHKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\\"MicrosoftSystemServices\" = \"[ARTEFACTS_FOLDER]\\Microsoft Services[.]vbs\"\nFinally it opens an embedded web browser within its own UI using the following URL:\nhxxps://usedust[.]com\nWhile it initially appeared that this URL may have been a loadpoint for Backdoor.Graphon, upon further investigation it appears to be a decoy to confuse any affected users.\nBackdoor.Graphon is compiled as a .NET PE DLL with export “Main” and the following PDB file name\n:\nD:\\OfficeProjects\\Updated Working Due to Submission\\4.5\\Outlook_4.5\\Outlook 4.5.2 32 bit New without presistancy\\NPServices\\bin\\x86\\Debug\\NPServices[.]pdb\nWhen this is executed, it attempts to communicate with the attackers’ C&C servers, which are hosted on Microsoft infrastructure.\nhxxps://microsoftmsdn[.]azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]\nhxxps://microsoftsgraphapi[.]azurewebsites.net/api/Values_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]\nhxxps://msdnmicrosoft.azurewebsites[.]net\n/\napi\n/\nValues_V1/AuthAsyncComplete_V1?Identity=[INFECTION_ID]\nThe attackers then run commands to control their input stream and capture the output and error streams.\nThey also periodically send GET requests to the C&C server, with the content of any returned messages extracted and then deleted.\nData that cmd.exe pulled from the output and error streams is encrypted and sent back to the attackers’ servers.\nThe custom screenshot tool was also packed with the Costura Assembly Loader.\nThe screenshot tool takes photos that it saves to a password-protected ZIP archive for exfiltration, with all archives older than a week deleted.\nOngoing activity\nWhile we do not have enough evidence yet to attribute Harvester’s activity to a specific nation state, the group’s use of custom backdoors, the extensive steps taken to hide its malicious activity, and its targeting all point to it being a state-sponsored actor.\nHarvester’s use of legitimate infrastructure to host its C&C servers in order to blend in with normal network traffic is one example of the stealthy steps taken by this actor.\nThe targeting of organizations in Afghanistan in this campaign is also interesting given the huge upheaval seen in that country recently.\nThe activity carried out by Harvester makes it clear the purpose of this campaign is espionage, which is the typical motivation behind nation-state-backed activity.\nThat Harvester’s most recent activity was seen earlier this month means that organizations in the sectors and geographies mentioned should be alert to the malicious activity outlined in this blog.\nProtection\nFile based:\nBackdoor.Graphon\nFor the latest protection updates, please visit the Symantec Protection Bulletin.\nIndicators of Compromise\n0740cc87a7d028ad45a3d54540b91c4d90b6fc54d83bb01842cf23348b25bc42\n303f93cc47c58e64665f9e447ac11efe5b83f0cfe4253f3ff62dd7504ee935e0\n3c34c23aef8934651937c31be7420d2fc8a22ca260f5afdda0f08f4d3730ae59\n3c8fa5cc50eb678d9353c9f94430eeaa74b36270c13ba094dc5c124259f0dc31\n470cd1645d1da5566eef36c6e0b2a8ed510383657c4030180eb0083358813cd3\n691e170c5e42dd7d488b9d47396b633a981640f8ab890032246bf37704d4d865\na4935e31150a9d6cd00c5a69b40496fea0e6b49bf76f123ea34c3b7ea6f86ce6\nc4b6d7e88a63945f3e0768657e299d2d3a4087266b4fc6b1498e2435e311f5d1\ncb5e40c6702e8fe9aa64405afe462b76e6fe9479196bb58118ee42aba0641c04\nd84a9f7b1d70d83bd3519c4f2c108af93b307e8f7457e72e61f3fa7eb03a5f0d\nf4a77e9970d53fe7467bdd963e8d1ce44a2d74e3e4262cd55bb67e7b3001c989\nURL\nhxxps://perfect-couple.com/perfectcouple[.]exe – sample was downloaded from this address\nBLOG UPDATED 2.45pm, October 18, 2021: Minor updates made for clarity\nAbout the AuthorThreat Hunter TeamSymantecThe Threat Hunter Team is a group of security experts within Symantec whose mission is to investigate targeted attacks, drive enhanced protection in Symantec products, and offer analysis that helps customers respond to attacks.\nRelated Blog PostsPosted: 15 Nov, 20228 Min ReadBillbug: State-sponsored Actor Targets Cert Authority, Government Agencies in Multiple Asian CountriesPosted: 28 Oct, 20229 Min\nReadCranefly: Threat Actor Uses Previously Unseen Techniques and Tools in Stealthy CampaignPosted: 21 Oct, 20228 Min ReadExbyte: BlackByte Ransomware Attackers Deploy New Exfiltration ToolPosted: 18 Oct, 202210 Min\nReadSpyder Loader: Malware Seen in Recent Campaign Targeting Organizations in Hong Kong SubscribeFollowtwitterlinkedinPrivacy PolicyCookie PolicyData Processing and Data TransfersSupplier ResponsibilityTerms of UseSitemapCopyright © 2005-2022 Broadcom.",
+  "idorurl": "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/harvester-new-apt-attacks-asia"
+}

@@ -1,104 +1,68 @@
 {
-  "idorurl": "60k_0026296",
-  "content": "\n\nby\nMike Coulter\n\nVirusTotal has been well known to most readers of the blog. Its a free virus and malware online scan service which allows submitters to test a particular file against a multitude of malware scanners. So, its not highly surprising that malware authors would try to use that name to further their gain.\nToday we came across such a sample arriving at one of our spamtraps through a carrelated forum. The message looks like this:\n\nSubject: Warning!\nDO NOT REPLY TO THIS EMAIL!\n\nDear [Redacted forum user name],\nYou have received a new private message at [Redacted] Forum from [Redacted], entitled Warning!.\nTo read the original version, respond to, or delete this message, you must log in here:\nhttp://[Redacted]\nThis is the message that was sent:\n\nDear, [Redacted forum user names]\nThere are viruses activities from your computer! Highly recommend you to scan your computer for malicious and potentially unwanted software. If you do not follow this, I will have to make a complaint to your Internet Service Provider with attached log file (your IP address, etc.). If you want to find a report about your computers security and solve every problem with it, please click here: http://www.virustotal.[TLD removed]/detected/[Redacted] This is an online service that you can use for free spyware removal. Use it to scan your computer to help protect, clean, and keep your computer running at its best. Use the free scan to check for and remove viruses, spyware, and other potentially malicious software and to find vulnerabilities or shortcomings in your Internet security.\nThank you. Yours truly, [Redacted].\n\nThats right  the malware authors registered a domain called virustotal.TLD. (The suffix is purposely removed here so that the curious wont get themselves in trouble). This is in contrast to the legitimate site which is at virustotal.com with no dashes in the name.\nThe link in the forum message would bring an unsuspecting user to a page which says:\nWe detected viruses activity from your computer. If that is really so, we highly recommend you to install our security tool and keep your computer running at its best.. Please, wait for a moment. Youll be redirected to perform scanning...\nThis page will then redirect to page /scanning/ at the same website which generates the following popup:\n\nThe above popup would follow by the loading of a fake scanning page inside the browser:\n\nOne of the interesting parts of this fake page is that the Windows Security Alert popup is actually a timedelayed object inside the page. Even though the box looks like a window box from Windows XP, it is not moveable at all.\nWhen the fake scanning completes, another popup will be generated asking the user to download a file called securitytoolsetup.exe. Needless to say, this file is malicious and is yet another one of the Fake Antiviruses. Fortunately, this executable has already been proactively detected as Mal/FakeVirPkA.\nThe moral of the story is even though there are helpful people out there trying to warn others about malware, this technique is also abused by malware authors for their own gain. So, no matter if a link comes from a friend, family, or a close acquaintance, one has to be careful what link you access.\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "virustotal.TLD",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "malware authors",
+      "rel": "registered a domain called",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "virustotal.TLD"
     },
     {
-      "name": "malware authors",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "None"
+      "sub": "http://www.virustotal.[TLD removed]/detected/[Redacted]",
+      "rel": "would bring an unsuspecting user to a page which says",
+      "rel_type": [
+        "leads-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "page"
     },
     {
-      "name": "http://www.virustotal.[TLD removed]/detected/[Redacted]",
-      "type": "url",
-      "alias": [
-        "None"
+      "sub": "page",
+      "rel": "redirect to page",
+      "rel_type": [
+        "leads-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "/scanning/"
     },
     {
-      "name": "Windows Security Alert popup",
-      "type": "other",
-      "alias": [
-        "None"
+      "sub": "/scanning/",
+      "rel": "generates the following",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Windows Security Alert popup"
     },
     {
-      "name": "Windows XP",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "Windows Security Alert popup",
+      "rel": "looks like a window box from",
+      "rel_type": [
+        "compares-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Windows XP"
     },
     {
-      "name": "securitytoolsetup.exe",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "fake scanning",
+      "rel": "asking the user to download a file called",
+      "rel_type": [
+        "leads-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "securitytoolsetup.exe"
     },
     {
-      "name": "Fake Antiviruses",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "securitytoolsetup.exe",
+      "rel": "is yet another one of the",
+      "rel_type": [
+        "categorized-as"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Fake Antiviruses"
     },
     {
-      "name": "Mal/FakeVirPkA",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "securitytoolsetup.exe",
+      "rel": "has already been proactively detected as",
+      "rel_type": [
+        "research-describes-analysis-of-characterizes-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "page",
-      "type": "generic-noun",
-      "alias": [],
-      "mother entity": []
-    },
-    {
-      "name": "/scanning/",
-      "type": "other",
-      "alias": [],
-      "mother entity": []
-    },
-    {
-      "name": "fake scanning",
-      "type": "attack-pattern",
-      "alias": [],
-      "mother entity": []
+      "obj": "Mal/FakeVirPkA"
     }
   ],
   "entitylist": [
@@ -210,70 +174,6 @@
       "mother entity": []
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "malware authors",
-      "rel": "registered a domain called",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": "virustotal.TLD"
-    },
-    {
-      "sub": "http://www.virustotal.[TLD removed]/detected/[Redacted]",
-      "rel": "would bring an unsuspecting user to a page which says",
-      "rel_type": [
-        "leads-to"
-      ],
-      "obj": "page"
-    },
-    {
-      "sub": "page",
-      "rel": "redirect to page",
-      "rel_type": [
-        "leads-to"
-      ],
-      "obj": "/scanning/"
-    },
-    {
-      "sub": "/scanning/",
-      "rel": "generates the following",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": "Windows Security Alert popup"
-    },
-    {
-      "sub": "Windows Security Alert popup",
-      "rel": "looks like a window box from",
-      "rel_type": [
-        "compares-to"
-      ],
-      "obj": "Windows XP"
-    },
-    {
-      "sub": "fake scanning",
-      "rel": "asking the user to download a file called",
-      "rel_type": [
-        "leads-to"
-      ],
-      "obj": "securitytoolsetup.exe"
-    },
-    {
-      "sub": "securitytoolsetup.exe",
-      "rel": "is yet another one of the",
-      "rel_type": [
-        "categorized-as"
-      ],
-      "obj": "Fake Antiviruses"
-    },
-    {
-      "sub": "securitytoolsetup.exe",
-      "rel": "has already been proactively detected as",
-      "rel_type": [
-        "research-describes-analysis-of-characterizes-detects"
-      ],
-      "obj": "Mal/FakeVirPkA"
-    }
-  ]
+  "content": "\n\nby\nMike Coulter\n\nVirusTotal has been well known to most readers of the blog. Its a free virus and malware online scan service which allows submitters to test a particular file against a multitude of malware scanners. So, its not highly surprising that malware authors would try to use that name to further their gain.\nToday we came across such a sample arriving at one of our spamtraps through a carrelated forum. The message looks like this:\n\nSubject: Warning!\nDO NOT REPLY TO THIS EMAIL!\n\nDear [Redacted forum user name],\nYou have received a new private message at [Redacted] Forum from [Redacted], entitled Warning!.\nTo read the original version, respond to, or delete this message, you must log in here:\nhttp://[Redacted]\nThis is the message that was sent:\n\nDear, [Redacted forum user names]\nThere are viruses activities from your computer! Highly recommend you to scan your computer for malicious and potentially unwanted software. If you do not follow this, I will have to make a complaint to your Internet Service Provider with attached log file (your IP address, etc.). If you want to find a report about your computers security and solve every problem with it, please click here: http://www.virustotal.[TLD removed]/detected/[Redacted] This is an online service that you can use for free spyware removal. Use it to scan your computer to help protect, clean, and keep your computer running at its best. Use the free scan to check for and remove viruses, spyware, and other potentially malicious software and to find vulnerabilities or shortcomings in your Internet security.\nThank you. Yours truly, [Redacted].\n\nThats right  the malware authors registered a domain called virustotal.TLD. (The suffix is purposely removed here so that the curious wont get themselves in trouble). This is in contrast to the legitimate site which is at virustotal.com with no dashes in the name.\nThe link in the forum message would bring an unsuspecting user to a page which says:\nWe detected viruses activity from your computer. If that is really so, we highly recommend you to install our security tool and keep your computer running at its best.. Please, wait for a moment. Youll be redirected to perform scanning...\nThis page will then redirect to page /scanning/ at the same website which generates the following popup:\n\nThe above popup would follow by the loading of a fake scanning page inside the browser:\n\nOne of the interesting parts of this fake page is that the Windows Security Alert popup is actually a timedelayed object inside the page. Even though the box looks like a window box from Windows XP, it is not moveable at all.\nWhen the fake scanning completes, another popup will be generated asking the user to download a file called securitytoolsetup.exe. Needless to say, this file is malicious and is yet another one of the Fake Antiviruses. Fortunately, this executable has already been proactively detected as Mal/FakeVirPkA.\nThe moral of the story is even though there are helpful people out there trying to warn others about malware, this technique is also abused by malware authors for their own gain. So, no matter if a link comes from a friend, family, or a close acquaintance, one has to be careful what link you access.\n",
+  "idorurl": "60k_0026296"
 }

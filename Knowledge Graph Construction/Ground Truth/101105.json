@@ -1,0 +1,532 @@
+{
+  "relationshiplist": [
+    {
+      "sub": "fake AdShield app",
+      "rel": "impersonates",
+      "rel_type": [
+        "impersonates"
+      ],
+      "obj": "AdShield"
+    },
+    {
+      "sub": "fake AdShield app",
+      "rel": "distributed under the name",
+      "rel_type": [
+        "other"
+      ],
+      "obj": "adshield.pro"
+    },
+    {
+      "sub": "fake AdShield app",
+      "rel": "changes",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
+      ],
+      "obj": "DNS settings"
+    },
+    {
+      "sub": "fake AdShield app",
+      "rel": "starts updating itself by running",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "updater.exe"
+    },
+    {
+      "sub": "updater.exe",
+      "rel": "contacts",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "C&C"
+    },
+    {
+      "sub": "updater.exe",
+      "rel": "downloads from",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "transmissionbt.org"
+    },
+    {
+      "sub": "updater.exe",
+      "rel": "runs",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "modified Transmission installer"
+    },
+    {
+      "sub": "modified Transmission installer",
+      "rel": "sends installation information to",
+      "rel_type": [
+        "exfiltrate-to"
+      ],
+      "obj": "C&C"
+    },
+    {
+      "sub": "modified Transmission installer",
+      "rel": "downloads a",
+      "rel_type": [
+        "downloads"
+      ],
+      "obj": "mining module"
+    },
+    {
+      "sub": "mining module",
+      "rel": "made up of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "data.pak"
+    },
+    {
+      "sub": "mining module",
+      "rel": "made up of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "flock.exe"
+    },
+    {
+      "sub": "mining module",
+      "rel": "made up of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "lic.data"
+    },
+    {
+      "sub": "modified Transmission installer",
+      "rel": "runs",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "flock.exe"
+    },
+    {
+      "sub": "flock.exe",
+      "rel": "decrypts",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "data.pak"
+    },
+    {
+      "sub": "flock.exe",
+      "rel": "generate",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "XMRig miner"
+    },
+    {
+      "sub": "flock.exe",
+      "rel": "generate",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "bxsdk64.dll"
+    },
+    {
+      "sub": "bxsdk64.dll",
+      "rel": "is part of",
+      "rel_type": [
+        "is-part-of"
+      ],
+      "obj": "BoxedApp SDK"
+    },
+    {
+      "sub": "bxsdk64.dll",
+      "rel": "injects the decrypted miner body into the process memory of",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "find.exe"
+    },
+    {
+      "sub": "bxsdk64.dll",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "WriteProcessMemory"
+    },
+    {
+      "sub": "bxsdk64.dll",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
+      ],
+      "obj": "CreateRemoteThread"
+    },
+    {
+      "sub": "servicecheck_XX task",
+      "rel": "created in",
+      "rel_type": [
+        "is-part-of"
+      ],
+      "obj": "Windows Task Scheduler"
+    },
+    {
+      "sub": "servicecheck_XX task",
+      "rel": "runs",
+      "rel_type": [
+        "executes"
+      ],
+      "obj": "flock.exe"
+    },
+    {
+      "sub": "5aa0cda743e5fbd1d0315b686e5e6024",
+      "rel": "hash of",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "AdShield installer"
+    },
+    {
+      "sub": "AdShield installer",
+      "rel": "is file for",
+      "rel_type": [
+        "is-part-of"
+      ],
+      "obj": "fake AdShield app"
+    },
+    {
+      "sub": "81BC965E07A0D6C9E3EB0124CDF97AA2",
+      "rel": "hash of",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "updater.exe"
+    },
+    {
+      "sub": "ac9e74ef5ccab1d5c2bdd9c74bb798cc",
+      "rel": "hash of",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "modified Transmission installer"
+    },
+    {
+      "sub": "9E989EF2A8D4BC5BA1421143AAD59A47",
+      "rel": "hash of",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "NetShield installer"
+    },
+    {
+      "sub": "NetShield installer",
+      "rel": "impersonates",
+      "rel_type": [
+        "impersonates"
+      ],
+      "obj": "Netshield"
+    },
+    {
+      "sub": "2156F6E4DF941600FE3F44D07109354E",
+      "rel": "hash of",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "OpenDNS installer"
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "fake AdShield app",
+      "type": "malware",
+      "alias": [
+        "AdShield installer",
+        "5aa0cda743e5fbd1d0315b686e5e6024"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "AdShield",
+      "type": "general-software",
+      "alias": [
+        "AdShield mobile ad blocker"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "adshield.pro",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "DNS settings",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "updater.exe",
+      "type": "file",
+      "alias": [
+        "81BC965E07A0D6C9E3EB0124CDF97AA2"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "C&C",
+      "type": "infrastructure",
+      "alias": [
+        "C&C server"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "transmissionbt.org",
+      "type": "domain-name",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "modified Transmission installer",
+      "type": "malware",
+      "alias": [
+        "modified version of the Transmission torrent client",
+        "ac9e74ef5ccab1d5c2bdd9c74bb798cc"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "mining module",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "data.pak",
+      "type": "file",
+      "alias": [
+        "encrypted miner file"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "flock.exe",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "lic.data",
+      "type": "file",
+      "alias": [
+        "\"license\" file"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "XMRig miner",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "bxsdk64.dll",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BoxedApp SDK",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "find.exe",
+      "type": "file",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "WriteProcessMemory",
+      "type": "detailed-part-of-general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "CreateRemoteThread",
+      "type": "detailed-part-of-general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "servicecheck_XX task",
+      "type": "other",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Windows Task Scheduler",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "5aa0cda743e5fbd1d0315b686e5e6024",
+      "type": "indicator",
+      "alias": [
+        "fake AdShield app",
+        "AdShield installer"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "AdShield installer",
+      "type": "file",
+      "alias": [
+        "fake AdShield app",
+        "5aa0cda743e5fbd1d0315b686e5e6024"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "81BC965E07A0D6C9E3EB0124CDF97AA2",
+      "type": "indicator",
+      "alias": [
+        "updater.exe"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "ac9e74ef5ccab1d5c2bdd9c74bb798cc",
+      "type": "indicator",
+      "alias": [
+        "modified Transmission installer"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "9E989EF2A8D4BC5BA1421143AAD59A47",
+      "type": "indicator",
+      "alias": [
+        "NetShield installer"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "NetShield installer",
+      "type": "file",
+      "alias": [
+        "9E989EF2A8D4BC5BA1421143AAD59A47"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Netshield",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "OpenDNS installer",
+      "type": "file",
+      "alias": [
+        "2156F6E4DF941600FE3F44D07109354E"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "2156F6E4DF941600FE3F44D07109354E",
+      "type": "indicator",
+      "alias": [
+        "OpenDNS installer"
+      ],
+      "mother entity": []
+    }
+  ],
+  "content": "Ad blocker with miner included | Securelist\nAd blocker with miner included\n10 Mar 2021\nAnton Kuzmenko\nSome time ago, we discovered a number of fake apps delivering a Monero cryptocurrency miner to user computers.\nThey are distributed through malicious websites that may turn up in the victim’s search results.\nBy the look of it, it appears to be a continuation of the summer campaign covered by our colleagues from Avast.\nBack then, cybercriminals distributed malware under the guise of the Malwarebytes antivirus installer.\nIn the latest campaign, we have seen several apps impersonated by the malware: the ad blockers AdShield and Netshield, as well as the OpenDNS service.\nThis article analyzes only fake AdShield app, but all the other cases follow the same scenario.\nTechnical details\nDistributed under the name adshield[.]pro, the malware impersonates the Windows version of the AdShield mobile ad blocker.\nAfter the user starts the program, it changes the DNS settings on the device so that all domains are resolved through the attackers’ servers, which, in turn, prevent users from accessing certain antivirus sites, such as Malwarebytes.com.\nAfter substituting the DNS servers, the malware starts updating itself by running update.exe with the argument self-upgrade (“C:\\Program Files (x86)\\AdShield\\updater.exe” -self-upgrade).\nUpdater.exe contacts C&C and sends data about the infected machine and information about the start of the installation.\nSome of the lines in the executable file, including the line with the C&C server address, are encrypted to make static detection more difficult.\nUpdater.exe code snippet containing the encrypted address\nUpdater.exe downloads from the site transmissionbt[.]org and runs a modified version of the Transmission torrent client (the original distribution can be found at transmissionbt.com).\nThe modified program sends installation information together with the ID of the infected machine to C&C, and downloads a mining module from it.\nNotifying C&C about the successful installation\nThe mining module is made up of legitimate auxiliary libraries, an encrypted miner file named data.pak, the executable file flock.exe and the “license” file lic.data.\nThe latter contains a SHA-256 hexadecimal hash of some parameters of the machine for which the module is intended and the data from the data.pak file.\nThe modified Transmission client runs flock.exe, which first of all calculates the hash of the parameters of the infected computer and the data from the data.pak file, and then compares it with the hash from the lic.data file.\nThis is necessary because C&C generates a unique set of files for each machine so as to hinder static detection and prevent the miner from running and being analyzed in various virtual environments.\nIf the hashes do not match, the execution stops.\nOtherwise, flock.exe decrypts the data from the data.pak file using the AES-128-CTR algorithm, whereby the decryption key and initialization vector are assembled from several parts stored in the sample code.\nThe decryption results in a Qt binary resource file that contains two executable files: the open-source XMRig miner (the same one used in the summer attack) and the bxsdk64.dll library.\nDecrypted data.pak file\nThe bxsdk64.dll file is part of the BoxedApp SDK for creating a virtual environment, but in this case it is used to run the miner under the guise of the legitimate app find.exe.\nThe point is that to implement its functionality, bxsdk intercepts calls to system functions and can manipulate their execution.\nIn this case, the BoxedAppSDK_CreateVirtualFileA function creates the find.exe file (which is a copy of the C:\\Windows\\System32\\find.exe file) in the C:\\ProgramData\\Flock directory.\nAll further manipulations with find.exe occur in RAM and do not affect the file on the disk.\nWhen the find.exe process starts, bxsdk intercepts the event and runs the file from the C:\\ProgramData\\Flock directory; then, using the WriteProcessMemory and CreateRemoteThread functions, it injects the decrypted miner body into the process memory.\nTo ensure the continuous operation of the miner, a servicecheck_XX task is created in Windows Task Scheduler, where XX are random numbers.\nThe task runs flock.exe with the argument minimize.\nAccording to data from Kaspersky Security Network, at the time of preparing this article, since the beginning of February 2021, there have been attempts to install fake apps on the devices of more than 7 thousand users.\nAt the peak of the current campaign, more than 2,500 unique users per day were attacked, with most of the victims located in Russia and CIS countries.\nNumber of users attacked, August 2020 – February 2021 (download)\nKaspersky’s security solutions detect the above-described threats with the following verdicts:\nWin64.Patched.netyyk\nWin32.DNSChanger.aaox\nWin64.Miner.gen\nHEUR:Trojan.Multi.Miner.gen\nHow to remove the miner\nIf the QtWinExtras.dll file is detected on your device, reinstall Malwarebytes.\nIf Malwarebytes is not in the list of apps, you need to delete all the following folders that are on the disk:\n%program files%\\malwarebytes\nprogram files (x86)\\malwarebytes\n%windir%\\.old\\program files\\malwarebytes\n%windir%\\.old\\program files (x86)\\malwarebytes\nIf flock.exe is detected on your device:\nUninstall NetshieldKit, AdShield, uninstall or reinstall OpenDNS (whichever is installed on your device).\nReinstall the Transmission torrent client or uninstall it if you don’t need it.\nDelete the folders (if present on the disk)\nC:\\ProgramData\\Flock\n%allusersprofile%\\start menu\\programs\\startup\\flock\n%allusersprofile%\\start menu\\programs\\startup\\flock2\nDelete the servicecheck_XX task (where XX are random numbers) in Windows Task Scheduler.\nIOC\nDNS\n142[.]4[.]214[.]15\n185[.]201[.]47[.]42\n176[.]31[.]103[.]74\n37[.]59[.]58[.]122\n185[.]192[.]111[.]210\nDomains\nadshield[.]pro\ntransmissionbt[.]org\nnetshieldkit[.]com\nopendns[.]info\nHashes\n5aa0cda743e5fbd1d0315b686e5e6024 (AdShield installer)\n81BC965E07A0D6C9E3EB0124CDF97AA2 (updater.exe)\nac9e74ef5ccab1d5c2bdd9c74bb798cc (modified Transmission installer)\n9E989EF2A8D4BC5BA1421143AAD59A47 (NetShield installer)\n2156F6E4DF941600FE3F44D07109354E (OpenDNS installer)\nMalware Descriptions\nMalware Technologies\nMiner\nTrojan\nAnton Kuzmenko\nAd blocker with miner included\nQakBot technical analysis\nMalicious spam campaigns delivering banking Trojans\nGootkit: the cautious Trojan\nOn the trail of the XMRig miner\nLoncom packer: from backdoors to Cobalt Strike\nPrilex: the pricey prickle credit card complex\nNullMixer: oodles of Trojans in a single dropper\nSelf-spreading stealer attacks gamers via YouTube\nLuna and Black Basta — new ransomware for Windows, Linux and ESXi",
+  "idorurl": "https://securelist.com/ad-blocker-with-miner-included/101105/"
+}

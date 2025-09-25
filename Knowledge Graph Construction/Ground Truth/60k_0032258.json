@@ -1,453 +1,4 @@
 {
-  "idorurl": "60k_0032258",
-  "content": "In early April, we identified a new botnet designed to comprise IoT devices and corrupt their storage. Over a fourday period, our honeypots recorded 1,895 PDoS attempts performed from several locations around the world. Its sole purpose was to compromise IoT devices and corrupt their storage. Besides this intense, shortlived bot (BrickerBot.1), our honeypots recorded attempts from a second, very similar bot (BrickerBot.2) which started PDoS attempts on the same date  both bots were discovered less than one hour apart with lower intensity but more thorough and its location(s) concealed by TOR egress nodes.\n\nYesterday we discovered a new version of the BrickerBot PDoS attack (BrickerBot.3) with a new command sequence on a different honeypot location. 1 hour after finalizing the report on the first 12h of BrickerBot.3 the article on the potential author of BrickerBot and the comments by this author were published by Catalin Cimpany on his blog.\nThe new PDoS attempt sequence, for which we named the bots that are responsible for performing the attacks BrickerBot.3, is the following:\n\nFor reference, the BrickerBot.1 command sequence:\n\nCompared with the original BrickerBot.1, the sequence of commands is very similar. It does not start with fdisk  but goes straight to business. The first six block devices it tries to corrupt (up to and including /dev/ram0) correspond with the BrickerBot.1 attack. The devices mtd0,1 and mtdblock1,2,3 are new for the Busybox version of BrickerBot. The fdisk commands to try to change the geometry of the block devices are identical to what BrickerBot.1 attempted. The end sequence again tries to disrupt connectivity by removing the default route and disabling TCP timestamps, wiping the root and limiting the number of kernel threats to one. The fork bomb, which was signature for BrickerBot.2 is not present.\nThe first 12 hours\nDuring the first 12 hours of the attack, a total of 1,118 PDoS attempts were recorded. The attacks all originated from a limited number of clear net IP addresses. ZoomEye and Shodan searches based on the source IPs of the attacks revealed all of them running an outdated version of the Dropbear SSH server (SSH2.0dropbear0.51, SSH2.0dropbear2013.58, and SSH2.0dropbear2014.63).\n [You might also like: The Expansion of IoT since Mirai.]\nThe attacks started at 12:00 GMT on April 21st and in its first 12 hours, the number of bots performing the attacks grew up to 15  the bot growth timeline is depicted in the graph below:\n\nThe devices used to perform the PDoS attacks on our honeypot do not correspond to the devices from BrickerBot.1. Although BrickerBot.1 was also abusing a limited number of clear net connected devices to perform its attack, there is no immediate correlation between both. For complete disclosure and transparency, the attacks were detected by a different honeypot than the one that detected the BrickerBot.1 and BrickerBot.2 attacks.\nThe devices that perform the attack are spread around the globe and do not concentrate in a specific region and do not correlate to the locations of the BrickerBot.1 sources.\nHere is the geographic distribution of devices used by BrickerBot.2 to perform the attacks:\n\nExploit vector like Mirai\nIn line with BrickerBot.1 and BrickerBot.2, this bot is also using the Mirai exploit vector to compromise the target. Any Busyboxbased Linux device that has telnet exposed publically and has factory default credentials unchanged are a potential victim.\nBrickerBot.4\nBetween 5:22pm and 8:44pm GMT the same honeypot also detected yet another, very similar sequence of commands. The attack was only attempted from a single device which was located on the clear net and upon investigation also had an outdated version of the Dropbear SSH server (SSH2.0dropbear2014.63). This isolated bot performed 90 attacks and was not seen again between 8:44pm and midnight.\nThe BrickerBot.4 command sequence has a few less block devices it tries to corrupt, as compared to BrickerBot.3:\n\n [You might also like: 5 Recommendations for IoT Manufacturers]\nRob the Janit0r\nA few hours after finalizing this report, Catalin Cimpanu published his article on the author of BrickerBot. A person who went by the name of Janit0r on Hackerforums alluded to being the author of BrickerBot on April 14th.\n\nThe Janit0r reached out to Victor Gevers based on a comment Victor made in one of the first articles on BrickerBot.1 and .2. The person confirmed he is the Janit0r on Hackforums and he is the author of BrickerBot.\nThe Janit0r:\nLike so many others I was dismayed by the indiscriminate DDoS attacks by IoT botnets in 2016. I thought for sure that the large attacks would force the industry to finally get its act together, but after a few months of recordbreaking attacks it became obvious that in spite of all the sincere efforts the problem couldnt be solved quickly enough by conventional means.\nBased on the Janit0rs discussion, BrickerBot is more complex and most probably much larger than we initially believed it to be.\nThe Janit0r:\nI consider my project a form of Internet Chemotherapy I sometimes jokingly think of myself as The Doctor. Chemotherapy is a harsh treatment that nobody in their right mind would administer to a healthy patient, but the Internet was becoming seriously ill in Q3 and Q4/2016 and the moderate remedies were ineffective.\nFor the time being, it does not seem like the Janit0r will stop BrickerBot attacks, or at least not until officials and hardware vendors take definitive action to improve the state of IoT security.\nThe Potential Damage\nBrickerBot.3 and BrickerBot.4, like BrickerBot.1, are targeting Busyboxbased Linux devices, typically IoT devices such as IP cameras and DVRs. As mentioned in our BrickerBot blog from April 13th, we put the BrickerBot.1 command sequence to the test and assessed its impact on a real life device. The device in question was a Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera, which is known to be supported by Mirai. Although the know invokes thoughts of robustness, upon running the sequence of commands from BrickerBot.1, the camera got disconnected from the network and upon reboot was not responding anymore. Factory reset though a special button on the camera did not recover the IoT device. It was effectively bricked!\nProtecting your IoT Devices\nIt is not possible to assess how widely spread the attacks are, but the potential damage BrickerBot.3 can cause poses a clear and present danger for any IoT device with factory default credentials. As the attacks are still ongoing, we urge you to\n\nChange the devices factory default credentials.\nDisable Telnet access to the device.\nUse Network Behavioral Analysis to detect anomalies in traffic and combine this with automatic signature generation for fast and effective mitigation.\nUse User/Entity behavioral analysis (UEBA) to spot granular anomalies in traffic early.\nGateway devices allow blocking Telnet default credentials. Use a DPI signature to detect default credentials and/or provided command sequences.\n\nRead the 20162017 Global Application  Network Security Report by Radwares Emergency Response Team.\nDownload Now\n\nShare this:TwitterLinkedInFacebookGoogle",
-  "实体列表(没更新别名)": [
-    {
-      "name": "BrickerBot",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "BrickerBot.1",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "BrickerBot.2",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "BrickerBot.3",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "BrickerBot.4",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "Mirai",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Mirai exploit vector",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "IoT devices",
-      "type": "generic-noun",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Busybox-based Linux devices",
-      "type": "generic-noun",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Telnet",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "factory default credentials",
-      "type": "credential-value",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Dropbear SSH server",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "SSH2.0dropbear0.51",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "Dropbear SSH server"
-      ]
-    },
-    {
-      "name": "SSH2.0dropbear2013.58",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "Dropbear SSH server"
-      ]
-    },
-    {
-      "name": "SSH2.0dropbear2014.63",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "Dropbear SSH server"
-      ]
-    },
-    {
-      "name": "The Janit0r",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "Rob the Janit0r"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Catalin Cimpanu",
-      "type": "identity",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Victor Gevers",
-      "type": "identity",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "TOR egress nodes",
-      "type": "infrastructure",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera",
-      "type": "other",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Radwares Emergency Response Team",
-      "type": "identity",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "2016-2017 Global Application & Network Security Report",
-      "type": "malware-analysis-document-or-publication-or-conference",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    }
-  ],
-  "entitylist": [
-    {
-      "name": "BrickerBot",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "BrickerBot.1",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "BrickerBot.2",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "BrickerBot.3",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "BrickerBot.4",
-      "type": "malware",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "BrickerBot"
-      ]
-    },
-    {
-      "name": "Mirai",
-      "type": "malware",
-      "alias": [
-        "Mirai exploit vector"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Mirai exploit vector",
-      "type": "attack-pattern",
-      "alias": [
-        "Mirai"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "IoT devices",
-      "type": "generic-noun",
-      "alias": [
-        "Busybox-based Linux devices",
-        "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Busybox-based Linux devices",
-      "type": "generic-noun",
-      "alias": [
-        "IoT devices",
-        "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Telnet",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "factory default credentials",
-      "type": "credential-value",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Dropbear SSH server",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "SSH2.0dropbear0.51",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "Dropbear SSH server"
-      ]
-    },
-    {
-      "name": "SSH2.0dropbear2013.58",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "Dropbear SSH server"
-      ]
-    },
-    {
-      "name": "SSH2.0dropbear2014.63",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "Dropbear SSH server"
-      ]
-    },
-    {
-      "name": "The Janit0r",
-      "type": "threat-actor-or-intrusion-set",
-      "alias": [
-        "Rob the Janit0r"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Catalin Cimpanu",
-      "type": "identity",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Victor Gevers",
-      "type": "identity",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "TOR egress nodes",
-      "type": "infrastructure",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera",
-      "type": "other",
-      "alias": [
-        "IoT devices",
-        "Busybox-based Linux devices"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Radwares Emergency Response Team",
-      "type": "identity",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "2016-2017 Global Application & Network Security Report",
-      "type": "malware-analysis-document-or-publication-or-conference",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    }
-  ],
   "relationshiplist": [
     {
       "sub": "BrickerBot.1",
@@ -681,5 +232,232 @@
       ],
       "obj": "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera"
     }
-  ]
+  ],
+  "entitylist": [
+    {
+      "name": "BrickerBot",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "BrickerBot.1",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "BrickerBot"
+      ]
+    },
+    {
+      "name": "BrickerBot.2",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "BrickerBot"
+      ]
+    },
+    {
+      "name": "BrickerBot.3",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "BrickerBot"
+      ]
+    },
+    {
+      "name": "BrickerBot.4",
+      "type": "malware",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "BrickerBot"
+      ]
+    },
+    {
+      "name": "Mirai",
+      "type": "malware",
+      "alias": [
+        "Mirai exploit vector"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mirai exploit vector",
+      "type": "attack-pattern",
+      "alias": [
+        "Mirai"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "IoT devices",
+      "type": "generic-noun",
+      "alias": [
+        "Busybox-based Linux devices",
+        "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Busybox-based Linux devices",
+      "type": "generic-noun",
+      "alias": [
+        "IoT devices",
+        "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Telnet",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "factory default credentials",
+      "type": "credential-value",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Dropbear SSH server",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "SSH2.0dropbear0.51",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "Dropbear SSH server"
+      ]
+    },
+    {
+      "name": "SSH2.0dropbear2013.58",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "Dropbear SSH server"
+      ]
+    },
+    {
+      "name": "SSH2.0dropbear2014.63",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "Dropbear SSH server"
+      ]
+    },
+    {
+      "name": "The Janit0r",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "Rob the Janit0r"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Catalin Cimpanu",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Victor Gevers",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "TOR egress nodes",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera",
+      "type": "other",
+      "alias": [
+        "IoT devices",
+        "Busybox-based Linux devices"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Radwares Emergency Response Team",
+      "type": "identity",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "2016-2017 Global Application & Network Security Report",
+      "type": "malware-analysis-document-or-publication-or-conference",
+      "alias": [
+        "None"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "content": "In early April, we identified a new botnet designed to comprise IoT devices and corrupt their storage. Over a fourday period, our honeypots recorded 1,895 PDoS attempts performed from several locations around the world. Its sole purpose was to compromise IoT devices and corrupt their storage. Besides this intense, shortlived bot (BrickerBot.1), our honeypots recorded attempts from a second, very similar bot (BrickerBot.2) which started PDoS attempts on the same date  both bots were discovered less than one hour apart with lower intensity but more thorough and its location(s) concealed by TOR egress nodes.\n\nYesterday we discovered a new version of the BrickerBot PDoS attack (BrickerBot.3) with a new command sequence on a different honeypot location. 1 hour after finalizing the report on the first 12h of BrickerBot.3 the article on the potential author of BrickerBot and the comments by this author were published by Catalin Cimpany on his blog.\nThe new PDoS attempt sequence, for which we named the bots that are responsible for performing the attacks BrickerBot.3, is the following:\n\nFor reference, the BrickerBot.1 command sequence:\n\nCompared with the original BrickerBot.1, the sequence of commands is very similar. It does not start with fdisk  but goes straight to business. The first six block devices it tries to corrupt (up to and including /dev/ram0) correspond with the BrickerBot.1 attack. The devices mtd0,1 and mtdblock1,2,3 are new for the Busybox version of BrickerBot. The fdisk commands to try to change the geometry of the block devices are identical to what BrickerBot.1 attempted. The end sequence again tries to disrupt connectivity by removing the default route and disabling TCP timestamps, wiping the root and limiting the number of kernel threats to one. The fork bomb, which was signature for BrickerBot.2 is not present.\nThe first 12 hours\nDuring the first 12 hours of the attack, a total of 1,118 PDoS attempts were recorded. The attacks all originated from a limited number of clear net IP addresses. ZoomEye and Shodan searches based on the source IPs of the attacks revealed all of them running an outdated version of the Dropbear SSH server (SSH2.0dropbear0.51, SSH2.0dropbear2013.58, and SSH2.0dropbear2014.63).\n [You might also like: The Expansion of IoT since Mirai.]\nThe attacks started at 12:00 GMT on April 21st and in its first 12 hours, the number of bots performing the attacks grew up to 15  the bot growth timeline is depicted in the graph below:\n\nThe devices used to perform the PDoS attacks on our honeypot do not correspond to the devices from BrickerBot.1. Although BrickerBot.1 was also abusing a limited number of clear net connected devices to perform its attack, there is no immediate correlation between both. For complete disclosure and transparency, the attacks were detected by a different honeypot than the one that detected the BrickerBot.1 and BrickerBot.2 attacks.\nThe devices that perform the attack are spread around the globe and do not concentrate in a specific region and do not correlate to the locations of the BrickerBot.1 sources.\nHere is the geographic distribution of devices used by BrickerBot.2 to perform the attacks:\n\nExploit vector like Mirai\nIn line with BrickerBot.1 and BrickerBot.2, this bot is also using the Mirai exploit vector to compromise the target. Any Busyboxbased Linux device that has telnet exposed publically and has factory default credentials unchanged are a potential victim.\nBrickerBot.4\nBetween 5:22pm and 8:44pm GMT the same honeypot also detected yet another, very similar sequence of commands. The attack was only attempted from a single device which was located on the clear net and upon investigation also had an outdated version of the Dropbear SSH server (SSH2.0dropbear2014.63). This isolated bot performed 90 attacks and was not seen again between 8:44pm and midnight.\nThe BrickerBot.4 command sequence has a few less block devices it tries to corrupt, as compared to BrickerBot.3:\n\n [You might also like: 5 Recommendations for IoT Manufacturers]\nRob the Janit0r\nA few hours after finalizing this report, Catalin Cimpanu published his article on the author of BrickerBot. A person who went by the name of Janit0r on Hackerforums alluded to being the author of BrickerBot on April 14th.\n\nThe Janit0r reached out to Victor Gevers based on a comment Victor made in one of the first articles on BrickerBot.1 and .2. The person confirmed he is the Janit0r on Hackforums and he is the author of BrickerBot.\nThe Janit0r:\nLike so many others I was dismayed by the indiscriminate DDoS attacks by IoT botnets in 2016. I thought for sure that the large attacks would force the industry to finally get its act together, but after a few months of recordbreaking attacks it became obvious that in spite of all the sincere efforts the problem couldnt be solved quickly enough by conventional means.\nBased on the Janit0rs discussion, BrickerBot is more complex and most probably much larger than we initially believed it to be.\nThe Janit0r:\nI consider my project a form of Internet Chemotherapy I sometimes jokingly think of myself as The Doctor. Chemotherapy is a harsh treatment that nobody in their right mind would administer to a healthy patient, but the Internet was becoming seriously ill in Q3 and Q4/2016 and the moderate remedies were ineffective.\nFor the time being, it does not seem like the Janit0r will stop BrickerBot attacks, or at least not until officials and hardware vendors take definitive action to improve the state of IoT security.\nThe Potential Damage\nBrickerBot.3 and BrickerBot.4, like BrickerBot.1, are targeting Busyboxbased Linux devices, typically IoT devices such as IP cameras and DVRs. As mentioned in our BrickerBot blog from April 13th, we put the BrickerBot.1 command sequence to the test and assessed its impact on a real life device. The device in question was a Sricam AP003 Metal Gun Type Waterproof Outdoor Bullet IP camera, which is known to be supported by Mirai. Although the know invokes thoughts of robustness, upon running the sequence of commands from BrickerBot.1, the camera got disconnected from the network and upon reboot was not responding anymore. Factory reset though a special button on the camera did not recover the IoT device. It was effectively bricked!\nProtecting your IoT Devices\nIt is not possible to assess how widely spread the attacks are, but the potential damage BrickerBot.3 can cause poses a clear and present danger for any IoT device with factory default credentials. As the attacks are still ongoing, we urge you to\n\nChange the devices factory default credentials.\nDisable Telnet access to the device.\nUse Network Behavioral Analysis to detect anomalies in traffic and combine this with automatic signature generation for fast and effective mitigation.\nUse User/Entity behavioral analysis (UEBA) to spot granular anomalies in traffic early.\nGateway devices allow blocking Telnet default credentials. Use a DPI signature to detect default credentials and/or provided command sequences.\n\nRead the 20162017 Global Application  Network Security Report by Radwares Emergency Response Team.\nDownload Now\n\nShare this:TwitterLinkedInFacebookGoogle",
+  "idorurl": "60k_0032258"
 }

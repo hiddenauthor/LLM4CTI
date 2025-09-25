@@ -1,497 +1,380 @@
 {
-  "idorurl": "60k_0049442",
-  "content": "\n\nThe evolution of cryptoransomware in terms of behavior takes a step forward, and a creepy one at that. We have recently encountered a nasty cryptoransomware family called JIGSAW. Reminiscent to the horror film Saw, this malware toys with users by locking and deleting their files incrementally. To an extent, it instills fear and pressures users into paying the ransom. It even comes with an image of Saws very own Billy the puppet, and the red digitalclock to boot.\nIts no longer a surprise that cryptoransomware is the prevalent threat in todays computing landscape, given its promise of quick ROI for the cybercriminals behind it. Its also not surprising that many have joined this bandwagon. These days, the name of the cryptoransomware game is to add unique features or creative ways to instill fear and put more pressure to users to pay up, despite the fact that, when it comes to their technical routines, theres not much difference among these malware. JIGSAW joins notable families like PETYA and CERBER that have emerged in the past couple of months alone.\nInfection and distribution\nBased on our analysis, JIGSAW arrives as a file downloaded from a free cloud storage service named 1fichier[.]com. This service has previously hosted other malware like the information stealer FAREIT, as well as COINSTEALER, which gathers bitcoins. We already notified 1ficher about this incident and they already removed the said malicious URLs. It can also be downloaded at hxxp://waldorftrust[.]com, where JIGSAW is most probably bundled with a cryptominer software.\nMind games\nOnce the cryptoransomware is executed, the user is greeted by an image of Billy, and the ransom note.\nFigure 1. JIGSAW showing ransom note and Billy the puppet\nThe message comes in two languages; English or Portuguese. The note introduces the idea of exponential growth, and applies it on the users file and the ransom amount. Recent cryptoransomware families have ransom amounts that grow as time passes, but not with the same increments as JIGSAW. To make matters worse, it deletes a larger amount of files with every hour while the amount to be paid also increases.\nJIGSAW deletes files and increases the ransom amount per hour. And with the exponential increase of files being permanently deleted, users may be pressured into paying the ransom so they may either save the remaining files, or avoid paying a larger ransom. The least amount the user can pay is US20150 .\n\nFigure 2. Activated timer pressures users to pay ransom\nJIGSAWis the first cryptoransomware with a routine that creates a copy of all the users files, encrypts the copies into .fun files, and deletes the original.Some of its variants, however, changed the file extensions into .KKK, .BTC, and .GWS files.It encrypts the following file types:\n\nFigure 3. File extensions encrypted by JIGSAW\n\nFigure 4. JIGSAW changes file extensions into .BTC\n\nFigure 5. Red highlighted files are deleted while green highlighted files are the encrypted duplicate\nThe ransom note also states that if the user forcibly reboots their computer, 1,000 files would be deleted and no duplicate copy will be made. When a user attempts to restart the computer, another threat is given. And in 72 hours, if the user fails to pay, all encrypted files will be deleted.\n\nFigure 6. Restart prompt message\nAs scary as JIGSAW may be, its structure is still very simple.It has no new capabilities or routines as compared to other cryptoransomware families. But whatever JIGSAW lacks in sophistication, it makes up with its deviousness. The user interface (UI) and scare tactics used are nastier and moves users into paying the ransom.\nShaming\nThrough our analysis, we are also able to identify porn sites as another possible infection vector, apart from PUA/adware. Another version of JIGSAW doesnt use the Billy image. The alternate version actually shows adult images, with a message that says YOU ARE A PORN ADDICT.STOP WATCHING SO MUCH PORN. NOW YOU HAVE TO PAY. The ransom details remain the same as the previous one. Another variant of JIGSAW shows the stock image of pink flowers.\n\nFigure 7. Alternative background images of JIGSAW\nBigger picture\nJIGSAW isnt the only cryptoransomware thats banking on the fear factor. MAKTUBLOCKER, another recent cryptoransomware, infects users via email through a malicious file. Whats makes the attack effective is that the mail includes the users name and mailing address, making it seem legitimate. What is evident is that cryptoransomware familiesare now resorting to more vicious methods of infecting more and more users, and devising new means of forcing victims to pay.\nSolutions\nCryptoransomware is getting more and more difficult to avoid. That is why users should back up their data regularly and follow the 321 rule to make sure their data is secure. This also mitigates any damages occurred during the event of a ransomware. Keep in mind that paying ransom is never a guarantee that the attacker would still unlock the encrypted files.\nTrend Micro endpoint solutions such asTrend Micro Security,Trend Micro Smart ProtectionSuites,and Trend MicroWorryFreeBusiness Securitycan protect usersfrom this threat by detecting malicious files, and emailmessages before their systems get infected. These solutions are also capable of blocking all related malicious URLs that may contain malware.Systems with Trend Micro Smart Protection Suites are also protected from this threat via Trend Micro Endpoint Application Control.\nWith additional insights and analysis by: Mark Manahan and Jamz Yaneza\n\nSHA1s for related files:\n\n0C269C5A641FD479269C2F353841A5BF9910888B  RansomJIGSAW.A\nDC307A673AA5EECB5C1400F1D342E03697564F98  RansomJIGSAW.A\nCE42E2C694CA4737AE68D3C9E333554C55AFEE27  RansomJIGSAW.A\n1AD9F8695C10ADB69BDEBD6BDC39B119707D500E  RansomJIGSAW.B\nCA40233610D40258539DA0212A06AF29B07C13F6  RansomJIGSAW.C\nF8431CF0A73E4EDE5B4B38185D73D8472CFE2AE7  RansomJIGSAW.C\nDCE911B1C05DA965C8733935723B88BC29D12756  RansomJIGSAW.D\n3F6E3E5126C837F46A18EE988DBF5756C2B856AA  RansomJIGSAW.E\n92620194A581A91874A5284A775014E0D71A9DB1  RansomJIGSAW.E\n\nUpdate as of April 21, 2016, 3:30 P.M. PDT:\nWe have seen a new version of this ransomware dubbed JIGSAW 2.0 one month after the original was detected. Unlike its predecessor, JIGSAW 2.0 uses Confuser to obfuscate its code. The presence of an antidebugging technique was also found. It is also possible for the new version to terminate or disable forensic tools and windows system utilities such as:\n\nTaskmgr\nProcexp\nRegedit\nAutoruns\ncmd\n\nThe sample we recovered failed to encrypt any file and kept crashing. This could mean that JIGSAW 2.0 is still on its testing and development phase.\nWith analysis by Ruby Santos\nAdditional SHA1s for related files:\n\n5d6eeeffe8997aab2b2f38f81ed117b0e1b458d9 RansomJIGSAW.F\n4e647721d4b98b00ce1430241b47348c81837f33 RansomJIGSAW.F\nebb78d5b1e0734a9de81b4c0e4168de8b83ddb7f RansomJIGSAW.F\n4c7b4e20d1cba5a88e74daec7c7577d68feae7f1 RansomJIGSAW.G\ned42fd4a6cf5f813b3640144b456c6aaa9fef3e2 RansomJIGSAW.G\n\nRelated posts:\nXLoader Android Spyware and Banking Trojan Distributed via DNS Spoofing \n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: cryptoransomwareJIGSAWSAW\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "JIGSAW",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "1fichier.com",
+      "rel": "hosted",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "1fichier.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "1fichier.com",
+      "rel": "hosted",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "FAREIT"
     },
     {
-      "name": "FAREIT",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "1fichier.com",
+      "rel": "hosted",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "COINSTEALER"
     },
     {
-      "name": "COINSTEALER",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "waldorftrust.com",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "waldorftrust.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "JIGSAW",
+      "rel": "banks on fear factor like",
+      "rel_type": [
+        "compares-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "MAKTUBLOCKER"
     },
     {
-      "name": "MAKTUBLOCKER",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "0C269C5A641FD479269C2F353841A5BF9910888B",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.A"
     },
     {
-      "name": "0C269C5A641FD479269C2F353841A5BF9910888B",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "RansomJIGSAW.A",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "RansomJIGSAW.A",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "DC307A673AA5EECB5C1400F1D342E03697564F98",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "RansomJIGSAW.A"
     },
     {
-      "name": "DC307A673AA5EECB5C1400F1D342E03697564F98",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "CE42E2C694CA4737AE68D3C9E333554C55AFEE27",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.A"
     },
     {
-      "name": "CE42E2C694CA4737AE68D3C9E333554C55AFEE27",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "1AD9F8695C10ADB69BDEBD6BDC39B119707D500E",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.B"
     },
     {
-      "name": "1AD9F8695C10ADB69BDEBD6BDC39B119707D500E",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "RansomJIGSAW.B",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "RansomJIGSAW.B",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "CA40233610D40258539DA0212A06AF29B07C13F6",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "RansomJIGSAW.C"
     },
     {
-      "name": "CA40233610D40258539DA0212A06AF29B07C13F6",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "RansomJIGSAW.C",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "RansomJIGSAW.C",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "F8431CF0A73E4EDE5B4B38185D73D8472CFE2AE7",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "RansomJIGSAW.C"
     },
     {
-      "name": "F8431CF0A73E4EDE5B4B38185D73D8472CFE2AE7",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "DCE911B1C05DA965C8733935723B88BC29D12756",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.D"
     },
     {
-      "name": "DCE911B1C05DA965C8733935723B88BC29D12756",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "RansomJIGSAW.D",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "RansomJIGSAW.D",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "3F6E3E5126C837F46A18EE988DBF5756C2B856AA",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "RansomJIGSAW.E"
     },
     {
-      "name": "3F6E3E5126C837F46A18EE988DBF5756C2B856AA",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "RansomJIGSAW.E",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "RansomJIGSAW.E",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "92620194A581A91874A5284A775014E0D71A9DB1",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "RansomJIGSAW.E"
     },
     {
-      "name": "92620194A581A91874A5284A775014E0D71A9DB1",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "JIGSAW 2.0",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Confuser"
     },
     {
-      "name": "JIGSAW 2.0",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "JIGSAW 2.0",
+      "rel": "terminates or disables",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "Taskmgr"
     },
     {
-      "name": "Confuser",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "JIGSAW 2.0",
+      "rel": "terminates or disables",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Procexp"
     },
     {
-      "name": "Taskmgr",
-      "type": "general-software",
-      "alias": [
-        "Task Manager"
+      "sub": "JIGSAW 2.0",
+      "rel": "terminates or disables",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Regedit"
     },
     {
-      "name": "Procexp",
-      "type": "general-software",
-      "alias": [
-        "Process Explorer"
+      "sub": "JIGSAW 2.0",
+      "rel": "terminates or disables",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Autoruns"
     },
     {
-      "name": "Regedit",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "JIGSAW 2.0",
+      "rel": "terminates or disables",
+      "rel_type": [
+        "bypasses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "cmd"
     },
     {
-      "name": "Autoruns",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "5d6eeeffe8997aab2b2f38f81ed117b0e1b458d9",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.F"
     },
     {
-      "name": "cmd",
-      "type": "general-software",
-      "alias": [
-        "Command Prompt"
+      "sub": "RansomJIGSAW.F",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "5d6eeeffe8997aab2b2f38f81ed117b0e1b458d9",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "4e647721d4b98b00ce1430241b47348c81837f33",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.F"
     },
     {
-      "name": "RansomJIGSAW.F",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "ebb78d5b1e0734a9de81b4c0e4168de8b83ddb7f",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "RansomJIGSAW.F"
     },
     {
-      "name": "4e647721d4b98b00ce1430241b47348c81837f33",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "4c7b4e20d1cba5a88e74daec7c7577d68feae7f1",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.G"
     },
     {
-      "name": "ebb78d5b1e0734a9de81b4c0e4168de8b83ddb7f",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "RansomJIGSAW.G",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "4c7b4e20d1cba5a88e74daec7c7577d68feae7f1",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "ed42fd4a6cf5f813b3640144b456c6aaa9fef3e2",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RansomJIGSAW.G"
     },
     {
-      "name": "RansomJIGSAW.G",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "JIGSAW",
+      "rel": "has",
+      "rel_type": [
+        "has"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "routine"
     },
     {
-      "name": "ed42fd4a6cf5f813b3640144b456c6aaa9fef3e2",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "routine",
+      "rel": "creates a copy of",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "user's files"
     },
     {
-      "name": "routine",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
+      "sub": "routine",
+      "rel": "encrypts copies into",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": ".fun files"
     },
     {
-      "name": "user's files",
-      "type": "file",
-      "alias": [
-        "the original"
+      "sub": "routine",
+      "rel": "deletes",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "user's files"
     },
     {
-      "name": ".fun files",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "JIGSAW variant",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "JIGSAW variant",
-      "type": "malware",
-      "alias": [
-        "Some of its variants"
+      "sub": "JIGSAW variant",
+      "rel": "changed file extensions into",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": ".KKK files"
     },
     {
-      "name": ".KKK files",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "JIGSAW variant",
+      "rel": "changed file extensions into",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": ".BTC files"
     },
     {
-      "name": ".BTC files",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "JIGSAW variant",
+      "rel": "changed file extensions into",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": ".GWS files"
     },
     {
-      "name": ".GWS files",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "JIGSAW alternate version",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "JIGSAW alternate version",
-      "type": "malware",
-      "alias": [
-        "Another version of JIGSAW",
-        "The alternate version"
+      "sub": "JIGSAW alternate version",
+      "rel": "shows",
+      "rel_type": [
+        "has"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "adult images"
     },
     {
-      "name": "adult images",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "JIGSAW pink flower variant",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "JIGSAW"
     },
     {
-      "name": "JIGSAW pink flower variant",
-      "type": "malware",
-      "alias": [
-        "Another variant of JIGSAW"
+      "sub": "JIGSAW pink flower variant",
+      "rel": "shows",
+      "rel_type": [
+        "has"
       ],
-      "mother entity": [
-        "JIGSAW"
-      ]
+      "obj": "stock image of pink flowers"
     },
     {
-      "name": "stock image of pink flowers",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "MAKTUBLOCKER",
+      "rel": "delivers via email",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "malicious file"
     },
     {
-      "name": "email",
-      "type": "generic-noun",
-      "alias": [
-        "mail"
+      "sub": "email",
+      "rel": "includes",
+      "rel_type": [
+        "has"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "user's name"
     },
     {
-      "name": "malicious file",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "email",
+      "rel": "includes",
+      "rel_type": [
+        "has"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "user's name",
-      "type": "credential-value",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "user's mailing address",
-      "type": "credential-value",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "user's mailing address"
     }
   ],
   "entitylist": [
@@ -994,382 +877,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "1fichier.com",
-      "rel": "hosted",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "1fichier.com",
-      "rel": "hosted",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "FAREIT"
-    },
-    {
-      "sub": "1fichier.com",
-      "rel": "hosted",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "COINSTEALER"
-    },
-    {
-      "sub": "waldorftrust.com",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "JIGSAW",
-      "rel": "banks on fear factor like",
-      "rel_type": [
-        "compares-to"
-      ],
-      "obj": "MAKTUBLOCKER"
-    },
-    {
-      "sub": "0C269C5A641FD479269C2F353841A5BF9910888B",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.A"
-    },
-    {
-      "sub": "RansomJIGSAW.A",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "DC307A673AA5EECB5C1400F1D342E03697564F98",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.A"
-    },
-    {
-      "sub": "CE42E2C694CA4737AE68D3C9E333554C55AFEE27",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.A"
-    },
-    {
-      "sub": "1AD9F8695C10ADB69BDEBD6BDC39B119707D500E",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.B"
-    },
-    {
-      "sub": "RansomJIGSAW.B",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "CA40233610D40258539DA0212A06AF29B07C13F6",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.C"
-    },
-    {
-      "sub": "RansomJIGSAW.C",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "F8431CF0A73E4EDE5B4B38185D73D8472CFE2AE7",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.C"
-    },
-    {
-      "sub": "DCE911B1C05DA965C8733935723B88BC29D12756",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.D"
-    },
-    {
-      "sub": "RansomJIGSAW.D",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "3F6E3E5126C837F46A18EE988DBF5756C2B856AA",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.E"
-    },
-    {
-      "sub": "RansomJIGSAW.E",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "92620194A581A91874A5284A775014E0D71A9DB1",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.E"
-    },
-    {
-      "sub": "JIGSAW 2.0",
-      "rel": "uses",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Confuser"
-    },
-    {
-      "sub": "JIGSAW 2.0",
-      "rel": "terminates or disables",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "Taskmgr"
-    },
-    {
-      "sub": "JIGSAW 2.0",
-      "rel": "terminates or disables",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "Procexp"
-    },
-    {
-      "sub": "JIGSAW 2.0",
-      "rel": "terminates or disables",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "Regedit"
-    },
-    {
-      "sub": "JIGSAW 2.0",
-      "rel": "terminates or disables",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "Autoruns"
-    },
-    {
-      "sub": "JIGSAW 2.0",
-      "rel": "terminates or disables",
-      "rel_type": [
-        "bypasses"
-      ],
-      "obj": "cmd"
-    },
-    {
-      "sub": "5d6eeeffe8997aab2b2f38f81ed117b0e1b458d9",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.F"
-    },
-    {
-      "sub": "RansomJIGSAW.F",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "4e647721d4b98b00ce1430241b47348c81837f33",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.F"
-    },
-    {
-      "sub": "ebb78d5b1e0734a9de81b4c0e4168de8b83ddb7f",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.F"
-    },
-    {
-      "sub": "4c7b4e20d1cba5a88e74daec7c7577d68feae7f1",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.G"
-    },
-    {
-      "sub": "RansomJIGSAW.G",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "ed42fd4a6cf5f813b3640144b456c6aaa9fef3e2",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "RansomJIGSAW.G"
-    },
-    {
-      "sub": "JIGSAW",
-      "rel": "has",
-      "rel_type": [
-        "has"
-      ],
-      "obj": "routine"
-    },
-    {
-      "sub": "routine",
-      "rel": "creates a copy of",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": "user's files"
-    },
-    {
-      "sub": "routine",
-      "rel": "encrypts copies into",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": ".fun files"
-    },
-    {
-      "sub": "routine",
-      "rel": "deletes",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": "user's files"
-    },
-    {
-      "sub": "JIGSAW variant",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "JIGSAW variant",
-      "rel": "changed file extensions into",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": ".KKK files"
-    },
-    {
-      "sub": "JIGSAW variant",
-      "rel": "changed file extensions into",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": ".BTC files"
-    },
-    {
-      "sub": "JIGSAW variant",
-      "rel": "changed file extensions into",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": ".GWS files"
-    },
-    {
-      "sub": "JIGSAW alternate version",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "JIGSAW alternate version",
-      "rel": "shows",
-      "rel_type": [
-        "has"
-      ],
-      "obj": "adult images"
-    },
-    {
-      "sub": "JIGSAW pink flower variant",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "JIGSAW"
-    },
-    {
-      "sub": "JIGSAW pink flower variant",
-      "rel": "shows",
-      "rel_type": [
-        "has"
-      ],
-      "obj": "stock image of pink flowers"
-    },
-    {
-      "sub": "MAKTUBLOCKER",
-      "rel": "delivers via email",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "malicious file"
-    },
-    {
-      "sub": "email",
-      "rel": "includes",
-      "rel_type": [
-        "has"
-      ],
-      "obj": "user's name"
-    },
-    {
-      "sub": "email",
-      "rel": "includes",
-      "rel_type": [
-        "has"
-      ],
-      "obj": "user's mailing address"
-    }
-  ]
+  "content": "\n\nThe evolution of cryptoransomware in terms of behavior takes a step forward, and a creepy one at that. We have recently encountered a nasty cryptoransomware family called JIGSAW. Reminiscent to the horror film Saw, this malware toys with users by locking and deleting their files incrementally. To an extent, it instills fear and pressures users into paying the ransom. It even comes with an image of Saws very own Billy the puppet, and the red digitalclock to boot.\nIts no longer a surprise that cryptoransomware is the prevalent threat in todays computing landscape, given its promise of quick ROI for the cybercriminals behind it. Its also not surprising that many have joined this bandwagon. These days, the name of the cryptoransomware game is to add unique features or creative ways to instill fear and put more pressure to users to pay up, despite the fact that, when it comes to their technical routines, theres not much difference among these malware. JIGSAW joins notable families like PETYA and CERBER that have emerged in the past couple of months alone.\nInfection and distribution\nBased on our analysis, JIGSAW arrives as a file downloaded from a free cloud storage service named 1fichier[.]com. This service has previously hosted other malware like the information stealer FAREIT, as well as COINSTEALER, which gathers bitcoins. We already notified 1ficher about this incident and they already removed the said malicious URLs. It can also be downloaded at hxxp://waldorftrust[.]com, where JIGSAW is most probably bundled with a cryptominer software.\nMind games\nOnce the cryptoransomware is executed, the user is greeted by an image of Billy, and the ransom note.\nFigure 1. JIGSAW showing ransom note and Billy the puppet\nThe message comes in two languages; English or Portuguese. The note introduces the idea of exponential growth, and applies it on the users file and the ransom amount. Recent cryptoransomware families have ransom amounts that grow as time passes, but not with the same increments as JIGSAW. To make matters worse, it deletes a larger amount of files with every hour while the amount to be paid also increases.\nJIGSAW deletes files and increases the ransom amount per hour. And with the exponential increase of files being permanently deleted, users may be pressured into paying the ransom so they may either save the remaining files, or avoid paying a larger ransom. The least amount the user can pay is US20150 .\n\nFigure 2. Activated timer pressures users to pay ransom\nJIGSAWis the first cryptoransomware with a routine that creates a copy of all the users files, encrypts the copies into .fun files, and deletes the original.Some of its variants, however, changed the file extensions into .KKK, .BTC, and .GWS files.It encrypts the following file types:\n\nFigure 3. File extensions encrypted by JIGSAW\n\nFigure 4. JIGSAW changes file extensions into .BTC\n\nFigure 5. Red highlighted files are deleted while green highlighted files are the encrypted duplicate\nThe ransom note also states that if the user forcibly reboots their computer, 1,000 files would be deleted and no duplicate copy will be made. When a user attempts to restart the computer, another threat is given. And in 72 hours, if the user fails to pay, all encrypted files will be deleted.\n\nFigure 6. Restart prompt message\nAs scary as JIGSAW may be, its structure is still very simple.It has no new capabilities or routines as compared to other cryptoransomware families. But whatever JIGSAW lacks in sophistication, it makes up with its deviousness. The user interface (UI) and scare tactics used are nastier and moves users into paying the ransom.\nShaming\nThrough our analysis, we are also able to identify porn sites as another possible infection vector, apart from PUA/adware. Another version of JIGSAW doesnt use the Billy image. The alternate version actually shows adult images, with a message that says YOU ARE A PORN ADDICT.STOP WATCHING SO MUCH PORN. NOW YOU HAVE TO PAY. The ransom details remain the same as the previous one. Another variant of JIGSAW shows the stock image of pink flowers.\n\nFigure 7. Alternative background images of JIGSAW\nBigger picture\nJIGSAW isnt the only cryptoransomware thats banking on the fear factor. MAKTUBLOCKER, another recent cryptoransomware, infects users via email through a malicious file. Whats makes the attack effective is that the mail includes the users name and mailing address, making it seem legitimate. What is evident is that cryptoransomware familiesare now resorting to more vicious methods of infecting more and more users, and devising new means of forcing victims to pay.\nSolutions\nCryptoransomware is getting more and more difficult to avoid. That is why users should back up their data regularly and follow the 321 rule to make sure their data is secure. This also mitigates any damages occurred during the event of a ransomware. Keep in mind that paying ransom is never a guarantee that the attacker would still unlock the encrypted files.\nTrend Micro endpoint solutions such asTrend Micro Security,Trend Micro Smart ProtectionSuites,and Trend MicroWorryFreeBusiness Securitycan protect usersfrom this threat by detecting malicious files, and emailmessages before their systems get infected. These solutions are also capable of blocking all related malicious URLs that may contain malware.Systems with Trend Micro Smart Protection Suites are also protected from this threat via Trend Micro Endpoint Application Control.\nWith additional insights and analysis by: Mark Manahan and Jamz Yaneza\n\nSHA1s for related files:\n\n0C269C5A641FD479269C2F353841A5BF9910888B  RansomJIGSAW.A\nDC307A673AA5EECB5C1400F1D342E03697564F98  RansomJIGSAW.A\nCE42E2C694CA4737AE68D3C9E333554C55AFEE27  RansomJIGSAW.A\n1AD9F8695C10ADB69BDEBD6BDC39B119707D500E  RansomJIGSAW.B\nCA40233610D40258539DA0212A06AF29B07C13F6  RansomJIGSAW.C\nF8431CF0A73E4EDE5B4B38185D73D8472CFE2AE7  RansomJIGSAW.C\nDCE911B1C05DA965C8733935723B88BC29D12756  RansomJIGSAW.D\n3F6E3E5126C837F46A18EE988DBF5756C2B856AA  RansomJIGSAW.E\n92620194A581A91874A5284A775014E0D71A9DB1  RansomJIGSAW.E\n\nUpdate as of April 21, 2016, 3:30 P.M. PDT:\nWe have seen a new version of this ransomware dubbed JIGSAW 2.0 one month after the original was detected. Unlike its predecessor, JIGSAW 2.0 uses Confuser to obfuscate its code. The presence of an antidebugging technique was also found. It is also possible for the new version to terminate or disable forensic tools and windows system utilities such as:\n\nTaskmgr\nProcexp\nRegedit\nAutoruns\ncmd\n\nThe sample we recovered failed to encrypt any file and kept crashing. This could mean that JIGSAW 2.0 is still on its testing and development phase.\nWith analysis by Ruby Santos\nAdditional SHA1s for related files:\n\n5d6eeeffe8997aab2b2f38f81ed117b0e1b458d9 RansomJIGSAW.F\n4e647721d4b98b00ce1430241b47348c81837f33 RansomJIGSAW.F\nebb78d5b1e0734a9de81b4c0e4168de8b83ddb7f RansomJIGSAW.F\n4c7b4e20d1cba5a88e74daec7c7577d68feae7f1 RansomJIGSAW.G\ned42fd4a6cf5f813b3640144b456c6aaa9fef3e2 RansomJIGSAW.G\n\nRelated posts:\nXLoader Android Spyware and Banking Trojan Distributed via DNS Spoofing \n\n Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:ENTERPRISE SMALL BUSINESSHOME\n \n\n           Tags: cryptoransomwareJIGSAWSAW\n\n",
+  "idorurl": "60k_0049442"
 }

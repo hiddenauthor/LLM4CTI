@@ -1,116 +1,84 @@
 {
-  "idorurl": "60k_0000098",
-  "content": "A new malware called Stuxnet is currently targeting Scada systems. This could be one of the thousands of pieces of malware used by criminals but I want to emphasize some of the characteristics that make this attempt important enough to think over.The malware is designed specifically to attack Siemens WinCC systems. This software controls and monitors industrial processes such as water treatment, gas pipelines, electrical distribution systems and so son. The malware takes advantage of default system credentials and seems to steal schematics information. (http://www.securityfocus.com/bid/41753)Stuxnet uses a previously unknown vulnerability that affects the current versions of Windows. The vulnerability affects the Windows Shell that incorrectly parses shortcuts letting malicious code being executed when the icon is displayed. This can be exploited through USB drives or network shares. (POC: http://www.exploitdb.com/exploits/14403/)The drivers dropped by the malware are signed with a digital certificate belonging to Realtek so we can assume that the malware authors gained access to Realteks private key.A high number of infections have been reported in Iran, Indonesia, India, Azerbaijan and the United States. Coincidence?Who is behind Stuxnet? Anyway, this is a successful attempt to attack highvalue assets around the world and whoever did this is highly skilled, well funded and possibly motivated by political, economical or military reasons.",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "Stuxnet",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Stuxnet",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "SCADA systems"
     },
     {
-      "name": "SCADA systems",
-      "type": "generic-noun",
-      "alias": [
-        "None"
+      "sub": "Stuxnet",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Siemens WinCC"
     },
     {
-      "name": "Siemens WinCC",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "Stuxnet",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "default system credentials"
     },
     {
-      "name": "default system credentials",
-      "type": "credential-value",
-      "alias": [
-        "None"
+      "sub": "Stuxnet",
+      "rel": "malicious-investigates-track-detects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "schematics information"
     },
     {
-      "name": "schematics information",
-      "type": "generic-noun",
-      "alias": [
-        "None"
+      "sub": "Stuxnet",
+      "rel": "exploits",
+      "rel_type": [
+        "exploits"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "unknown Windows Shell vulnerability"
     },
     {
-      "name": "unknown Windows Shell vulnerability",
-      "type": "vulnerability",
-      "alias": [
-        "None"
+      "sub": "unknown Windows Shell vulnerability",
+      "rel": "affects",
+      "rel_type": [
+        "other"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Windows Shell"
     },
     {
-      "name": "Windows Shell",
-      "type": "general-software",
-      "alias": [
-        "None"
+      "sub": "unknown Windows Shell vulnerability",
+      "rel": "can be exploited through",
+      "rel_type": [
+        "other"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "USB drives"
     },
     {
-      "name": "USB drives",
-      "type": "generic-noun",
-      "alias": [
-        "None"
+      "sub": "unknown Windows Shell vulnerability",
+      "rel": "can be exploited through",
+      "rel_type": [
+        "other"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "network shares"
     },
     {
-      "name": "network shares",
-      "type": "generic-noun",
-      "alias": [
-        "None"
+      "sub": "Stuxnet",
+      "rel": "drops",
+      "rel_type": [
+        "drops"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "drivers"
     },
     {
-      "name": "drivers",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "drivers",
+      "rel": "uses",
+      "rel_type": [
+        "uses"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Realtek digital certificate",
-      "type": "x509-certificate",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Realtek digital certificate"
     }
   ],
   "entitylist": [
@@ -226,86 +194,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "Stuxnet",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "SCADA systems"
-    },
-    {
-      "sub": "Stuxnet",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "Siemens WinCC"
-    },
-    {
-      "sub": "Stuxnet",
-      "rel": "uses",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "default system credentials"
-    },
-    {
-      "sub": "Stuxnet",
-      "rel": "malicious-investigates-track-detects",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "schematics information"
-    },
-    {
-      "sub": "Stuxnet",
-      "rel": "exploits",
-      "rel_type": [
-        "exploits"
-      ],
-      "obj": "unknown Windows Shell vulnerability"
-    },
-    {
-      "sub": "unknown Windows Shell vulnerability",
-      "rel": "affects",
-      "rel_type": [
-        "other"
-      ],
-      "obj": "Windows Shell"
-    },
-    {
-      "sub": "unknown Windows Shell vulnerability",
-      "rel": "can be exploited through",
-      "rel_type": [
-        "other"
-      ],
-      "obj": "USB drives"
-    },
-    {
-      "sub": "unknown Windows Shell vulnerability",
-      "rel": "can be exploited through",
-      "rel_type": [
-        "other"
-      ],
-      "obj": "network shares"
-    },
-    {
-      "sub": "Stuxnet",
-      "rel": "drops",
-      "rel_type": [
-        "drops"
-      ],
-      "obj": "drivers"
-    },
-    {
-      "sub": "drivers",
-      "rel": "uses",
-      "rel_type": [
-        "uses"
-      ],
-      "obj": "Realtek digital certificate"
-    }
-  ]
+  "content": "A new malware called Stuxnet is currently targeting Scada systems. This could be one of the thousands of pieces of malware used by criminals but I want to emphasize some of the characteristics that make this attempt important enough to think over.The malware is designed specifically to attack Siemens WinCC systems. This software controls and monitors industrial processes such as water treatment, gas pipelines, electrical distribution systems and so son. The malware takes advantage of default system credentials and seems to steal schematics information. (http://www.securityfocus.com/bid/41753)Stuxnet uses a previously unknown vulnerability that affects the current versions of Windows. The vulnerability affects the Windows Shell that incorrectly parses shortcuts letting malicious code being executed when the icon is displayed. This can be exploited through USB drives or network shares. (POC: http://www.exploitdb.com/exploits/14403/)The drivers dropped by the malware are signed with a digital certificate belonging to Realtek so we can assume that the malware authors gained access to Realteks private key.A high number of infections have been reported in Iran, Indonesia, India, Azerbaijan and the United States. Coincidence?Who is behind Stuxnet? Anyway, this is a successful attempt to attack highvalue assets around the world and whoever did this is highly skilled, well funded and possibly motivated by political, economical or military reasons.",
+  "idorurl": "60k_0000098"
 }

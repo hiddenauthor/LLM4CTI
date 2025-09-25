@@ -1,108 +1,76 @@
 {
-  "idorurl": "60k_0041321",
-  "content": "\nLast night the Kido (aka Conficker/ Downadup) botnet kicked into action  what everyones been on the lookout for since 1st April.\nThe computers infected with TrojanDownloader.Win32.Kido (aka Conficker.c) contacted each other over P2P, telling infected machines to download new malicious files.\nThis latest Kido variant  NetWorm.Win32.Kido.js  is very different to previous ones, with two notable points: once again its a worm, and its only functional until 3rd May. Were still digging into the files, and well post updates.\nKido doesnt only download updates for itself; its the other files it downloads which really make the story interesting.\nOne of the files is a rogue antivirus app, which we detect as FraudTool.Win32.SpywareProtect2009.s. The first version of Kido, detected back in November 2008, also tried to download fake antivirus to the infected machine. And once again, six months later, weve got unknown cybercriminals using the same trick.\nThe rogue software, SpywareProtect2009, can be found on spyprotect2009.com, spywrprotect2009.com, spywareprotector2009.com.\n\nOnce its run, you see the app interface, which naturally asks if you want to remove the threats its detected. Of course, this service comes at a price  49.95.\n\nAt the moment, the rogue antivirus comes from sites located in Ukraine (1313.elaninet.com.78.26.179.107) although Kido is downloading it from other sites.\nThe latest version of Kido also downloads EmailWorm.Win32.Iksmas.atz to infected systems. This email worm is also known as Waledac, and is able to steal data and send spam. When it first appeared in January 2009, a lot of IT experts noted the similarity between Kido and Iksmas. The Kido epidemic was mirrored by an email epidemic caused by Iksmas which was on just as large a scale. But up until now, there wasnt any firm evidence of a link between the two worms.\nThe evidence appeared last night. Both Kido and Iksmas are now present on infected machines and part of the gigantic botnet designed to conduct spam mailings. And, although theres no confirmation of this yet, it may be that sites belonging to companies and organizations which are part of the Conficker Working Group will find themselves under attack.\nUPDATE: Our colleagues over at ISC have just posted saying the the CWG site is down; theyre looking into it.\nUPDATE 2: Wired is reporting that the outage is due to cable sabotage.\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "Kido",
-      "type": "malware",
-      "alias": [
-        "Conficker",
-        "Downadup"
+      "sub": "NetWorm.Win32.Kido.js",
+      "rel": "variant-of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Kido"
     },
     {
-      "name": "NetWorm.Win32.Kido.js",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Kido",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
       ],
-      "mother entity": [
-        "Kido"
-      ]
+      "obj": "SpywareProtect2009"
     },
     {
-      "name": "SpywareProtect2009",
-      "type": "malware",
-      "alias": [
-        "FraudTool.Win32.SpywareProtect2009.s"
+      "sub": "Kido",
+      "rel": "downloads",
+      "rel_type": [
+        "downloads"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "EmailWorm.Win32.Iksmas.atz"
     },
     {
-      "name": "spyprotect2009.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "Kido",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Conficker Working Group"
     },
     {
-      "name": "spywrprotect2009.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "spyprotect2009.com",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "SpywareProtect2009"
     },
     {
-      "name": "spywareprotector2009.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "spywrprotect2009.com",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "SpywareProtect2009"
     },
     {
-      "name": "1313.elaninet.com",
-      "type": "domain-name",
-      "alias": [
-        "None"
+      "sub": "spywareprotector2009.com",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "SpywareProtect2009"
     },
     {
-      "name": "78.26.179.107",
-      "type": "ipv4-addr",
-      "alias": [
-        "None"
+      "sub": "1313.elaninet.com",
+      "rel": "hosts",
+      "rel_type": [
+        "hosts"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "SpywareProtect2009"
     },
     {
-      "name": "EmailWorm.Win32.Iksmas.atz",
-      "type": "malware",
-      "alias": [
-        "Iksmas",
-        "Waledac"
+      "sub": "1313.elaninet.com",
+      "rel": "resolves-to",
+      "rel_type": [
+        "resolves-to"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Conficker Working Group",
-      "type": "identity",
-      "alias": [
-        "CWG"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "78.26.179.107"
     }
   ],
   "entitylist": [
@@ -209,78 +177,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "NetWorm.Win32.Kido.js",
-      "rel": "variant-of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "Kido"
-    },
-    {
-      "sub": "Kido",
-      "rel": "downloads",
-      "rel_type": [
-        "downloads"
-      ],
-      "obj": "SpywareProtect2009"
-    },
-    {
-      "sub": "Kido",
-      "rel": "downloads",
-      "rel_type": [
-        "downloads"
-      ],
-      "obj": "EmailWorm.Win32.Iksmas.atz"
-    },
-    {
-      "sub": "Kido",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "Conficker Working Group"
-    },
-    {
-      "sub": "spyprotect2009.com",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "SpywareProtect2009"
-    },
-    {
-      "sub": "spywrprotect2009.com",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "SpywareProtect2009"
-    },
-    {
-      "sub": "spywareprotector2009.com",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "SpywareProtect2009"
-    },
-    {
-      "sub": "1313.elaninet.com",
-      "rel": "hosts",
-      "rel_type": [
-        "hosts"
-      ],
-      "obj": "SpywareProtect2009"
-    },
-    {
-      "sub": "1313.elaninet.com",
-      "rel": "resolves-to",
-      "rel_type": [
-        "resolves-to"
-      ],
-      "obj": "78.26.179.107"
-    }
-  ]
+  "content": "\nLast night the Kido (aka Conficker/ Downadup) botnet kicked into action  what everyones been on the lookout for since 1st April.\nThe computers infected with TrojanDownloader.Win32.Kido (aka Conficker.c) contacted each other over P2P, telling infected machines to download new malicious files.\nThis latest Kido variant  NetWorm.Win32.Kido.js  is very different to previous ones, with two notable points: once again its a worm, and its only functional until 3rd May. Were still digging into the files, and well post updates.\nKido doesnt only download updates for itself; its the other files it downloads which really make the story interesting.\nOne of the files is a rogue antivirus app, which we detect as FraudTool.Win32.SpywareProtect2009.s. The first version of Kido, detected back in November 2008, also tried to download fake antivirus to the infected machine. And once again, six months later, weve got unknown cybercriminals using the same trick.\nThe rogue software, SpywareProtect2009, can be found on spyprotect2009.com, spywrprotect2009.com, spywareprotector2009.com.\n\nOnce its run, you see the app interface, which naturally asks if you want to remove the threats its detected. Of course, this service comes at a price  49.95.\n\nAt the moment, the rogue antivirus comes from sites located in Ukraine (1313.elaninet.com.78.26.179.107) although Kido is downloading it from other sites.\nThe latest version of Kido also downloads EmailWorm.Win32.Iksmas.atz to infected systems. This email worm is also known as Waledac, and is able to steal data and send spam. When it first appeared in January 2009, a lot of IT experts noted the similarity between Kido and Iksmas. The Kido epidemic was mirrored by an email epidemic caused by Iksmas which was on just as large a scale. But up until now, there wasnt any firm evidence of a link between the two worms.\nThe evidence appeared last night. Both Kido and Iksmas are now present on infected machines and part of the gigantic botnet designed to conduct spam mailings. And, although theres no confirmation of this yet, it may be that sites belonging to companies and organizations which are part of the Conficker Working Group will find themselves under attack.\nUPDATE: Our colleagues over at ISC have just posted saying the the CWG site is down; theyre looking into it.\nUPDATE 2: Wired is reporting that the outage is due to cable sabotage.\n",
+  "idorurl": "60k_0041321"
 }

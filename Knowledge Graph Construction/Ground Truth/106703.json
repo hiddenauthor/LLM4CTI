@@ -1,0 +1,154 @@
+{
+  "relationshiplist": [
+    {
+      "sub": "CVE-2022-30190",
+      "rel": "is a vulnerability in",
+      "rel_type": [
+        "is-part-of"
+      ],
+      "obj": "Microsoft Support Diagnostic Tool"
+    },
+    {
+      "sub": "CVE-2022-30190",
+      "rel": "exploits",
+      "rel_type": [
+        "exploits"
+      ],
+      "obj": "Microsoft Office"
+    },
+    {
+      "sub": "Attacker(using: CVE-2022-30190)",
+      "rel": "creates",
+      "rel_type": [
+        "creates-or-generates"
+      ],
+      "obj": "MS Office document"
+    },
+    {
+      "sub": "MS Office document",
+      "rel": "contains a link to",
+      "rel_type": [
+        "has"
+      ],
+      "obj": "external malicious OLE object"
+    },
+    {
+      "sub": "Attacker(using: CVE-2022-30190)",
+      "rel": "pass any command to",
+      "rel_type": [
+        "controls"
+      ],
+      "obj": "Microsoft Support Diagnostic Tool"
+    },
+    {
+      "sub": "PDM:Exploit.Win32.Generic",
+      "rel": "indicates exploitation of",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "CVE-2022-30190"
+    },
+    {
+      "sub": "HEUR:Exploit.MSOffice.Agent.gen",
+      "rel": "indicates exploitation of",
+      "rel_type": [
+        "indicates"
+      ],
+      "obj": "CVE-2022-30190"
+    }
+  ],
+  "entitylist": [
+    {
+      "name": "CVE-2022-30190",
+      "type": "vulnerability",
+      "alias": [
+        "Follina",
+        "HEUR:Exploit.MSOffice.Agent.gen",
+        "PDM:Exploit.Win32.Generic"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Microsoft Support Diagnostic Tool",
+      "type": "general-software",
+      "alias": [
+        "MSDT"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Attacker(using: CVE-2022-30190)",
+      "type": "threat-actor-or-intrusion-set",
+      "alias": [
+        "attacker",
+        "attackers"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "Microsoft Office",
+      "type": "general-software",
+      "alias": [
+        "MS Office"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "MS Office document",
+      "type": "file",
+      "alias": [
+        "Microsoft Word (.docx)",
+        "Rich Text Format (.rtf)"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "external malicious OLE object",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "OLE object",
+        "rels file",
+        "HTML file"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "PDM:Exploit.Win32.Generic",
+      "type": "indicator",
+      "alias": [
+        "CVE-2022-30190",
+        "Follina",
+        "HEUR:Exploit.MSOffice.Agent.gen"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    },
+    {
+      "name": "HEUR:Exploit.MSOffice.Agent.gen",
+      "type": "indicator",
+      "alias": [
+        "CVE-2022-30190",
+        "Follina",
+        "PDM:Exploit.Win32.Generic"
+      ],
+      "mother entity": [
+        "None"
+      ]
+    }
+  ],
+  "content": "CVE-2022-30190 (Follina) vulnerability in MSDT: description and counteraction | Securelist\nCVE-2022-30190 (Follina) vulnerability in MSDT: description and counteraction\n06 Jun 2022\nCVE-2022-30190 technical detailsProtecting against Follina\nAMR\nAt the end of May, researchers from the nao_sec team reported a new zero-day vulnerability in Microsoft Support Diagnostic Tool (MSDT) that can be exploited using Microsoft Office documents.\nIt allowed attackers to remotely execute code on Windows systems, while the victim could not even open the document containing the exploit, or open it in Protected Mode.\nThe vulnerability, which the researchers dubbed Follina, later received the identifier CVE-2022-30190.\nCVE-2022-30190 technical details\nBriefly, the exploitation of the CVE-2022-30190 vulnerability can be described as follows.\nThe attacker creates an MS Office document with a link to an external malicious OLE object (word/_rels/document.xml.rels), such as an HTML file located on a remote server.\nThe data used to describe the link is placed in the  tag with attributes Type=”http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject”, Target=”http_malicious_link!”.\nThe link in the Target attribute points to the above-mentioned HTML file, inside which a malicious script is written using a special URI scheme.\nWhen opened, the attacker-created document runs MSDT.\nThe attacker can then pass, through a set of parameters, any command to this tool for execution on the victim’s system with the privileges of the user who opened the document.\nWhat is more, the command can be passed even if the document is opened in Protected Mode and macros are disabled.\nAt the time of posting, two document formats were known to allow CVE-2022-30190 exploitation: Microsoft Word (.docx) and Rich Text Format (.rtf).\nThe latter is more dangerous for the potential victim because it allows execution of a malicious command even without opening the document — just previewing it in Windows Explorer is enough.\nProtecting against Follina\nKaspersky is aware of attempts to exploit the CVE-2022-30190 vulnerability through Microsoft Office documents.\nOur solutions protect against this using the Behavior Detection and Exploit Prevention tools.\nThe following verdict names are possible:\nPDM:Exploit.\nWin32.Generic\nHEUR:Exploit.MSOffice.Agent.n\nHEUR:Exploit.MSOffice.Agent.gen\nHEUR:Exploit.MSOffice.CVE-2017-0199.a\nHEUR:Exploit.MSOffice.CVE-2021-40444.a\nHEUR:Exploit.MSOffice.Generic\nGeography of Follina exploitation attempts with Exploit.MSOffice.CVE-2021-40444.a verdict, May 1 – June 3, 2022 (download)\nWe expect to see more Follina exploitation attempts to gain access to corporate resources, including for ransomware attacks and data breaches.\nTherefore, we continue to closely monitor the situation and improve overall vulnerability detection.\nIn addition, as part of the Managed Detection and Response service, our SOC experts can detect vulnerability exploitation, investigate attacks and provide clients with all necessary threat-related information.\nTo protect against Follina exploitation, we strongly advise that you follow Microsoft’s own guidelines: Guidance for CVE-2022-30190 Microsoft Support Diagnostic Tool Vulnerability. In particular, to prevent exploitation of this vulnerability, you can disable support for the MSDT URL protocol by taking these steps:\nRun Command Prompt as Administrator.\nTo back up the registry key, execute the command “reg export HKEY_CLASSES_ROOT\\ms-msdt filename”\nExecute the command “reg delete HKEY_CLASSES_ROOT\\ms-msdt /f”.\nMicrosoft Office\nMSDT\nVulnerability Statistics\nZero-day vulnerabilities\nAMR\nCVE-2022-30190 (Follina) vulnerability in MSDT: description and counteraction\nBENJAMIN PACHECO\nPosted on\nJune 12, 2022. 6:52 pm\nI understand the detriment these vulnerabilities pose, I do not understand the “basic” steps to preventing the intrusion.\nIs that left up to Kaspersky to assure, .. Or at the user level are their additional steps to be taken to assist in the effort?\nReply\nPosted on\nJune 14, 2022. 6:16 pm\nHi Benjamin!\nIf you are Kaspersky customer, our solutions block attempts to exploit this vulnerability.\nTo ensure that all necessary steps are taken to prevent exploitation, contact your local admin.\nIf you are a home user and do not have other admins on your computer, you most likely do have admin privileges and can try to disable MSDT yourself.\nReply\nCVE-2022-30190 technical detailsProtecting against Follina\nIT threat evolution in Q3 2022. Non-mobile statistics\nIT threat evolution in Q2 2022. Non-mobile statistics\nIT threat evolution in Q1 2022. Non-mobile statistics\nEmotet modules and recent attacks\nSpring4Shell (CVE-2022-22965): details and mitigations\nOngoing exploitation of CVE-2022-41352 (Zimbra 0-day)\nTwo more malicious Python packages in the PyPI\nLofyLife: malicious npm packages steal Discord tokens and bank card data\nSpring4Shell (CVE-2022-22965): details and mitigations\nCVE-2022-0847 aka Dirty Pipe vulnerability in Linux kernel",
+  "idorurl": "https://securelist.com/cve-2022-30190-follina-vulnerability-in-msdt-description-and-counteraction/106703/"
+}

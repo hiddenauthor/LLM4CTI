@@ -1,226 +1,4 @@
 {
-  "idorurl": "60k_0025946",
-  "content": "\n\nby\nSophosLabs\n\nA few weeks ago Richard posted a blog about malicious HTML attachments we were seeing in spam. Well, the attacks have continued since then along much the same lines. For example:\n\nCurrent attachments are being blocked as Troj/JSRedirBV.\nAs noted before, if the victim opens the HTML attachment, the embedded script will run within the browser, and redirect them to a another remote web page (hosted within a legitimate but compromised site). Sophos products block this page as Mal/IframeQ. From there, the attack is twofold:\n\nMETA redirect to some spammy site (Canadian Pharmacy and similar)\nmalicious IFRAME loading further content from another site\n\nIn this post I wanted to highlight one of the tricks used in the malicious JavaScript within the HTML attachments. The script is minified and peppered with junk code, hindering readability, but after prettifying and removing the junk code, it is fairly simple. The decryption function is called via setTimeOut, and consists of a simple xor.\n\nThere is a cunning little trick in the script, designed to break JavaScript emulation tools. By calling the decryption routine via setTimeOut, the script is able to ensure there has been a sufficient delay. Most emulation tools will tend to ignore the setTimeOut delay, resulting in an incorrect xor key being generated, and decryption failing.\n\nWhen correctly deobfuscated, you can see that the script redirects the victim with a location.href:\n\nThese attacks are just another example of the growing number of tricks being used within malicious JavaScript to evade generic detection and hinder automated analysis techniques.\n",
-  "实体列表(没更新别名)": [
-    {
-      "name": "HTML attachment",
-      "type": "file",
-      "alias": [
-        "malicious HTML attachments",
-        "Troj/JSRedirBV"
-      ]
-    },
-    {
-      "name": "Troj/JSRedirBV",
-      "type": "malware",
-      "alias": [
-        "HTML attachment",
-        "malicious HTML attachments"
-      ]
-    },
-    {
-      "name": "malicious JavaScript",
-      "type": "malware",
-      "alias": [
-        "embedded script",
-        "the script"
-      ]
-    },
-    {
-      "name": "browser",
-      "type": "general-software",
-      "alias": []
-    },
-    {
-      "name": "remote web page",
-      "type": "infrastructure",
-      "alias": [
-        "Mal/IframeQ"
-      ]
-    },
-    {
-      "name": "legitimate but compromised site",
-      "type": "infrastructure",
-      "alias": []
-    },
-    {
-      "name": "Mal/IframeQ",
-      "type": "malware",
-      "alias": [
-        "remote web page"
-      ]
-    },
-    {
-      "name": "META redirect",
-      "type": "attack-pattern",
-      "alias": []
-    },
-    {
-      "name": "spammy site",
-      "type": "infrastructure",
-      "alias": [
-        "Canadian Pharmacy"
-      ]
-    },
-    {
-      "name": "Canadian Pharmacy",
-      "type": "identity",
-      "alias": [
-        "spammy site"
-      ]
-    },
-    {
-      "name": "malicious IFRAME",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": []
-    },
-    {
-      "name": "decryption function",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "decryption routine"
-      ]
-    },
-    {
-      "name": "setTimeOut",
-      "type": "detailed-part-of-general-software",
-      "alias": []
-    },
-    {
-      "name": "simple xor",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": []
-    },
-    {
-      "name": "JavaScript emulation tools",
-      "type": "security-product",
-      "alias": []
-    },
-    {
-      "name": "location.href",
-      "type": "detailed-part-of-general-software",
-      "alias": []
-    }
-  ],
-  "entitylist": [
-    {
-      "name": "HTML attachment",
-      "type": "file",
-      "alias": [
-        "Troj/JSRedirBV",
-        "attachments",
-        "malicious HTML attachments"
-      ]
-    },
-    {
-      "name": "Troj/JSRedirBV",
-      "type": "malware",
-      "alias": [
-        "HTML attachment",
-        "attachments",
-        "malicious HTML attachments"
-      ]
-    },
-    {
-      "name": "malicious JavaScript",
-      "type": "malware",
-      "alias": [
-        "embedded script",
-        "the script"
-      ]
-    },
-    {
-      "name": "browser",
-      "type": "general-software",
-      "alias": [
-        "None"
-      ]
-    },
-    {
-      "name": "remote web page",
-      "type": "infrastructure",
-      "alias": [
-        "Mal/IframeQ"
-      ]
-    },
-    {
-      "name": "legitimate but compromised site",
-      "type": "infrastructure",
-      "alias": [
-        "None"
-      ]
-    },
-    {
-      "name": "Mal/IframeQ",
-      "type": "malware",
-      "alias": [
-        "remote web page"
-      ]
-    },
-    {
-      "name": "META redirect",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
-      ]
-    },
-    {
-      "name": "spammy site",
-      "type": "infrastructure",
-      "alias": [
-        "Canadian Pharmacy"
-      ]
-    },
-    {
-      "name": "Canadian Pharmacy",
-      "type": "identity",
-      "alias": [
-        "spammy site"
-      ]
-    },
-    {
-      "name": "malicious IFRAME",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
-      ]
-    },
-    {
-      "name": "decryption function",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "decryption routine"
-      ]
-    },
-    {
-      "name": "setTimeOut",
-      "type": "detailed-part-of-general-software",
-      "alias": [
-        "None"
-      ]
-    },
-    {
-      "name": "simple xor",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
-      ]
-    },
-    {
-      "name": "JavaScript emulation tools",
-      "type": "security-product",
-      "alias": [
-        "emulation tools"
-      ]
-    },
-    {
-      "name": "location.href",
-      "type": "detailed-part-of-general-software",
-      "alias": [
-        "None"
-      ]
-    }
-  ],
   "relationshiplist": [
     {
       "sub": "HTML attachment",
@@ -342,5 +120,126 @@
       ],
       "obj": "location.href"
     }
-  ]
+  ],
+  "entitylist": [
+    {
+      "name": "HTML attachment",
+      "type": "file",
+      "alias": [
+        "Troj/JSRedirBV",
+        "attachments",
+        "malicious HTML attachments"
+      ]
+    },
+    {
+      "name": "Troj/JSRedirBV",
+      "type": "malware",
+      "alias": [
+        "HTML attachment",
+        "attachments",
+        "malicious HTML attachments"
+      ]
+    },
+    {
+      "name": "malicious JavaScript",
+      "type": "malware",
+      "alias": [
+        "embedded script",
+        "the script"
+      ]
+    },
+    {
+      "name": "browser",
+      "type": "general-software",
+      "alias": [
+        "None"
+      ]
+    },
+    {
+      "name": "remote web page",
+      "type": "infrastructure",
+      "alias": [
+        "Mal/IframeQ"
+      ]
+    },
+    {
+      "name": "legitimate but compromised site",
+      "type": "infrastructure",
+      "alias": [
+        "None"
+      ]
+    },
+    {
+      "name": "Mal/IframeQ",
+      "type": "malware",
+      "alias": [
+        "remote web page"
+      ]
+    },
+    {
+      "name": "META redirect",
+      "type": "attack-pattern",
+      "alias": [
+        "None"
+      ]
+    },
+    {
+      "name": "spammy site",
+      "type": "infrastructure",
+      "alias": [
+        "Canadian Pharmacy"
+      ]
+    },
+    {
+      "name": "Canadian Pharmacy",
+      "type": "identity",
+      "alias": [
+        "spammy site"
+      ]
+    },
+    {
+      "name": "malicious IFRAME",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ]
+    },
+    {
+      "name": "decryption function",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "decryption routine"
+      ]
+    },
+    {
+      "name": "setTimeOut",
+      "type": "detailed-part-of-general-software",
+      "alias": [
+        "None"
+      ]
+    },
+    {
+      "name": "simple xor",
+      "type": "detailed-part-of-malware-or-hackertool",
+      "alias": [
+        "None"
+      ]
+    },
+    {
+      "name": "JavaScript emulation tools",
+      "type": "security-product",
+      "alias": [
+        "emulation tools"
+      ]
+    },
+    {
+      "name": "location.href",
+      "type": "detailed-part-of-general-software",
+      "alias": [
+        "None"
+      ]
+    }
+  ],
+  "content": "\n\nby\nSophosLabs\n\nA few weeks ago Richard posted a blog about malicious HTML attachments we were seeing in spam. Well, the attacks have continued since then along much the same lines. For example:\n\nCurrent attachments are being blocked as Troj/JSRedirBV.\nAs noted before, if the victim opens the HTML attachment, the embedded script will run within the browser, and redirect them to a another remote web page (hosted within a legitimate but compromised site). Sophos products block this page as Mal/IframeQ. From there, the attack is twofold:\n\nMETA redirect to some spammy site (Canadian Pharmacy and similar)\nmalicious IFRAME loading further content from another site\n\nIn this post I wanted to highlight one of the tricks used in the malicious JavaScript within the HTML attachments. The script is minified and peppered with junk code, hindering readability, but after prettifying and removing the junk code, it is fairly simple. The decryption function is called via setTimeOut, and consists of a simple xor.\n\nThere is a cunning little trick in the script, designed to break JavaScript emulation tools. By calling the decryption routine via setTimeOut, the script is able to ensure there has been a sufficient delay. Most emulation tools will tend to ignore the setTimeOut delay, resulting in an incorrect xor key being generated, and decryption failing.\n\nWhen correctly deobfuscated, you can see that the script redirects the victim with a location.href:\n\nThese attacks are just another example of the growing number of tricks being used within malicious JavaScript to evade generic detection and hinder automated analysis techniques.\n",
+  "idorurl": "60k_0025946"
 }

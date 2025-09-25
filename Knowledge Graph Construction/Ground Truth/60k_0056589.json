@@ -1,205 +1,180 @@
 {
-  "idorurl": "60k_0056589",
-  "content": "\n\nShare\n\nWin32/Quervar (a.k.a Dorifel, XDocCrypt) is a virus family that has been in the news recently, especially in the Netherlands. It has been reported to be causing havoc on computers of several notable Dutch institutions. In our analysis, we provide additional technical details about the workings of the virus and compare it to another virus, the\n\nWin32/Quervar (a.k.a Dorifel, XDocCrypt) is a virus family that has been in the news recently, especially in the Netherlands. It has been reported to be causing havoc on computers of several notable Dutch institutions. In our analysis, we provide additional technical details about the workings of the virus and compare it to another virus, the Delphiinfecting Win32/Induc.C, to which it bears a suspiciously strong resemblance.\nThe virus can get onto a victim machine through several infection vectors, including email, download by other malware (it has been seen in the company of the Zeus variant Citadel) and through its own replication mechanisms, described below. As others have previously blogged (here and here), Quervar is a parasitic virus that targets executable files, as well as Microsoft Word and Excel documents. Lets recapitulate how it does this, what other functionalities are included in the virus code, and why all this is so interesting.\nFile infection\nAfter a few initial checks (such as making sure that its running only once using a named event and global atom, and checking that its been run from a .LNK file with the parameter  launcher ) the virus creates a thread that will search through drives on the system for files to infect.\nIt goes about this by enumerating the logical drives on the system (GetLogicalDriveStrings) and recursively traversing their directory structures looking for target files. While doing this, it avoids certain drive types (specifically DRIVENOROOTDIR, DRIVECDROM and DRIVEUNKNOWN), and drives that contain the System Volume Information directory. Now this looked very familiar, being the exact same procedure that the Win32/Induc.C virus used. And its only one of the many similarities we found between the two viruses. By filtering out the specific drive types, the virus is intended to infect files on network mapped drives and removable media, such as USB sticks.\n\nThe virus is interested in all files with file names containing the strings  .doc ,  .xls  (this includes the newer .docx and .xlsx file extensions)   with the exception of those whose names contain  .  (this is a marker used by the virus when the original document is dropped from the infected file and launched)    and for file names containing  .exe . It also checks on whether the  .exe  file found is a 32bit executable, and looks for the presence of a special marker to ensure that the file hasnt already been infected. A file size check is also performed   the virus only infects files from 10kB to 30MB in size.\n\nThe victim file is then infected provided it meets these criteria. The original file is overwritten by the virus body, followed by the infection marker ( [scarface]  in the case of Win32/Quervar.C) and the original file (document or executable) encrypted with RC4.\n\nWith Word and Excel documents, two extra steps are taken. Firstly, the icon of the file is changed to that of a Word or Excel document. Secondly, the infected documents file extension is changed to RLOcod.scr (for .doc and .docx files) or RLOslx.scr (for .xls and .xlsx files). RLO in this case is the Unicode character 0x202E righttoleft override which, as the name suggests, causes the string following the character to be reversed. In effect, this file:\n\nwould be displayed like this in Windows Explorer:\n\nThis trick for hiding the executable file extension has been used by malware in the past (see here and here). Interestingly, it doesnt work on Windows XP by default, as it lacks righttoleft text support.\n\nNaturally, when the virusladen file is executed, it decrypts, drops and opens the original document or launches the original executable.\nPayload and motives\nThe virus infects executables and documents (i.e. turns documents into executable files as well) on networked mapped drives and removable media. The reason for this is   as with any other virus or worm   to enable it to spread. Even though the original files are RC4 encrypted inside the virus, this is not a case of a file cryptor or ransomware, where the victim has to pay a fee for the decryption key; the reason for the encryption is simply to make disinfection slightly more difficult for AV companies. (All ESET security products are capable of cleaning the infection, or you can download a standalone removal tool here.) After all, the virus does try to conceal the fact that files are infected (using the righttoleft extension trick) and opens the original document.\nOnce an infected file is executed, its only action is to  install  the virus on the system and to launch the original file. The installation process is to copy itself and add a Registry entry that will ensure its execution every time the system starts with the  launcher  parameter.\nOnce  installed  the virus creates three threads:\n\nInfecting thread (Infinite loop so that the virus catches when a new drive is mounted or new files for infection appear, with 5s sleep between cycles. For details, see previous section.)\nPayload thread\nSelfdefense thread\n\nWhile this is in other respects a straightforward and easytoanalyze virus coded in Delphi, the payload thread employs a little obfuscation through code encryption in order to make static analysis more difficult.\n\nFirst, the virus attempts to set the [HKCUSoftwareMicrosoftWindowsCurrentVersionInternet Settings]  GlobalUserOffline  Registry entry to 0, which would put Internet Explorer out of Offline Mode. (However, theres a bug in the code, as described in the following section). Then, the decrypted code is responsible for the other malicious actions the virus performs:\n\nIt contains a set of URLs, to which Quervar tries to connect\nThe HTTP request also sends a unique ID of the infected computer (derived from the path where the virus was launched and the Volume Serial Number of the disk) to identify the individual machine and distinguish it from others in the botnet\nThe virus is able to receive commands from the CC server, download and execute other malicious code (through HTTP or FTP), and update itself\nIt has the ability to steal user data, including browser history and cache, and the list of URLs typed into the browser\n\nWhile debugging one of the Win32/Quervar samples, we noticed another interesting technique that also seemed very familiar.\nOne of the hardcoded URLs inside the binary pointed to a user avatar on a discussion forum. Heres the decrypted URL from the Win32/Quervar.C variant:\n\nThe user whose avatar was used here has already been banned. But that is not the case with the avatar used by the Win32/Quervar.D variant.\nUnsurprisingly, the downloaded image contained additional encrypted CC URLs:\n\nHeres the avatar downloaded by Win32/Quervar.D:\n\nAnd here is the associated forum user:\n\nThe third thread   used as a trivial selfdefensive measure by the malware process   is exactly the same as the one used in Win32/Induc.C (well, apart from the Sleep delay duration). The process exits if the Task Manager is opened.\nThe selfdefense thread in of Win32/Quervar.C is shown below on the left, and the same in Win32/Induc.C on the right:\n \nEaster Eggs\n\nAs mentioned in the text above, theres a bug in the part of the Quervar.C code that tries to set the GlobalUserOffline Registry entry. Unlike most other strings, the Registry key is stored unencrypted in the binary, so  decrypting  it results in an addition to the Registry that is essentially gibberish.\nThe abovementioned writing to the Registry takes place only after an unsuccessful attempt to connect to the registry of a remote computer named  kaspersky .\n\nDifferent string markers separating the encrypted original file from the virus body are used in different versions of the virus:\n[scarface] in Win32/Quervar.C, a reference to the movie with Al Pacino.\n[deadline] in other variants   this could be a reference to a one of a few movie/TV titles\nWin32/Quervar.C uses an event called  SayHellotomyLittleFriend    also from Scarface\nThis variant also uses a global atom called  BreakingBad , a TV series\n\nComparison with Win32/Induc.C\nAs mentioned in the previous text, we have noticed a great deal of similarity between Quervar and Induc.C. Heres a comparison table:\n\nFeature\nWin32/Quervar.C\nWin32/Induc.C\n\nProgramming language\n\nDelphi\n\nMalware type\n\nvirus\n\nInfects\n.exe, .doc(x), .xls(x) files\nDelphi applications and .exe files\n\nInfection method\nAppends encrypted file after virus body, with infection string marker\n\nInfection string marker\n[scarface]\n=supernatural=\n\nInfected file extension\n.exe, .scr\n.exe\n\nEncryption\nRC4\nxor 5, add 7\n\nTargets for infection\nRemovable media, networked mapped drives\nRemovable media, networked mapped drives   the same as Quervar in the case of .exe file infection\n\nSearching for targets\nThe same logical drive enumeration and recursive directory traversing technique. The exclusions for drive types and drives containing System Volume Information are also the same.\n\nSelfdefense\nThe same thread (different timeout value), exiting after the Task Manager process is seen\n\nForms a botnet?\n\nYes\n\nMain payload\n\nDownload and execute arbitrary file\n\nAdditional payloads\nVirus update, steal browser history\n\nCC URL mechanism\nContains hardcoded encrypted URLs, (some of which) point to user avatars on discussion forums, which contain additional URLs\n\nCountries of highest prevalence\nNetherlands\nRussia, Slovakia\n\nVariants and statistics\nWin32/Quervar.C is the virus variant that has been troubling Dutch computer users in the past weeks: however the first variants of Quervar date back to a couple of months to spring 2012 and are not confined only to the Netherlands.\nAs indicated by the graph below, statistics from ESET LiveGrid  telemetry show that the Quervar virus (all variants) is most prevalent in Turkey. The variant Win32/Quervar.C (which has a much lower share in detections than the other variants) is detected almost exclusively (~90 of all reported detections) in the Netherlands.\n\nConclusion\nAs has become common practice in the world of malware, the Win32/Quervar virus family implements several techniques, which have already been observed elsewhere. It is part of a bigger  operation , forms a botnet, and is able to perform tasks sent from the CC server, and to download and execute other malware. It is not unlikely that the virus botnet operator provides this as a service to other cyber criminals. Furthermore, as David Harley mentions, it has attracted the attention of telephone support scammers.\nHowever, what struck us most forcibly in this case is the great degree of similarity to the Win32/Induc.C virus. Its very likely that the malware writer is the same in both cases, or at any rate that Quervar was inspired by the Win32/Induc.C code.\nUsers of ESET security software are protected from the virus. Anyone else can download the free removal tool here. The Threat Encyclopedia entry can be found here: Win32/Quervar.C.\n\nRobert Lipovsky 21 Aug 2012  07:27AM\n\nSimilar Articles\n\nCybercrime \n\nCyberextortionists take aim at lucrative targets\n\nCybercrime \n\nSiegeware: When criminals take over your smart building\n\nGeneral \n\nSmoke damage and hard drives\n\nCybercrime \n\nMaltas leading bank resumes operations after cyberheistinduced shutdown\n\nDiscussion\n\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "C&C server",
-      "type": "infrastructure",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "compares to",
+      "rel_type": [
+        "compares-to"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Win32/Induc.C"
     },
     {
-      "name": "Citadel",
-      "type": "malware",
-      "alias": [
-        "Zeus variant Citadel"
+      "sub": "Win32/Quervar",
+      "rel": "is delivered by",
+      "rel_type": [
+        "cooperates-with"
       ],
-      "mother entity": [
-        "Zeus"
-      ]
+      "obj": "Citadel"
     },
     {
-      "name": "Excel documents",
-      "type": "generic-noun",
-      "alias": [
-        ".xls",
-        ".xlsx"
+      "sub": "Citadel",
+      "rel": "is a variant of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Zeus"
     },
     {
-      "name": "executable files",
-      "type": "generic-noun",
-      "alias": [
-        ".exe"
+      "sub": "Win32/Quervar",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "executable files"
     },
     {
-      "name": "file icon",
-      "type": "detailed-part-of-general-software",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Microsoft Word documents"
     },
     {
-      "name": "hardcoded URLs",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "targets",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Excel documents"
     },
     {
-      "name": "Infecting thread",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "infects files on",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "network mapped drives"
     },
     {
-      "name": "infection marker",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "special marker"
+      "sub": "Win32/Quervar",
+      "rel": "infects files on",
+      "rel_type": [
+        "targets"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "removable media"
     },
     {
-      "name": "Microsoft Word documents",
-      "type": "generic-noun",
-      "alias": [
-        ".doc",
-        ".docx"
+      "sub": "Win32/Quervar",
+      "rel": "adds",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Registry entry"
     },
     {
-      "name": "network mapped drives",
-      "type": "infrastructure",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "receives commands from",
+      "rel_type": [
+        "communicates-with"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "C&C server"
     },
     {
-      "name": "Payload thread",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
+      "sub": "user avatar",
+      "rel": "contained",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "additional encrypted C&C URLs"
     },
     {
-      "name": "Registry entry",
-      "type": "windows-registry-key",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "creates thread to search for files",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Infecting thread"
     },
     {
-      "name": "removable media",
-      "type": "infrastructure",
-      "alias": [
-        "USB sticks"
+      "sub": "Win32/Quervar",
+      "rel": "looks for the presence of",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "infection marker"
     },
     {
-      "name": "RLOcod.scr",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "overwrites",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "executable files"
     },
     {
-      "name": "Self-defense thread",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "changes",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "file icon"
     },
     {
-      "name": "user avatar",
-      "type": "file",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "changes file extension to",
+      "rel_type": [
+        "modifies-or-removes-or-replaces"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "RLOcod.scr"
     },
     {
-      "name": "Win32/Induc.C",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "copies",
+      "rel_type": [
+        "creates-or-generates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Win32/Quervar"
     },
     {
-      "name": "Win32/Quervar",
-      "type": "malware",
-      "alias": [
-        "Dorifel",
-        "XDocCrypt"
+      "sub": "Win32/Quervar",
+      "rel": "consists of",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Infecting thread"
     },
     {
-      "name": "Zeus",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Win32/Quervar",
+      "rel": "consists of",
+      "rel_type": [
+        "consists-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Payload thread"
     },
     {
-      "name": "additional encrypted C&C URLs",
-      "type": "detailed-part-of-malware-or-hackertool",
-      "alias": [],
-      "mother entity": []
+      "sub": "Win32/Quervar",
+      "rel": "consists of",
+      "rel_type": [
+        "consists-of"
+      ],
+      "obj": "Self-defense thread"
+    },
+    {
+      "sub": "Win32/Quervar",
+      "rel": "update",
+      "rel_type": [
+        "has"
+      ],
+      "obj": "Win32/Quervar"
+    },
+    {
+      "sub": "hardcoded URLs",
+      "rel": "pointed to",
+      "rel_type": [
+        "communicates-with"
+      ],
+      "obj": "user avatar"
     }
   ],
   "entitylist": [
@@ -407,182 +382,6 @@
       "mother entity": []
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "Win32/Quervar",
-      "rel": "compares to",
-      "rel_type": [
-        "compares-to"
-      ],
-      "obj": "Win32/Induc.C"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "is delivered by",
-      "rel_type": [
-        "cooperates-with"
-      ],
-      "obj": "Citadel"
-    },
-    {
-      "sub": "Citadel",
-      "rel": "is a variant of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "Zeus"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "executable files"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "Microsoft Word documents"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "targets",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "Excel documents"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "infects files on",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "network mapped drives"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "infects files on",
-      "rel_type": [
-        "targets"
-      ],
-      "obj": "removable media"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "adds",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": "Registry entry"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "receives commands from",
-      "rel_type": [
-        "communicates-with"
-      ],
-      "obj": "C&C server"
-    },
-    {
-      "sub": "user avatar",
-      "rel": "contained",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "additional encrypted C&C URLs"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "creates thread to search for files",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": "Infecting thread"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "looks for the presence of",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "infection marker"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "overwrites",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": "executable files"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "changes",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": "file icon"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "changes file extension to",
-      "rel_type": [
-        "modifies-or-removes-or-replaces"
-      ],
-      "obj": "RLOcod.scr"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "copies",
-      "rel_type": [
-        "creates-or-generates"
-      ],
-      "obj": "Win32/Quervar"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "consists of",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "Infecting thread"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "consists of",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "Payload thread"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "consists of",
-      "rel_type": [
-        "consists-of"
-      ],
-      "obj": "Self-defense thread"
-    },
-    {
-      "sub": "Win32/Quervar",
-      "rel": "update",
-      "rel_type": [
-        "has"
-      ],
-      "obj": "Win32/Quervar"
-    },
-    {
-      "sub": "hardcoded URLs",
-      "rel": "pointed to",
-      "rel_type": [
-        "communicates-with"
-      ],
-      "obj": "user avatar"
-    }
-  ]
+  "content": "\n\nShare\n\nWin32/Quervar (a.k.a Dorifel, XDocCrypt) is a virus family that has been in the news recently, especially in the Netherlands. It has been reported to be causing havoc on computers of several notable Dutch institutions. In our analysis, we provide additional technical details about the workings of the virus and compare it to another virus, the\n\nWin32/Quervar (a.k.a Dorifel, XDocCrypt) is a virus family that has been in the news recently, especially in the Netherlands. It has been reported to be causing havoc on computers of several notable Dutch institutions. In our analysis, we provide additional technical details about the workings of the virus and compare it to another virus, the Delphiinfecting Win32/Induc.C, to which it bears a suspiciously strong resemblance.\nThe virus can get onto a victim machine through several infection vectors, including email, download by other malware (it has been seen in the company of the Zeus variant Citadel) and through its own replication mechanisms, described below. As others have previously blogged (here and here), Quervar is a parasitic virus that targets executable files, as well as Microsoft Word and Excel documents. Lets recapitulate how it does this, what other functionalities are included in the virus code, and why all this is so interesting.\nFile infection\nAfter a few initial checks (such as making sure that its running only once using a named event and global atom, and checking that its been run from a .LNK file with the parameter  launcher ) the virus creates a thread that will search through drives on the system for files to infect.\nIt goes about this by enumerating the logical drives on the system (GetLogicalDriveStrings) and recursively traversing their directory structures looking for target files. While doing this, it avoids certain drive types (specifically DRIVENOROOTDIR, DRIVECDROM and DRIVEUNKNOWN), and drives that contain the System Volume Information directory. Now this looked very familiar, being the exact same procedure that the Win32/Induc.C virus used. And its only one of the many similarities we found between the two viruses. By filtering out the specific drive types, the virus is intended to infect files on network mapped drives and removable media, such as USB sticks.\n\nThe virus is interested in all files with file names containing the strings  .doc ,  .xls  (this includes the newer .docx and .xlsx file extensions)   with the exception of those whose names contain  .  (this is a marker used by the virus when the original document is dropped from the infected file and launched)    and for file names containing  .exe . It also checks on whether the  .exe  file found is a 32bit executable, and looks for the presence of a special marker to ensure that the file hasnt already been infected. A file size check is also performed   the virus only infects files from 10kB to 30MB in size.\n\nThe victim file is then infected provided it meets these criteria. The original file is overwritten by the virus body, followed by the infection marker ( [scarface]  in the case of Win32/Quervar.C) and the original file (document or executable) encrypted with RC4.\n\nWith Word and Excel documents, two extra steps are taken. Firstly, the icon of the file is changed to that of a Word or Excel document. Secondly, the infected documents file extension is changed to RLOcod.scr (for .doc and .docx files) or RLOslx.scr (for .xls and .xlsx files). RLO in this case is the Unicode character 0x202E righttoleft override which, as the name suggests, causes the string following the character to be reversed. In effect, this file:\n\nwould be displayed like this in Windows Explorer:\n\nThis trick for hiding the executable file extension has been used by malware in the past (see here and here). Interestingly, it doesnt work on Windows XP by default, as it lacks righttoleft text support.\n\nNaturally, when the virusladen file is executed, it decrypts, drops and opens the original document or launches the original executable.\nPayload and motives\nThe virus infects executables and documents (i.e. turns documents into executable files as well) on networked mapped drives and removable media. The reason for this is   as with any other virus or worm   to enable it to spread. Even though the original files are RC4 encrypted inside the virus, this is not a case of a file cryptor or ransomware, where the victim has to pay a fee for the decryption key; the reason for the encryption is simply to make disinfection slightly more difficult for AV companies. (All ESET security products are capable of cleaning the infection, or you can download a standalone removal tool here.) After all, the virus does try to conceal the fact that files are infected (using the righttoleft extension trick) and opens the original document.\nOnce an infected file is executed, its only action is to  install  the virus on the system and to launch the original file. The installation process is to copy itself and add a Registry entry that will ensure its execution every time the system starts with the  launcher  parameter.\nOnce  installed  the virus creates three threads:\n\nInfecting thread (Infinite loop so that the virus catches when a new drive is mounted or new files for infection appear, with 5s sleep between cycles. For details, see previous section.)\nPayload thread\nSelfdefense thread\n\nWhile this is in other respects a straightforward and easytoanalyze virus coded in Delphi, the payload thread employs a little obfuscation through code encryption in order to make static analysis more difficult.\n\nFirst, the virus attempts to set the [HKCUSoftwareMicrosoftWindowsCurrentVersionInternet Settings]  GlobalUserOffline  Registry entry to 0, which would put Internet Explorer out of Offline Mode. (However, theres a bug in the code, as described in the following section). Then, the decrypted code is responsible for the other malicious actions the virus performs:\n\nIt contains a set of URLs, to which Quervar tries to connect\nThe HTTP request also sends a unique ID of the infected computer (derived from the path where the virus was launched and the Volume Serial Number of the disk) to identify the individual machine and distinguish it from others in the botnet\nThe virus is able to receive commands from the CC server, download and execute other malicious code (through HTTP or FTP), and update itself\nIt has the ability to steal user data, including browser history and cache, and the list of URLs typed into the browser\n\nWhile debugging one of the Win32/Quervar samples, we noticed another interesting technique that also seemed very familiar.\nOne of the hardcoded URLs inside the binary pointed to a user avatar on a discussion forum. Heres the decrypted URL from the Win32/Quervar.C variant:\n\nThe user whose avatar was used here has already been banned. But that is not the case with the avatar used by the Win32/Quervar.D variant.\nUnsurprisingly, the downloaded image contained additional encrypted CC URLs:\n\nHeres the avatar downloaded by Win32/Quervar.D:\n\nAnd here is the associated forum user:\n\nThe third thread   used as a trivial selfdefensive measure by the malware process   is exactly the same as the one used in Win32/Induc.C (well, apart from the Sleep delay duration). The process exits if the Task Manager is opened.\nThe selfdefense thread in of Win32/Quervar.C is shown below on the left, and the same in Win32/Induc.C on the right:\n \nEaster Eggs\n\nAs mentioned in the text above, theres a bug in the part of the Quervar.C code that tries to set the GlobalUserOffline Registry entry. Unlike most other strings, the Registry key is stored unencrypted in the binary, so  decrypting  it results in an addition to the Registry that is essentially gibberish.\nThe abovementioned writing to the Registry takes place only after an unsuccessful attempt to connect to the registry of a remote computer named  kaspersky .\n\nDifferent string markers separating the encrypted original file from the virus body are used in different versions of the virus:\n[scarface] in Win32/Quervar.C, a reference to the movie with Al Pacino.\n[deadline] in other variants   this could be a reference to a one of a few movie/TV titles\nWin32/Quervar.C uses an event called  SayHellotomyLittleFriend    also from Scarface\nThis variant also uses a global atom called  BreakingBad , a TV series\n\nComparison with Win32/Induc.C\nAs mentioned in the previous text, we have noticed a great deal of similarity between Quervar and Induc.C. Heres a comparison table:\n\nFeature\nWin32/Quervar.C\nWin32/Induc.C\n\nProgramming language\n\nDelphi\n\nMalware type\n\nvirus\n\nInfects\n.exe, .doc(x), .xls(x) files\nDelphi applications and .exe files\n\nInfection method\nAppends encrypted file after virus body, with infection string marker\n\nInfection string marker\n[scarface]\n=supernatural=\n\nInfected file extension\n.exe, .scr\n.exe\n\nEncryption\nRC4\nxor 5, add 7\n\nTargets for infection\nRemovable media, networked mapped drives\nRemovable media, networked mapped drives   the same as Quervar in the case of .exe file infection\n\nSearching for targets\nThe same logical drive enumeration and recursive directory traversing technique. The exclusions for drive types and drives containing System Volume Information are also the same.\n\nSelfdefense\nThe same thread (different timeout value), exiting after the Task Manager process is seen\n\nForms a botnet?\n\nYes\n\nMain payload\n\nDownload and execute arbitrary file\n\nAdditional payloads\nVirus update, steal browser history\n\nCC URL mechanism\nContains hardcoded encrypted URLs, (some of which) point to user avatars on discussion forums, which contain additional URLs\n\nCountries of highest prevalence\nNetherlands\nRussia, Slovakia\n\nVariants and statistics\nWin32/Quervar.C is the virus variant that has been troubling Dutch computer users in the past weeks: however the first variants of Quervar date back to a couple of months to spring 2012 and are not confined only to the Netherlands.\nAs indicated by the graph below, statistics from ESET LiveGrid  telemetry show that the Quervar virus (all variants) is most prevalent in Turkey. The variant Win32/Quervar.C (which has a much lower share in detections than the other variants) is detected almost exclusively (~90 of all reported detections) in the Netherlands.\n\nConclusion\nAs has become common practice in the world of malware, the Win32/Quervar virus family implements several techniques, which have already been observed elsewhere. It is part of a bigger  operation , forms a botnet, and is able to perform tasks sent from the CC server, and to download and execute other malware. It is not unlikely that the virus botnet operator provides this as a service to other cyber criminals. Furthermore, as David Harley mentions, it has attracted the attention of telephone support scammers.\nHowever, what struck us most forcibly in this case is the great degree of similarity to the Win32/Induc.C virus. Its very likely that the malware writer is the same in both cases, or at any rate that Quervar was inspired by the Win32/Induc.C code.\nUsers of ESET security software are protected from the virus. Anyone else can download the free removal tool here. The Threat Encyclopedia entry can be found here: Win32/Quervar.C.\n\nRobert Lipovsky 21 Aug 2012  07:27AM\n\nSimilar Articles\n\nCybercrime \n\nCyberextortionists take aim at lucrative targets\n\nCybercrime \n\nSiegeware: When criminals take over your smart building\n\nGeneral \n\nSmoke damage and hard drives\n\nCybercrime \n\nMaltas leading bank resumes operations after cyberheistinduced shutdown\n\nDiscussion\n\n",
+  "idorurl": "60k_0056589"
 }

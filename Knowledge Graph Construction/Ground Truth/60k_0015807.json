@@ -1,102 +1,68 @@
 {
-  "idorurl": "60k_0015807",
-  "content": " Authors Note: We at Malwarebytes continue to do our part in educating our product users and constant blog readers about daytoday online threats and how they can avoid falling prey to them. PUP Friday, our latest attempt at getting users acquainted with files they may need to watch out for in the Wild Web, offers an indepth look at some interesting and quite notable potentially unwanted programs (PUPs). Expect to see this type of content pushed out twice a month at the end of a work week.\n\nWe have discussed DNS hijackers in general in the past. This week, we like to have a look at an example called TopFlix. It belongs to a family of adware that we call DNSUnlocker.\nHow do people get infected?\nThis one is pushed by a bundle wrapper called SoftPulse. SoftPulse uses advertisements to lure users into downloading and installing useful applications like Java or Flash Player from their servers and to spice things up a bit they add some extra ingredients of their own.\nA current example of how the SoftPulse bundle installer looks\nDepending on your geolocation and maybe some other parameters, youd see some additional offers to digest along with the main course.\nTopFlix was presented as a mediaplayer during recent install procedures.\nInstallation\nOnce the bundle wrapper triggers the installation of TopFlix, youd be able to read their EULA as it should be, but in these cases, its not always shown. Since you have already allowed the wrapper to run, they dont need to ask for your permission to install the extras. You have implicitly and are probably unaware that you already allowed them. This one also includes a link to their Privacy Policy.\n\nScrolling down a bit in the EULA, you may notice this warning about you giving the Services permission to change your DNS settings:\n\nIn my book, thats a deal breaker. Do not ever allow anyone to control your DNS settings. The ramifications of changing them can range from extra content to being unable to reach any Web address at all.\nThe installer offers us another warning still further down, and lets us know that the Service maytrust me, it willcontain unsupervised thirdparty content:\n\nThirdparty content\nFrom what weve seen, the abovementioned thirdparty content comes as text popups, which are little advertisements that show up when you hover over certain keywords\n\nand some others that open a new browser tab or window.\nOne of the examples that we were served led to the potentially unwanted program called OneSafe PC Cleaner by Avanquest.\n\nAs you can see, that advertisement was marked as Ad by adsupply, but many of them do not reveal any information about their origin at all.\nRemoval and detection\nThe SoftPulse bundle wrapper is detected by Malwarebytes AntiMalware as PUP.Optional.SoftPulse. The TopFlix installer is detected as Adware.TopGuard.\n\nA full removal guide and logs of the install can be found on our forums.\nPrevention\nIn the case of bundle wrappers, a few habits can go a long way to prevent unwanted sidedishes:\n\nDownload software from the publishers own site whenever possible.\nReview the extra offers carefully. In many bundles you can Skip or Deny them.\nCreate a Restore Point before you install or use software that can undo the changes made to your system, such as Total Uninstall or Ashampoo Uninstaller.\n\nSummary\nWe looked at a DNS hijacker called TopFlix. It poses as a media player and is brought to you by one of the mainstream bundle wrappers called SoftPulse.\nPieter Arntz\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "DNS hijackers",
-      "type": "generic-noun",
-      "alias": [
-        "None"
+      "sub": "TopFlix",
+      "rel": "belongs to a family of",
+      "rel_type": [
+        "variant-of"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "DNSUnlocker"
     },
     {
-      "name": "TopFlix",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "DNSUnlocker",
+      "rel": "is a family of",
+      "rel_type": [
+        "categorized-as"
       ],
-      "mother entity": [
-        "DNSUnlocker"
-      ]
+      "obj": "adware"
     },
     {
-      "name": "DNSUnlocker",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "TopFlix",
+      "rel": "is a",
+      "rel_type": [
+        "categorized-as"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "DNS hijackers"
     },
     {
-      "name": "SoftPulse",
-      "type": "hacker-tool",
-      "alias": [
-        "None"
+      "sub": "SoftPulse",
+      "rel": "pushed",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "TopFlix"
     },
     {
-      "name": "media-player",
-      "type": "generic-noun",
-      "alias": [
-        "None"
+      "sub": "TopFlix",
+      "rel": "presented as a",
+      "rel_type": [
+        "impersonates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "media-player"
     },
     {
-      "name": "OneSafe PC Cleaner",
-      "type": "malware",
-      "alias": [
-        "None"
+      "sub": "Avanquest",
+      "rel": "authored",
+      "rel_type": [
+        "authored-by"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "OneSafe PC Cleaner"
     },
     {
-      "name": "Avanquest",
-      "type": "identity",
-      "alias": [
-        "None"
+      "sub": "PUP.Optional.SoftPulse",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "SoftPulse"
     },
     {
-      "name": "PUP.Optional.SoftPulse",
-      "type": "indicator",
-      "alias": [
-        "None"
+      "sub": "Adware.TopGuard",
+      "rel": "indicates",
+      "rel_type": [
+        "indicates"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "Adware.TopGuard",
-      "type": "indicator",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "adware",
-      "type": "generic-noun",
-      "alias": [],
-      "mother entity": []
+      "obj": "TopFlix"
     }
   ],
   "entitylist": [
@@ -200,70 +166,6 @@
       "mother entity": []
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "TopFlix",
-      "rel": "belongs to a family of",
-      "rel_type": [
-        "variant-of"
-      ],
-      "obj": "DNSUnlocker"
-    },
-    {
-      "sub": "DNSUnlocker",
-      "rel": "is a family of",
-      "rel_type": [
-        "categorized-as"
-      ],
-      "obj": "adware"
-    },
-    {
-      "sub": "TopFlix",
-      "rel": "is a",
-      "rel_type": [
-        "categorized-as"
-      ],
-      "obj": "DNS hijackers"
-    },
-    {
-      "sub": "SoftPulse",
-      "rel": "pushed",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "TopFlix"
-    },
-    {
-      "sub": "TopFlix",
-      "rel": "presented as a",
-      "rel_type": [
-        "impersonates"
-      ],
-      "obj": "media-player"
-    },
-    {
-      "sub": "Avanquest",
-      "rel": "authored",
-      "rel_type": [
-        "authored-by"
-      ],
-      "obj": "OneSafe PC Cleaner"
-    },
-    {
-      "sub": "PUP.Optional.SoftPulse",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "SoftPulse"
-    },
-    {
-      "sub": "Adware.TopGuard",
-      "rel": "indicates",
-      "rel_type": [
-        "indicates"
-      ],
-      "obj": "TopFlix"
-    }
-  ]
+  "content": " Authors Note: We at Malwarebytes continue to do our part in educating our product users and constant blog readers about daytoday online threats and how they can avoid falling prey to them. PUP Friday, our latest attempt at getting users acquainted with files they may need to watch out for in the Wild Web, offers an indepth look at some interesting and quite notable potentially unwanted programs (PUPs). Expect to see this type of content pushed out twice a month at the end of a work week.\n\nWe have discussed DNS hijackers in general in the past. This week, we like to have a look at an example called TopFlix. It belongs to a family of adware that we call DNSUnlocker.\nHow do people get infected?\nThis one is pushed by a bundle wrapper called SoftPulse. SoftPulse uses advertisements to lure users into downloading and installing useful applications like Java or Flash Player from their servers and to spice things up a bit they add some extra ingredients of their own.\nA current example of how the SoftPulse bundle installer looks\nDepending on your geolocation and maybe some other parameters, youd see some additional offers to digest along with the main course.\nTopFlix was presented as a mediaplayer during recent install procedures.\nInstallation\nOnce the bundle wrapper triggers the installation of TopFlix, youd be able to read their EULA as it should be, but in these cases, its not always shown. Since you have already allowed the wrapper to run, they dont need to ask for your permission to install the extras. You have implicitly and are probably unaware that you already allowed them. This one also includes a link to their Privacy Policy.\n\nScrolling down a bit in the EULA, you may notice this warning about you giving the Services permission to change your DNS settings:\n\nIn my book, thats a deal breaker. Do not ever allow anyone to control your DNS settings. The ramifications of changing them can range from extra content to being unable to reach any Web address at all.\nThe installer offers us another warning still further down, and lets us know that the Service maytrust me, it willcontain unsupervised thirdparty content:\n\nThirdparty content\nFrom what weve seen, the abovementioned thirdparty content comes as text popups, which are little advertisements that show up when you hover over certain keywords\n\nand some others that open a new browser tab or window.\nOne of the examples that we were served led to the potentially unwanted program called OneSafe PC Cleaner by Avanquest.\n\nAs you can see, that advertisement was marked as Ad by adsupply, but many of them do not reveal any information about their origin at all.\nRemoval and detection\nThe SoftPulse bundle wrapper is detected by Malwarebytes AntiMalware as PUP.Optional.SoftPulse. The TopFlix installer is detected as Adware.TopGuard.\n\nA full removal guide and logs of the install can be found on our forums.\nPrevention\nIn the case of bundle wrappers, a few habits can go a long way to prevent unwanted sidedishes:\n\nDownload software from the publishers own site whenever possible.\nReview the extra offers carefully. In many bundles you can Skip or Deny them.\nCreate a Restore Point before you install or use software that can undo the changes made to your system, such as Total Uninstall or Ashampoo Uninstaller.\n\nSummary\nWe looked at a DNS hijacker called TopFlix. It poses as a media player and is brought to you by one of the mainstream bundle wrappers called SoftPulse.\nPieter Arntz\n",
+  "idorurl": "60k_0015807"
 }

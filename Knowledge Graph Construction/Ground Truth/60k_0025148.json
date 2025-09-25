@@ -1,66 +1,44 @@
 {
-  "idorurl": "60k_0025148",
-  "content": "\n\nby\nAndrew Ludgate\n\nChances are, you or someone you know has received an email purporting to be from NACHA saying your ACH membership has expired. Unless youre in the Financial Payments industry however, you might not know what this is.\nNACHA is a notforprofit association, led by  financial institutions and payments associations, that is responsible for the administration, development, and governance of the ACH Network.\nIn other words, theyre responsible for overseeing and running the North American electronic payments system. This includes online payments, but also includes cheque cashing, money transfers and international wires.\nIt encompasses banks, healthcare providers, online boutiques, and the local corner store.  Were talking large sums of money and large volumes of transactions.\nSo why is everyone under the sun receiving these messages ? Because everyone includes ACH Network subscribers.  As mentioned in a recent Sophos Threat Spotlight, these emails are being used to socially engineer the recipients into installing a Zeus botnet node on their computer.\n\nThis is significant because the Zeus botnet (or Zbot) software is designed such that it can do much more than perform DDoS attacks and send out emails saying your ACH membership has expired  it also silently collects financial information residing on, or passing through your computer  including ACH transactions.\nZbot has been so successful at this that it continues to use almost the exact same method of distribution and information collection it used back in 2009. This is due in part to the continuing weaknesses in internet and business infrastructure that it targets.\nVerizon has compiled a list of the top fifteen Threat Action Types based on data breaches in the past year.  Zbot makes use of the following breach types from Verizons top 15 Threat Action Types:\nPage 26, Table 8: Top 15 Threat Action Types by number of breaches and number of records:\n\nThe botnet only fails to take advantage of three of the top fifteen, all of which involve manual (personally attended) attack mechanisms. Most of these threats are bundled into the malwares functionality by default, and the others are able to be leveraged through remote control of the system.\nSo from this, you can probably see that if someone is involved in electronic funds transfer activities, they should be running the latest antivirus and antispam software, have web protection and a solid firewall policy. \nThey should also have a defined data retention and encryption policy and some form of DLP (Data Loss Prevention) technology. Agreed? Its your money theyre leaking, after all.\nIf you are not a member of NACHA, Zbot also is happy to send you malicious eCards and online banking notifications, and will be quite pleased to add your computer to the botnet and gather your personal banking information.\nThis might sound like a classic case of Fear, Uncertainty and Doubt (FUD) about not using security products, but it isnt. Its about education and awareness. \nYour money is being stolen as you read this. If its not coming directly out of your bank account, it is being taken from you in the form of increased product pricing when the merchants have to absorb the thefts. Botnets like Zeus impact everyone.\nIf you cant afford a dedicated information security team, then assemble what you can, with the resources you have.\nFor those with no resources readily available, there are user groups you can join in your community that have members who would be happy to help you set up a secure computing system for free or for a low fee.\nIn the end, it all boils down to us, the people. Dont click on links you arent expecting. Dont run software you dont trust, even if it promises you the stars, or threatens you with doom if you dont. \nDont store personal information you dont need to store (on your PC, or on Facebook). If youre feeling suspicious that something might be awry, calling someone on the telephone and feeling a bit silly about it is much better than keeping silent.\n",
-  "实体列表(没更新别名)": [
+  "relationshiplist": [
     {
-      "name": "Phishing email purporting to be from NACHA",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
+      "sub": "Phishing email purporting to be from NACHA",
+      "rel": "used to install",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "Zeus botnet"
     },
     {
-      "name": "Zeus botnet",
-      "type": "malware",
-      "alias": [
-        "Zbot"
+      "sub": "Zeus botnet",
+      "rel": "silently collects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "financial information"
     },
     {
-      "name": "financial information",
-      "type": "abstract-concept",
-      "alias": [
-        "None"
+      "sub": "Zeus botnet",
+      "rel": "collects",
+      "rel_type": [
+        "malicious-investigates-track-detects"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "ACH transactions"
     },
     {
-      "name": "ACH transactions",
-      "type": "abstract-concept",
-      "alias": [
-        "None"
+      "sub": "Zeus botnet",
+      "rel": "sends",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "malicious eCards"
     },
     {
-      "name": "malicious eCards",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
+      "sub": "Zeus botnet",
+      "rel": "sends",
+      "rel_type": [
+        "delivers"
       ],
-      "mother entity": [
-        "None"
-      ]
-    },
-    {
-      "name": "online banking notifications",
-      "type": "attack-pattern",
-      "alias": [
-        "None"
-      ],
-      "mother entity": [
-        "None"
-      ]
+      "obj": "online banking notifications"
     }
   ],
   "entitylist": [
@@ -125,46 +103,6 @@
       ]
     }
   ],
-  "relationshiplist": [
-    {
-      "sub": "Phishing email purporting to be from NACHA",
-      "rel": "used to install",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "Zeus botnet"
-    },
-    {
-      "sub": "Zeus botnet",
-      "rel": "silently collects",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "financial information"
-    },
-    {
-      "sub": "Zeus botnet",
-      "rel": "collects",
-      "rel_type": [
-        "malicious-investigates-track-detects"
-      ],
-      "obj": "ACH transactions"
-    },
-    {
-      "sub": "Zeus botnet",
-      "rel": "sends",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "malicious eCards"
-    },
-    {
-      "sub": "Zeus botnet",
-      "rel": "sends",
-      "rel_type": [
-        "delivers"
-      ],
-      "obj": "online banking notifications"
-    }
-  ]
+  "content": "\n\nby\nAndrew Ludgate\n\nChances are, you or someone you know has received an email purporting to be from NACHA saying your ACH membership has expired. Unless youre in the Financial Payments industry however, you might not know what this is.\nNACHA is a notforprofit association, led by  financial institutions and payments associations, that is responsible for the administration, development, and governance of the ACH Network.\nIn other words, theyre responsible for overseeing and running the North American electronic payments system. This includes online payments, but also includes cheque cashing, money transfers and international wires.\nIt encompasses banks, healthcare providers, online boutiques, and the local corner store.  Were talking large sums of money and large volumes of transactions.\nSo why is everyone under the sun receiving these messages ? Because everyone includes ACH Network subscribers.  As mentioned in a recent Sophos Threat Spotlight, these emails are being used to socially engineer the recipients into installing a Zeus botnet node on their computer.\n\nThis is significant because the Zeus botnet (or Zbot) software is designed such that it can do much more than perform DDoS attacks and send out emails saying your ACH membership has expired  it also silently collects financial information residing on, or passing through your computer  including ACH transactions.\nZbot has been so successful at this that it continues to use almost the exact same method of distribution and information collection it used back in 2009. This is due in part to the continuing weaknesses in internet and business infrastructure that it targets.\nVerizon has compiled a list of the top fifteen Threat Action Types based on data breaches in the past year.  Zbot makes use of the following breach types from Verizons top 15 Threat Action Types:\nPage 26, Table 8: Top 15 Threat Action Types by number of breaches and number of records:\n\nThe botnet only fails to take advantage of three of the top fifteen, all of which involve manual (personally attended) attack mechanisms. Most of these threats are bundled into the malwares functionality by default, and the others are able to be leveraged through remote control of the system.\nSo from this, you can probably see that if someone is involved in electronic funds transfer activities, they should be running the latest antivirus and antispam software, have web protection and a solid firewall policy. \nThey should also have a defined data retention and encryption policy and some form of DLP (Data Loss Prevention) technology. Agreed? Its your money theyre leaking, after all.\nIf you are not a member of NACHA, Zbot also is happy to send you malicious eCards and online banking notifications, and will be quite pleased to add your computer to the botnet and gather your personal banking information.\nThis might sound like a classic case of Fear, Uncertainty and Doubt (FUD) about not using security products, but it isnt. Its about education and awareness. \nYour money is being stolen as you read this. If its not coming directly out of your bank account, it is being taken from you in the form of increased product pricing when the merchants have to absorb the thefts. Botnets like Zeus impact everyone.\nIf you cant afford a dedicated information security team, then assemble what you can, with the resources you have.\nFor those with no resources readily available, there are user groups you can join in your community that have members who would be happy to help you set up a secure computing system for free or for a low fee.\nIn the end, it all boils down to us, the people. Dont click on links you arent expecting. Dont run software you dont trust, even if it promises you the stars, or threatens you with doom if you dont. \nDont store personal information you dont need to store (on your PC, or on Facebook). If youre feeling suspicious that something might be awry, calling someone on the telephone and feeling a bit silly about it is much better than keeping silent.\n",
+  "idorurl": "60k_0025148"
 }
